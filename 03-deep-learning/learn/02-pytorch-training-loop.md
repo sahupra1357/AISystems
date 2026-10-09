@@ -1,4 +1,4 @@
-# Lesson 02 — PyTorch Training Loop
+# Lesson 3.2 — PyTorch Training Loop
 
 PyTorch is a leading deep learning framework. This lesson focuses on the **everyday loop**: tensors → dataset → model → loss → backward → optimizer step → evaluate.
 

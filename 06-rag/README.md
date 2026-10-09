@@ -8,7 +8,7 @@ Summary, rules and context: [AI Engineering Guide, section 8](../AI_ENGINEERING_
 
 Curriculum lessons, in reading order.
 
-- [Lesson 03 — RAG Deep Dive](learn/03-rag-deep-dive.md)
+- [Lesson 6.1 — RAG Deep Dive](learn/01-rag-deep-dive.md)
 
 ## Apply
 

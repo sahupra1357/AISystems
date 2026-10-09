@@ -1,8 +1,8 @@
-# Lesson 09 — Scenario-Based Production AI Questions
+# Lesson 12.5 — Scenario-Based Production AI Questions
 
 ## Why this lesson exists
 
-Interviews and real design reviews rarely ask “what is a feature store?” They drop you into **messy constraints**: conflicting goals, incomplete labels, cost spikes, stakeholder pressure, and no free lunch. This lesson is a **drill set**—50+ high-difficulty scenarios with strong answer outlines so you can practice the Part 5 habit:
+Interviews and real design reviews rarely ask “what is a feature store?” They drop you into **messy constraints**: conflicting goals, incomplete labels, cost spikes, stakeholder pressure, and no free lunch. This lesson is a **drill set**—50+ high-difficulty scenarios with strong answer outlines so you can practice the Stage 10 habit:
 
 **options → tradeoffs → recommended path → eval → HITL → risks → week-1 vs month-3 measures.**
 
@@ -14,7 +14,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
 2. Force yourself to name **at least two rejected options**.
 3. End with eval + HITL + rollback—even if the prompt forgot to ask.
 4. Only then read the strong answer outline; note gaps, don’t memorize verbatim.
-5. Map each scenario to patterns from [Lesson 08](../../11-architecture-patterns/learn/08-ai-architecture-patterns-for-prod.md).
+5. Map each scenario to patterns from [Lesson 11.1](../../11-architecture-patterns/learn/01-ai-architecture-patterns-for-prod.md).
 
 ## Coverage map (approximate)
 
@@ -74,7 +74,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: chargeback rate delta, $ utility, feature freshness SLOs, analyst handle time, false-decline complaints.
 
 
-- **Pattern map (Lesson 08):** 1 Batch; 2 Sync API; 3 Async/queue; 4 Feature store; 5 Router / 13 Cascade; 6 RAG; 7 Constrained agent; 8 HITL; 9 Shadow/canary/A/B; 10 Event-driven; 12 LLM gateway
+- **Pattern map (Lesson 11.1):** 1 Batch; 2 Sync API; 3 Async/queue; 4 Feature store; 5 Router / 13 Cascade; 6 RAG; 7 Constrained agent; 8 HITL; 9 Shadow/canary/A/B; 10 Event-driven; 12 LLM gateway
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -120,7 +120,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: incremental retention lift, coupon ROI, complaint rate, segment parity.
 
 
-- **Pattern map (Lesson 08):** 1 Batch; 8 HITL; 9 Shadow/canary/A/B
+- **Pattern map (Lesson 11.1):** 1 Batch; 8 HITL; 9 Shadow/canary/A/B
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -163,7 +163,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: stable purchase lift, reduced reformulation, healthy tail exposure.
 
 
-- **Pattern map (Lesson 08):** 8 HITL; 9 Shadow/canary/A/B; 10 Event-driven
+- **Pattern map (Lesson 11.1):** 8 HITL; 9 Shadow/canary/A/B; 10 Event-driven
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -207,7 +207,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: labeled PD calibration by app version; formal retrain decision.
 
 
-- **Pattern map (Lesson 08):** 8 HITL; 9 Shadow/canary/A/B; 14 MLOps loop
+- **Pattern map (Lesson 11.1):** 8 HITL; 9 Shadow/canary/A/B; 14 MLOps loop
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -249,7 +249,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: reduced label noise, measurable catch of new typologies without explainability regressions.
 
 
-- **Pattern map (Lesson 08):** 2 Sync API; 3 Async/queue; 5 Router / 13 Cascade; 8 HITL; 9 Shadow/canary/A/B
+- **Pattern map (Lesson 11.1):** 2 Sync API; 3 Async/queue; 5 Router / 13 Cascade; 8 HITL; 9 Shadow/canary/A/B
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -292,7 +292,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: seller retention, GMV from new SKUs, long-term relevance.
 
 
-- **Pattern map (Lesson 08):** 2 Sync API; 6 RAG; 8 HITL; 12 LLM gateway
+- **Pattern map (Lesson 11.1):** 2 Sync API; 6 RAG; 8 HITL; 12 LLM gateway
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -333,7 +333,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: >95% versioned traffic; rollback <15 minutes proven.
 
 
-- **Pattern map (Lesson 08):** 6 RAG; 7 Constrained agent; 8 HITL; 9 Shadow/canary/A/B; 12 LLM gateway; 14 MLOps loop
+- **Pattern map (Lesson 11.1):** 6 RAG; 7 Constrained agent; 8 HITL; 9 Shadow/canary/A/B; 12 LLM gateway; 14 MLOps loop
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -376,7 +376,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: monitored disparity bounds, appeal outcomes, finance lift vs constraints.
 
 
-- **Pattern map (Lesson 08):** 6 RAG; 8 HITL; 11 Edge/hybrid
+- **Pattern map (Lesson 11.1):** 6 RAG; 8 HITL; 11 Edge/hybrid
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -418,7 +418,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: low ungrounded rate, employee trust survey, legal sign-off on mode.
 
 
-- **Pattern map (Lesson 08):** 5 Router / 13 Cascade; 6 RAG; 8 HITL; 10 Event-driven
+- **Pattern map (Lesson 11.1):** 5 Router / 13 Cascade; 6 RAG; 8 HITL; 10 Event-driven
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -460,7 +460,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: zero auto money movement by LLM; measured deflection with safe drafts.
 
 
-- **Pattern map (Lesson 08):** 6 RAG; 7 Constrained agent; 8 HITL; 11 Edge/hybrid
+- **Pattern map (Lesson 11.1):** 6 RAG; 7 Constrained agent; 8 HITL; 11 Edge/hybrid
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -503,7 +503,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: stable unit economics; documented route mix.
 
 
-- **Pattern map (Lesson 08):** 1 Batch; 5 Router / 13 Cascade; 6 RAG; 8 HITL; 12 LLM gateway; 14 MLOps loop
+- **Pattern map (Lesson 11.1):** 1 Batch; 5 Router / 13 Cascade; 6 RAG; 8 HITL; 12 LLM gateway; 14 MLOps loop
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -545,7 +545,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: architecture review complete; enterprise isolation tiers; zero repeats.
 
 
-- **Pattern map (Lesson 08):** 6 RAG; 8 HITL; 11 Edge/hybrid; 12 LLM gateway; 15 Multi-tenant
+- **Pattern map (Lesson 11.1):** 6 RAG; 8 HITL; 11 Edge/hybrid; 12 LLM gateway; 15 Multi-tenant
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -586,7 +586,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: expert accuracy SLO met; chunking regressions tested in CI.
 
 
-- **Pattern map (Lesson 08):** 6 RAG; 8 HITL
+- **Pattern map (Lesson 11.1):** 6 RAG; 8 HITL
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -627,7 +627,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: stable gate rate; GPU utilization justified by quality.
 
 
-- **Pattern map (Lesson 08):** 2 Sync API; 5 Router / 13 Cascade; 6 RAG; 8 HITL; 10 Event-driven; 12 LLM gateway
+- **Pattern map (Lesson 11.1):** 2 Sync API; 5 Router / 13 Cascade; 6 RAG; 8 HITL; 10 Event-driven; 12 LLM gateway
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -667,7 +667,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: zero ungated publishes; schema RFC process.
 
 
-- **Pattern map (Lesson 08):** 1 Batch; 3 Async/queue; 6 RAG; 8 HITL; 14 MLOps loop
+- **Pattern map (Lesson 11.1):** 1 Batch; 3 Async/queue; 6 RAG; 8 HITL; 14 MLOps loop
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -708,7 +708,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: stable κ on graded set; low unsafe rate; clear escalation to care.
 
 
-- **Pattern map (Lesson 08):** 6 RAG; 8 HITL
+- **Pattern map (Lesson 11.1):** 6 RAG; 8 HITL
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -747,7 +747,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: low incomplete high-risk rate; legal comfort.
 
 
-- **Pattern map (Lesson 08):** 2 Sync API; 3 Async/queue; 5 Router / 13 Cascade; 6 RAG; 8 HITL; 10 Event-driven
+- **Pattern map (Lesson 11.1):** 2 Sync API; 3 Async/queue; 5 Router / 13 Cascade; 6 RAG; 8 HITL; 10 Event-driven
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -787,7 +787,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: v3 at 100% with accepted quality band; documented fallback.
 
 
-- **Pattern map (Lesson 08):** 6 RAG; 8 HITL; 9 Shadow/canary/A/B; 12 LLM gateway
+- **Pattern map (Lesson 11.1):** 6 RAG; 8 HITL; 9 Shadow/canary/A/B; 12 LLM gateway
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -829,7 +829,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: SLA met without reopen regression; audited wrongful-close < target.
 
 
-- **Pattern map (Lesson 08):** 6 RAG; 7 Constrained agent; 8 HITL
+- **Pattern map (Lesson 11.1):** 6 RAG; 7 Constrained agent; 8 HITL
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -869,7 +869,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: hardened allowlist; incident playbooks without LLM shell.
 
 
-- **Pattern map (Lesson 08):** 7 Constrained agent; 8 HITL; 9 Shadow/canary/A/B
+- **Pattern map (Lesson 11.1):** 7 Constrained agent; 8 HITL; 9 Shadow/canary/A/B
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -910,7 +910,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: chaos-tested exactly-once-effect; CFO confidence metrics.
 
 
-- **Pattern map (Lesson 08):** 2 Sync API; 3 Async/queue; 7 Constrained agent; 8 HITL
+- **Pattern map (Lesson 11.1):** 2 Sync API; 3 Async/queue; 7 Constrained agent; 8 HITL
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -950,7 +950,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: red-team pass; limited re-enable with DLP.
 
 
-- **Pattern map (Lesson 08):** 7 Constrained agent; 8 HITL; 15 Multi-tenant
+- **Pattern map (Lesson 11.1):** 7 Constrained agent; 8 HITL; 15 Multi-tenant
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -990,7 +990,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: prod least privilege live; no shared god account.
 
 
-- **Pattern map (Lesson 08):** 7 Constrained agent; 8 HITL; 15 Multi-tenant
+- **Pattern map (Lesson 11.1):** 7 Constrained agent; 8 HITL; 15 Multi-tenant
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1030,7 +1030,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: anomaly detection; no shared prod keys.
 
 
-- **Pattern map (Lesson 08):** 3 Async/queue; 7 Constrained agent; 8 HITL; 9 Shadow/canary/A/B; 12 LLM gateway
+- **Pattern map (Lesson 11.1):** 3 Async/queue; 7 Constrained agent; 8 HITL; 9 Shadow/canary/A/B; 12 LLM gateway
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1070,7 +1070,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: conditional reasoner with stable p99.
 
 
-- **Pattern map (Lesson 08):** 2 Sync API; 7 Constrained agent; 8 HITL; 9 Shadow/canary/A/B; 14 MLOps loop
+- **Pattern map (Lesson 11.1):** 2 Sync API; 7 Constrained agent; 8 HITL; 9 Shadow/canary/A/B; 14 MLOps loop
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1110,7 +1110,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: cost-optimized schedule; predictive scale for campaigns.
 
 
-- **Pattern map (Lesson 08):** 3 Async/queue; 5 Router / 13 Cascade; 8 HITL; 12 LLM gateway
+- **Pattern map (Lesson 11.1):** 3 Async/queue; 5 Router / 13 Cascade; 8 HITL; 12 LLM gateway
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1150,7 +1150,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: target architecture with measured unit economics.
 
 
-- **Pattern map (Lesson 08):** 1 Batch; 3 Async/queue; 5 Router / 13 Cascade; 8 HITL; 10 Event-driven; 12 LLM gateway; 14 MLOps loop
+- **Pattern map (Lesson 11.1):** 1 Batch; 3 Async/queue; 5 Router / 13 Cascade; 8 HITL; 10 Event-driven; 12 LLM gateway; 14 MLOps loop
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1190,7 +1190,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: async path adopted by mobile; fan-out under control.
 
 
-- **Pattern map (Lesson 08):** 2 Sync API; 3 Async/queue; 7 Constrained agent; 8 HITL
+- **Pattern map (Lesson 11.1):** 2 Sync API; 3 Async/queue; 7 Constrained agent; 8 HITL
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1230,7 +1230,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: cache policy documented; periodic poison tests.
 
 
-- **Pattern map (Lesson 08):** 7 Constrained agent; 8 HITL; 12 LLM gateway; 15 Multi-tenant
+- **Pattern map (Lesson 11.1):** 7 Constrained agent; 8 HITL; 12 LLM gateway; 15 Multi-tenant
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1269,7 +1269,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: old index deleted after evidence; runbook updated.
 
 
-- **Pattern map (Lesson 08):** 6 RAG; 8 HITL; 9 Shadow/canary/A/B; 12 LLM gateway
+- **Pattern map (Lesson 11.1):** 6 RAG; 8 HITL; 9 Shadow/canary/A/B; 12 LLM gateway
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1310,7 +1310,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: feature store/contract; drift true-positive rate improved.
 
 
-- **Pattern map (Lesson 08):** 1 Batch; 4 Feature store; 8 HITL; 12 LLM gateway
+- **Pattern map (Lesson 11.1):** 1 Batch; 4 Feature store; 8 HITL; 12 LLM gateway
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1349,7 +1349,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: training standards adopted; audits clean.
 
 
-- **Pattern map (Lesson 08):** 8 HITL
+- **Pattern map (Lesson 11.1):** 8 HITL
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1389,7 +1389,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: improved tail languages; stable sampling mix.
 
 
-- **Pattern map (Lesson 08):** 6 RAG; 7 Constrained agent; 8 HITL; 12 LLM gateway
+- **Pattern map (Lesson 11.1):** 6 RAG; 7 Constrained agent; 8 HITL; 12 LLM gateway
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1429,7 +1429,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: decision-capture SLO; legal-approved data path.
 
 
-- **Pattern map (Lesson 08):** 5 Router / 13 Cascade; 8 HITL
+- **Pattern map (Lesson 11.1):** 5 Router / 13 Cascade; 8 HITL
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1469,7 +1469,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: governed synthetic policy; improved real rare-class recall.
 
 
-- **Pattern map (Lesson 08):** 2 Sync API; 8 HITL
+- **Pattern map (Lesson 11.1):** 2 Sync API; 8 HITL
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1509,7 +1509,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: automated erasure runbooks; backup policies aligned.
 
 
-- **Pattern map (Lesson 08):** 3 Async/queue; 6 RAG; 8 HITL; 12 LLM gateway; 15 Multi-tenant
+- **Pattern map (Lesson 11.1):** 3 Async/queue; 6 RAG; 8 HITL; 12 LLM gateway; 15 Multi-tenant
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1549,7 +1549,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: clean-room training path; memorization tests.
 
 
-- **Pattern map (Lesson 08):** 8 HITL; 9 Shadow/canary/A/B
+- **Pattern map (Lesson 11.1):** 8 HITL; 9 Shadow/canary/A/B
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1589,7 +1589,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: ledger in prod; successful drill.
 
 
-- **Pattern map (Lesson 08):** 8 HITL; 11 Edge/hybrid; 14 MLOps loop
+- **Pattern map (Lesson 11.1):** 8 HITL; 11 Edge/hybrid; 14 MLOps loop
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1629,7 +1629,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: regional packs live; appeals SLO met.
 
 
-- **Pattern map (Lesson 08):** 5 Router / 13 Cascade; 8 HITL
+- **Pattern map (Lesson 11.1):** 5 Router / 13 Cascade; 8 HITL
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1669,7 +1669,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: identity-aware tools; clean corpus.
 
 
-- **Pattern map (Lesson 08):** 6 RAG; 7 Constrained agent; 8 HITL
+- **Pattern map (Lesson 11.1):** 6 RAG; 7 Constrained agent; 8 HITL
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1709,7 +1709,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: audited ranker; disclosure UX.
 
 
-- **Pattern map (Lesson 08):** 8 HITL; 12 LLM gateway
+- **Pattern map (Lesson 11.1):** 8 HITL; 12 LLM gateway
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1749,7 +1749,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: extractor pipeline; near-zero numeric hallucinations on gold.
 
 
-- **Pattern map (Lesson 08):** 7 Constrained agent; 8 HITL
+- **Pattern map (Lesson 11.1):** 7 Constrained agent; 8 HITL
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1789,7 +1789,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: propose/undo pattern; injection suite green.
 
 
-- **Pattern map (Lesson 08):** 7 Constrained agent; 8 HITL; 10 Event-driven
+- **Pattern map (Lesson 11.1):** 7 Constrained agent; 8 HITL; 10 Event-driven
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1828,7 +1828,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: dual-region GA; cost accepted.
 
 
-- **Pattern map (Lesson 08):** 5 Router / 13 Cascade; 6 RAG; 8 HITL; 12 LLM gateway; 15 Multi-tenant
+- **Pattern map (Lesson 11.1):** 5 Router / 13 Cascade; 6 RAG; 8 HITL; 12 LLM gateway; 15 Multi-tenant
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1867,7 +1867,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: clean model; trust restored with evidence.
 
 
-- **Pattern map (Lesson 08):** 6 RAG; 8 HITL
+- **Pattern map (Lesson 11.1):** 6 RAG; 8 HITL
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1907,7 +1907,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: game-day passed; on-call trained.
 
 
-- **Pattern map (Lesson 08):** 6 RAG; 8 HITL; 12 LLM gateway
+- **Pattern map (Lesson 11.1):** 6 RAG; 8 HITL; 12 LLM gateway
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1948,7 +1948,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: safe automation only after gates; contract language fixed.
 
 
-- **Pattern map (Lesson 08):** 2 Sync API; 7 Constrained agent; 8 HITL
+- **Pattern map (Lesson 11.1):** 2 Sync API; 7 Constrained agent; 8 HITL
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -1990,7 +1990,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: safer variant ships with clear guardrail pass.
 
 
-- **Pattern map (Lesson 08):** 8 HITL; 9 Shadow/canary/A/B; 10 Event-driven
+- **Pattern map (Lesson 11.1):** 8 HITL; 9 Shadow/canary/A/B; 10 Event-driven
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -2030,7 +2030,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: healthy page rate; caught true regressions.
 
 
-- **Pattern map (Lesson 08):** 6 RAG; 8 HITL; 14 MLOps loop
+- **Pattern map (Lesson 11.1):** 6 RAG; 8 HITL; 14 MLOps loop
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -2071,7 +2071,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: actions done; culture survey signal.
 
 
-- **Pattern map (Lesson 08):** 8 HITL; 9 Shadow/canary/A/B
+- **Pattern map (Lesson 11.1):** 8 HITL; 9 Shadow/canary/A/B
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -2111,7 +2111,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: dedicated SKU; contracts updated.
 
 
-- **Pattern map (Lesson 08):** 3 Async/queue; 6 RAG; 8 HITL; 12 LLM gateway; 15 Multi-tenant
+- **Pattern map (Lesson 11.1):** 3 Async/queue; 6 RAG; 8 HITL; 12 LLM gateway; 15 Multi-tenant
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -2152,7 +2152,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: forecasting within 15%; chargeback model.
 
 
-- **Pattern map (Lesson 08):** 8 HITL; 9 Shadow/canary/A/B; 12 LLM gateway
+- **Pattern map (Lesson 11.1):** 8 HITL; 9 Shadow/canary/A/B; 12 LLM gateway
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -2191,7 +2191,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: publish barrier for critical corpus; diffs rare.
 
 
-- **Pattern map (Lesson 08):** 2 Sync API; 6 RAG; 8 HITL; 10 Event-driven; 11 Edge/hybrid; 14 MLOps loop
+- **Pattern map (Lesson 11.1):** 2 Sync API; 6 RAG; 8 HITL; 10 Event-driven; 11 Edge/hybrid; 14 MLOps loop
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -2231,7 +2231,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: productized customization tiers; ops load manageable.
 
 
-- **Pattern map (Lesson 08):** 6 RAG; 8 HITL; 14 MLOps loop; 15 Multi-tenant
+- **Pattern map (Lesson 11.1):** 6 RAG; 8 HITL; 14 MLOps loop; 15 Multi-tenant
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -2271,7 +2271,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: evidence-based renew/cancel; expanded only where slices win.
 
 
-- **Pattern map (Lesson 08):** 7 Constrained agent; 8 HITL; 9 Shadow/canary/A/B; 12 LLM gateway
+- **Pattern map (Lesson 11.1):** 7 Constrained agent; 8 HITL; 9 Shadow/canary/A/B; 12 LLM gateway
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -2311,7 +2311,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: standard shadow playbook with quotas.
 
 
-- **Pattern map (Lesson 08):** 2 Sync API; 3 Async/queue; 8 HITL; 9 Shadow/canary/A/B; 12 LLM gateway
+- **Pattern map (Lesson 11.1):** 2 Sync API; 3 Async/queue; 8 HITL; 9 Shadow/canary/A/B; 12 LLM gateway
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -2351,7 +2351,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: chaos game day; documented money tradeoff dials.
 
 
-- **Pattern map (Lesson 08):** 2 Sync API; 3 Async/queue; 4 Feature store; 6 RAG; 8 HITL; 14 MLOps loop
+- **Pattern map (Lesson 11.1):** 2 Sync API; 3 Async/queue; 4 Feature store; 6 RAG; 8 HITL; 14 MLOps loop
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -2391,7 +2391,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: zero undocumented prompt drift; drills.
 
 
-- **Pattern map (Lesson 08):** 8 HITL; 9 Shadow/canary/A/B; 14 MLOps loop
+- **Pattern map (Lesson 11.1):** 8 HITL; 9 Shadow/canary/A/B; 14 MLOps loop
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -2431,7 +2431,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
   - Month 3: customer-specific eval harness; profitable support model.
 
 
-- **Pattern map (Lesson 08):** 8 HITL
+- **Pattern map (Lesson 11.1):** 8 HITL
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?
@@ -2441,7 +2441,7 @@ Use them solo (cover the outline, answer aloud, then compare) or with a peer. Th
 - **One-sentence teaching moral:** Production judgment is naming the constraint that dominates (latency, money, privacy, isolation, or politics)—then picking the pattern that respects it without pretending the other constraints vanished.
 
 ---
-### Q60 — Connecting Part 5 patterns under fake urgency
+### Q60 — Connecting Stage 10 patterns under fake urgency
 
 **Scenario:** You’re the staff engineer. In one week you must present an architecture for: (1) classical fraud sync scoring, (2) multi-tenant RAG help center, (3) refund-drafting agent. Execs want “one AI platform.” Budget is modest; team is six people.
 
@@ -2495,17 +2495,17 @@ Give yourself 0–2 points on each dimension (target ≥ 10/12 before you call y
 | 3 | Q25, Q26, Q52 | Latency, cold start, cost crisis |
 | 4 | Q12, Q15, Q51 | Tenancy, index rollback, noisy neighbor |
 | 5 | Q47, Q48, Q50 | Stakeholder pressure, mixed A/B, postmortem |
-| 6 | Q60 + your Part 5 design doc | Compose patterns end-to-end |
+| 6 | Q60 + your Stage 10 design doc | Compose patterns end-to-end |
 
 ## Tie-back to exercises
 
-Return to [07-exercises-and-checklist.md](../../10-production/learn/07-exercises-and-checklist.md) and strengthen your **production design-doc capstone** using pattern names from Lesson 08 and at least two scenarios from this file as “worked risk reviews” in an appendix.
+Return to [07-exercises-and-checklist.md](../../10-production/learn/07-exercises-and-checklist.md) and strengthen your **production design-doc capstone** using pattern names from Lesson 11.1 and at least two scenarios from this file as “worked risk reviews” in an appendix.
 
 ## Checkpoint
 
-If you can deliver a structured answer to any random Q from this set in ~10 minutes—with rejected options, eval, HITL, and rollback—you are practicing the same judgment Part 6 capstones and real production reviews demand.
+If you can deliver a structured answer to any random Q from this set in ~10 minutes—with rejected options, eval, HITL, and rollback—you are practicing the same judgment Stage 12 capstones and real production reviews demand.
 
-- **Pattern map (Lesson 08):** 2 Sync API; 3 Async/queue; 5 Router / 13 Cascade; 6 RAG; 7 Constrained agent; 8 HITL; 9 Shadow/canary/A/B; 12 LLM gateway; 14 MLOps loop; 15 Multi-tenant
+- **Pattern map (Lesson 11.1):** 2 Sync API; 3 Async/queue; 5 Router / 13 Cascade; 6 RAG; 7 Constrained agent; 8 HITL; 9 Shadow/canary/A/B; 12 LLM gateway; 14 MLOps loop; 15 Multi-tenant
 - **Interview follow-ups to be ready for**
   - What do you explicitly *not* build in v1, and what trigger makes you revisit it?
   - Where does the rollback pointer live, and who is allowed to move it?

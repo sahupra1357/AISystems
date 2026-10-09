@@ -1,4 +1,4 @@
-# Lesson 05 — Fine-Tuning vs RAG vs Prompt
+# Lesson 8.1 — Fine-Tuning vs RAG vs Prompt
 
 When should you change **instructions**, supply **context**, or change **weights**? Teams waste months fine-tuning when a better prompt + RAG would ship in a week—or they refuse to fine-tune when style consistency will never stabilize with examples alone.
 
@@ -220,7 +220,7 @@ Document the combo so on-call knows which lever to turn when quality drops.
 
 ## 10. Experiment plan before fine-tuning
 
-1. Freeze a golden set (Lesson 06)
+1. Freeze a golden set (Lesson 9.1)
 2. Record prompt-only baseline scores
 3. Record prompt+RAG/tools baseline
 4. Estimate data + training cost
@@ -425,4 +425,4 @@ prompt vs RAG vs fine-tune; PEFT; LoRA; adapter; training pair; held-out eval; b
 
 ## What is next
 
-**[06-evaluation-for-llm-systems.md](../../09-evaluation/learn/06-evaluation-for-llm-systems.md)** — prove changes help: golden sets, rubrics, pairwise compares, regression gates, and online signals.
+**[01-evaluation-for-llm-systems.md](../../09-evaluation/learn/01-evaluation-for-llm-systems.md)** — prove changes help: golden sets, rubrics, pairwise compares, regression gates, and online signals.

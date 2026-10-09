@@ -1,12 +1,12 @@
-# Part 6 — Capstones: Overview
+# Stage 12 — Capstones: Overview
 
-Parts 1–5 built skills in isolation. Capstones ask you to **ship something coherent**: a problem statement, working system, evaluation, and a story you can tell in a portfolio or interview.
+Stages 1–11 built skills in isolation. Capstones ask you to **ship something coherent**: a problem statement, working system, evaluation, and a story you can tell in a portfolio or interview.
 
 You do not need a startup. You need a finished slice with honest limitations.
 
-## Goals for Part 6
+## Goals for Stage 12
 
-By the end of Part 6, you should be able to:
+By the end of Stage 12, you should be able to:
 
 - Pick a project scoped to a few weeks with clear success criteria
 - Choose from a catalog of ideas matched to skills you want to showcase
@@ -17,7 +17,7 @@ By the end of Part 6, you should be able to:
 
 ## Prerequisites
 
-You should have completed **Parts 1–5** checklists (or equivalent experience). Especially:
+You should have completed **Stages 1–11** checklists (or equivalent experience). Especially:
 
 - Classical ML workflows and metrics
 - Comfort calling LLMs and validating outputs

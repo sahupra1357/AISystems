@@ -1,4 +1,4 @@
-# Part 4 — Exercises and “Ready for Part 5” Checklist
+# Stages 4–9 — Exercises and “Ready for Stage 10” Checklist
 
 Work Beginner items first. Some exercises need an API key or a local model; if you lack access, write designs, templates, and offline golden sets, then run when you can. Depth matters more than polish—show your reasoning.
 
@@ -6,7 +6,7 @@ Suggested pairing with the 6–8 week plan in `00-overview.md`: do each lesson�
 
 ---
 
-## Exercises — Lesson 01 (Foundation models basics)
+## Exercises — Lesson 4.1 (Foundation models basics)
 
 ### Beginner
 
@@ -22,7 +22,7 @@ Suggested pairing with the 6–8 week plan in `00-overview.md`: do each lesson�
 
 ---
 
-## Exercises — Lesson 02 (Prompting deep dive)
+## Exercises — Lesson 5.1 (Prompting deep dive)
 
 ### Beginner
 
@@ -30,7 +30,7 @@ Suggested pairing with the 6–8 week plan in `00-overview.md`: do each lesson�
 2. **Roles.** Write system vs user content for a SQL helper that refuses destructive SQL unless the user types a confirmation phrase.
 3. **Style menu.** For ticket triage, draft zero-shot, few-shot, and contrastive prompts; predict which ships first.
 4. **RAG-answer vs free chat.** Write both prompts side by side; highlight five differences.
-5. **Shipping checklist.** Run the Lesson 02 checklist on one of your prompts; fix gaps.
+5. **Shipping checklist.** Run the Lesson 5.1 checklist on one of your prompts; fix gaps.
 
 ### Stretch
 
@@ -40,7 +40,7 @@ Suggested pairing with the 6–8 week plan in `00-overview.md`: do each lesson�
 
 ---
 
-## Exercises — Lesson 03 (RAG deep dive)
+## Exercises — Lesson 6.1 (RAG deep dive)
 
 ### Beginner
 
@@ -58,7 +58,7 @@ Suggested pairing with the 6–8 week plan in `00-overview.md`: do each lesson�
 
 ---
 
-## Exercises — Lesson 04 (Tools, agents, structured output)
+## Exercises — Lesson 7.1 (Tools, agents, structured output)
 
 ### Beginner
 
@@ -75,7 +75,7 @@ Suggested pairing with the 6–8 week plan in `00-overview.md`: do each lesson�
 
 ---
 
-## Exercises — Lesson 05 (Fine-tune vs RAG vs prompt)
+## Exercises — Lesson 8.1 (Fine-tune vs RAG vs prompt)
 
 ### Beginner
 
@@ -85,13 +85,13 @@ Suggested pairing with the 6–8 week plan in `00-overview.md`: do each lesson�
 
 ### Stretch
 
-4. **Exec one-pager.** Complete Lesson 05 practice §19 for Scenario B or C.
+4. **Exec one-pager.** Complete Lesson 8.1 practice §19 for Scenario B or C.
 5. **Data ethics.** List PII scrubbing + license checks before exporting chat logs to train.
 6. **Combo architecture.** Diagram router → RAG / tools / style-adapted model for a single product.
 
 ---
 
-## Exercises — Lesson 06 (Evaluation)
+## Exercises — Lesson 9.1 (Evaluation)
 
 ### Beginner
 
@@ -108,13 +108,13 @@ Suggested pairing with the 6–8 week plan in `00-overview.md`: do each lesson�
 
 ---
 
-## Part 4 capstone — Prompt library + eval set (+ optional mini RAG)
+## Stages 4–9 capstone — Prompt library + eval set (+ optional mini RAG)
 
 Build a portfolio-ready package (lightweight is fine):
 
 ### Requirements
 
-1. **Prompt library** with ≥5 versioned templates: classify, extract, rewrite, RAG-answer, critique (from Lesson 02 mini capstone—upgrade it).
+1. **Prompt library** with ≥5 versioned templates: classify, extract, rewrite, RAG-answer, critique (from Lesson 5.1 mini capstone—upgrade it).
 2. Each template documents: purpose, style, parameters, example I/O, known failure modes, owner.
 3. **Golden set** ≥15 items spanning at least three templates; include abstain/refusal cases.
 4. **Harness** (script or notebook) that runs templates against fixtures and prints schema_pass / rubric checklist results.
@@ -128,7 +128,7 @@ A teammate can run the harness, understand how to add a gold case, and know whic
 
 ---
 
-## Checklist: Ready for Part 5
+## Checklist: Ready for Stage 10
 
 ### Foundation & prompting
 
@@ -153,7 +153,7 @@ A teammate can run the harness, understand how to add a gold case, and know whic
 
 ### Capstone
 
-- [ ] I completed the Part 4 capstone (or equivalent at work)
+- [ ] I completed the Stages 4–9 capstone (or equivalent at work)
 
 ---
 
@@ -213,7 +213,7 @@ hybrid retrieval; tighter enums
 1. **End-to-end story:** Pick one user journey (e.g., “digital refund help”). Write the prompt, RAG needs, tools, eval cases, and decision against fine-tuning—five short sections, one page total.
 2. **Incident drill:** Gold recall@5 drops from 0.84 to 0.60 after a chunker change. List the first five debugging steps in order.
 3. **Cost incident:** Daily spend doubles; latency flat. Hypothesize three causes across prompt size, k, agent steps, and model routing.
-4. **Safety boundary:** Explain in six sentences what Part 4 taught you about injection awareness versus what you expect Part 5 to add (guardrails, authz, monitoring).
+4. **Safety boundary:** Explain in six sentences what Stages 4–9 taught you about injection awareness versus what you expect Stage 10 to add (guardrails, authz, monitoring).
 
 ---
 
@@ -225,7 +225,7 @@ After the checklist, write:
 - Which concept is still fuzzy?
 - What will you implement at work or in a side project in the next two weeks?
 
-Keep it honest—future-you will reuse this when starting Part 5.
+Keep it honest—future-you will reuse this when starting Stage 10.
 
 
 
@@ -242,9 +242,9 @@ Keep it honest—future-you will reuse this when starting Part 5.
 | Harness + README | 3–5 hours |
 | Optional mini RAG | +1–2 days |
 
-If short on time: finish Beginner items for lessons 01–06, then a slim capstone (5 templates + 15 gold + harness in offline mode).
+If short on time: finish Beginner items for lessons 4.1–9.1, then a slim capstone (5 templates + 15 gold + harness in offline mode).
 
 
 ## Suggested next step
 
-Proceed to **Part 5 — Production AI systems**: MLOps, serving, monitoring, cost control, safety, privacy, and reliability patterns that keep LLM/ML features trustworthy after launch. Bring your prompt library, gold set, and architecture sketch—you will harden them.
+Proceed to **Stage 10 — Production AI systems**: MLOps, serving, monitoring, cost control, safety, privacy, and reliability patterns that keep LLM/ML features trustworthy after launch. Bring your prompt library, gold set, and architecture sketch—you will harden them.

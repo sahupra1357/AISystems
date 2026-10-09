@@ -1,8 +1,8 @@
-# Lesson 06 — Evaluation for LLM Systems
+# Lesson 9.1 — Evaluation for LLM Systems
 
 If you cannot measure quality, every prompt edit is a coin flip. LLM systems fail differently from classical classifiers: fluent wrong answers, partial citations, brittle formats, retrieval misses. Evaluation must mix **automatic checks**, **rubric grading**, **human review**, and **online signals**—with regression gates that block silent damage.
 
-This lesson builds that discipline so Part 5 can plug it into CI, monitoring, and incidents.
+This lesson builds that discipline so Stage 10 can plug it into CI, monitoring, and incidents.
 
 ## Learning goals
 
@@ -46,7 +46,7 @@ Start with **30–100** examples; grow as production failures appear. Ten is bet
 
 - Happy paths
 - Ambiguous asks
-- Adversarial / injection-ish inputs (lightweight here; deeper in Part 5)
+- Adversarial / injection-ish inputs (lightweight here; deeper in Stage 10)
 - Empty retrieval
 - Multi-turn coreference
 - Each product locale / tier if relevant
@@ -223,7 +223,7 @@ Log per experiment:
 - Qualitative failure notes
 - Owner + date
 
-A markdown table or spreadsheet works at first; Part 5 introduces fuller MLOps tooling. The habit matters more than the brand of tracker.
+A markdown table or spreadsheet works at first; Stage 10 introduces fuller MLOps tooling. The habit matters more than the brand of tracker.
 
 ```text
 | date       | exp_id | prompt | recall@5 | rubric_pass | notes            |
@@ -233,7 +233,7 @@ A markdown table or spreadsheet works at first; Part 5 introduces fuller MLOps t
 
 ---
 
-## 10. Eval for each Part 4 subsystem
+## 10. Eval for each Stages 4–9 subsystem
 
 ### Prompting
 
@@ -337,7 +337,7 @@ Dashboards: pass rates, cost, latency, thumbs
 Alerts → on-call → gold additions → fix
 ```
 
-Part 5 operationalizes serving and safety; your eval hooks must already exist.
+Stage 10 operationalizes serving and safety; your eval hooks must already exist.
 
 ---
 
@@ -414,7 +414,7 @@ Abstain cases are easy to get wrong in metrics:
 - If `must_abstain=true` and model abstains → **pass** (even if phrasing varies)
 - If `must_abstain=false` and model abstains because retrieval missed → often a **retrieval fail**, not a “good careful model” win—track separately
 
-## 22. Release checklist tying eval to Part 5
+## 22. Release checklist tying eval to Stage 10
 
 Before calling a change “production ready”:
 
@@ -432,4 +432,4 @@ golden set; rubric; faithfulness; recall@k; pairwise comparison; LLM-as-judge; r
 
 ## What is next
 
-**[07-exercises-and-checklist.md](07-exercises-and-checklist.md)** — deliberate practice across all lessons, a prompt library + eval set capstone, and the Ready-for-Part-5 checklist.
+**[02-exercises-and-checklist.md](02-exercises-and-checklist.md)** — deliberate practice across all lessons, a prompt library + eval set capstone, and the Ready-for-Stage-10 checklist.

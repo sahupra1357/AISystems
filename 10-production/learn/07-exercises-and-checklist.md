@@ -1,16 +1,16 @@
-# Part 5 — Exercises and “Ready for Part 6” Checklist
+# Stage 10 — Exercises and “Ready for Stage 11” Checklist
 
 These exercises push you to **decide with tradeoffs**, not only memorize terms. Build small prototypes where you can. The capstone is a production design doc a teammate could implement.
 
 ---
 
-## Exercises — Lesson 01 (Mindset & decisions)
+## Exercises — Lesson 10.1 (Mindset & decisions)
 
 ### Beginner
 
-1. **Notebook gap.** List five notebook habits from a past project that would break in production; map each to a mitigation from Lesson 01.
+1. **Notebook gap.** List five notebook habits from a past project that would break in production; map each to a mitigation from Lesson 10.1.
 2. **Risk tier.** Assign low/medium/high to: (a) emoji suggestion, (b) customer policy chatbot, (c) auto-refund agent. Justify in 3–4 sentences each.
-3. **One-pager.** Fill the decision template (problem → … → rollback) for a feature you might build in Part 6.
+3. **One-pager.** Fill the decision template (problem → … → rollback) for a feature you might build in Stage 12.
 4. **Batch vs online.** For nightly churn email scores vs payment-time fraud vs docs chatbot, choose batch/sync/async/hybrid and cite the constraint that dominated.
 
 ### Stretch
@@ -20,7 +20,7 @@ These exercises push you to **decide with tradeoffs**, not only memorize terms. 
 
 ---
 
-## Exercises — Lesson 02 (Data & MLOps)
+## Exercises — Lesson 10.2 (Data & MLOps)
 
 ### Beginner
 
@@ -37,7 +37,7 @@ These exercises push you to **decide with tradeoffs**, not only memorize terms. 
 
 ---
 
-## Exercises — Lesson 03 (Serving)
+## Exercises — Lesson 10.3 (Serving)
 
 ### Beginner
 
@@ -54,13 +54,13 @@ These exercises push you to **decide with tradeoffs**, not only memorize terms. 
 
 ---
 
-## Exercises — Lesson 04 (Monitoring, drift, cost)
+## Exercises — Lesson 10.4 (Monitoring, drift, cost)
 
 ### Beginner
 
 1. **Log schema.** JSON log for an LLM turn with redaction notes (no raw secrets/PII).
 2. **Dashboard.** Sketch five panels for a RAG bot (reliability, quality, cost).
-3. **Judge caveat.** Write a paragraph on when LLM-as-judge is misleading for your Part 6 idea.
+3. **Judge caveat.** Write a paragraph on when LLM-as-judge is misleading for your Stage 12 idea.
 4. **Cost alert.** Formula + thresholds at 80% and 100% of daily budget; what human does when it fires.
 
 ### Stretch
@@ -71,7 +71,7 @@ These exercises push you to **decide with tradeoffs**, not only memorize terms. 
 
 ---
 
-## Exercises — Lesson 05 (Safety, privacy, HITL)
+## Exercises — Lesson 10.5 (Safety, privacy, HITL)
 
 ### Beginner
 
@@ -88,7 +88,7 @@ These exercises push you to **decide with tradeoffs**, not only memorize terms. 
 
 ---
 
-## Exercises — Lesson 06 (Reliability & incidents)
+## Exercises — Lesson 10.6 (Reliability & incidents)
 
 ### Beginner
 
@@ -105,7 +105,7 @@ These exercises push you to **decide with tradeoffs**, not only memorize terms. 
 
 ---
 
-## Part 5 Capstone — Production design doc
+## Stage 10 Capstone — Production design doc
 
 Pick **one** system: **RAG support/docs bot** *or* **tabular classical scoring (+ optional LLM report)**.
 
@@ -134,11 +134,11 @@ A teammate could implement an MVP from your doc without inventing major missing 
 
 ### Optional build
 
-Implement a thin slice: FastAPI `/health` + stub orchestrator + manifest + fake gold runner. Not required to “pass” Part 5, but excellent portfolio evidence.
+Implement a thin slice: FastAPI `/health` + stub orchestrator + manifest + fake gold runner. Not required to “pass” Stage 10, but excellent portfolio evidence.
 
 ---
 
-## Checklist: Ready for Part 6
+## Checklist: Ready for Stage 11
 
 ### Decision mindset
 
@@ -177,7 +177,7 @@ Implement a thin slice: FastAPI `/health` + stub orchestrator + manifest + fake 
 
 ### Capstone
 
-- [ ] I completed the Part 5 production design-doc capstone (or equivalent at work)
+- [ ] I completed the Stage 10 production design-doc capstone (or equivalent at work)
 
 ---
 
@@ -193,14 +193,14 @@ Implement a thin slice: FastAPI `/health` + stub orchestrator + manifest + fake 
 
 | Week | Lesson read | Exercises to complete |
 |------|-------------|------------------------|
-| 1 | 00–01 | Lesson 01 beginner 1–4; start one-pager for capstone topic |
-| 2 | 02 | Lesson 02 beginner + stretch 5 or 6 |
+| 1 | 00–01 | Lesson 10.1 beginner 1–4; start one-pager for capstone topic |
+| 2 | 02 | Lesson 10.2 beginner + stretch 5 or 6 |
 | 3 | 03 | FastAPI stub + canary plan stretch |
 | 4 | 04 | Log schema + capacity math |
 | 5 | 05 | Threat model + HITL rates + red-team set |
 | 6 | 06–07 | Runbook + full design-doc capstone; checklist |
 
-If short on time: prioritize **Lesson 01 one-pager**, **promotion gates**, **HITL rate design**, and the **full capstone doc**—those transfer directly into Part 6.
+If short on time: prioritize **Lesson 10.1 one-pager**, **promotion gates**, **HITL rate design**, and the **full capstone doc**—those transfer directly into Stage 12.
 
 ---
 
@@ -214,7 +214,7 @@ If short on time: prioritize **Lesson 01 one-pager**, **promotion gates**, **HIT
 
 ## Capstone self-grade rubric
 
-Score yourself 0–2 on each (target ≥ 12/16 before Part 6):
+Score yourself 0–2 on each (target ≥ 12/16 before Stage 12):
 
 | Criterion | 0 | 1 | 2 |
 |-----------|---|---|---|
@@ -227,10 +227,10 @@ Score yourself 0–2 on each (target ≥ 12/16 before Part 6):
 | Monitoring | None | Infra only | Infra + quality + cost |
 | Honesty | Overclaim | Some unknowns | Clear open questions |
 
-If you score under 12, revise the weak sections before starting Part 6 builds—the design doc is the rehearsal for production judgment.
+If you score under 12, revise the weak sections before starting Stage 12 builds—the design doc is the rehearsal for production judgment.
 
 ## Suggested next step
 
-Proceed to **[Part 6 — Capstones](../../12-capstones-and-interviews/learn/00-overview.md)**: pick a portfolio project, follow a build guide, and package metrics, limitations, and production habits for hiring conversations or real stakeholders.
+Proceed to **[Stage 12 — Capstones](../../12-capstones-and-interviews/learn/00-overview.md)**: pick a portfolio project, follow a build guide, and package metrics, limitations, and production habits for hiring conversations or real stakeholders.
 
-Carry your Part 5 design doc forward—Part 6 is where you implement a slice of it end-to-end.
+Carry your Stage 10 design doc forward—Stage 12 is where you implement a slice of it end-to-end.

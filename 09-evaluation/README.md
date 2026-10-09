@@ -8,8 +8,8 @@ Summary, rules and context: [AI Engineering Guide, section 11](../AI_ENGINEERING
 
 Curriculum lessons, in reading order.
 
-- [Lesson 06 — Evaluation for LLM Systems](learn/06-evaluation-for-llm-systems.md)
-- [Part 4 — Exercises and “Ready for Part 5” Checklist](learn/07-exercises-and-checklist.md)
+- [Lesson 9.1 — Evaluation for LLM Systems](learn/01-evaluation-for-llm-systems.md)
+- [Stages 4–9 — Exercises and “Ready for Stage 10” Checklist](learn/02-exercises-and-checklist.md)
 
 ## Apply
 

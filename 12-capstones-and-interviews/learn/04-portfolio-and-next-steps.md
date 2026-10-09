@@ -1,4 +1,4 @@
-# Portfolio Packaging and Next Steps
+# Lesson 12.4 — Portfolio Packaging and Next Steps
 
 You built skills and (ideally) a capstone. This lesson is about **showing the work** and continuing to learn without drowning.
 
@@ -114,11 +114,11 @@ After the capstone:
 
 1. Schedule a weekly 90-minute block for deliberate practice
 2. Alternate *build* weeks and *read* weeks
-3. Revisit Part 1–2 when tabular problems appear—do not force deep learning everywhere
+3. Revisit Stage 1–2 when tabular problems appear—do not force deep learning everywhere
 4. Prefer finishing unfinished projects over starting new ones
 
 ## Closing
 
-AI engineering is less about memorizing every new model name and more about **data honesty, evaluation, and reliable delivery**. If you carried those habits through Parts 1–6, you have the foundation to keep growing as tools change.
+AI engineering is less about memorizing every new model name and more about **data honesty, evaluation, and reliable delivery**. If you carried those habits through Stages 1–12, you have the foundation to keep growing as tools change.
 
 Return to earlier parts whenever a concept feels shaky—the path is designed for revisiting.

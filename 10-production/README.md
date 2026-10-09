@@ -8,14 +8,14 @@ Summary, rules and context: [AI Engineering Guide, section 12](../AI_ENGINEERING
 
 Curriculum lessons, in reading order.
 
-- [Part 5 — Production AI Systems: Overview](learn/00-overview.md)
-- [Lesson 01 — Production Mindset and Decision Framework](learn/01-production-mindset-and-decision-framework.md)
-- [Lesson 02 — Data Pipelines and MLOps](learn/02-data-pipelines-and-mlops.md)
-- [Lesson 03 — Serving Architectures](learn/03-serving-architectures.md)
-- [Lesson 04 — Monitoring, Drift, and Cost](learn/04-monitoring-drift-and-cost.md)
-- [Lesson 05 — Safety, Privacy, and Human-in-the-Loop](learn/05-safety-privacy-and-hitl.md)
-- [Lesson 06 — Reliability and Incident Response](learn/06-reliability-and-incident-response.md)
-- [Part 5 — Exercises and “Ready for Part 6” Checklist](learn/07-exercises-and-checklist.md)
+- [Stage 10 — Production AI Systems: Overview](learn/00-overview.md)
+- [Lesson 10.1 — Production Mindset and Decision Framework](learn/01-production-mindset-and-decision-framework.md)
+- [Lesson 10.2 — Data Pipelines and MLOps](learn/02-data-pipelines-and-mlops.md)
+- [Lesson 10.3 — Serving Architectures](learn/03-serving-architectures.md)
+- [Lesson 10.4 — Monitoring, Drift, and Cost](learn/04-monitoring-drift-and-cost.md)
+- [Lesson 10.5 — Safety, Privacy, and Human-in-the-Loop](learn/05-safety-privacy-and-hitl.md)
+- [Lesson 10.6 — Reliability and Incident Response](learn/06-reliability-and-incident-response.md)
+- [Stage 10 — Exercises and “Ready for Stage 11” Checklist](learn/07-exercises-and-checklist.md)
 
 ## Apply
 

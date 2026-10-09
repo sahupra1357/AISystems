@@ -1,4 +1,4 @@
-# Lesson 01 — Machine Learning Concepts
+# Lesson 2.1 — Machine Learning Concepts
 
 This lesson builds the vocabulary you will use for the rest of the course. Read slowly, draw diagrams if that helps, and do the mini practices. Algorithms come in the next lesson; here we focus on *ideas*.
 
@@ -82,7 +82,7 @@ Pick a real-world prediction you care about (for example, “will this support t
 
 ## Training, validation, and test (again, with teeth)
 
-You met splits in Part 1. Here is how they drive classical ML decisions:
+You met splits in Stage 1. Here is how they drive classical ML decisions:
 
 | Split | Used for | Rule |
 |-------|----------|------|
@@ -90,7 +90,7 @@ You met splits in Part 1. Here is how they drive classical ML decisions:
 | **Validation** | Choose models, hyperparameters, features | Do **not** fit the final preprocessor using this data’s statistics mixed with train carelessly—fit on train, transform val |
 | **Test** | Final honest estimate | Touch once (or rarely) at the end |
 
-If you only have enough data for two splits, use **train + test** and prefer **cross-validation** on train for model selection (next lesson and lesson 03).
+If you only have enough data for two splits, use **train + test** and prefer **cross-validation** on train for model selection (next lesson and lesson 2.3).
 
 ### Data leakage (classical ML edition)
 
@@ -121,7 +121,7 @@ Too complex / too little data  →  overfit
 - More diverse training data
 - Simpler models or fewer features
 - **Regularization** (penalties on large weights; depth limits on trees)
-- Dropout and early stopping (deep learning; Part 3)
+- Dropout and early stopping (deep learning; Stage 3)
 - Cross-validation for honest model selection
 - Ensembles that average many weak learners (often helps variance)
 
@@ -186,7 +186,7 @@ Every classical ML project repeats a loop:
 7. **Lock** a candidate and score once on test
 8. **Ship or reject** based on business criteria, not only leaderboard vanity
 
-Lesson 03 turns this loop into scikit-learn code.
+Lesson 2.3 turns this loop into scikit-learn code.
 
 ## Common failure modes
 
@@ -200,7 +200,7 @@ Lesson 03 turns this loop into scikit-learn code.
 
 ## Key vocabulary checklist
 
-Before lesson 02, make sure these words feel usable in a sentence:
+Before lesson 2.2, make sure these words feel usable in a sentence:
 
 - supervised / unsupervised
 - classification / regression

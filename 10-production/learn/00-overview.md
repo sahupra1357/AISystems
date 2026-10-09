@@ -1,12 +1,12 @@
-# Part 5 — Production AI Systems: Overview
+# Stage 10 — Production AI Systems: Overview
 
 A model that works in a notebook is not yet a product. **Production AI** means data pipelines you can trust, deployments you can roll back, monitors that notice silent failures, costs you can explain, safety controls that respect users, and **explicit decisions** about quality gates—including when humans must review.
 
-This part connects classical ML and LLM features (Parts 2–4) to engineering habits used on real teams. Every lesson centers **tradeoffs** (options → costs → how to choose) and how **evaluation** plus **human-in-the-loop (HITL)** gate releases—not only “what tool to install.”
+This part connects classical ML and LLM features (Stages 2–9) to engineering habits used on real teams. Every lesson centers **tradeoffs** (options → costs → how to choose) and how **evaluation** plus **human-in-the-loop (HITL)** gate releases—not only “what tool to install.”
 
-## Goals for Part 5
+## Goals for Stage 10
 
-By the end of Part 5, you should be able to:
+By the end of Stage 10, you should be able to:
 
 - Apply a decision framework: problem → constraints → options → tradeoffs → eval plan → HITL plan → ship criteria → rollback
 - Version data, track experiments, and promote models/prompts/indexes through a registry with eval gates
@@ -15,14 +15,14 @@ By the end of Part 5, you should be able to:
 - Implement layered safety/privacy: PII handling, prompt-injection defenses, guardrails, and risk-tiered HITL
 - Operate reliability patterns: timeouts, retries, circuit breakers, fallbacks, graceful degradation, runbooks, postmortems
 - Write a production design doc (capstone) that a teammate could implement
-- Pass the Ready-for-Part-6 checklist
+- Pass the Ready-for-Stage-11 checklist
 
 ## Prerequisites
 
-Complete **Parts 1–4** (or equivalent experience):
+Complete **Stages 1–9** (or equivalent experience):
 
 - You can train/evaluate a classical model and call an LLM API
-- You understand RAG failure modes and golden-set evaluation (Part 4 lesson 06)
+- You understand RAG failure modes and golden-set evaluation (Lesson 9.1)
 - You can sketch an orchestrator / retriever / LLM / tools shape
 - Comfortable with Git, virtualenvs, reading logs, and basic HTTP concepts
 
@@ -56,7 +56,7 @@ python -m pip install fastapi uvicorn pydantic  # for serving sketches
             └──────────────► (back to data / adapt)
 ```
 
-Part 4 built the *feature* (prompt, RAG, tools, eval). Part 5 hardens the *outer ring*: pipelines, serving, monitors, safety, reliability—and makes **eval + HITL first-class release controls**, not afterthoughts.
+Stages 4–9 built the *feature* (prompt, RAG, tools, eval). Stage 10 hardens the *outer ring*: pipelines, serving, monitors, safety, reliability—and makes **eval + HITL first-class release controls**, not afterthoughts.
 
 ## Explicit teaching contract
 
@@ -80,9 +80,9 @@ This is deeper than a tool tour. Budget time for design writing, small prototype
 | 3 | **03** Serving architectures (batch/API/queue, caching, routing, rollouts) |
 | 4 | **04** Monitoring, drift & cost (logs, quality, SLOs, review queues) |
 | 5 | **05** Safety, privacy & HITL (PII, injection, guardrails, HITL rates) |
-| 6 | **06** Reliability & incidents + **07** Exercises, design-doc capstone, Ready-for-Part-6 checklist |
+| 6 | **06** Reliability & incidents + **07** Exercises, design-doc capstone, Ready-for-Stage-11 checklist |
 
-Experienced backend engineers may compress weeks 3–4; still do the decision tables and HITL plans—those catch most AI-specific production bugs. If Part 4 evaluation felt thin, revisit Part 4 lesson 06 in parallel with week 1–2.
+Experienced backend engineers may compress weeks 3–4; still do the decision tables and HITL plans—those catch most AI-specific production bugs. If Stages 4–9 evaluation felt thin, revisit Lesson 9.1 in parallel with week 1–2.
 
 ## Order to study
 
@@ -94,7 +94,7 @@ Experienced backend engineers may compress weeks 3–4; still do the decision ta
 6. **[06-reliability-and-incident-response.md](06-reliability-and-incident-response.md)**
 7. **[07-exercises-and-checklist.md](07-exercises-and-checklist.md)**
 
-## Success criteria before Part 6
+## Success criteria before Stage 12
 
 You are ready for Capstones when you can:
 
@@ -104,6 +104,6 @@ You are ready for Capstones when you can:
 - List metrics and alerts for quality, latency, cost, and drift—and when humans review samples
 - Describe PII handling, prompt-injection mitigations, and a risk-tiered HITL policy
 - Design timeouts, retries, fallbacks, and a rollback for prompts/indexes/models
-- Deliver the Part 5 production design-doc capstone (options, tradeoffs, eval, HITL, rollout, rollback)
+- Deliver the Stage 10 production design-doc capstone (options, tradeoffs, eval, HITL, rollout, rollback)
 
-Part 6 asks you to *use* these habits end-to-end on a portfolio project.
+Stage 12 asks you to *use* these habits end-to-end on a portfolio project.

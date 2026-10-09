@@ -1,4 +1,4 @@
-# Lesson 02 — Math for AI (Practical Intuition)
+# Lesson 1.2 — Math for AI (Practical Intuition)
 
 This is not a mathematics textbook. The goal is **intuition you can use**: enough linear algebra, probability, calculus, and statistics to understand what models are doing when you train and evaluate them.
 
@@ -238,7 +238,7 @@ def variance(xs):
 - **Bias**: error from a model that is too simple to capture the pattern (underfitting). A straight line fitting a curve has high bias.
 - **Variance**: error from a model that is too sensitive to the training sample (overfitting). A wiggly curve that memorizes noise has high variance.
 
-You want a balance: flexible enough to learn signal, constrained enough to ignore noise. Regularization, more data, and simpler models are tools for that balance—you will use them explicitly in Part 2.
+You want a balance: flexible enough to learn signal, constrained enough to ignore noise. Regularization, more data, and simpler models are tools for that balance—you will use them explicitly in Stage 2.
 
 ### Train / validation / test intuition
 

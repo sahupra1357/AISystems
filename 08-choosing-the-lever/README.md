@@ -8,7 +8,7 @@ Summary, rules and context: [AI Engineering Guide, section 10](../AI_ENGINEERING
 
 Curriculum lessons, in reading order.
 
-- [Lesson 05 — Fine-Tuning vs RAG vs Prompt](learn/05-fine-tuning-vs-rag-vs-prompt.md)
+- [Lesson 8.1 — Fine-Tuning vs RAG vs Prompt](learn/01-fine-tuning-vs-rag-vs-prompt.md)
 
 ## Apply
 
