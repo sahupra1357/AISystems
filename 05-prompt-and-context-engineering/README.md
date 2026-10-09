@@ -8,7 +8,7 @@ Summary, rules and context: [AI Engineering Guide, section 7](../AI_ENGINEERING_
 
 Curriculum lessons, in reading order.
 
-- [Lesson 02 — Prompting Deep Dive](learn/02-prompting-deep-dive.md)
+- [Lesson 5.1 — Prompting Deep Dive](learn/01-prompting-deep-dive.md)
 
 ## Apply
 

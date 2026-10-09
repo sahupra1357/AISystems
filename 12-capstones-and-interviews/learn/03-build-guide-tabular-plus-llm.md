@@ -1,4 +1,4 @@
-# Build Guide — Tabular ML + LLM Report Hybrid
+# Lesson 12.3 — Build Guide: Tabular ML + LLM Report Hybrid
 
 This guide builds a **hybrid system**: classical ML on a tabular dataset, then an LLM that writes a stakeholder-friendly report **strictly from computed metrics** (no invented numbers).
 
@@ -66,7 +66,7 @@ Write in README:
 
 ## Step 2 — Train/eval with scikit-learn discipline
 
-Reuse Part 2 habits:
+Reuse Stage 2 habits:
 
 1. Split first
 2. `ColumnTransformer` + `Pipeline`

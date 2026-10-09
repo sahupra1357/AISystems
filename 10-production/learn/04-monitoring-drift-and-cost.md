@@ -1,4 +1,4 @@
-# Lesson 04 — Monitoring, Drift, and Cost
+# Lesson 10.4 — Monitoring, Drift, and Cost
 
 ## Why this lesson exists
 
@@ -92,7 +92,7 @@ def redact(text: str) -> str:
     return text
 ```
 
-Redaction is imperfect—combine with retention limits and access control (Lesson 05).
+Redaction is imperfect—combine with retention limits and access control (Lesson 10.5).
 
 ### Mini practice
 
@@ -237,11 +237,11 @@ Budgets per environment (dev/staging/prod) and per tenant if multi-tenant.
 
 ### Levers when over SLO / budget
 
-- Route easy traffic cheaper (Lesson 03)
+- Route easy traffic cheaper (Lesson 10.3)
 - Cap `max_tokens`; shrink retrieval `k`
 - Cache safe layers
 - Batch offline work
-- Degrade gracefully (Lesson 06): smaller model, retrieval-only, canned apology + ticket id
+- Degrade gracefully (Lesson 10.6): smaller model, retrieval-only, canned apology + ticket id
 
 ---
 
@@ -294,7 +294,7 @@ actions: approve, edit & approve, reject, escalate, add_to_gold
 sla: medium tier ≤ 1 business day; high tier irreversible ≤ minutes with on-call
 ```
 
-### Deciding sample rates (connects to Lesson 01 / 05)
+### Deciding sample rates (connects to Lessons 10.1 and 10.5)
 
 ```text
 rate ≈ clip(
@@ -433,7 +433,7 @@ Imagine a weekly job that scores churn risk (classical) and drafts an account su
 | P3 | Thumbs-down +30% WoW; empty retrieval +50% | Ticket | This week |
 | P4 | Cache hit rate drift; judge score soft dip | Dashboard only | Backlog |
 
-Tie each P1/P2 to a runbook link (Lesson 06). If an alert has no runbook, it will be ignored or cause thrash—either write the runbook or demote the alert.
+Tie each P1/P2 to a runbook link (Lesson 10.6). If an alert has no runbook, it will be ignored or cause thrash—either write the runbook or demote the alert.
 
 ---
 

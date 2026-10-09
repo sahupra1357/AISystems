@@ -1,8 +1,8 @@
-# Lesson 01 — Project Catalog
+# Lesson 12.1 — Project Catalog
 
 Use this catalog to pick a capstone. Prefer projects where you can access data legally and finish an MVP.
 
-Difficulty assumes you finished Parts 1–5.
+Difficulty assumes you finished Stages 1–11.
 
 ## How to choose
 

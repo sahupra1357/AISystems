@@ -1,4 +1,4 @@
-# Build Guide — Docs Q&A RAG System
+# Lesson 12.2 — Build Guide: Docs Q&A RAG System
 
 This guide walks an end-to-end **documentation question-answering** system with retrieval-augmented generation. Follow in order. Swap libraries as you like; keep the stages.
 

@@ -30,7 +30,6 @@ Each stage folder has:
 Also at the root:
 
 - **[`AI_System.md`](AI_System.md)**: the whole field manual on one page, in build order (ingest → parse → chunk → embed → index → retrieve → rerank → generate → evaluate → serve → operate). The `apply/` file numbers match its section numbers.
-- **`old/`**: earlier drafts, kept for history.
 
 ## How to use these notes
 

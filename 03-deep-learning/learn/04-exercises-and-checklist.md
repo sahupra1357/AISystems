@@ -1,10 +1,10 @@
-# Part 3 — Exercises and “Ready for Part 4” Checklist
+# Stage 3 — Exercises and “Ready for Stage 4” Checklist
 
-Use these after lessons 01–03. Beginner first; Stretch when ready. Prefer finishing imperfect projects over endless tutorial-hopping.
+Use these after lessons 3.1–3.3. Beginner first; Stretch when ready. Prefer finishing imperfect projects over endless tutorial-hopping.
 
 ---
 
-## Exercises tied to Lesson 01 (Neural net basics)
+## Exercises tied to Lesson 3.1 (Neural net basics)
 
 ### Beginner
 
@@ -20,7 +20,7 @@ Use these after lessons 01–03. Beginner first; Stretch when ready. Prefer fini
 
 ---
 
-## Exercises tied to Lesson 02 (PyTorch loop)
+## Exercises tied to Lesson 3.2 (PyTorch loop)
 
 ### Beginner — MNIST MLP
 
@@ -37,7 +37,7 @@ Use these after lessons 01–03. Beginner first; Stretch when ready. Prefer fini
 
 ---
 
-## Exercises tied to Lesson 03 (CNNs and Transformers)
+## Exercises tied to Lesson 3.3 (CNNs and Transformers)
 
 ### Beginner — Small CNN
 
@@ -57,7 +57,7 @@ Use these after lessons 01–03. Beginner first; Stretch when ready. Prefer fini
 
 ---
 
-## Part 3 mini-capstone
+## Stage 3 mini-capstone
 
 Ship a small vision project **or** a tiny sequence model—your choice.
 
@@ -80,7 +80,7 @@ A teammate can run your README steps and get similar metrics. You can explain ev
 
 ---
 
-## Checklist: Ready for Part 4
+## Checklist: Ready for Stage 4
 
 ### Concepts
 
@@ -107,10 +107,10 @@ A teammate can run your README steps and get similar metrics. You can explain ev
 - [ ] I completed MNIST MLP training
 - [ ] I completed a CNN or fine-tune experiment
 - [ ] I at least started a tiny Transformer / sequence tutorial path
-- [ ] I finished the Part 3 mini-capstone (or equivalent)
+- [ ] I finished the Stage 3 mini-capstone (or equivalent)
 
 ---
 
 ## Suggested next step
 
-Proceed to **Part 4 — Generative AI / LLMs**: foundation models, prompting, RAG, tools, and evaluation—using APIs and retrieval while keeping the same honest evaluation mindset.
+Proceed to **Stages 4–9 — Generative AI / LLMs**: foundation models, prompting, RAG, tools, and evaluation—using APIs and retrieval while keeping the same honest evaluation mindset.

@@ -1,10 +1,10 @@
-# Lesson 03 — Serving Architectures
+# Lesson 10.3 — Serving Architectures
 
 ## Why this lesson exists
 
 How you **expose** a model shapes cost, latency, failure modes, and what you can evaluate in production. The same RAG pipeline can be a sync chat API, an async “I’ll email you” job, or a nightly FAQ builder—and those are different products.
 
-This lesson compares serving shapes, sketches FastAPI + Docker, ties the LLM gateway/orchestrator to Part 4, covers caching and multi-model routing, and walks canary / blue-green / shadow rollouts with **eval + HITL** during promotion.
+This lesson compares serving shapes, sketches FastAPI + Docker, ties the LLM gateway/orchestrator to Stages 4–9, covers caching and multi-model routing, and walks canary / blue-green / shadow rollouts with **eval + HITL** during promotion.
 
 ## Learning goals
 
@@ -101,7 +101,7 @@ def predict(req: PredictRequest, x_api_key: str | None = Header(default=None)):
     X = [[req.age, req.income]]
     proba = float(model.predict_proba(X)[0][1])
     latency_ms = (time.time() - t0) * 1000
-    # log structured fields (redacted) — see Lesson 04
+    # log structured fields (redacted) — see Lesson 10.4
     _ = latency_ms
     return PredictResponse(
         probability=proba,
@@ -183,9 +183,9 @@ Client poll GET /jobs/{id}  or  webhook / email
 
 ---
 
-## 4. LLM gateway / orchestrator pattern (ties to Part 4)
+## 4. LLM gateway / orchestrator pattern (ties to Stages 4–9)
 
-Part 4’s mental model becomes a service boundary:
+Stages 4–9’s mental model becomes a service boundary:
 
 ```text
                  ┌─────────────────────────┐
@@ -352,7 +352,7 @@ Two full environments; flip the router when ready.
 2. Shadow: automatic rubric/LLM-judge optional + human grade N paired outputs
 3. Canary 1%: watch error, latency, thumbs-down; HITL reviews all thumbs-down + 10% canary sample
 4. Ramp only if guards green and no severe human findings
-5. Prod: ongoing sample per risk tier (Lesson 01 / 05)
+5. Prod: ongoing sample per risk tier (Lessons 10.1 and 10.5)
 ```
 
 **Tools/actions:** do not canary irreversible tools without HITL. Shadow must be side-effect free.
@@ -361,7 +361,7 @@ Two full environments; flip the router when ready.
 
 ## 8. Self-host vs API provider (serving decision)
 
-Extends Lesson 01 with serving-specific rows:
+Extends Lesson 10.1 with serving-specific rows:
 
 | Dimension | API provider | Self-host weights |
 |-----------|--------------|-------------------|
@@ -439,7 +439,7 @@ Production serving is not only ML:
 
 **Why not self-host?** Volume low; privacy OK under vendor DPA.
 
-**HITL:** no pre-action (read-only); 5% post-hoc + 100% thumbs-down; refund tool stays disabled until Lesson 05 controls exist.
+**HITL:** no pre-action (read-only); 5% post-hoc + 100% thumbs-down; refund tool stays disabled until Lesson 10.5 controls exist.
 
 **Rollback:** feature flag `prompt_bundle=v17` → `v16` in one config change.
 

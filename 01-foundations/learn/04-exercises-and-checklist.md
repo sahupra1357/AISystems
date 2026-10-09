@@ -1,12 +1,12 @@
-# Part 1 — Exercises and “Ready for Part 2” Checklist
+# Stage 1 — Exercises and “Ready for Stage 2” Checklist
 
-Use these exercises after lessons 01–03. Attempt **Beginner** items first. **Stretch** items deepen understanding; skip them only if you are blocked, then return later.
+Use these exercises after lessons 1.1–1.3. Attempt **Beginner** items first. **Stretch** items deepen understanding; skip them only if you are blocked, then return later.
 
 Work in your virtual environment. Prefer scripts or a notebook—whichever you will actually finish.
 
 ---
 
-## Exercises tied to Lesson 01 (Python)
+## Exercises tied to Lesson 1.1 (Python)
 
 ### Beginner
 
@@ -24,7 +24,7 @@ Work in your virtual environment. Prefer scripts or a notebook—whichever you w
 
 ---
 
-## Exercises tied to Lesson 02 (Math for AI)
+## Exercises tied to Lesson 1.2 (Math for AI)
 
 ### Beginner
 
@@ -35,13 +35,13 @@ Work in your virtual environment. Prefer scripts or a notebook—whichever you w
 
 ### Stretch
 
-5. **Tiny regression.** Fit `y ≈ w x + b` on `x = [1,2,3,4]`, `y = [3,5,7,9]` with the MSE gradient descent sketch from lesson 02. Report final `w`, `b`, and RMSE.
+5. **Tiny regression.** Fit `y ≈ w x + b` on `x = [1,2,3,4]`, `y = [3,5,7,9]` with the MSE gradient descent sketch from lesson 1.2. Report final `w`, `b`, and RMSE.
 6. **Bayes recount.** Change the disease prior from 1% to 10% in the lesson’s counting argument. What roughly happens to the posterior after a positive test?
 7. **Bias vs variance journal.** In five sentences, describe a high-bias model and a high-variance model for predicting house prices from square footage alone.
 
 ---
 
-## Exercises tied to Lesson 03 (Data literacy)
+## Exercises tied to Lesson 1.3 (Data literacy)
 
 ### Beginner
 
@@ -59,7 +59,7 @@ Work in your virtual environment. Prefer scripts or a notebook—whichever you w
 
 ---
 
-## Part 1 capstone
+## Stage 1 capstone
 
 Build a small end-to-end script (one file is fine) that proves you can move data through a careful pipeline.
 
@@ -107,7 +107,7 @@ part1_capstone/
 
 ---
 
-## Checklist: Ready for Part 2
+## Checklist: Ready for Stage 2
 
 Mark these when they are true for you (change `[ ]` to `[x]`):
 
@@ -136,7 +136,7 @@ Mark these when they are true for you (change `[ ]` to `[x]`):
 
 ### Capstone
 
-- [ ] I completed the Part 1 capstone (or an equivalent personal project)
+- [ ] I completed the Stage 1 capstone (or an equivalent personal project)
 - [ ] My `summary.json` and cleaning rules would make sense to a teammate
 
 If most boxes are checked and the rest have a plan, you are ready.
@@ -145,8 +145,8 @@ If most boxes are checked and the rest have a plan, you are ready.
 
 ## Suggested next step
 
-Proceed to **Part 2 — Classical ML**: supervised learning with scikit-learn-style workflows (train/val/test for real, baselines, trees and linear models, feature preprocessing, and proper evaluation).
+Proceed to **Stage 2 — Classical ML**: supervised learning with scikit-learn-style workflows (train/val/test for real, baselines, trees and linear models, feature preprocessing, and proper evaluation).
 
-Bring your Part 1 habits with you. Classical ML will feel much easier if your Python, math intuition, and data hygiene are already in place.
+Bring your Stage 1 habits with you. Classical ML will feel much easier if your Python, math intuition, and data hygiene are already in place.
 
-When Part 2 materials are available in this repo, start with that part’s overview file and work in order—just as you did here.
+When Stage 2 materials are available in this repo, start with that part’s overview file and work in order—just as you did here.

@@ -1,4 +1,4 @@
-# Lesson 04 — Tools, Agents, and Structured Output
+# Lesson 7.1 — Tools, Agents, and Structured Output
 
 RAG retrieves documents. Many product questions need **live actions or state**: look up an order, create a ticket, calculate a number, call an internal API. **Tool / function calling** lets the model request those actions in a structured way. **Agents** loop that process. **Structured output** makes results machine-checkable.
 
@@ -38,7 +38,7 @@ Language models emit tokens. They do not magically mutate your database. If the 
 2. **Structured final output** (JSON the app parses as the product result)
 3. **Tool call arguments** (JSON for side effects / fetches)
 
-All three benefit from schemas. Lesson 02 covered schema-first prompting; here we operationalize it.
+All three benefit from schemas. Lesson 5.1 covered schema-first prompting; here we operationalize it.
 
 ### Strategies (strongest first when available)
 
@@ -321,7 +321,7 @@ User → API gateway → Orchestrator
                       └─ Logs, traces, cost meters, eval hooks
 ```
 
-Part 5 adds service hardening; your job now is to **own** this shape on a whiteboard and in a prototype.
+Stage 10 adds service hardening; your job now is to **own** this shape on a whiteboard and in a prototype.
 
 ---
 
@@ -418,7 +418,7 @@ class FakeOrders:
 # In tests, inject FakeOrders into run_tool
 ```
 
-Gold conversations should run without network I/O so CI is stable (Lesson 06).
+Gold conversations should run without network I/O so CI is stable (Lesson 9.1).
 
 ## 19. Cost model for tool-using chats
 
@@ -471,4 +471,4 @@ function / tool calling; JSON Schema; structured output; validation loop; fail c
 
 ## What is next
 
-**[05-fine-tuning-vs-rag-vs-prompt.md](../../08-choosing-the-lever/learn/05-fine-tuning-vs-rag-vs-prompt.md)** — decide when to change weights versus context versus prompts, with scenarios, LoRA intuition, data and cost realities.
+**[01-fine-tuning-vs-rag-vs-prompt.md](../../08-choosing-the-lever/learn/01-fine-tuning-vs-rag-vs-prompt.md)** — decide when to change weights versus context versus prompts, with scenarios, LoRA intuition, data and cost realities.

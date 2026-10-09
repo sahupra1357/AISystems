@@ -8,12 +8,12 @@ Summary, rules and context: [AI Engineering Guide, section 14](../AI_ENGINEERING
 
 Curriculum lessons, in reading order.
 
-- [Part 6 — Capstones: Overview](learn/00-overview.md)
-- [Lesson 01 — Project Catalog](learn/01-project-catalog.md)
-- [Build Guide — Docs Q&A RAG System](learn/02-build-guide-docs-qa-rag.md)
-- [Build Guide — Tabular ML + LLM Report Hybrid](learn/03-build-guide-tabular-plus-llm.md)
-- [Portfolio Packaging and Next Steps](learn/04-portfolio-and-next-steps.md)
-- [Lesson 09 — Scenario-Based Production AI Questions](learn/09-scenario-based-prod-ai-questions.md)
+- [Stage 12 — Capstones: Overview](learn/00-overview.md)
+- [Lesson 12.1 — Project Catalog](learn/01-project-catalog.md)
+- [Lesson 12.2 — Build Guide: Docs Q&A RAG System](learn/02-build-guide-docs-qa-rag.md)
+- [Lesson 12.3 — Build Guide: Tabular ML + LLM Report Hybrid](learn/03-build-guide-tabular-plus-llm.md)
+- [Lesson 12.4 — Portfolio Packaging and Next Steps](learn/04-portfolio-and-next-steps.md)
+- [Lesson 12.5 — Scenario-Based Production AI Questions](learn/05-scenario-based-prod-ai-questions.md)
 
 ---
 

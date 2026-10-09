@@ -1,4 +1,4 @@
-# Lesson 02 — Data Pipelines and MLOps
+# Lesson 10.2 — Data Pipelines and MLOps
 
 ## Why this lesson exists
 
@@ -442,7 +442,7 @@ Keep a living **model/system card lite**:
 - Known failure modes
 - How to roll back
 - PII / retention notes
-- Link to runbook (Lesson 06)
+- Link to runbook (Lesson 10.6)
 
 ### Mini practice
 
@@ -480,7 +480,7 @@ registry ← Staging
 HITL attestation (checkbox + link to reviewed sample) if tier ≥ medium
         │
         ▼
-canary / shadow (Lesson 03–04)
+canary / shadow (Lessons 10.3–10.4)
         │
         ▼
 Production pointer update + announce

@@ -1,4 +1,4 @@
-# Lesson 03 — RAG Deep Dive
+# Lesson 6.1 — RAG Deep Dive
 
 Prompting steers behavior. It cannot reliably know **your** private documents, yesterday’s policy change, or a customer’s order row. **Retrieval-Augmented Generation (RAG)** supplies relevant evidence at request time, then asks the model to answer **conditioned on that evidence**.
 
@@ -57,7 +57,7 @@ RAG is **selective memory**, not merely “more tokens.”
 | Situation | Prefer |
 |-----------|--------|
 | Stable label taxonomy with tons of history | Classifier / fine-tune (+ maybe RAG for explanations) |
-| Need live inventory/price that changes per second | **Tools** / DB queries (Lesson 04), not static index alone |
+| Need live inventory/price that changes per second | **Tools** / DB queries (Lesson 7.1), not static index alone |
 | Need consistent weird XML voice and few facts | Prompting or fine-tune for style; RAG for facts |
 | Tiny static FAQ (10 answers) | Hard-coded intents or simple search may beat RAG complexity |
 
@@ -83,7 +83,7 @@ Essential metadata fields (typical):
 source systems → clean/export → chunk → embed → upsert index → version the index
 ```
 
-Treat re-ingest as a product feature: policies change; your index must too (Part 5 expands pipelines).
+Treat re-ingest as a product feature: policies change; your index must too (Stage 10 expands pipelines).
 
 ---
 
@@ -236,7 +236,7 @@ If chunks are long:
 - Truncate low-value boilerplate
 - Use extractive compression (“keep sentences that mention refund”) carefully—over-compression drops answers
 
-### Answer vs free chat (recap from Lesson 02)
+### Answer vs free chat (recap from Lesson 5.1)
 
 RAG-answer prompts differ: abstain path, citation contract, lower temperature, no encouragement to freestyle company law.
 
@@ -344,7 +344,7 @@ You can have great recall@k and still bad answers (generation bug)—measure bot
 
 ---
 
-## 11. Evaluation hooks for RAG (preview of Lesson 06)
+## 11. Evaluation hooks for RAG (preview of Lesson 9.1)
 
 Minimum viable:
 
@@ -521,7 +521,7 @@ Checklist to graduate a notebook RAG into something teammates can trust:
 - [ ] Known failure list in README
 - [ ] Owner for corpus freshness
 
-Part 5 will add stronger ops (monitoring, rollbacks); this checklist is the bridge.
+Stage 10 will add stronger ops (monitoring, rollbacks); this checklist is the bridge.
 
 
 ## Key vocabulary
@@ -530,4 +530,4 @@ RAG; chunking; overlap; parent-child chunks; embeddings; dense retrieval; BM25 /
 
 ## What is next
 
-**[04-tools-agents-and-structured-output.md](../../07-agents-tools-memory/learn/04-tools-agents-and-structured-output.md)** — when the model must take actions or fetch live state: function calling, JSON schemas, validation loops, constrained agents, and least privilege.
+**[01-tools-agents-and-structured-output.md](../../07-agents-tools-memory/learn/01-tools-agents-and-structured-output.md)** — when the model must take actions or fetch live state: function calling, JSON schemas, validation loops, constrained agents, and least privilege.

@@ -1,4 +1,4 @@
-# Lesson 01 — Python Programming for AI Engineers
+# Lesson 1.1 — Python Programming for AI Engineers
 
 This lesson starts from zero. Read each section, type the examples, and do the mini practices. You do not need to memorize every detail; you need to become comfortable reading and changing Python code.
 
@@ -407,7 +407,7 @@ In your course folder, run `git init` (if it is not already a repo), add one fil
 
 ## Libraries preview: NumPy and pandas
 
-You will use these heavily in Part 2 and beyond. For now, **install and import** them so setup is not a blocker later.
+You will use these heavily in Stage 2 and beyond. For now, **install and import** them so setup is not a blocker later.
 
 ```bash
 python -m pip install numpy pandas

@@ -1,6 +1,6 @@
-# Lesson 02 — Prompting Deep Dive
+# Lesson 5.1 — Prompting Deep Dive
 
-This is the centerpiece of Part 4. Prompting is how you steer foundation models day to day. Shallow prompting notes list a few buzzwords and move on; this lesson teaches **what a prompt is**, **how to assemble one**, **which style to pick**, **which parameters fit which task**, and **how to iterate without lying to yourself**.
+This is the centerpiece of Stages 4–9. Prompting is how you steer foundation models day to day. Shallow prompting notes list a few buzzwords and move on; this lesson teaches **what a prompt is**, **how to assemble one**, **which style to pick**, **which parameters fit which task**, and **how to iterate without lying to yourself**.
 
 Read slowly. Do the before/after rewrites. Keep a tiny prompt changelog even for homework—that habit transfers straight into production.
 
@@ -12,7 +12,7 @@ By the end of this lesson you should be able to:
 - Place content in system vs user vs assistant roles for clear reasons
 - Choose among major prompting styles with when-to-use and when-not-to-use judgment
 - Match temperature / top_p / max tokens / stop sequences to task types
-- Delimit untrusted input and stay injection-aware (full safety in Part 5)
+- Delimit untrusted input and stay injection-aware (full safety in Stage 10)
 - Iterate with one-variable changes, golden examples, and anti-pattern avoidance
 
 ---
@@ -100,7 +100,7 @@ Stop conditions: If context lacks the answer, reply exactly:
 | **user** | Task for this turn, untrusted documents, questions | Reflects end-user or upstream system input |
 | **assistant** | Prior model answers you intentionally keep | Continues multi-turn coherence |
 
-Some APIs add a **tool** / **function** role for tool results—treat those as **data**, not instructions (Lesson 04).
+Some APIs add a **tool** / **function** role for tool results—treat those as **data**, not instructions (Lesson 7.1).
 
 ### Why separation matters
 
@@ -290,7 +290,7 @@ User question: {q}
 
 **Why it exists:** Connects language reasoning to external grounding—search, calculators, ticket APIs—reducing pure hallucination.
 
-**How to write it (prompt-level):** Define legal actions and argument formats tightly. Better: use **native tool calling** (Lesson 04) and keep only light reasoning in text.
+**How to write it (prompt-level):** Define legal actions and argument formats tightly. Better: use **native tool calling** (Lesson 7.1) and keep only light reasoning in text.
 
 **When to use:** Workflows that must hit tools; multi-step data gathering with clear APIs.
 
@@ -566,7 +566,7 @@ Use clear fences (`"""`, XML-ish tags, markdown). Tell the model that fenced con
 - Treat retrieved docs as untrusted too
 - Authorization happens in **your** code, not in prose rules
 
-**Deeper controls** (guardrails, sandboxes, allowlists, human approval): see **Part 5 — Safety, privacy, reliability**. This lesson only builds the prompting habits that make those controls feasible.
+**Deeper controls** (guardrails, sandboxes, allowlists, human approval): see **Stage 10 — Safety, privacy, reliability**. This lesson only builds the prompting habits that make those controls feasible.
 
 ---
 
@@ -639,7 +639,7 @@ Say which you would ship first and how you would evaluate.
 
 ### Mini capstone for this lesson
 
-Build a **prompt library** (markdown or YAML) with at least five templates covering classify, extract, rewrite, RAG-answer, and critique. For each: purpose, style, parameters, example I/O, known failure modes. You will reuse this in Lesson 07.
+Build a **prompt library** (markdown or YAML) with at least five templates covering classify, extract, rewrite, RAG-answer, and critique. For each: purpose, style, parameters, example I/O, known failure modes. You will reuse this in Lesson 9.2.
 
 ---
 
@@ -652,7 +652,7 @@ Real systems compose styles **across calls**, not by stacking every trick into o
 | Stage | Style | Output |
 |-------|-------|--------|
 | 1. Route | zero-shot classify | `intent` |
-| 2. Gather | tool / RAG (Lesson 03–04) | context pack |
+| 2. Gather | tool / RAG (Lessons 6.1–7.1) | context pack |
 | 3. Answer | schema-first + RAG-answer rules | user-visible text or JSON |
 | 4. Check | critique rubric (optional) | pass/fail + notes |
 
@@ -710,7 +710,7 @@ Inbound email:
 2. “Can you do 90% off forever?” → `needs_human=true`
 3. Empty context → abstain / needs_human, no invented price list
 
-This case study is the pattern for Lessons 03–06: prompt contract + retrieval + eval.
+This case study is the pattern for Lessons 6.1–9.1: prompt contract + retrieval + eval.
 
 ## 13. Prompt testing notes (lightweight)
 
@@ -746,9 +746,9 @@ Format still flaky after clear instructions?
 Multi-step reasoning error on golden set?
   → structured scratchpad / two-pass; measure cost
 Need tools?
-  → native function calling (Lesson 04), not fragile ReAct text parsing
+  → native function calling (Lesson 7.1), not fragile ReAct text parsing
 Still unstable behavior/style after prompts+RAG?
-  → consider fine-tune (Lesson 05), still keep eval
+  → consider fine-tune (Lesson 8.1), still keep eval
 ```
 
 
@@ -758,4 +758,4 @@ prompt anatomy; output contract; system/user/assistant roles; zero-shot; few-sho
 
 ## What is next
 
-**[03-rag-deep-dive.md](../../06-rag/learn/03-rag-deep-dive.md)** — when prompting alone cannot know your private or changing knowledge: chunking, embeddings, hybrid retrieval, citations, and RAG debugging playbooks.
+**[01-rag-deep-dive.md](../../06-rag/learn/01-rag-deep-dive.md)** — when prompting alone cannot know your private or changing knowledge: chunking, embeddings, hybrid retrieval, citations, and RAG debugging playbooks.

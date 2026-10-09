@@ -14,10 +14,10 @@ One path from "I can open a terminal" to "I run AI systems in production." The r
 Every stage folder has the same three parts:
 
 - **`README.md`** lists everything in the stage, in reading order.
-- **`learn/`** holds the *curriculum*: lessons, exercises and checklists that explain **why** things work and build habits. Lessons keep their original numbers (for example `02-prompting-deep-dive.md` was Part 4, lesson 02), so lesson cross-references such as "Part 4 lesson 06" still identify the file.
+- **`learn/`** holds the *curriculum*: lessons, exercises and checklists that explain **why** things work and build habits. Lessons are numbered by stage, so Lesson 6.1 is the first lesson in stage 6 and lives in `06-rag/learn/01-rag-deep-dive.md`. Each stage that has an overview starts with `00-overview.md`; the overview in stage 4 covers stages 4 to 9, and the one in stage 10 covers the production lessons.
 - **`apply/`** holds the *field manual*: one file per production scenario, each with implementation steps, an example, trade-offs, scale notes, a checklist and metrics. It tells you **what to do** when you are building. File numbers such as `04.1.5` match the section numbers in [`AI_System.md`](AI_System.md), the one-page version of the whole field manual, which stays at the root.
 
-Stages 1 to 3 are curriculum only. `old/` keeps earlier drafts for history.
+Stages 1 to 3 are curriculum only.
 
 This guide stitches the stages together. Each section below gives you the core ideas in a few paragraphs, the rules worth memorising, and links into both `learn/` and `apply/` so you can go deep exactly where you need to.
 
@@ -53,7 +53,7 @@ This guide stitches the stages together. Each section below gives you the core i
 
 **If you are building something right now:** jump to the stage that matches the problem, read the "Rules" block, then open the field-manual file for the exact scenario. Use [section 17](#17-master-index-topic-to-file) to find it.
 
-**If you are preparing for interviews or design reviews:** read [section 2](#2-the-three-mental-models), [section 12](#12-stage-10-production-engineering) and [section 15](#15-cheat-sheets), then drill the 60 scenarios in [Lesson 09](12-capstones-and-interviews/learn/09-scenario-based-prod-ai-questions.md).
+**If you are preparing for interviews or design reviews:** read [section 2](#2-the-three-mental-models), [section 12](#12-stage-10-production-engineering) and [section 15](#15-cheat-sheets), then drill the 60 scenarios in [Lesson 12.5](12-capstones-and-interviews/learn/05-scenario-based-prod-ai-questions.md).
 
 Every field-manual file follows the same shape: what it is, how to implement, small example, pros and cons, when to use, production at scale, checklist and metrics, and a 30-second takeaway. Every curriculum part follows: overview, lessons, exercises and a "ready for the next part" checklist.
 
@@ -78,7 +78,7 @@ Almost every decision in AI engineering is easier once these three pictures are 
               Logging · eval hooks · cost meters
 ```
 
-The model is one box. Quality comes from what you put around it: the data it reads, the tools it can call, the checks on its output, and the logs that let you debug it. Source: [Part 4 overview](04-llm-foundations/learn/00-overview.md).
+The model is one box. Quality comes from what you put around it: the data it reads, the tools it can call, the checks on its output, and the logs that let you debug it. Source: [Stages 4–9 overview](04-llm-foundations/learn/00-overview.md).
 
 ### 2.2 Production AI is a loop
 
@@ -86,7 +86,7 @@ The model is one box. Quality comes from what you put around it: the data it rea
 Data & labels → Train / adapt → Serve → Observe → Improve (eval gates + HITL) → back to data
 ```
 
-A model that works in a notebook is not a product. You need versioned data, rollbackable releases, monitors for silent failure, explainable cost, safety controls, and explicit decisions about when humans review. Sources: [Part 5 overview](10-production/learn/00-overview.md), [data flywheel](10-production/apply/8-data-flywheel/12.1_data_flywheel.md).
+A model that works in a notebook is not a product. You need versioned data, rollbackable releases, monitors for silent failure, explainable cost, safety controls, and explicit decisions about when humans review. Sources: [Stage 10 overview](10-production/learn/00-overview.md), [data flywheel](10-production/apply/8-data-flywheel/12.1_data_flywheel.md).
 
 ### 2.3 The end-to-end reference architecture
 
@@ -144,7 +144,7 @@ Sections 6 to 12 of this guide walk this diagram left to right. Sources: [AI_Sys
 - Put preprocessing inside the `Pipeline`, so cross-validation cannot leak.
 - On tabular problems, try gradient boosting before deep learning, and often before an LLM.
 
-**Why this matters later:** classical ML still powers fraud scoring, churn, ranking and routing, and many production LLM systems use a small classifier as a cheap router or guardrail. See [cascade classifiers](11-architecture-patterns/learn/08-ai-architecture-patterns-for-prod.md#13-ensemble--cascade-classifiers) and the [tabular + LLM capstone](12-capstones-and-interviews/learn/03-build-guide-tabular-plus-llm.md).
+**Why this matters later:** classical ML still powers fraud scoring, churn, ranking and routing, and many production LLM systems use a small classifier as a cheap router or guardrail. See [cascade classifiers](11-architecture-patterns/learn/01-ai-architecture-patterns-for-prod.md#13-ensemble--cascade-classifiers) and the [tabular + LLM capstone](12-capstones-and-interviews/learn/03-build-guide-tabular-plus-llm.md).
 
 **Learn:** [overview](02-classical-ml/learn/00-overview.md) · [ML concepts](02-classical-ml/learn/01-ml-concepts.md) · [supervised algorithms](02-classical-ml/learn/02-supervised-algorithms.md) · [scikit-learn workflow](02-classical-ml/learn/03-scikit-learn-workflow.md) · [exercises and checklist](02-classical-ml/learn/04-exercises-and-checklist.md)
 
@@ -218,7 +218,7 @@ Context engineering manages *everything* in the window: instructions, retrieved 
 - Give subagents their own window instead of appending to the orchestrator's ([isolation](05-prompt-and-context-engineering/apply/2-context-engineering/03.6_context_isolation.md)).
 - Name the failure modes: poisoning, distraction, confusion and clash ([failure modes](05-prompt-and-context-engineering/apply/2-context-engineering/03.7_context_failure_modes.md)).
 
-**Learn:** [prompting deep dive](05-prompt-and-context-engineering/learn/02-prompting-deep-dive.md) (anatomy, roles, styles, task playbooks, parameters, iteration method, anti-patterns, and a worked case from playground to template).
+**Learn:** [prompting deep dive](05-prompt-and-context-engineering/learn/01-prompting-deep-dive.md) (anatomy, roles, styles, task playbooks, parameters, iteration method, anti-patterns, and a worked case from playground to template).
 
 ---
 
@@ -280,7 +280,7 @@ Answer only from context, then verify ([04.7.1](06-rag/apply/8-generation-ground
 - Log retrieved chunk IDs and scores on every request. You cannot debug an answer without knowing what it read.
 - Evaluate retrieval separately from generation. If the answer was never retrieved, generation metrics are noise.
 
-**Learn:** [RAG deep dive](06-rag/learn/03-rag-deep-dive.md) (corpus design, chunking workshop, hybrid fusion sketch, citations, ACLs, debugging playbook, worked handbook Q&A). **Build:** [Docs Q&A RAG capstone](12-capstones-and-interviews/learn/02-build-guide-docs-qa-rag.md).
+**Learn:** [RAG deep dive](06-rag/learn/01-rag-deep-dive.md) (corpus design, chunking workshop, hybrid fusion sketch, citations, ACLs, debugging playbook, worked handbook Q&A). **Build:** [Docs Q&A RAG capstone](12-capstones-and-interviews/learn/02-build-guide-docs-qa-rag.md).
 
 ---
 
@@ -314,7 +314,7 @@ Choose ReAct for exploration, plan-then-execute for predictable work, and search
 
 Short-term (the window), working (a scratchpad), episodic (past interactions), semantic (durable facts) and procedural (how-tos) ([06.1](07-agents-tools-memory/apply/2-memory/06.1_memory_types.md)). Write only what an extraction step judges memory-worthy ([06.2](07-agents-tools-memory/apply/2-memory/06.2_what_to_write.md)); retrieve by relevance and recency with a cap ([06.3](07-agents-tools-memory/apply/2-memory/06.3_when_to_retrieve.md)); forget with TTLs and user controls ([06.4](07-agents-tools-memory/apply/2-memory/06.4_how_to_forget.md)); supersede changed facts with `valid_from` ([06.5](07-agents-tools-memory/apply/2-memory/06.5_conflict_resolution.md)); and treat memory as data, because it is an injection surface ([06.6](07-agents-tools-memory/apply/2-memory/06.6_memory_security.md)).
 
-**Learn:** [tools, agents and structured output](07-agents-tools-memory/learn/04-tools-agents-and-structured-output.md) (argument validation catalogue, tool result hygiene, deterministic test stubs, cost model, worked refund assistant, and a pre-production orchestrator checklist).
+**Learn:** [tools, agents and structured output](07-agents-tools-memory/learn/01-tools-agents-and-structured-output.md) (argument validation catalogue, tool result hygiene, deterministic test stubs, cost model, worked refund assistant, and a pre-production orchestrator checklist).
 
 ---
 
@@ -333,7 +333,7 @@ Short-term (the window), working (a scratchpad), episodic (past interactions), s
 
 **Fine-tuning, when you get there:** SFT on a few hundred to a few thousand high-quality pairs ([11.1](08-choosing-the-lever/apply/fine-tuning/11.1_sft.md)); LoRA/QLoRA adapters as the default ([11.2](08-choosing-the-lever/apply/fine-tuning/11.2_peft_lora_qlora.md)); DPO for subjective quality ([11.3](08-choosing-the-lever/apply/fine-tuning/11.3_preference_tuning_dpo_rlhf.md)); distillation to cut cost once behaviour is stable ([11.4](08-choosing-the-lever/apply/fine-tuning/11.4_distillation.md)). Do not fine-tune for changing knowledge, unstable tasks, or anything a better prompt fixes ([11.5](08-choosing-the-lever/apply/fine-tuning/11.5_when_not_to_fine_tune.md)). Version datasets with checkpoints and keep a held-out split from day one ([11.6](08-choosing-the-lever/apply/fine-tuning/11.6_fine_tuning_ops.md)).
 
-**Learn:** [fine-tuning vs RAG vs prompt](08-choosing-the-lever/learn/05-fine-tuning-vs-rag-vs-prompt.md) (decision flowchart, scenario workshop, LoRA intuition, data pipeline, eval gates, a copy-paste decision worksheet). **Apply:** [prompting vs RAG vs fine-tuning](08-choosing-the-lever/apply/01.3_prompting_vs_rag_vs_finetuning.md).
+**Learn:** [fine-tuning vs RAG vs prompt](08-choosing-the-lever/learn/01-fine-tuning-vs-rag-vs-prompt.md) (decision flowchart, scenario workshop, LoRA intuition, data pipeline, eval gates, a copy-paste decision worksheet). **Apply:** [prompting vs RAG vs fine-tuning](08-choosing-the-lever/apply/01.3_prompting_vs_rag_vs_finetuning.md).
 
 ---
 
@@ -356,7 +356,7 @@ Evaluation is the skill that most separates AI engineers from people who call AP
 
 **Testing pyramid:** unit tests for tools and parsers → eval suites for prompts → integration tests for agent flows with mocked tools → red-team tests → evals in CI that block merges on regression ([08.1](09-evaluation/apply/08.1_testing_pyramid.md)).
 
-**Learn:** [evaluation for LLM systems](09-evaluation/learn/06-evaluation-for-llm-systems.md) (metric formulas, rubrics, pairwise comparison, regression gates, human review session recipe, eval harness sketch, release checklist). **Practise:** [Part 4 capstone: prompt library + eval set](09-evaluation/learn/07-exercises-and-checklist.md).
+**Learn:** [evaluation for LLM systems](09-evaluation/learn/01-evaluation-for-llm-systems.md) (metric formulas, rubrics, pairwise comparison, regression gates, human review session recipe, eval harness sketch, release checklist). **Practise:** [Stages 4–9 capstone: prompt library + eval set](09-evaluation/learn/02-exercises-and-checklist.md).
 
 ---
 
@@ -366,7 +366,7 @@ Evaluation is the skill that most separates AI engineers from people who call AP
 
 ### 12.1 Decide deliberately
 
-Use this framework for every significant decision, and leave a one-page memo behind ([Lesson 01](10-production/learn/01-production-mindset-and-decision-framework.md)):
+Use this framework for every significant decision, and leave a one-page memo behind ([Lesson 10.1](10-production/learn/01-production-mindset-and-decision-framework.md)):
 
 ```text
 1. Problem       Who is harmed or helped? What job is the model doing?
@@ -391,11 +391,11 @@ If a wrong answer can move money, change access or give regulated advice, treat 
 
 ### 12.2 Data pipelines and MLOps
 
-Version datasets and RAG corpora, track experiments, and promote models, prompts and indexes through a registry with eval gates. Separate dev, staging and prod indexes; never evaluate against the prod index you are mutating ([Lesson 02](10-production/learn/02-data-pipelines-and-mlops.md), [environments](10-production/apply/1-serving-cost-latency/09.6_environments.md)).
+Version datasets and RAG corpora, track experiments, and promote models, prompts and indexes through a registry with eval gates. Separate dev, staging and prod indexes; never evaluate against the prod index you are mutating ([Lesson 10.2](10-production/learn/02-data-pipelines-and-mlops.md), [environments](10-production/apply/1-serving-cost-latency/09.6_environments.md)).
 
 ### 12.3 Serving
 
-- **Shapes:** batch, sync API, async queue, streaming. Add a worker queue when work exceeds a request timeout or needs retries and review ([Lesson 03](10-production/learn/03-serving-architectures.md)).
+- **Shapes:** batch, sync API, async queue, streaming. Add a worker queue when work exceeds a request timeout or needs retries and review ([Lesson 10.3](10-production/learn/03-serving-architectures.md)).
 - **Cost levers:** prompt caching, batching, routing, per-request token budgets, shorter system prompts, trimming top-k after reranking. Know your $/task and $/user/month ([09.1](10-production/apply/1-serving-cost-latency/09.1_cost_levers.md)).
 - **Latency levers:** streaming (perceived latency is what users judge), semantic caching, parallel retrieval and tool calls, smaller models on the critical path ([09.2](10-production/apply/1-serving-cost-latency/09.2_latency_levers.md)).
 - **Self-hosting:** vLLM/TGI with continuous batching, paged KV cache, quantisation and tensor parallelism ([09.3](10-production/apply/1-serving-cost-latency/09.3_self_hosted_serving.md)). Rate limits, per-tenant throttling, backpressure and load shedding ([09.4](10-production/apply/1-serving-cost-latency/09.4_capacity_limits.md)).
@@ -408,11 +408,11 @@ On GPUs the card is the unit of capacity and most clouds cannot hot-swap GPU typ
 
 ### 12.5 Monitoring, drift and cost
 
-Log enough to replay any request: prompt version, model, tokens, latency, cost, tool calls, retrieved chunk IDs and scores, outcome, and a trace ID ([observability](10-production/apply/4-observability-reliability/08.6_observability_tracing.md)). Monitor quality, drift, latency and cost against SLOs; route thumbs-down, empty retrieval and low-confidence traffic to human review queues; and run a weekly operating rhythm ([Lesson 04](10-production/learn/04-monitoring-drift-and-cost.md)).
+Log enough to replay any request: prompt version, model, tokens, latency, cost, tool calls, retrieved chunk IDs and scores, outcome, and a trace ID ([observability](10-production/apply/4-observability-reliability/08.6_observability_tracing.md)). Monitor quality, drift, latency and cost against SLOs; route thumbs-down, empty retrieval and low-confidence traffic to human review queues; and run a weekly operating rhythm ([Lesson 10.4](10-production/learn/04-monitoring-drift-and-cost.md)).
 
 ### 12.6 Safety, privacy and security
 
-Start with a threat model, then layer defences ([Lesson 05](10-production/learn/05-safety-privacy-and-hitl.md)):
+Start with a threat model, then layer defences ([Lesson 10.5](10-production/learn/05-safety-privacy-and-hitl.md)):
 
 - **Input guardrails:** PII detection and masking, topic and abuse classification ([08.2](10-production/apply/5-guardrails/08.2_input_guardrails.md)). **Output guardrails:** leakage, toxicity, schema, banned claims ([08.3](10-production/apply/5-guardrails/08.3_output_guardrails.md)).
 - **Prompt injection:** all retrieved content, tool output and memory is data, never instructions; privileged actions sit behind a policy check the model does not control ([08.4](10-production/apply/5-guardrails/08.4_prompt_injection_defense.md)).
@@ -422,7 +422,7 @@ Start with a threat model, then layer defences ([Lesson 05](10-production/learn/
 
 ### 12.7 Reliability and incidents
 
-Timeouts on every external call, retries with exponential backoff and jitter, idempotency, circuit breakers, fallback models across providers, and graceful degradation (return the sources with "couldn't summarise" rather than a 500) ([08.7](10-production/apply/4-observability-reliability/08.7_failure_handling.md)). Write runbooks for AI-specific failures, version everything so rollback is real, and run postmortems that ask which eval would have caught the incident ([Lesson 06](10-production/learn/06-reliability-and-incident-response.md)).
+Timeouts on every external call, retries with exponential backoff and jitter, idempotency, circuit breakers, fallback models across providers, and graceful degradation (return the sources with "couldn't summarise" rather than a 500) ([08.7](10-production/apply/4-observability-reliability/08.7_failure_handling.md)). Write runbooks for AI-specific failures, version everything so rollback is real, and run postmortems that ask which eval would have caught the incident ([Lesson 10.6](10-production/learn/06-reliability-and-incident-response.md)).
 
 ### 12.8 The data flywheel
 
@@ -433,13 +433,13 @@ prod traffic → traces + feedback → weekly triage → new golden cases
 
 Bucket failures into parse, retrieval, ranking, generation and tooling; the buckets tell you where to spend. Mine hard negatives to fine-tune the embedder or reranker. Every fixed bug becomes a permanent regression test ([12.1](10-production/apply/8-data-flywheel/12.1_data_flywheel.md), [12.2](10-production/apply/8-data-flywheel/12.2_feedback_capture_triage.md)).
 
-**Practise:** [Part 5 exercises and production design-doc capstone](10-production/learn/07-exercises-and-checklist.md).
+**Practise:** [Stage 10 exercises and production design-doc capstone](10-production/learn/07-exercises-and-checklist.md).
 
 ---
 
 ## 13. Stage 11: Architecture patterns
 
-Patterns compose. A multi-tenant RAG SaaS product is typically patterns 15 + 6 + 12 + 9 + 8 below. Full treatment with options, trade-offs and eval requirements in [Lesson 08](11-architecture-patterns/learn/08-ai-architecture-patterns-for-prod.md).
+Patterns compose. A multi-tenant RAG SaaS product is typically patterns 15 + 6 + 12 + 9 + 8 below. Full treatment with options, trade-offs and eval requirements in [Lesson 11.1](11-architecture-patterns/learn/01-ai-architecture-patterns-for-prod.md).
 
 | # | Pattern | Latency | Typical risk |
 |---|---|---|---|
@@ -472,7 +472,7 @@ For the RAG and agent patterns, the field-manual counterpart is the [reference a
 - Build a tabular ML + LLM report hybrid: [build guide](12-capstones-and-interviews/learn/03-build-guide-tabular-plus-llm.md).
 - Package it and plan what is next: [portfolio and next steps](12-capstones-and-interviews/learn/04-portfolio-and-next-steps.md).
 
-**Interview and design-review drills:** [60 scenario questions](12-capstones-and-interviews/learn/09-scenario-based-prod-ai-questions.md) covering classical ML in production, RAG, agents, serving, data, safety, organisation and multi-tenant cost crises. Answer aloud in 8–12 minutes, name at least two rejected options, and always end with eval, HITL and rollback.
+**Interview and design-review drills:** [60 scenario questions](12-capstones-and-interviews/learn/05-scenario-based-prod-ai-questions.md) covering classical ML in production, RAG, agents, serving, data, safety, organisation and multi-tenant cost crises. Answer aloud in 8–12 minutes, name at least two rejected options, and always end with eval, HITL and rollback.
 
 ---
 
@@ -556,7 +556,7 @@ More: [common failure modes](10-production/apply/7-metrics-failure-modes/15.1_co
 
 | Week | Focus |
 |---|---|
-| 1 | Checklists for Parts 1–3; patch any gaps. Read section 2 of this guide. |
+| 1 | Checklists for Stages 1–3; patch any gaps. Read section 2 of this guide. |
 | 2 | Foundation models and prompting (stages 4–5) |
 | 3 | RAG end to end (stage 6), building a minimal Docs Q&A |
 | 4 | Golden set and eval harness for that build (stage 9) |
@@ -567,7 +567,7 @@ More: [common failure modes](10-production/apply/7-metrics-failure-modes/15.1_co
 
 ### 16.3 Interview sprint (about 2 weeks)
 
-Day 1–2: sections 2, 12 and 15 of this guide. Day 3–4: [Lesson 08 patterns](11-architecture-patterns/learn/08-ai-architecture-patterns-for-prod.md). Day 5–12: four scenario questions a day from [Lesson 09](12-capstones-and-interviews/learn/09-scenario-based-prod-ai-questions.md), cross-checking answers against the field manual. Day 13–14: rehearse a five-minute walkthrough of your capstone.
+Day 1–2: sections 2, 12 and 15 of this guide. Day 3–4: [Lesson 11.1 patterns](11-architecture-patterns/learn/01-ai-architecture-patterns-for-prod.md). Day 5–12: four scenario questions a day from [Lesson 12.5](12-capstones-and-interviews/learn/05-scenario-based-prod-ai-questions.md), cross-checking answers against the field manual. Day 13–14: rehearse a five-minute walkthrough of your capstone.
 
 ---
 
@@ -581,14 +581,14 @@ Day 1–2: sections 2, 12 and 15 of this guide. Day 3–4: [Lesson 08 patterns](
 | Classical ML | [02-classical-ml](02-classical-ml/README.md) | [overview](02-classical-ml/learn/00-overview.md) | — |
 | Deep learning | [03-deep-learning](03-deep-learning/README.md) | [overview](03-deep-learning/learn/00-overview.md) | — |
 | Model basics and selection | [04-llm-foundations](04-llm-foundations/README.md) | [foundation models basics](04-llm-foundations/learn/01-foundation-models-basics.md) | [model selection, routing, build vs buy](04-llm-foundations/apply/) |
-| Prompting | [05-prompt-and-context-engineering](05-prompt-and-context-engineering/README.md) | [prompting deep dive](05-prompt-and-context-engineering/learn/02-prompting-deep-dive.md) | [1-prompt-engineering/](05-prompt-and-context-engineering/apply/1-prompt-engineering/) |
-| Context engineering | [05-prompt-and-context-engineering](05-prompt-and-context-engineering/README.md) | [prompting deep dive](05-prompt-and-context-engineering/learn/02-prompting-deep-dive.md) | [2-context-engineering/](05-prompt-and-context-engineering/apply/2-context-engineering/) |
-| Ingestion and parsing | [06-rag](06-rag/README.md) | [RAG deep dive §2](06-rag/learn/03-rag-deep-dive.md) | [1-ingestion-parsing/](06-rag/apply/1-ingestion-parsing/) |
-| RAG pipeline | [06-rag](06-rag/README.md) | [RAG deep dive](06-rag/learn/03-rag-deep-dive.md) | [2-chunking/ through 8-generation-grounding/](06-rag/apply/) |
-| Tools and agents | [07-agents-tools-memory](07-agents-tools-memory/README.md) | [tools, agents, structured output](07-agents-tools-memory/learn/04-tools-agents-and-structured-output.md) | [1-agents/](07-agents-tools-memory/apply/1-agents/) |
+| Prompting | [05-prompt-and-context-engineering](05-prompt-and-context-engineering/README.md) | [prompting deep dive](05-prompt-and-context-engineering/learn/01-prompting-deep-dive.md) | [1-prompt-engineering/](05-prompt-and-context-engineering/apply/1-prompt-engineering/) |
+| Context engineering | [05-prompt-and-context-engineering](05-prompt-and-context-engineering/README.md) | [prompting deep dive](05-prompt-and-context-engineering/learn/01-prompting-deep-dive.md) | [2-context-engineering/](05-prompt-and-context-engineering/apply/2-context-engineering/) |
+| Ingestion and parsing | [06-rag](06-rag/README.md) | [RAG deep dive §2](06-rag/learn/01-rag-deep-dive.md) | [1-ingestion-parsing/](06-rag/apply/1-ingestion-parsing/) |
+| RAG pipeline | [06-rag](06-rag/README.md) | [RAG deep dive](06-rag/learn/01-rag-deep-dive.md) | [2-chunking/ through 8-generation-grounding/](06-rag/apply/) |
+| Tools and agents | [07-agents-tools-memory](07-agents-tools-memory/README.md) | [tools, agents, structured output](07-agents-tools-memory/learn/01-tools-agents-and-structured-output.md) | [1-agents/](07-agents-tools-memory/apply/1-agents/) |
 | Memory | [07-agents-tools-memory](07-agents-tools-memory/README.md) | [conversation state](04-llm-foundations/learn/01-foundation-models-basics.md) | [2-memory/](07-agents-tools-memory/apply/2-memory/) |
-| Prompt vs RAG vs fine-tune | [08-choosing-the-lever](08-choosing-the-lever/README.md) | [decision framework](08-choosing-the-lever/learn/05-fine-tuning-vs-rag-vs-prompt.md) | [01.3](08-choosing-the-lever/apply/01.3_prompting_vs_rag_vs_finetuning.md), [fine-tuning/](08-choosing-the-lever/apply/fine-tuning/) |
-| Evaluation and testing | [09-evaluation](09-evaluation/README.md) | [evaluation for LLM systems](09-evaluation/learn/06-evaluation-for-llm-systems.md) | [evals and testing pyramid](09-evaluation/apply/) |
+| Prompt vs RAG vs fine-tune | [08-choosing-the-lever](08-choosing-the-lever/README.md) | [decision framework](08-choosing-the-lever/learn/01-fine-tuning-vs-rag-vs-prompt.md) | [01.3](08-choosing-the-lever/apply/01.3_prompting_vs_rag_vs_finetuning.md), [fine-tuning/](08-choosing-the-lever/apply/fine-tuning/) |
+| Evaluation and testing | [09-evaluation](09-evaluation/README.md) | [evaluation for LLM systems](09-evaluation/learn/01-evaluation-for-llm-systems.md) | [evals and testing pyramid](09-evaluation/apply/) |
 | Decision framework and risk tiers | [10-production](10-production/README.md) | [production mindset](10-production/learn/01-production-mindset-and-decision-framework.md) | [build vs buy](04-llm-foundations/apply/01.4_build_vs_buy.md) |
 | Data pipelines and MLOps | [10-production](10-production/README.md) | [data pipelines and MLOps](10-production/learn/02-data-pipelines-and-mlops.md) | [environments](10-production/apply/1-serving-cost-latency/09.6_environments.md), [fine-tuning ops](08-choosing-the-lever/apply/fine-tuning/11.6_fine_tuning_ops.md) |
 | Serving, cost, latency | [10-production](10-production/README.md) | [serving architectures](10-production/learn/03-serving-architectures.md) | [1-serving-cost-latency/](10-production/apply/1-serving-cost-latency/), [3-deployment/](10-production/apply/3-deployment/) |
@@ -597,6 +597,6 @@ Day 1–2: sections 2, 12 and 15 of this guide. Day 3–4: [Lesson 08 patterns](
 | Guardrails, security, HITL | [10-production](10-production/README.md) | [safety, privacy, HITL](10-production/learn/05-safety-privacy-and-hitl.md) | [5-guardrails/](10-production/apply/5-guardrails/), [6-security-privacy-governance/](10-production/apply/6-security-privacy-governance/), [HITL](07-agents-tools-memory/apply/1-agents/05.8_human_in_the_loop.md) |
 | Reliability and incidents | [10-production](10-production/README.md) | [reliability and incidents](10-production/learn/06-reliability-and-incident-response.md) | [failure handling](10-production/apply/4-observability-reliability/08.7_failure_handling.md), [failure modes](10-production/apply/7-metrics-failure-modes/15.1_common_failure_modes.md) |
 | Data flywheel | [10-production](10-production/README.md) | [monitoring, drift, cost](10-production/learn/04-monitoring-drift-and-cost.md) | [8-data-flywheel/](10-production/apply/8-data-flywheel/) |
-| Architecture patterns | [11-architecture-patterns](11-architecture-patterns/README.md) | [15 production patterns](11-architecture-patterns/learn/08-ai-architecture-patterns-for-prod.md) | [reference architecture](11-architecture-patterns/apply/13.1_reference_architecture.md) |
+| Architecture patterns | [11-architecture-patterns](11-architecture-patterns/README.md) | [15 production patterns](11-architecture-patterns/learn/01-ai-architecture-patterns-for-prod.md) | [reference architecture](11-architecture-patterns/apply/13.1_reference_architecture.md) |
 | Capstones | [12-capstones-and-interviews](12-capstones-and-interviews/README.md) | [overview](12-capstones-and-interviews/learn/00-overview.md) | [reference architecture](11-architecture-patterns/apply/13.1_reference_architecture.md) |
-| Scenario drills | [12-capstones-and-interviews](12-capstones-and-interviews/README.md) | [60 scenarios](12-capstones-and-interviews/learn/09-scenario-based-prod-ai-questions.md) | All of the above |
+| Scenario drills | [12-capstones-and-interviews](12-capstones-and-interviews/README.md) | [60 scenarios](12-capstones-and-interviews/learn/05-scenario-based-prod-ai-questions.md) | All of the above |

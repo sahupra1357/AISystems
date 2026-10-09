@@ -1,12 +1,12 @@
-# Part 2 — Exercises and “Ready for Part 3” Checklist
+# Stage 2 — Exercises and “Ready for Stage 3” Checklist
 
-Use these after lessons 01–03. Attempt **Beginner** items first. **Stretch** items deepen skill; return to them if you skip.
+Use these after lessons 2.1–2.3. Attempt **Beginner** items first. **Stretch** items deepen skill; return to them if you skip.
 
 Work in your course virtual environment with `numpy`, `pandas`, and `scikit-learn` installed.
 
 ---
 
-## Exercises tied to Lesson 01 (ML concepts)
+## Exercises tied to Lesson 2.1 (ML concepts)
 
 ### Beginner
 
@@ -22,7 +22,7 @@ Work in your course virtual environment with `numpy`, `pandas`, and `scikit-lear
 
 ---
 
-## Exercises tied to Lesson 02 (Algorithms)
+## Exercises tied to Lesson 2.2 (Algorithms)
 
 ### Beginner
 
@@ -39,7 +39,7 @@ Work in your course virtual environment with `numpy`, `pandas`, and `scikit-lear
 
 ---
 
-## Exercises tied to Lesson 03 (scikit-learn workflow)
+## Exercises tied to Lesson 2.3 (scikit-learn workflow)
 
 ### Beginner
 
@@ -57,7 +57,7 @@ Work in your course virtual environment with `numpy`, `pandas`, and `scikit-lear
 
 ---
 
-## Part 2 capstone
+## Stage 2 capstone
 
 Build a small **tabular classification or regression** project that proves you can run a professional classical ML loop.
 
@@ -92,7 +92,7 @@ Someone else can reproduce your numbers within normal random variation and under
 
 ---
 
-## Checklist: Ready for Part 3
+## Checklist: Ready for Stage 3
 
 Mark these when true (`[ ]` → `[x]`):
 
@@ -118,7 +118,7 @@ Mark these when true (`[ ]` → `[x]`):
 
 ### Capstone
 
-- [ ] I finished the Part 2 capstone (or equivalent)
+- [ ] I finished the Stage 2 capstone (or equivalent)
 - [ ] My README and report would make sense to a teammate
 
 If most boxes are checked, you are ready for neural networks.
@@ -127,6 +127,6 @@ If most boxes are checked, you are ready for neural networks.
 
 ## Suggested next step
 
-Proceed to **Part 3 — Deep Learning**: neural net basics, a PyTorch training loop, and an introduction to CNNs and Transformers.
+Proceed to **Stage 3 — Deep Learning**: neural net basics, a PyTorch training loop, and an introduction to CNNs and Transformers.
 
 You will reuse everything here—splits, metrics, baselines, and overfitting—on tensors instead of `DataFrame` columns.

@@ -1,4 +1,4 @@
-# Lesson 01 — Foundation Models Basics
+# Lesson 4.1 — Foundation Models Basics
 
 ## Why this lesson exists
 
@@ -62,7 +62,7 @@ At each step the model produces a distribution over the next token. Decoding str
 - Lower temperature and stricter decoding make outputs more repeatable (good for extraction)
 - Higher temperature increases diversity (good for brainstorming, riskier for facts)
 
-Lesson 02 covers prompting styles; this lesson only needs you to remember: **chat is sampled continuation under constraints**.
+Lesson 5.1 covers prompting styles; this lesson only needs you to remember: **chat is sampled continuation under constraints**.
 
 ## Tokens
 
@@ -141,7 +141,7 @@ An **embedding** is a vector representation of text (or other media) such that s
 | Training focus | Represent meaning for comparison | Predict / generate text |
 | You usually | Compare with cosine/dot product | Sample or constrain decoding |
 
-You often use **both**: embed to find relevant chunks, then generate an answer conditioned on those chunks (Lesson 03).
+You often use **both**: embed to find relevant chunks, then generate an answer conditioned on those chunks (Lesson 6.1).
 
 **Why separate models?** Embedding models are optimized and priced for representation. Chat models are optimized for generation. Using a chat model as a makeshift embedder (for example, “rate similarity 1–10”) is usually worse and more expensive than a real embedding API or local embedding model.
 
@@ -179,7 +179,7 @@ response = client.chat.completions.create(
 
 ### What belongs where (preview)
 
-Lesson 02 goes deep on roles. Seed intuition now:
+Lesson 5.1 goes deep on roles. Seed intuition now:
 
 - **System:** durable policy, role, output contract—not one-off user questions
 - **User:** the task and data for this turn
@@ -207,7 +207,7 @@ Do not put secrets (API keys, private tokens) in any message you would not log. 
 | Tutoring explanation | 0.3–0.7 | Clarity over novelty |
 | Brainstorming names | 0.7–1.0 | Then filter with a second pass |
 
-Change **one** knob at a time when debugging. Lesson 02 expands this into task playbooks.
+Change **one** knob at a time when debugging. Lesson 5.1 expands this into task playbooks.
 
 ## Cost and latency intuition
 
@@ -267,7 +267,7 @@ Think in **product requirements**, not prestige.
 | Truncation | Answers cut off mid-thought | Hit max tokens or context | Raise carefully; shorten prompts; summarize |
 | Format drift | Almost-JSON, missing fields | Generative freedom | JSON mode/schema; validate; repair limitedly |
 | Over-long context noise | Misses the key sentence | Dilution / attention limits | Better retrieval; structure; reorder |
-| Prompt injection | User/doc content steers the model | Untrusted text in context | Delimiters; don’t treat prompts as security; Part 5 |
+| Prompt injection | User/doc content steers the model | Untrusted text in context | Delimiters; don’t treat prompts as security; Stage 10 |
 | Cost blowups | Bill spike | Huge contexts, loops, wrong model tier | Caps, caching, routing, monitoring |
 
 ## Structured output (preview)
@@ -314,7 +314,7 @@ def classify_email(client, model: str, email_body: str) -> dict:
     return parse_json_answer(raw)
 ```
 
-Notice what this already encodes from this lesson: tight system contract, low temperature, capped tokens, validation in code. Prompting styles in Lesson 02 will make the *language* of that system message even stronger.
+Notice what this already encodes from this lesson: tight system contract, low temperature, capped tokens, validation in code. Prompting styles in Lesson 5.1 will make the *language* of that system message even stronger.
 
 
 
@@ -323,7 +323,7 @@ Notice what this already encodes from this lesson: tight system contract, low te
 Many “chat” models today accept more than text: images, sometimes audio, and structured **tool schemas**. For this fundamentals path:
 
 - Treat multimodal input as **another context channel** that still consumes budget and can carry untrusted content (for example, text inside a screenshot)
-- Treat tool schemas as **contracts your server must enforce** (Lesson 04)—the model proposing a tool call is not the same as the action being safe
+- Treat tool schemas as **contracts your server must enforce** (Lesson 7.1)—the model proposing a tool call is not the same as the action being safe
 - Do not assume every model supports the same message roles, JSON mode, or vision features; read the model card for the deployment you use
 
 ## Provider APIs vs open weights
@@ -370,7 +370,7 @@ Even at temperature 0, hosted APIs may not guarantee bit-identical outputs acros
 - Log raw prompts and outputs for failed cases
 - Prefer schema validation over matching exact prose
 
-## Safety-aware basics (before Part 5)
+## Safety-aware basics (before Stage 10)
 
 Even in fundamentals:
 
@@ -379,7 +379,7 @@ Even in fundamentals:
 - Do not treat “the model refused” as a security control for authorization
 - Log thoughtfully: prompts may contain PII—apply retention and access rules early
 
-Full injection, jailbreaks, and guardrails arrive in Part 5; Lesson 02 teaches delimiters and injection *awareness*.
+Full injection, jailbreaks, and guardrails arrive in Stage 10; Lesson 5.1 teaches delimiters and injection *awareness*.
 
 ## Debugging playbook: “the model is being weird”
 
@@ -461,4 +461,4 @@ Keep the brief concrete enough that a teammate could implement a prototype in a 
 
 ## What is next
 
-**[02-prompting-deep-dive.md](../../05-prompt-and-context-engineering/learn/02-prompting-deep-dive.md)** — the centerpiece of Part 4: what a prompt really is, anatomy of strong prompts, message roles, every major prompting style with when/why/how, task playbooks, parameters, iteration habits, and anti-patterns.
+**[01-prompting-deep-dive.md](../../05-prompt-and-context-engineering/learn/01-prompting-deep-dive.md)** — the centerpiece of Stages 4–9: what a prompt really is, anatomy of strong prompts, message roles, every major prompting style with when/why/how, task playbooks, parameters, iteration habits, and anti-patterns.

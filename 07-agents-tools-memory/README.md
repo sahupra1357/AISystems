@@ -8,7 +8,7 @@ Summary, rules and context: [AI Engineering Guide, section 9](../AI_ENGINEERING_
 
 Curriculum lessons, in reading order.
 
-- [Lesson 04 — Tools, Agents, and Structured Output](learn/04-tools-agents-and-structured-output.md)
+- [Lesson 7.1 — Tools, Agents, and Structured Output](learn/01-tools-agents-and-structured-output.md)
 
 ## Apply
 

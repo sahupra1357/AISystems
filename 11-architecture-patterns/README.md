@@ -8,7 +8,7 @@ Summary, rules and context: [AI Engineering Guide, section 13](../AI_ENGINEERING
 
 Curriculum lessons, in reading order.
 
-- [Lesson 08 — AI Architecture Patterns for Production](learn/08-ai-architecture-patterns-for-prod.md)
+- [Lesson 11.1 — AI Architecture Patterns for Production](learn/01-ai-architecture-patterns-for-prod.md)
 
 ## Apply
 

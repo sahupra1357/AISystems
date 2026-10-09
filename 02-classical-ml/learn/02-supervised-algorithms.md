@@ -1,8 +1,8 @@
-# Lesson 02 — Supervised Algorithms (and a Cluster Friend)
+# Lesson 2.2 — Supervised Algorithms (and a Cluster Friend)
 
 This lesson surveys the algorithms you will use most often in classical ML. You do not need to derive every equation. You need intuition: **what the model assumes**, **what it is good at**, and **what breaks it**.
 
-We will use scikit-learn-shaped APIs in sketches. Full pipelines come in lesson 03.
+We will use scikit-learn-shaped APIs in sketches. Full pipelines come in lesson 2.3.
 
 ## Linear regression
 

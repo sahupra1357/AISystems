@@ -1,4 +1,4 @@
-# Lesson 01 — Production Mindset and Decision Framework
+# Lesson 10.1 — Production Mindset and Decision Framework
 
 ## Why this lesson exists
 
@@ -58,7 +58,7 @@ List three things in your last AI notebook that would break if a teammate ran it
 
 ## 2. Decision framework (use this every time)
 
-Print this on a sticky note. Every major Part 5 decision should leave a short memo following it.
+Print this on a sticky note. Every major Stage 10 decision should leave a short memo following it.
 
 ```text
 1. Problem      — Who is harmed/helped? What job is the model doing?
@@ -459,7 +459,7 @@ Adjust with volume: at 10 requests/day, review more percentage; at 1M/day, prior
 
 ## 12. Mini practices
 
-1. Fill the one-page template (§2) for a feature you want to build in Part 6.  
+1. Fill the one-page template (§2) for a feature you want to build in Stage 12.  
 2. Assign a risk tier and justify the HITL rate.  
 3. For “Docs Q&A over 200 markdown files,” pick batch vs online and managed API vs self-host with a 5-row tradeoff table.  
 4. Write ship criteria that mention **both** an automatic gate and a human gate.

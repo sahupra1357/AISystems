@@ -1,4 +1,4 @@
-# Lesson 06 — Reliability and Incident Response
+# Lesson 10.6 — Reliability and Incident Response
 
 ## Why this lesson exists
 
@@ -26,7 +26,7 @@ AI features inherit every failure mode of distributed systems—plus fuzzy quali
 | Cost runaway | Bill alert | Feature turned off hastily |
 | Bad prompt promote | Sudden quality cliff | Support surge |
 
-Reliability patterns below address the left column; eval/HITL (Lessons 01, 04, 05) address the middle quality rows.
+Reliability patterns below address the left column; eval/HITL (Lessons 10.1, 10.4 and 10.5) address the middle quality rows.
 
 ---
 
@@ -324,7 +324,7 @@ Tuesday 14:00  add gold items requiring citations; fix prompt; re-shadow
 - [ ] Rate limits / load shedding
 - [ ] Versioned bundles + one-step rollback flag
 - [ ] Runbooks for infra **and** quality
-- [ ] On-call knows kill switches (Lesson 05)
+- [ ] On-call knows kill switches (Lesson 10.5)
 - [ ] Postmortem template includes eval/HITL questions
 - [ ] Game-day practiced at least once pre-launch for medium+
 
@@ -416,4 +416,4 @@ Alert fires
 
 ## What is next
 
-**[07-exercises-and-checklist.md](07-exercises-and-checklist.md)** — exercises per lesson, production design-doc capstone, and Ready-for-Part-6 checklist.
+**[07-exercises-and-checklist.md](07-exercises-and-checklist.md)** — exercises per lesson, production design-doc capstone, and Ready-for-Stage-11 checklist.

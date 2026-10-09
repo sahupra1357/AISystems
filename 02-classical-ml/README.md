@@ -8,11 +8,11 @@ Summary, rules and context: [AI Engineering Guide, section 4](../AI_ENGINEERING_
 
 Curriculum lessons, in reading order. Finish with the exercises and checklist.
 
-- [Part 2 — Classical ML: Overview](learn/00-overview.md)
-- [Lesson 01 — Machine Learning Concepts](learn/01-ml-concepts.md)
-- [Lesson 02 — Supervised Algorithms (and a Cluster Friend)](learn/02-supervised-algorithms.md)
-- [Lesson 03 — The scikit-learn Workflow](learn/03-scikit-learn-workflow.md)
-- [Part 2 — Exercises and “Ready for Part 3” Checklist](learn/04-exercises-and-checklist.md)
+- [Stage 2 — Classical ML: Overview](learn/00-overview.md)
+- [Lesson 2.1 — Machine Learning Concepts](learn/01-ml-concepts.md)
+- [Lesson 2.2 — Supervised Algorithms (and a Cluster Friend)](learn/02-supervised-algorithms.md)
+- [Lesson 2.3 — The scikit-learn Workflow](learn/03-scikit-learn-workflow.md)
+- [Stage 2 — Exercises and “Ready for Stage 3” Checklist](learn/04-exercises-and-checklist.md)
 
 ---
 

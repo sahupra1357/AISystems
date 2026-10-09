@@ -1,4 +1,4 @@
-# Lesson 03 — The scikit-learn Workflow
+# Lesson 2.3 — The scikit-learn Workflow
 
 Concepts and algorithms matter, but **workflow** is what separates a toy demo from trustworthy work. This lesson walks a standard loop with scikit-learn: split → preprocess → model → evaluate → iterate.
 
@@ -252,7 +252,7 @@ Save the **whole pipeline**, not only the final estimator—production needs the
 
 ## Experiment hygiene (lightweight)
 
-Even before Part 5 (MLOps), keep a simple log:
+Even before Stage 10 (MLOps), keep a simple log:
 
 | Field | Example |
 |-------|---------|
@@ -279,4 +279,4 @@ List three steps in the sketch above that specifically prevent leakage. Check yo
 
 ## What is next
 
-**[04-exercises-and-checklist.md](04-exercises-and-checklist.md)** — practice problems, a Part 2 capstone, and the Ready-for-Part-3 checklist.
+**[04-exercises-and-checklist.md](04-exercises-and-checklist.md)** — practice problems, a Stage 2 capstone, and the Ready-for-Stage-3 checklist.

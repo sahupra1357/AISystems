@@ -1,8 +1,8 @@
-# Lesson 08 — AI Architecture Patterns for Production
+# Lesson 11.1 — AI Architecture Patterns for Production
 
 ## Why this lesson exists
 
-Lessons 01–07 give you a **decision framework**, MLOps habits, serving shapes, monitors, safety, and reliability. This lesson goes one level deeper: **named production architectures**—recurring topologies teams actually ship—with enough teaching depth that you can sketch one on a whiteboard, defend the choice, and say where eval and humans sit in the path.
+Lessons 10.1–10.7 give you a **decision framework**, MLOps habits, serving shapes, monitors, safety, and reliability. This lesson goes one level deeper: **named production architectures**—recurring topologies teams actually ship—with enough teaching depth that you can sketch one on a whiteboard, defend the choice, and say where eval and humans sit in the path.
 
 You will not memorize vendor product names. You will recognize **patterns**, their **tradeoffs**, **failure modes**, and **when** each is the best path for a small-to-mid team.
 
@@ -14,7 +14,7 @@ You will not memorize vendor product names. You will recognize **patterns**, the
 - Apply cross-cutting concerns: authZ, PII, observability, idempotency, versioning
 - Use a decision table / tree to pick a starting pattern under constraints
 
-## Teaching contract (same as Part 5)
+## Teaching contract (same as Stage 10)
 
 For each pattern: **diagram-in-text → components → flow → tradeoffs → failure modes → when it’s best → eval + HITL → anti-patterns.**
 
@@ -933,7 +933,7 @@ Event-time reactions? → Event-driven (10).
 
 ## Mapping patterns → risk tier → required eval + human verification
 
-Risk tiers (from Lesson 01): **Low** (cosmetic), **Medium** (user-facing advice), **High** (money, safety, rights, irreversible).
+Risk tiers (from Lesson 10.1): **Low** (cosmetic), **Medium** (user-facing advice), **High** (money, safety, rights, irreversible).
 
 | Pattern | Low tier | Medium tier | High tier |
 |---------|----------|-------------|-----------|
@@ -994,7 +994,7 @@ Risk tiers (from Lesson 01): **Low** (cosmetic), **Medium** (user-facing advice)
 
 ## Mini practices
 
-1. Pick a Part 6 project idea. Name **two** patterns you will compose and **one** you explicitly reject; write the rejecting reason as a tradeoff row.  
+1. Pick a Stage 12 project idea. Name **two** patterns you will compose and **one** you explicitly reject; write the rejecting reason as a tradeoff row.  
 2. For pattern 6 (RAG), list three failure modes and the monitor or HITL hook that catches each.  
 3. Draw pattern 9 for a prompt-only change (no model weight change)—what still belongs in the bundle?  
 4. Tenant T asks for GDPR delete. Which components in patterns 6, 12, and 15 must prove deletion?  
@@ -1004,4 +1004,4 @@ Risk tiers (from Lesson 01): **Low** (cosmetic), **Medium** (user-facing advice)
 
 You should now be able to whiteboard any of the 15 patterns, compose 2–3 for a product, attach risk-tiered eval + HITL, and explain cross-cutting authZ/PII/idempotency/versioning without hiding behind a vendor logo.
 
-**Next:** [09-scenario-based-prod-ai-questions.md](../../12-capstones-and-interviews/learn/09-scenario-based-prod-ai-questions.md) — grind high-difficulty scenarios. Then return to [07-exercises-and-checklist.md](../../10-production/learn/07-exercises-and-checklist.md) for the design-doc capstone with richer pattern vocabulary.
+**Next:** [05-scenario-based-prod-ai-questions.md](../../12-capstones-and-interviews/learn/05-scenario-based-prod-ai-questions.md) — grind high-difficulty scenarios. Then return to [07-exercises-and-checklist.md](../../10-production/learn/07-exercises-and-checklist.md) for the design-doc capstone with richer pattern vocabulary.

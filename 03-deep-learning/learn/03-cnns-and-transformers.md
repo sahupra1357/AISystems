@@ -1,4 +1,4 @@
-# Lesson 03 — CNNs and Transformers
+# Lesson 3.3 — CNNs and Transformers
 
 MLPs treat inputs as flat vectors. Images and sequences have **structure**. Two architectures dominate modern deep learning for those domains: **Convolutional Neural Networks (CNNs)** and **Transformers**.
 
@@ -99,7 +99,7 @@ Stack many blocks. Add **positional information** because plain attention is per
 - Speech and multimodal models
 - Increasingly vision (ViT) and other modalities
 
-LLMs (Part 4) are Transformers (or Transformer variants) trained at huge scale on text (and more).
+LLMs (Stages 4–9) are Transformers (or Transformer variants) trained at huge scale on text (and more).
 
 ### Tiny learning path (tutorial-scale)
 
@@ -134,9 +134,9 @@ Self-attention scales roughly with sequence length squared in the naive form. Lo
 | Often best in practice |
 |------------------------|
 | **Pretrained** vision model (CNN or ViT) fine-tuned for your labels |
-| **Pretrained** language model adapted via prompts / adapters / fine-tunes (Part 4) |
+| **Pretrained** language model adapted via prompts / adapters / fine-tunes (Stages 4–9) |
 
-## Connecting back to Part 2 habits
+## Connecting back to Stage 2 habits
 
 Architecture choice does not replace evaluation discipline:
 
@@ -154,4 +154,4 @@ Architecture choice does not replace evaluation discipline:
 
 ## What is next
 
-**[04-exercises-and-checklist.md](04-exercises-and-checklist.md)** — MNIST MLP, CNN/fine-tune practice, a tiny Transformer path, and the Ready-for-Part-4 checklist.
+**[04-exercises-and-checklist.md](04-exercises-and-checklist.md)** — MNIST MLP, CNN/fine-tune practice, a tiny Transformer path, and the Ready-for-Stage-4 checklist.

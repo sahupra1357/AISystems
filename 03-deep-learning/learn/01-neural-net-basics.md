@@ -1,4 +1,4 @@
-# Lesson 01 — Neural Network Basics
+# Lesson 3.1 — Neural Network Basics
 
 This lesson is conceptual with light math. The goal is fluency: when someone says “we increased depth and switched the loss,” you should know what that implies.
 
@@ -132,7 +132,7 @@ Rough intuition:
 | Huge data, expressive net | Deep learning often wins |
 | Tabular medium data | Tree ensembles frequently competitive |
 
-Pretrained models (Part 3 CNN fine-tuning; Part 4 LLMs) change the game: you often start from features learned on large datasets.
+Pretrained models (Stage 3 CNN fine-tuning; Stages 4–9 LLMs) change the game: you often start from features learned on large datasets.
 
 ## What “learning” looks like on a plot
 

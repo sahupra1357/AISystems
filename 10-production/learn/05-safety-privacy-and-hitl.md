@@ -1,4 +1,4 @@
-# Lesson 05 — Safety, Privacy, and Human-in-the-Loop
+# Lesson 10.5 — Safety, Privacy, and Human-in-the-Loop
 
 ## Why this lesson exists
 

@@ -8,8 +8,8 @@ Summary, rules and context: [AI Engineering Guide, section 6](../AI_ENGINEERING_
 
 Curriculum lessons, in reading order.
 
-- [Part 4 — Generative AI / LLMs: Overview](learn/00-overview.md)
-- [Lesson 01 — Foundation Models Basics](learn/01-foundation-models-basics.md)
+- [Stages 4–9 — Generative AI / LLMs: Overview](learn/00-overview.md)
+- [Lesson 4.1 — Foundation Models Basics](learn/01-foundation-models-basics.md)
 
 ## Apply
 

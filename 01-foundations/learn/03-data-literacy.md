@@ -1,4 +1,4 @@
-# Lesson 03 — Data Literacy for AI Engineers
+# Lesson 1.3 — Data Literacy for AI Engineers
 
 Models get the headlines; **data** decides whether those models work. This lesson teaches how to look at data critically: formats, cleaning, splits, leakage, metrics, and honest evaluation.
 
@@ -252,7 +252,7 @@ Do **not** need a fancy model yet. Practice:
 5. Choose a metric (accuracy/F1 for Titanic; RMSE for housing)
 6. Write a short markdown note: what could leak? what is the majority-class baseline?
 
-You will train stronger baselines in Part 2 with scikit-learn. The win here is **seeing the data clearly**.
+You will train stronger baselines in Stage 2 with scikit-learn. The win here is **seeing the data clearly**.
 
 Example skeleton for a local CSV named `data.csv`:
 
@@ -280,4 +280,4 @@ print(summary)
 - Match metrics to costs of errors
 - Evaluate honestly; beat a simple baseline
 
-Next: [04-exercises-and-checklist.md](04-exercises-and-checklist.md) to practice and confirm you are ready for Classical ML (Part 2).
+Next: [04-exercises-and-checklist.md](04-exercises-and-checklist.md) to practice and confirm you are ready for Classical ML (Stage 2).
