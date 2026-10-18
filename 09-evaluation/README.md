@@ -2,7 +2,7 @@
 
 Golden sets, LLM-as-judge, retrieval and generation evals, agent evals and the testing pyramid.
 
-Summary, rules and context: [AI Engineering Guide, section 11](../AI_ENGINEERING_GUIDE.md#11-stage-9-evaluation).
+Summary, rules and context: [AI Engineering Guide, Stage 9](../AI_ENGINEERING_GUIDE.md#stage-9-evaluation).
 
 ## Learn
 

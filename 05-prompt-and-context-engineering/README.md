@@ -2,7 +2,7 @@
 
 Reliable behaviour from what you put in the model's window.
 
-Summary, rules and context: [AI Engineering Guide, section 7](../AI_ENGINEERING_GUIDE.md#7-stage-5-prompt-and-context-engineering).
+Summary, rules and context: [AI Engineering Guide, Stage 5](../AI_ENGINEERING_GUIDE.md#stage-5-prompt-and-context-engineering).
 
 ## Learn
 

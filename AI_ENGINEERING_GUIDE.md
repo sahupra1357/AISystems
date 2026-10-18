@@ -25,45 +25,44 @@ This guide stitches the stages together. Each section below gives you the core i
 
 ## Contents
 
-1. [How to use this guide](#1-how-to-use-this-guide)
-2. [The three mental models](#2-the-three-mental-models)
-3. [Stage 1: Foundations](#3-stage-1-foundations)
-4. [Stage 2: Classical machine learning](#4-stage-2-classical-machine-learning)
-5. [Stage 3: Deep learning](#5-stage-3-deep-learning)
-6. [Stage 4: Foundation models and LLMs](#6-stage-4-foundation-models-and-llms)
-7. [Stage 5: Prompt and context engineering](#7-stage-5-prompt-and-context-engineering)
-8. [Stage 6: Retrieval-augmented generation](#8-stage-6-retrieval-augmented-generation)
-9. [Stage 7: Tools, agents and memory](#9-stage-7-tools-agents-and-memory)
-10. [Stage 8: Choosing the lever (prompt, RAG, fine-tune)](#10-stage-8-choosing-the-lever)
-11. [Stage 9: Evaluation](#11-stage-9-evaluation)
-12. [Stage 10: Production engineering](#12-stage-10-production-engineering)
-13. [Stage 11: Architecture patterns](#13-stage-11-architecture-patterns)
-14. [Stage 12: Capstones, portfolio and interviews](#14-stage-12-capstones-portfolio-and-interviews)
-15. [Cheat sheets](#15-cheat-sheets)
-16. [Study plans](#16-study-plans)
-17. [Master index: topic to file](#17-master-index-topic-to-file)
+- [How to use this guide](#how-to-use-this-guide)
+- [The three mental models](#the-three-mental-models)
+- [Stage 1: Foundations](#stage-1-foundations)
+- [Stage 2: Classical machine learning](#stage-2-classical-machine-learning)
+- [Stage 3: Deep learning](#stage-3-deep-learning)
+- [Stage 4: Foundation models and LLMs](#stage-4-foundation-models-and-llms)
+- [Stage 5: Prompt and context engineering](#stage-5-prompt-and-context-engineering)
+- [Stage 6: Retrieval-augmented generation](#stage-6-retrieval-augmented-generation)
+- [Stage 7: Tools, agents and memory](#stage-7-tools-agents-and-memory)
+- [Stage 8: Choosing the lever (prompt, RAG, fine-tune)](#stage-8-choosing-the-lever)
+- [Stage 9: Evaluation](#stage-9-evaluation)
+- [Stage 10: Production engineering](#stage-10-production-engineering)
+- [Stage 11: Architecture patterns](#stage-11-architecture-patterns)
+- [Stage 12: Capstones, portfolio and interviews](#stage-12-capstones-portfolio-and-interviews)
+- [Cheat sheets](#cheat-sheets)
+- [Master index: topic to file](#master-index-topic-to-file)
 
 ---
 
-## 1. How to use this guide
+## How to use this guide
 
 **If you are new to AI:** follow stages 1 to 12 in order. For each stage, read the curriculum lessons first (the "Learn" links), do the exercises, pass the checklist, then skim the field-manual files (the "Apply" links) so you know they exist.
 
 **If you already ship software and want to build LLM features:** skim stages 1 to 3 against their checklists, then start properly at stage 4. Spend most of your time on stages 6, 9 and 10.
 
-**If you are building something right now:** jump to the stage that matches the problem, read the "Rules" block, then open the field-manual file for the exact scenario. Use [section 17](#17-master-index-topic-to-file) to find it.
+**If you are building something right now:** jump to the stage that matches the problem, read the "Rules" block, then open the field-manual file for the exact scenario. Use [the master index](#master-index-topic-to-file) to find it.
 
-**If you are preparing for interviews or design reviews:** read [section 2](#2-the-three-mental-models), [section 12](#12-stage-10-production-engineering) and [section 15](#15-cheat-sheets), then drill the 60 scenarios in [Lesson 12.5](12-capstones-and-interviews/learn/05-scenario-based-prod-ai-questions.md).
+**If you are preparing for interviews or design reviews:** read [the three mental models](#the-three-mental-models), [Stage 10](#stage-10-production-engineering) and [the cheat sheets](#cheat-sheets), then drill the 60 scenarios in [Lesson 12.5](12-capstones-and-interviews/learn/05-scenario-based-prod-ai-questions.md).
 
 Every field-manual file follows the same shape: what it is, how to implement, small example, pros and cons, when to use, production at scale, checklist and metrics, and a 30-second takeaway. Every curriculum part follows: overview, lessons, exercises and a "ready for the next part" checklist.
 
 ---
 
-## 2. The three mental models
+## The three mental models
 
 Almost every decision in AI engineering is easier once these three pictures are in your head.
 
-### 2.1 An AI feature is a system, not a model call
+### An AI feature is a system, not a model call
 
 ```text
                     ┌──────────────┐
@@ -80,7 +79,7 @@ Almost every decision in AI engineering is easier once these three pictures are 
 
 The model is one box. Quality comes from what you put around it: the data it reads, the tools it can call, the checks on its output, and the logs that let you debug it. Source: [Stages 4–9 overview](04-llm-foundations/learn/00-overview.md).
 
-### 2.2 Production AI is a loop
+### Production AI is a loop
 
 ```text
 Data & labels → Train / adapt → Serve → Observe → Improve (eval gates + HITL) → back to data
@@ -88,7 +87,7 @@ Data & labels → Train / adapt → Serve → Observe → Improve (eval gates + 
 
 A model that works in a notebook is not a product. You need versioned data, rollbackable releases, monitors for silent failure, explainable cost, safety controls, and explicit decisions about when humans review. Sources: [Stage 10 overview](10-production/learn/00-overview.md), [data flywheel](10-production/apply/8-data-flywheel/12.1_data_flywheel.md).
 
-### 2.3 The end-to-end reference architecture
+### The end-to-end reference architecture
 
 ```text
 OFFLINE   sources → ingest (dedupe, hash, ACL) → parse (route per page, validate)
@@ -105,7 +104,7 @@ Sections 6 to 12 of this guide walk this diagram left to right. Sources: [AI_Sys
 
 ---
 
-## 3. Stage 1: Foundations
+## Stage 1: Foundations
 
 **Goal:** write and run Python confidently, have working intuition for the math that training uses, and handle data honestly.
 
@@ -127,7 +126,7 @@ Sections 6 to 12 of this guide walk this diagram left to right. Sources: [AI_Sys
 
 ---
 
-## 4. Stage 2: Classical machine learning
+## Stage 2: Classical machine learning
 
 **Goal:** train, compare and evaluate models on tabular data the professional way.
 
@@ -150,7 +149,7 @@ Sections 6 to 12 of this guide walk this diagram left to right. Sources: [AI_Sys
 
 ---
 
-## 5. Stage 3: Deep learning
+## Stage 3: Deep learning
 
 **Goal:** understand what training is doing, and write a PyTorch training loop you can debug.
 
@@ -171,7 +170,7 @@ Sections 6 to 12 of this guide walk this diagram left to right. Sources: [AI_Sys
 
 ---
 
-## 6. Stage 4: Foundation models and LLMs
+## Stage 4: Foundation models and LLMs
 
 **Goal:** reason about what an LLM is doing, what it costs, and how it fails, before building on top of it.
 
@@ -194,11 +193,11 @@ Sections 6 to 12 of this guide walk this diagram left to right. Sources: [AI_Sys
 
 ---
 
-## 7. Stage 5: Prompt and context engineering
+## Stage 5: Prompt and context engineering
 
 **Goal:** get reliable behaviour from a model through what you put in its window.
 
-### 7.1 Prompt engineering
+### Prompt engineering
 
 - **Structure:** system/role → task → constraints → examples → output format. Put **stable content first** so the prompt-cache prefix hits ([prompt structure](05-prompt-and-context-engineering/apply/1-prompt-engineering/02.1_prompt_structure.md)).
 - **Delimit data from instructions.** Retrieved text, user uploads and tool output go inside clearly marked blocks the instructions say to treat as data ([delimiters](05-prompt-and-context-engineering/apply/1-prompt-engineering/02.2_delimiters_data_vs_instructions.md)).
@@ -207,7 +206,7 @@ Sections 6 to 12 of this guide walk this diagram left to right. Sources: [AI_Sys
 - **Structured outputs:** JSON schema, function calling, and validate-then-retry with the error fed back. Track schema violations as a metric ([02.8](05-prompt-and-context-engineering/apply/1-prompt-engineering/02.8_structured_outputs_tool_use.md)).
 - **Prompts are code:** version them, diff them, run the eval suite on every change, and log the prompt version with every call ([02.9](05-prompt-and-context-engineering/apply/1-prompt-engineering/02.9_prompt_versioning_evaluation.md)).
 
-### 7.2 Context engineering
+### Context engineering
 
 Context engineering manages *everything* in the window: instructions, retrieved documents, tool results, memory and history. The goal is the right information, in the right position, with minimal noise ([what it is](05-prompt-and-context-engineering/apply/2-context-engineering/03.1_what_is_context_engineering.md)).
 
@@ -222,13 +221,13 @@ Context engineering manages *everything* in the window: instructions, retrieved 
 
 ---
 
-## 8. Stage 6: Retrieval-augmented generation
+## Stage 6: Retrieval-augmented generation
 
 **Goal:** answer from private, fresh or large knowledge with citations a user can trust.
 
 RAG is a pipeline, and quality is capped by its weakest stage. Work through it in build order.
 
-### 8.1 Ingestion and parsing (the highest-leverage stage)
+### Ingestion and parsing (the highest-leverage stage)
 
 Garbage parsing caps everything downstream. No reranker recovers a table flattened into word soup.
 
@@ -237,7 +236,7 @@ Garbage parsing caps everything downstream. No reranker recovers a table flatten
 - **Preserve structure:** reading order ([00.3.1](06-rag/apply/1-ingestion-parsing/00.3.1_reading_order.md)), tables as HTML/Markdown ([00.3.2](06-rag/apply/1-ingestion-parsing/00.3.2_tables.md)), heading breadcrumbs ([00.3.3](06-rag/apply/1-ingestion-parsing/00.3.3_headings_hierarchy.md)), page numbers and bounding boxes for citations ([00.3.4](06-rag/apply/1-ingestion-parsing/00.3.4_page_numbers_bounding_boxes.md)), boilerplate stripped ([00.3.5](06-rag/apply/1-ingestion-parsing/00.3.5_boilerplate_stripping.md)).
 - **Validate:** CER/WER and table-cell accuracy on a golden sample ([00.4.1](06-rag/apply/1-ingestion-parsing/00.4.1_validation_golden_sample.md)); cheap per-page heuristics in production ([00.4.2](06-rag/apply/1-ingestion-parsing/00.4.2_validation_production_heuristics.md)); a bounded retry ladder that ends in a visible human queue, never silent empty text ([00.5.1](06-rag/apply/1-ingestion-parsing/00.5.1_retry_ladder.md)).
 
-### 8.2 Chunking
+### Chunking
 
 | Strategy | Use it when | File |
 |---|---|---|
@@ -251,26 +250,26 @@ Garbage parsing caps everything downstream. No reranker recovers a table flatten
 
 Every chunk carries metadata: `doc_id`, title, breadcrumb, page, section, dates, tenant, ACL, source URL ([04.1.8](06-rag/apply/2-chunking/04.1.8_chunk_metadata.md)).
 
-### 8.3 Embeddings and indexing
+### Embeddings and indexing
 
 - Choose the embedder for your domain and language, and validate on *your* golden set, not only a leaderboard ([04.2.1](06-rag/apply/3-embeddings/04.2.1_embedding_model_choice.md)). Get query/passage prefixes right ([04.2.2](06-rag/apply/3-embeddings/04.2.2_symmetric_vs_asymmetric.md)). Fine-tuning the embedder on your own triplets is often a bigger win than a bigger LLM ([04.2.3](06-rag/apply/3-embeddings/04.2.3_fine_tuning_embeddings.md)). A model change means a full re-index; store the version per chunk and dual-index during migration ([04.2.4](06-rag/apply/3-embeddings/04.2.4_embedding_versioning.md)).
 - HNSW is the default index; flat for small corpora; IVF-PQ when memory-bound ([04.3.1](06-rag/apply/4-indexing/04.3.1_index_types_flat_hnsw_ivfpq.md)). Choose the store by what else you need: pgvector for joins and transactional ACLs, Qdrant/Weaviate/Milvus for scale and filtering, a managed service for no ops, OpenSearch when you also need BM25 and aggregations ([04.3.2](06-rag/apply/4-indexing/04.3.2_vector_store_choice.md)). Prefer native filtered ANN; post-filtering by tenant can return zero rows ([04.3.3](06-rag/apply/4-indexing/04.3.3_filtered_search.md)).
 
-### 8.4 Query understanding
+### Query understanding
 
 Rewrite follow-ups using chat history, or multi-turn RAG falls apart by turn three ([04.4.1](06-rag/apply/5-query-understanding/04.4.1_query_rewriting.md)). Add multi-query with Reciprocal Rank Fusion for cheap recall ([04.4.2](06-rag/apply/5-query-understanding/04.4.2_multi_query_rrf.md)), HyDE for short queries against verbose documents ([04.4.3](06-rag/apply/5-query-understanding/04.4.3_hyde.md)), decomposition for multi-hop questions ([04.4.4](06-rag/apply/5-query-understanding/04.4.4_decomposition.md)), self-query to turn language into hard filters ([04.4.5](06-rag/apply/5-query-understanding/04.4.5_self_query_metadata_filters.md)), and routing so that not every question hits the index ([04.4.6](06-rag/apply/5-query-understanding/04.4.6_query_routing.md)).
 
-### 8.5 Retrieval and ranking
+### Retrieval and ranking
 
 - **Hybrid search** (BM25 + dense, fused) beats either alone on virtually every real corpus, because IDs, part numbers and names are where dense retrieval fails ([04.5.1](06-rag/apply/6-retrieval-ranking/04.5.1_hybrid_search.md)).
 - **Rerank:** retrieve top-50 cheaply, cross-encoder rerank to top-5. Usually the largest single quality jump ([04.5.2](06-rag/apply/6-retrieval-ranking/04.5.2_reranking.md)).
 - Diversify with MMR ([04.5.3](06-rag/apply/6-retrieval-ranking/04.5.3_mmr_diversity.md)), abstain below a tuned score floor ([04.5.4](06-rag/apply/6-retrieval-ranking/04.5.4_score_thresholding_abstention.md)), and bound any follow-up searches ([04.5.5](06-rag/apply/6-retrieval-ranking/04.5.5_recursive_agentic_retrieval.md)).
 
-### 8.6 Advanced patterns
+### Advanced patterns
 
 Reach for these only when the basics are measured and insufficient: agentic RAG ([04.6.1](06-rag/apply/7-advanced-rag/04.6.1_agentic_rag.md)), corrective RAG ([04.6.2](06-rag/apply/7-advanced-rag/04.6.2_corrective_rag.md)), Self-RAG ([04.6.3](06-rag/apply/7-advanced-rag/04.6.3_self_rag.md)), GraphRAG for global and multi-hop questions ([04.6.4](06-rag/apply/7-advanced-rag/04.6.4_graphrag.md)), multimodal RAG for slides and scans ([04.6.5](06-rag/apply/7-advanced-rag/04.6.5_multimodal_rag.md)), and SQL for aggregates alongside vectors for narrative, because many "RAG failures" are analytics questions ([04.6.6](06-rag/apply/7-advanced-rag/04.6.6_structured_unstructured_hybrid.md)).
 
-### 8.7 Generation and grounding
+### Generation and grounding
 
 Answer only from context, then verify ([04.7.1](06-rag/apply/8-generation-grounding/04.7.1_grounded_prompting.md)). Require citations in the output schema and validate every cited ID ([04.7.2](06-rag/apply/8-generation-grounding/04.7.2_citations.md)). Run a cheap faithfulness pass ([04.7.3](06-rag/apply/8-generation-grounding/04.7.3_faithfulness_check.md)). Surface conflicting sources with dates instead of picking one ([04.7.4](06-rag/apply/8-generation-grounding/04.7.4_conflict_handling.md)). Design and evaluate the refusal path ([04.7.5](06-rag/apply/8-generation-grounding/04.7.5_refusal_no_answer_path.md)).
 
@@ -284,15 +283,15 @@ Answer only from context, then verify ([04.7.1](06-rag/apply/8-generation-ground
 
 ---
 
-## 9. Stage 7: Tools, agents and memory
+## Stage 7: Tools, agents and memory
 
 **Goal:** let models take actions safely, with bounded cost and a clear stop point.
 
-### 9.1 Tools and structured output
+### Tools and structured output
 
 Tools beat hallucinated actions: the model proposes a call, your code validates and executes it. A good tool has a precise name, a description that says when *not* to use it, a strict argument schema, and an explicit side-effect contract. Prefer fewer, well-described, idempotent tools over one "supertool" ([tool design](07-agents-tools-memory/apply/1-agents/05.7_tool_design.md)).
 
-### 9.2 Agent shapes, simplest first
+### Agent shapes, simplest first
 
 1. **Single tool call** inside a fixed workflow. Most production "agents" should be this.
 2. **Plan-then-execute or a DAG** for predictable pipelines.
@@ -301,7 +300,7 @@ Tools beat hallucinated actions: the model proposes a call, your code validates 
 
 Choose ReAct for exploration, plan-then-execute for predictable work, and search only when steps are cheap and reversible ([planning styles](07-agents-tools-memory/apply/1-agents/05.6_planning_styles.md)).
 
-### 9.3 Making agents safe to run
+### Making agents safe to run
 
 - **Human-in-the-loop** approval before irreversible actions (send, pay, delete, deploy), with a clear resume path ([05.8](07-agents-tools-memory/apply/1-agents/05.8_human_in_the_loop.md)).
 - **Durability:** checkpoint after each step and use idempotency keys so a resumed run does not double-send ([05.9](07-agents-tools-memory/apply/1-agents/05.9_state_durability.md)).
@@ -310,7 +309,7 @@ Choose ReAct for exploration, plan-then-execute for predictable work, and search
 - **Budgets:** hard caps on tokens, tool calls, wall clock and dollars, enforced by the runtime ([05.12](07-agents-tools-memory/apply/1-agents/05.12_cost_step_budgets.md)).
 - **Least privilege:** a read-only agent with a read-only token cannot be talked into a delete ([excessive agency](10-production/apply/5-guardrails/08.5_excessive_agency.md)).
 
-### 9.4 Memory
+### Memory
 
 Short-term (the window), working (a scratchpad), episodic (past interactions), semantic (durable facts) and procedural (how-tos) ([06.1](07-agents-tools-memory/apply/2-memory/06.1_memory_types.md)). Write only what an extraction step judges memory-worthy ([06.2](07-agents-tools-memory/apply/2-memory/06.2_what_to_write.md)); retrieve by relevance and recency with a cap ([06.3](07-agents-tools-memory/apply/2-memory/06.3_when_to_retrieve.md)); forget with TTLs and user controls ([06.4](07-agents-tools-memory/apply/2-memory/06.4_how_to_forget.md)); supersede changed facts with `valid_from` ([06.5](07-agents-tools-memory/apply/2-memory/06.5_conflict_resolution.md)); and treat memory as data, because it is an injection surface ([06.6](07-agents-tools-memory/apply/2-memory/06.6_memory_security.md)).
 
@@ -318,7 +317,7 @@ Short-term (the window), working (a scratchpad), episodic (past interactions), s
 
 ---
 
-## 10. Stage 8: Choosing the lever
+## Stage 8: Choosing the lever
 
 **Goal:** fix the right problem with the right tool.
 
@@ -337,7 +336,7 @@ Short-term (the window), working (a scratchpad), episodic (past interactions), s
 
 ---
 
-## 11. Stage 9: Evaluation
+## Stage 9: Evaluation
 
 **Goal:** know whether a change made things better, before users tell you.
 
@@ -360,11 +359,11 @@ Evaluation is the skill that most separates AI engineers from people who call AP
 
 ---
 
-## 12. Stage 10: Production engineering
+## Stage 10: Production engineering
 
 **Goal:** ship AI features that are reliable, observable, affordable and safe, and that improve over time.
 
-### 12.1 Decide deliberately
+### Decide deliberately
 
 Use this framework for every significant decision, and leave a one-page memo behind ([Lesson 10.1](10-production/learn/01-production-mindset-and-decision-framework.md)):
 
@@ -389,11 +388,11 @@ Use this framework for every significant decision, and leave a one-page memo beh
 
 If a wrong answer can move money, change access or give regulated advice, treat it as high until someone accountable says otherwise.
 
-### 12.2 Data pipelines and MLOps
+### Data pipelines and MLOps
 
 Version datasets and RAG corpora, track experiments, and promote models, prompts and indexes through a registry with eval gates. Separate dev, staging and prod indexes; never evaluate against the prod index you are mutating ([Lesson 10.2](10-production/learn/02-data-pipelines-and-mlops.md), [environments](10-production/apply/1-serving-cost-latency/09.6_environments.md)).
 
-### 12.3 Serving
+### Serving
 
 - **Shapes:** batch, sync API, async queue, streaming. Add a worker queue when work exceeds a request timeout or needs retries and review ([Lesson 10.3](10-production/learn/03-serving-architectures.md)).
 - **Cost levers:** prompt caching, batching, routing, per-request token budgets, shorter system prompts, trimming top-k after reranking. Know your $/task and $/user/month ([09.1](10-production/apply/1-serving-cost-latency/09.1_cost_levers.md)).
@@ -402,15 +401,15 @@ Version datasets and RAG corpora, track experiments, and promote models, prompts
 - **Rollouts:** prompts, models, indexes and chunking configs are versioned artefacts. Shadow, canary or A/B; pin model versions; keep rollback one command away ([09.5](10-production/apply/1-serving-cost-latency/09.5_versioning_rollout.md)).
 - **Cloud deployment:** host the app on Fargate, run small stateless tasks on Lambda, and call the model through Bedrock ([16.1](10-production/apply/3-deployment/16.1_aws_bedrock_fargate_lambda.md)).
 
-### 12.4 GPU capacity
+### GPU capacity
 
 On GPUs the card is the unit of capacity and most clouds cannot hot-swap GPU type or count, so a resize is a controlled fleet replacement. **Exhaust software packing first, then horizontal replicas, then a bigger SKU, then tensor parallelism.** Size VRAM as weights + KV cache (context × concurrent sequences) + activations + 10–20% headroom; at production concurrency the KV cache usually dominates. Never autoscale on GPU utilisation; scale on queue depth and time-to-first-token, and keep generation pools warm. Read the playbook in [GPUResizing.md](10-production/apply/2-gpu/GPUResizing.md) and the detail in [`2-gpu/details/`](10-production/apply/2-gpu/details/).
 
-### 12.5 Monitoring, drift and cost
+### Monitoring, drift and cost
 
 Log enough to replay any request: prompt version, model, tokens, latency, cost, tool calls, retrieved chunk IDs and scores, outcome, and a trace ID ([observability](10-production/apply/4-observability-reliability/08.6_observability_tracing.md)). Monitor quality, drift, latency and cost against SLOs; route thumbs-down, empty retrieval and low-confidence traffic to human review queues; and run a weekly operating rhythm ([Lesson 10.4](10-production/learn/04-monitoring-drift-and-cost.md)).
 
-### 12.6 Safety, privacy and security
+### Safety, privacy and security
 
 Start with a threat model, then layer defences ([Lesson 10.5](10-production/learn/05-safety-privacy-and-hitl.md)):
 
@@ -418,13 +417,13 @@ Start with a threat model, then layer defences ([Lesson 10.5](10-production/lear
 - **Prompt injection:** all retrieved content, tool output and memory is data, never instructions; privileged actions sit behind a policy check the model does not control ([08.4](10-production/apply/5-guardrails/08.4_prompt_injection_defense.md)).
 - **Access and tenancy:** filter at query time with the caller's identity; isolation belongs in the index ([10.1](10-production/apply/6-security-privacy-governance/10.1_authn_authz_permission_filtered_retrieval.md)).
 - **Privacy and governance:** data residency and retention ([10.2](10-production/apply/6-security-privacy-governance/10.2_data_residency_retention.md)), PII with reversible mapping ([10.3](10-production/apply/6-security-privacy-governance/10.3_pii.md)), queryable audit trails ([10.4](10-production/apply/6-security-privacy-governance/10.4_auditability.md)), pinned and vetted dependencies and MCP servers ([10.5](10-production/apply/6-security-privacy-governance/10.5_supply_chain_hygiene.md)), and the OWASP LLM Top 10 as a checklist ([10.6](10-production/apply/6-security-privacy-governance/10.6_owasp_llm_top10.md)).
-- **HITL rate:** set it from error cost, volume and reviewer capacity (see [section 15.4](#154-starting-hitl-rates)), keep kill switches, and use an escalation ladder: auto-allow → soft flag → hard flag (HITL required) → deny and log.
+- **HITL rate:** set it from error cost, volume and reviewer capacity (see [starting HITL rates](#starting-hitl-rates)), keep kill switches, and use an escalation ladder: auto-allow → soft flag → hard flag (HITL required) → deny and log.
 
-### 12.7 Reliability and incidents
+### Reliability and incidents
 
 Timeouts on every external call, retries with exponential backoff and jitter, idempotency, circuit breakers, fallback models across providers, and graceful degradation (return the sources with "couldn't summarise" rather than a 500) ([08.7](10-production/apply/4-observability-reliability/08.7_failure_handling.md)). Write runbooks for AI-specific failures, version everything so rollback is real, and run postmortems that ask which eval would have caught the incident ([Lesson 10.6](10-production/learn/06-reliability-and-incident-response.md)).
 
-### 12.8 The data flywheel
+### The data flywheel
 
 ```text
 prod traffic → traces + feedback → weekly triage → new golden cases
@@ -437,7 +436,7 @@ Bucket failures into parse, retrieval, ranking, generation and tooling; the buck
 
 ---
 
-## 13. Stage 11: Architecture patterns
+## Stage 11: Architecture patterns
 
 Patterns compose. A multi-tenant RAG SaaS product is typically patterns 15 + 6 + 12 + 9 + 8 below. Full treatment with options, trade-offs and eval requirements in [Lesson 11.1](11-architecture-patterns/learn/01-ai-architecture-patterns-for-prod.md).
 
@@ -463,7 +462,7 @@ For the RAG and agent patterns, the field-manual counterpart is the [reference a
 
 ---
 
-## 14. Stage 12: Capstones, portfolio and interviews
+## Stage 12: Capstones, portfolio and interviews
 
 **Ship one excellent project rather than five half-finished clones.** A capstone is done when someone else can run it from the README, you report metrics on a held-out or golden set, you document failures honestly, and you can explain the architecture in five minutes without slides.
 
@@ -476,9 +475,9 @@ For the RAG and agent patterns, the field-manual counterpart is the [reference a
 
 ---
 
-## 15. Cheat sheets
+## Cheat sheets
 
-### 15.1 Decision rules worth memorising
+### Decision rules worth memorising
 
 | Situation | Rule |
 |---|---|
@@ -493,7 +492,7 @@ For the RAG and agent patterns, the field-manual counterpart is the [reference a
 | GPU capacity | Pack → replicate → bigger SKU → tensor parallel; scale on queue + TTFT |
 | Any release | Golden set gate, canary, pinned versions, one-command rollback |
 
-### 15.2 Metrics by stage
+### Metrics by stage
 
 | Stage | Metric | Why it matters |
 |---|---|---|
@@ -510,7 +509,7 @@ For the RAG and agent patterns, the field-manual counterpart is the [reference a
 
 More: [metrics cheat sheet](10-production/apply/7-metrics-failure-modes/14.1_metrics_cheat_sheet.md).
 
-### 15.3 Failure modes and fixes
+### Failure modes and fixes
 
 | Symptom | Usual cause | Fix |
 |---|---|---|
@@ -527,7 +526,7 @@ More: [metrics cheat sheet](10-production/apply/7-metrics-failure-modes/14.1_met
 
 More: [common failure modes](10-production/apply/7-metrics-failure-modes/15.1_common_failure_modes.md).
 
-### 15.4 Starting HITL rates
+### Starting HITL rates
 
 | Scenario | Starting point (calibrate) |
 |---|---|
@@ -539,39 +538,7 @@ More: [common failure modes](10-production/apply/7-metrics-failure-modes/15.1_co
 
 ---
 
-## 16. Study plans
-
-### 16.1 Full path (part-time, roughly 6–8 months)
-
-| Weeks | Focus | Material |
-|---|---|---|
-| 1–4 | Foundations | Stage 1 |
-| 5–7 | Classical ML | Stage 2 |
-| 8–11 | Deep learning | Stage 3 |
-| 12–19 | LLMs: models, prompting, RAG, tools, levers, evaluation | Stages 4–9 |
-| 20–25 | Production AI and architecture patterns | Stages 10–11 |
-| 26–31 | Capstone and portfolio | Stage 12 |
-
-### 16.2 Fast track for working software engineers (about 8 weeks)
-
-| Week | Focus |
-|---|---|
-| 1 | Checklists for Stages 1–3; patch any gaps. Read section 2 of this guide. |
-| 2 | Foundation models and prompting (stages 4–5) |
-| 3 | RAG end to end (stage 6), building a minimal Docs Q&A |
-| 4 | Golden set and eval harness for that build (stage 9) |
-| 5 | Tools and a constrained agent (stage 7); the lever decision (stage 8) |
-| 6 | Serving, cost, monitoring (stage 10.1–10.5) |
-| 7 | Safety, reliability, flywheel (stage 10.6–10.8); architecture patterns |
-| 8 | Polish the capstone; drill 10 scenario questions |
-
-### 16.3 Interview sprint (about 2 weeks)
-
-Day 1–2: sections 2, 12 and 15 of this guide. Day 3–4: [Lesson 11.1 patterns](11-architecture-patterns/learn/01-ai-architecture-patterns-for-prod.md). Day 5–12: four scenario questions a day from [Lesson 12.5](12-capstones-and-interviews/learn/05-scenario-based-prod-ai-questions.md), cross-checking answers against the field manual. Day 13–14: rehearse a five-minute walkthrough of your capstone.
-
----
-
-## 17. Master index: topic to file
+## Master index: topic to file
 
 "Learn" points to the curriculum lesson; "Apply" points to the field-manual scenarios. Each stage folder's `README.md` lists every file in it.
 

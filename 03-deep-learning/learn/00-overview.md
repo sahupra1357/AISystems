@@ -31,17 +31,6 @@ python -m pip install torch torchvision matplotlib
 
 CPU-only PyTorch is fine for learning. Follow the official **PyTorch** install guidance if you have an NVIDIA GPU and want CUDA builds.
 
-## Suggested time
-
-About **2–4 weeks** part-time:
-
-| Week | Focus |
-|------|--------|
-| 1 | Neural net basics (lesson 3.1); start PyTorch loop (lesson 3.2) |
-| 2 | Solidify training loop; debugging under/overfitting |
-| 3 | CNNs and Transformers (lesson 3.3) |
-| 4 | Exercises, checklist, Stage 3 mini-capstone |
-
 ## Order to study
 
 1. **[01-neural-net-basics.md](01-neural-net-basics.md)** — Building blocks and training intuition.

@@ -2,7 +2,7 @@
 
 Neural network basics, the PyTorch training loop, CNNs and Transformers.
 
-Summary, rules and context: [AI Engineering Guide, section 5](../AI_ENGINEERING_GUIDE.md#5-stage-3-deep-learning).
+Summary, rules and context: [AI Engineering Guide, Stage 3](../AI_ENGINEERING_GUIDE.md#stage-3-deep-learning).
 
 ## Learn
 

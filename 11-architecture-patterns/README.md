@@ -2,7 +2,7 @@
 
 Fifteen production AI patterns and the end-to-end reference architecture.
 
-Summary, rules and context: [AI Engineering Guide, section 13](../AI_ENGINEERING_GUIDE.md#13-stage-11-architecture-patterns).
+Summary, rules and context: [AI Engineering Guide, Stage 11](../AI_ENGINEERING_GUIDE.md#stage-11-architecture-patterns).
 
 ## Learn
 

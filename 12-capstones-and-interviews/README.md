@@ -2,7 +2,7 @@
 
 Portfolio capstones with build guides, and 60 scenario drills for design reviews and interviews.
 
-Summary, rules and context: [AI Engineering Guide, section 14](../AI_ENGINEERING_GUIDE.md#14-stage-12-capstones-portfolio-and-interviews).
+Summary, rules and context: [AI Engineering Guide, Stage 12](../AI_ENGINEERING_GUIDE.md#stage-12-capstones-portfolio-and-interviews).
 
 ## Learn
 

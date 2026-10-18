@@ -69,20 +69,9 @@ For every major decision in this part you will see:
 
 There is rarely one “correct” stack. There *is* a correct habit: write down options, pick with eyes open, and prove the pick with eval and human verification before you promote.
 
-## Suggested time: 4–6 weeks part-time
-
 This is deeper than a tool tour. Budget time for design writing, small prototypes, and the capstone design doc.
 
-| Week | Focus |
-|------|--------|
-| 1 | Overview + **01** Production mindset & decision framework (tradeoffs, risk tiers, worked examples) |
-| 2 | **02** Data pipelines & MLOps (versioning, features, registry, eval gates) |
-| 3 | **03** Serving architectures (batch/API/queue, caching, routing, rollouts) |
-| 4 | **04** Monitoring, drift & cost (logs, quality, SLOs, review queues) |
-| 5 | **05** Safety, privacy & HITL (PII, injection, guardrails, HITL rates) |
-| 6 | **06** Reliability & incidents + **07** Exercises, design-doc capstone, Ready-for-Stage-11 checklist |
-
-Experienced backend engineers may compress weeks 3–4; still do the decision tables and HITL plans—those catch most AI-specific production bugs. If Stages 4–9 evaluation felt thin, revisit Lesson 9.1 in parallel with week 1–2.
+Experienced backend engineers may skim serving and monitoring (lessons 03–04); still do the decision tables and HITL plans—those catch most AI-specific production bugs. If Stages 4–9 evaluation felt thin, revisit Lesson 9.1 alongside lessons 00–01.
 
 ## Order to study
 

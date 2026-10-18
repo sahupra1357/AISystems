@@ -2,7 +2,7 @@
 
 The RAG pipeline in build order: ingest, parse, chunk, embed, index, query, retrieve, rerank, generate and ground.
 
-Summary, rules and context: [AI Engineering Guide, section 8](../AI_ENGINEERING_GUIDE.md#8-stage-6-retrieval-augmented-generation).
+Summary, rules and context: [AI Engineering Guide, Stage 6](../AI_ENGINEERING_GUIDE.md#stage-6-retrieval-augmented-generation).
 
 ## Learn
 
