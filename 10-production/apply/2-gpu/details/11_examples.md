@@ -1,4 +1,4 @@
-# 11 — Examples (sizing, axis choice, K8s)
+# — Examples (sizing, axis choice, K8s)
 
 Back to [GPUResizing.md](../GPUResizing.md). Playbook: [10_cutover_playbook.md](10_cutover_playbook.md).
 

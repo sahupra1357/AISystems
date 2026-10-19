@@ -4,11 +4,11 @@ A start-to-end walk, roughly in the order a system actually gets built: **ingest
 
 ---
 
-## 0. Ingestion & Parsing
+## Ingestion & Parsing
 
 The single highest-leverage stage. Garbage parsing caps the quality of everything downstream — no reranker or bigger model recovers a table that was flattened into word soup.
 
-### 0.1 Source ingestion (before the parser)
+### Source ingestion (before the parser)
 - **Connectors** — S3/GCS, SharePoint, Confluence, Gmail, Drive, DBs, web crawl. Each needs auth, pagination, and rate-limit handling.
 - **Change detection** — Store a content hash (SHA-256 of raw bytes) + source `etag`/`modified_at`. Only re-parse and re-embed what changed; full re-index of a corpus is the most common avoidable cost.
 
@@ -30,7 +30,7 @@ The single highest-leverage stage. Garbage parsing caps the quality of everythin
 - **Document versioning** — Keep `doc_id + version`, soft-delete old chunks. Users ask "what does the *current* policy say" — stale chunks answering confidently is a classic prod incident.
 - **Tenant / ACL capture at ingest** — Record `tenant_id`, `owner`, `visibility`, `source_permissions` on every chunk *at ingest time*. Retrofitting access control onto an existing index is painful and usually leaks.
 
-### 0.2 OCR / digitization
+### OCR / digitization
 Inspect and classify each page, then route to the right parser:
 - **Digital document** → Docling (native text layer, preserves structure)
 - **Scanned page** → PaddleOCR
@@ -40,14 +40,14 @@ Inspect and classify each page, then route to the right parser:
 
 **Why route per page, not per document:** a 200-page PDF is usually mixed — a digital body with scanned appendices. Per-page routing gets you the fast path where possible and the accurate path where necessary.
 
-### 0.3 Structure extraction (what the parser must preserve)
+### Structure extraction (what the parser must preserve)
 - **Reading order** — Multi-column pages read out of order destroy sentence continuity.
 - **Tables** — Emit as HTML or Markdown, not flattened text. A flattened table loses row/column association, which is exactly the relationship the question is about.
 - **Headings hierarchy** — Becomes chunk metadata and the breadcrumb prepended to each chunk.
 - **Page numbers + bounding boxes** — The basis for citations that link to a highlighted region, which is what makes the answer verifiable.
 - **Headers/footers/boilerplate stripping** — Repeated legal footers dominate embeddings and inflate token cost.
 
-### 0.4 Validation
+### Validation
 **Test-time, against a golden sample:**
 - Character error rate (CER), word error rate (WER)
 - Field-level precision, recall, F1
@@ -60,7 +60,7 @@ Inspect and classify each page, then route to the right parser:
 - Is it internally consistent? (`reading_order`, `element_ids`, `coordinates`, `table_structure`)
 - Did the parser self-report adequate confidence? (`confidence`)
 
-### 0.5 Retry ladder
+### Retry ladder
 ```
 Primary parser → quality checks
   ├── passed → continue
@@ -71,7 +71,7 @@ Primary parser → quality checks
 
 ---
 
-## 1. Foundations
+## Foundations
 
 - **Model selection & tradeoffs** — Pick by capability / cost / latency / context window. Small models with good prompts and good retrieval routinely beat large models with bad context. Practical split:
     - Cheap, fast model → classification, routing, extraction, reranking-lite, query rewriting
@@ -86,7 +86,7 @@ Primary parser → quality checks
 
 ---
 
-## 2. Prompt engineering
+## Prompt engineering
 
 - **Prompt structure** — System/role → task → constraints → examples (few-shot) → output format, in that order.
     - Put **stable content first** so the prompt-cache prefix hits (large static system prompts + tool defs are the win).
@@ -99,7 +99,7 @@ Primary parser → quality checks
 
 ---
 
-## 3. Context engineering
+## Context engineering
 
 - **Definition** — Managing *everything* in the window: instructions, retrieved docs, tool results, memory, conversation history. The goal is the right information, in the right position, with minimal noise.
 - **Tactics**
@@ -112,9 +112,9 @@ Primary parser → quality checks
 
 ---
 
-## 4. Retrieval / RAG pipeline
+## Retrieval / RAG pipeline
 
-### 4.1 Chunking
+### Chunking
 - **Fixed-size + overlap** — Baseline. Simple, breaks semantics mid-sentence.
 - **Recursive character splitting** — Split on paragraph → sentence → word boundaries in order. Good default.
 - **Layout/structure-aware** — Split on headings, sections, table boundaries. Best when the parser preserved structure.
@@ -124,18 +124,18 @@ Primary parser → quality checks
 - **Late chunking** — Embed the whole document with a long-context embedder, then pool per chunk, so each chunk vector carries document-level context.
 - **Metadata on every chunk** — `doc_id`, `title`, breadcrumb, page, section, dates, tenant, ACL, source URL. Metadata is what makes filtering and citation possible.
 
-### 4.2 Embeddings
+### Embeddings
 - **Model choice** — Match domain and language; check MTEB but validate on *your* golden set. Dimension size trades recall against index size and latency; Matryoshka embeddings let you truncate dimensions on the fly.
 - **Symmetric vs asymmetric** — Query and document may need different prefixes/instructions (`query: …` / `passage: …`); getting this wrong quietly costs recall.
 - **Fine-tuning embeddings** — Train on (query, positive, hard-negative) triplets from your own logs. Usually a bigger win than swapping the LLM.
 - **Versioning** — An embedding-model change requires a full re-index. Store `embedding_model_version` per chunk and support dual-index during migration.
 
-### 4.3 Indexing & vector stores
+### Indexing & vector stores
 - **Index types** — Flat (exact, small corpora), **HNSW** (fast, memory-hungry, the default), IVF-PQ / quantized (large corpora, memory-constrained). Tune `ef_search`/`nprobe` for the recall-vs-latency curve.
 - **Store choice** — pgvector (already have Postgres, need joins + transactional ACLs), Qdrant/Weaviate/Milvus (scale + filtering), Pinecone/Turbopuffer (managed), Elasticsearch/OpenSearch (you also need BM25 and aggregations).
 - **Filtered search** — Pre-filter vs post-filter matters: post-filtering a top-100 by tenant can return zero rows. Prefer stores with native filtered-ANN.
 
-### 4.4 Query understanding
+### Query understanding
 - **Query rewriting** — Resolve pronouns and coreference from chat history ("what about *its* renewal term?" → "what is the renewal term of the Acme MSA?"). Without this, multi-turn RAG falls apart at turn 3.
 - **Multi-query / fusion** — Generate 3–5 paraphrases, retrieve for each, merge with Reciprocal Rank Fusion. Cheap recall boost.
 - **HyDE** — Generate a hypothetical answer, embed *that*, and search with it. Helps when queries are short and documents are verbose.
@@ -143,14 +143,14 @@ Primary parser → quality checks
 - **Self-query / metadata extraction** — Pull filters out of natural language ("contracts signed after 2023" → `signed_date > 2023-01-01`) and apply them as hard filters.
 - **Routing** — Decide per query: vector search, SQL/text2SQL, graph, web, or answer directly with no retrieval. Not every question needs the index.
 
-### 4.5 Retrieval & ranking
+### Retrieval & ranking
 - **Hybrid search** — BM25 (exact terms, IDs, names, codes) + dense vectors (paraphrase, concept), fused with RRF or weighted scores. Hybrid beats either alone on virtually every real corpus, because part numbers and proper nouns are where dense retrieval fails.
 - **Reranking** — A cross-encoder (Cohere Rerank, BGE-reranker) or ColBERT late-interaction model scores query×chunk jointly. Retrieve top-50 cheaply, rerank to top-5. Typically the largest single quality jump in a RAG pipeline.
 - **MMR / diversity** — Penalize near-duplicate chunks so top-k covers more ground instead of restating one paragraph.
 - **Score thresholding & abstention** — If the best score is below a floor, return "I don't have that" instead of forcing an answer from irrelevant text. Tune the threshold on the golden set.
 - **Recursive / agentic retrieval** — Let the model issue follow-up searches after seeing the first results; bounded by a max-hop count.
 
-### 4.6 Advanced RAG patterns
+### Advanced RAG patterns
 - **Agentic RAG** — Retrieval is a *tool* the agent calls repeatedly with refined queries, rather than a fixed prefetch step.
 - **Corrective RAG (CRAG)** — Grade retrieved docs for relevance; if they fail, rewrite the query or fall back to web search before generating.
 - **Self-RAG** — Model emits reflection tokens deciding *whether* to retrieve and whether its own output is supported.
@@ -158,7 +158,7 @@ Primary parser → quality checks
 - **Multimodal RAG** — Index page images with a vision embedder (ColPali-style) or index VLM-generated descriptions; essential for slide decks, charts, and scanned forms.
 - **Structured + unstructured hybrid** — Route numeric/aggregate questions to SQL over a warehouse and narrative questions to vector search; many "RAG failures" are actually analytics questions.
 
-### 4.7 Generation & grounding
+### Generation & grounding
 - **Grounded prompting** — "Answer only from the context; if it isn't there, say so." Then *verify* rather than trust.
 - **Citations** — Require span-level or chunk-level citations in the output schema and validate that every cited ID exists. Unverifiable citations are worse than none.
 - **Faithfulness check** — A cheap second pass (NLI model or small LLM) asking "is each claim entailed by the retrieved context?" Catches hallucination before the user sees it.
@@ -167,7 +167,7 @@ Primary parser → quality checks
 
 ---
 
-## 5. Agents
+## Agents
 
 - **Single agent loop** — LLM → decide tool → execute → observe → repeat until done. Key design points: **termination condition**, max iterations, per-step timeout, and error handling that feeds the error text back to the model instead of crashing.
 - **Task decomposition ("define down")** — The orchestrator breaks a goal into subtasks with explicit contracts (input/output schema, success criteria) *before* dispatching. Bad decomposition cannot be rescued by good subagents.
@@ -184,7 +184,7 @@ Primary parser → quality checks
 
 ---
 
-## 6. Memory
+## Memory
 
 - **Types**
     - **Short-term** — the context window itself.
@@ -202,7 +202,7 @@ Primary parser → quality checks
 
 ---
 
-## 7. Evaluation
+## Evaluation
 
 - **Golden dataset first** — 50–200 real, hand-labeled cases beat any generic benchmark. Grow it from production failures; every incident becomes a test case.
 - **Prompt evaluation** — Run variants against the golden set and score. Metrics: exact match, rubric scores, task success rate. Track regressions per prompt version.
@@ -217,7 +217,7 @@ Primary parser → quality checks
 
 ---
 
-## 8. Testing & reliability
+## Testing & reliability
 
 - **Testing pyramid**
     - Unit tests for tools and parsers (deterministic).
@@ -238,7 +238,7 @@ Primary parser → quality checks
 
 ---
 
-## 9. Production, cost & latency
+## Production, cost & latency
 
 - **Cost levers** — Prompt caching (biggest single win for long static prefixes), batching for offline work, model routing, token budgets per request, shortening system prompts, trimming top-k after reranking. **Know your $/task number** and your $/user/month.
 - **Latency levers** — Streaming (perceived latency is what users judge), semantic caching of near-identical queries, parallel retrieval + tool calls, speculative/prefetch retrieval while the user types, smaller models on the critical path, and moving reranking to a hosted low-latency endpoint.
@@ -249,7 +249,7 @@ Primary parser → quality checks
 
 ---
 
-## 10. Security, privacy & governance
+## Security, privacy & governance
 
 - **Authentication & authorization** — Retrieval must be permission-filtered *at query time* with the caller's identity, not filtered after generation. Multi-tenant isolation belongs in the index (tenant-scoped namespaces or mandatory filters), not in prompt instructions.
 - **Data residency & retention** — Where embeddings live, how long logs keep prompts, whether provider training is disabled (zero-retention endpoints), and per-region routing.
@@ -260,7 +260,7 @@ Primary parser → quality checks
 
 ---
 
-## 11. Fine-tuning (when you get there)
+## Fine-tuning (when you get there)
 
 - **SFT** — Supervised fine-tuning on (input, ideal output) pairs. Needs a few hundred to a few thousand high-quality examples; data quality dominates quantity.
 - **PEFT / LoRA / QLoRA** — Train low-rank adapters instead of full weights: cheap, fast, swappable per domain, and the default for most teams.
@@ -271,7 +271,7 @@ Primary parser → quality checks
 
 ---
 
-## 12. Data flywheel
+## Data flywheel
 
 The compounding loop that separates systems that improve from systems that plateau:
 
@@ -286,7 +286,7 @@ prod traffic → traces + user feedback → triage failures
 
 ---
 
-## 13. Reference architecture (end to end)
+## Reference architecture (end to end)
 
 ```
                           ┌──────────── Offline / batch ────────────┐
@@ -320,7 +320,7 @@ prod traffic → traces + user feedback → triage failures
 
 ---
 
-## 14. Metrics cheat sheet
+## Metrics cheat sheet
 
 | Stage | Metric | Why it matters |
 |---|---|---|
@@ -336,7 +336,7 @@ prod traffic → traces + user feedback → triage failures
 
 ---
 
-## 15. Common failure modes (and the fix)
+## Common failure modes (and the fix)
 
 | Symptom | Usual cause | Fix |
 |---|---|---|

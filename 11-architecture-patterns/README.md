@@ -14,7 +14,7 @@ Curriculum lessons, in reading order.
 
 Field-manual scenarios: implementation steps, an example, trade-offs, production notes, a checklist and metrics.
 
-- [13.1 Reference architecture (end to end)](apply/13.1_reference_architecture.md)
+- [Reference architecture (end to end)](apply/reference_architecture.md)
 
 ---
 

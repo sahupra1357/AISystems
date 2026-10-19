@@ -1,4 +1,4 @@
-# 08 — Serving knobs that must change with the GPU
+# — Serving knobs that must change with the GPU
 
 Back to [GPUResizing.md](../GPUResizing.md).
 

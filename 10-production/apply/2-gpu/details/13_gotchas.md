@@ -1,4 +1,4 @@
-# 13 — Finer details that bite in production
+# — Finer details that bite in production
 
 Back to [GPUResizing.md](../GPUResizing.md). Related knobs: [08_serving_knobs.md](08_serving_knobs.md).
 

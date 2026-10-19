@@ -15,9 +15,9 @@ Curriculum lessons, in reading order.
 
 Field-manual scenarios: implementation steps, an example, trade-offs, production notes, a checklist and metrics.
 
-- [1.1 Foundations → Model selection & tradeoffs](apply/01.1_model_selection.md)
-- [1.2 Foundations → Routing & escalation (cheap model first)](apply/01.2_routing_escalation.md)
-- [1.4 Foundations → Build vs buy (managed retrieval vs owning the pipeline)](apply/01.4_build_vs_buy.md)
+- [Foundations → Model selection & tradeoffs](apply/model_selection.md)
+- [Foundations → Routing & escalation (cheap model first)](apply/routing_escalation.md)
+- [Foundations → Build vs buy (managed retrieval vs owning the pipeline)](apply/build_vs_buy.md)
 
 ---
 

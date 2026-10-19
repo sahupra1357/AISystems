@@ -1,4 +1,4 @@
-# 06 — Considerations behind every resize
+# — Considerations behind every resize
 
 Back to [GPUResizing.md](../GPUResizing.md).
 
