@@ -1,4 +1,4 @@
-# 10 — Production cutover playbook
+# — Production cutover playbook
 
 Back to [GPUResizing.md](../GPUResizing.md). Code: [11_examples.md](11_examples.md).
 

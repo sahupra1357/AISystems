@@ -1,4 +1,4 @@
-# 05 — Workload pools: never resize one fleet
+# — Workload pools: never resize one fleet
 
 Back to [GPUResizing.md](../GPUResizing.md).
 

@@ -1,4 +1,4 @@
-# 03 — Four axes: S, H, V, W
+# — Four axes: S, H, V, W
 
 Back to [GPUResizing.md](../GPUResizing.md).
 

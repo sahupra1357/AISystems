@@ -1,4 +1,4 @@
-# 01 — Mental model: what GPU resize actually is
+# — Mental model: what GPU resize actually is
 
 Back to [GPUResizing.md](../GPUResizing.md).
 

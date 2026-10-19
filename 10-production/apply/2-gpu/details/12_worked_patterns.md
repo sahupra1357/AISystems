@@ -1,4 +1,4 @@
-# 12 — Worked patterns for a prod AI app
+# — Worked patterns for a prod AI app
 
 Back to [GPUResizing.md](../GPUResizing.md).
 

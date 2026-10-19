@@ -1,4 +1,4 @@
-# 04 — Three resources and the sizing math
+# — Three resources and the sizing math
 
 Back to [GPUResizing.md](../GPUResizing.md).
 

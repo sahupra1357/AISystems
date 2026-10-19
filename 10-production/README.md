@@ -23,12 +23,12 @@ Field-manual scenarios: implementation steps, an example, trade-offs, production
 
 **1-serving-cost-latency/**
 
-- [9.1 Production → Cost levers](apply/1-serving-cost-latency/09.1_cost_levers.md)
-- [9.2 Production → Latency levers](apply/1-serving-cost-latency/09.2_latency_levers.md)
-- [9.3 Production → Self-hosted serving (vLLM/TGI, quantisation, GPU sizing)](apply/1-serving-cost-latency/09.3_self_hosted_serving.md)
-- [9.4 Production → Capacity & limits](apply/1-serving-cost-latency/09.4_capacity_limits.md)
-- [9.5 Production → Versioning & rollout](apply/1-serving-cost-latency/09.5_versioning_rollout.md)
-- [9.6 Production → Environments](apply/1-serving-cost-latency/09.6_environments.md)
+- [Production → Cost levers](apply/1-serving-cost-latency/cost_levers.md)
+- [Production → Latency levers](apply/1-serving-cost-latency/latency_levers.md)
+- [Production → Self-hosted serving (vLLM/TGI, quantisation, GPU sizing)](apply/1-serving-cost-latency/self_hosted_serving.md)
+- [Production → Capacity & limits](apply/1-serving-cost-latency/capacity_limits.md)
+- [Production → Versioning & rollout](apply/1-serving-cost-latency/versioning_rollout.md)
+- [Production → Environments](apply/1-serving-cost-latency/environments.md)
 
 **2-gpu/**
 
@@ -53,38 +53,38 @@ Field-manual scenarios: implementation steps, an example, trade-offs, production
 
 **3-deployment/**
 
-- [16.1 Deployment → AWS: Fargate, Lambda, Bedrock](apply/3-deployment/16.1_aws_bedrock_fargate_lambda.md)
+- [Deployment → AWS: Fargate, Lambda, Bedrock](apply/3-deployment/aws_bedrock_fargate_lambda.md)
 
 **4-observability-reliability/**
 
-- [8.6 Testing & reliability → Observability & tracing](apply/4-observability-reliability/08.6_observability_tracing.md)
-- [8.7 Testing & reliability → Failure handling](apply/4-observability-reliability/08.7_failure_handling.md)
+- [Testing & reliability → Observability & tracing](apply/4-observability-reliability/observability_tracing.md)
+- [Testing & reliability → Failure handling](apply/4-observability-reliability/failure_handling.md)
 
 **5-guardrails/**
 
-- [8.2 Testing & reliability → Input guardrails](apply/5-guardrails/08.2_input_guardrails.md)
-- [8.3 Testing & reliability → Output guardrails](apply/5-guardrails/08.3_output_guardrails.md)
-- [8.4 Testing & reliability → Prompt-injection defence](apply/5-guardrails/08.4_prompt_injection_defense.md)
-- [8.5 Testing & reliability → Excessive agency (least privilege)](apply/5-guardrails/08.5_excessive_agency.md)
+- [Testing & reliability → Input guardrails](apply/5-guardrails/input_guardrails.md)
+- [Testing & reliability → Output guardrails](apply/5-guardrails/output_guardrails.md)
+- [Testing & reliability → Prompt-injection defence](apply/5-guardrails/prompt_injection_defense.md)
+- [Testing & reliability → Excessive agency (least privilege)](apply/5-guardrails/excessive_agency.md)
 
 **6-security-privacy-governance/**
 
-- [10.1 Security → Authentication & authorization (permission-filtered retrieval)](apply/6-security-privacy-governance/10.1_authn_authz_permission_filtered_retrieval.md)
-- [10.2 Security → Data residency & retention](apply/6-security-privacy-governance/10.2_data_residency_retention.md)
-- [10.3 Security → PII (detect, mask, reversible mapping)](apply/6-security-privacy-governance/10.3_pii.md)
-- [10.4 Security → Auditability](apply/6-security-privacy-governance/10.4_auditability.md)
-- [10.5 Security → Model & supply-chain hygiene](apply/6-security-privacy-governance/10.5_supply_chain_hygiene.md)
-- [10.6 Security → Threat checklist (OWASP LLM Top 10)](apply/6-security-privacy-governance/10.6_owasp_llm_top10.md)
+- [Security → Authentication & authorization (permission-filtered retrieval)](apply/6-security-privacy-governance/authn_authz_permission_filtered_retrieval.md)
+- [Security → Data residency & retention](apply/6-security-privacy-governance/data_residency_retention.md)
+- [Security → PII (detect, mask, reversible mapping)](apply/6-security-privacy-governance/pii.md)
+- [Security → Auditability](apply/6-security-privacy-governance/auditability.md)
+- [Security → Model & supply-chain hygiene](apply/6-security-privacy-governance/supply_chain_hygiene.md)
+- [Security → Threat checklist (OWASP LLM Top 10)](apply/6-security-privacy-governance/owasp_llm_top10.md)
 
 **7-metrics-failure-modes/**
 
-- [14.1 Metrics cheat sheet](apply/7-metrics-failure-modes/14.1_metrics_cheat_sheet.md)
-- [15.1 Common failure modes (and the fix)](apply/7-metrics-failure-modes/15.1_common_failure_modes.md)
+- [Metrics cheat sheet](apply/7-metrics-failure-modes/metrics_cheat_sheet.md)
+- [Common failure modes (and the fix)](apply/7-metrics-failure-modes/common_failure_modes.md)
 
 **8-data-flywheel/**
 
-- [12.1 Data flywheel → The compounding loop](apply/8-data-flywheel/12.1_data_flywheel.md)
-- [12.2 Data flywheel → Feedback capture & triage](apply/8-data-flywheel/12.2_feedback_capture_triage.md)
+- [Data flywheel → The compounding loop](apply/8-data-flywheel/data_flywheel.md)
+- [Data flywheel → Feedback capture & triage](apply/8-data-flywheel/feedback_capture_triage.md)
 
 ---
 

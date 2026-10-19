@@ -1,4 +1,4 @@
-# 07 — Cloud and Kubernetes mechanics
+# — Cloud and Kubernetes mechanics
 
 Back to [GPUResizing.md](../GPUResizing.md).
 

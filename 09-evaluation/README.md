@@ -15,16 +15,16 @@ Curriculum lessons, in reading order.
 
 Field-manual scenarios: implementation steps, an example, trade-offs, production notes, a checklist and metrics.
 
-- [7.1 Evaluation → Golden dataset first](apply/07.1_golden_dataset.md)
-- [7.2 Evaluation → Prompt evaluation](apply/07.2_prompt_evaluation.md)
-- [7.3 Evaluation → LLM-as-judge](apply/07.3_llm_as_judge.md)
-- [7.4 Evaluation → Retrieval evals (recall@k, precision@k, MRR, nDCG)](apply/07.4_retrieval_evals.md)
-- [7.5 Evaluation → Generation evals (faithfulness, relevance, citation accuracy)](apply/07.5_generation_evals.md)
-- [7.6 Evaluation → Agent evals (trajectory, cost, task success)](apply/07.6_agent_evals.md)
-- [7.7 Evaluation → Component vs end-to-end](apply/07.7_component_vs_end_to_end.md)
-- [7.8 Evaluation → Statistical hygiene](apply/07.8_statistical_hygiene.md)
-- [7.9 Evaluation → Online eval (production signals)](apply/07.9_online_eval.md)
-- [8.1 Testing & reliability → The testing pyramid](apply/08.1_testing_pyramid.md)
+- [Evaluation → Golden dataset first](apply/golden_dataset.md)
+- [Evaluation → Prompt evaluation](apply/prompt_evaluation.md)
+- [Evaluation → LLM-as-judge](apply/llm_as_judge.md)
+- [Evaluation → Retrieval evals (recall@k, precision@k, MRR, nDCG)](apply/retrieval_evals.md)
+- [Evaluation → Generation evals (faithfulness, relevance, citation accuracy)](apply/generation_evals.md)
+- [Evaluation → Agent evals (trajectory, cost, task success)](apply/agent_evals.md)
+- [Evaluation → Component vs end-to-end](apply/component_vs_end_to_end.md)
+- [Evaluation → Statistical hygiene](apply/statistical_hygiene.md)
+- [Evaluation → Online eval (production signals)](apply/online_eval.md)
+- [Testing & reliability → The testing pyramid](apply/testing_pyramid.md)
 
 ---
 

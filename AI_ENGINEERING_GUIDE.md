@@ -15,7 +15,7 @@ Every stage folder has the same three parts:
 
 - **`README.md`** lists everything in the stage, in reading order.
 - **`learn/`** holds the *curriculum*: lessons, exercises and checklists that explain **why** things work and build habits. Lessons are numbered by stage, so Lesson 6.1 is the first lesson in stage 6 and lives in `06-rag/learn/01-rag-deep-dive.md`. Each stage that has an overview starts with `00-overview.md`; the overview in stage 4 covers stages 4 to 9, and the one in stage 10 covers the production lessons.
-- **`apply/`** holds the *field manual*: one file per production scenario, each with implementation steps, an example, trade-offs, scale notes, a checklist and metrics. It tells you **what to do** when you are building. File numbers such as `04.1.5` match the section numbers in [`AI_System.md`](AI_System.md), the one-page version of the whole field manual, which stays at the root.
+- **`apply/`** holds the *field manual*: one file per production scenario, each with implementation steps, an example, trade-offs, scale notes, a checklist and metrics. It tells you **what to do** when you are building. [`AI_System.md`](AI_System.md), at the root, is the one-page version of the whole field manual.
 
 Stages 1 to 3 are curriculum only.
 
@@ -85,7 +85,7 @@ The model is one box. Quality comes from what you put around it: the data it rea
 Data & labels → Train / adapt → Serve → Observe → Improve (eval gates + HITL) → back to data
 ```
 
-A model that works in a notebook is not a product. You need versioned data, rollbackable releases, monitors for silent failure, explainable cost, safety controls, and explicit decisions about when humans review. Sources: [Stage 10 overview](10-production/learn/00-overview.md), [data flywheel](10-production/apply/8-data-flywheel/12.1_data_flywheel.md).
+A model that works in a notebook is not a product. You need versioned data, rollbackable releases, monitors for silent failure, explainable cost, safety controls, and explicit decisions about when humans review. Sources: [Stage 10 overview](10-production/learn/00-overview.md), [data flywheel](10-production/apply/8-data-flywheel/data_flywheel.md).
 
 ### The end-to-end reference architecture
 
@@ -100,7 +100,7 @@ ONLINE    user → authn/z → input guardrails → query understanding (rewrite
           → traces, cost, feedback → eval set → flywheel
 ```
 
-Sections 6 to 12 of this guide walk this diagram left to right. Sources: [AI_System.md §13](AI_System.md#13-reference-architecture-end-to-end), [reference architecture](11-architecture-patterns/apply/13.1_reference_architecture.md).
+Stages 4 to 10 below walk this diagram left to right. Sources: [AI_System.md reference architecture](AI_System.md#reference-architecture-end-to-end), [reference architecture](11-architecture-patterns/apply/reference_architecture.md).
 
 ---
 
@@ -182,12 +182,12 @@ Sections 6 to 12 of this guide walk this diagram left to right. Sources: [AI_Sys
 - **Decoding knobs.** Temperature and top-p trade determinism for diversity. Use temperature 0 for extraction, classification and evals.
 - **Failure modes to expect:** hallucination, format drift, instruction-following lapses, sensitivity to prompt wording, stale knowledge, and confident wrong answers.
 
-**Choosing models** ([model selection](04-llm-foundations/apply/01.1_model_selection.md), [routing and escalation](04-llm-foundations/apply/01.2_routing_escalation.md))
+**Choosing models** ([model selection](04-llm-foundations/apply/model_selection.md), [routing and escalation](04-llm-foundations/apply/routing_escalation.md))
 
 - Pick by capability, cost, latency and context window. Small models with good prompts and good retrieval routinely beat large models with bad context.
 - A cheap fast model handles classification, routing, extraction, query rewriting and light reranking. A reasoning model handles final answers, planning and critique.
 - Route cheap-first and escalate on low confidence. If more than about 40% of traffic escalates, the router is not earning its complexity.
-- **Build versus buy:** managed retrieval gets a demo in a day; you own the pipeline once you need custom chunking, reranking or ACLs ([build vs buy](04-llm-foundations/apply/01.4_build_vs_buy.md)).
+- **Build versus buy:** managed retrieval gets a demo in a day; you own the pipeline once you need custom chunking, reranking or ACLs ([build vs buy](04-llm-foundations/apply/build_vs_buy.md)).
 
 **Learn:** [foundation models basics](04-llm-foundations/learn/01-foundation-models-basics.md) (includes a worked cost estimate for a naive support bot and a "the model is being weird" debugging playbook)
 
@@ -199,23 +199,23 @@ Sections 6 to 12 of this guide walk this diagram left to right. Sources: [AI_Sys
 
 ### Prompt engineering
 
-- **Structure:** system/role → task → constraints → examples → output format. Put **stable content first** so the prompt-cache prefix hits ([prompt structure](05-prompt-and-context-engineering/apply/1-prompt-engineering/02.1_prompt_structure.md)).
-- **Delimit data from instructions.** Retrieved text, user uploads and tool output go inside clearly marked blocks the instructions say to treat as data ([delimiters](05-prompt-and-context-engineering/apply/1-prompt-engineering/02.2_delimiters_data_vs_instructions.md)).
-- **Techniques:** zero/few-shot ([02.3](05-prompt-and-context-engineering/apply/1-prompt-engineering/02.3_zero_few_shot.md)), chain-of-thought when reasoning pays and not for extraction ([02.4](05-prompt-and-context-engineering/apply/1-prompt-engineering/02.4_chain_of_thought.md)), self-consistency ([02.5](05-prompt-and-context-engineering/apply/1-prompt-engineering/02.5_self_consistency.md)), decomposition, negative examples and prefill ([02.6](05-prompt-and-context-engineering/apply/1-prompt-engineering/02.6_decomposition_negative_examples_prefill.md)).
-- **Dynamic few-shot:** retrieve the k most similar solved cases. It is a mini-RAG and beats static examples on domain tasks ([02.7](05-prompt-and-context-engineering/apply/1-prompt-engineering/02.7_dynamic_few_shot_selection.md)).
-- **Structured outputs:** JSON schema, function calling, and validate-then-retry with the error fed back. Track schema violations as a metric ([02.8](05-prompt-and-context-engineering/apply/1-prompt-engineering/02.8_structured_outputs_tool_use.md)).
-- **Prompts are code:** version them, diff them, run the eval suite on every change, and log the prompt version with every call ([02.9](05-prompt-and-context-engineering/apply/1-prompt-engineering/02.9_prompt_versioning_evaluation.md)).
+- **Structure:** system/role → task → constraints → examples → output format. Put **stable content first** so the prompt-cache prefix hits ([prompt structure](05-prompt-and-context-engineering/apply/1-prompt-engineering/prompt_structure.md)).
+- **Delimit data from instructions.** Retrieved text, user uploads and tool output go inside clearly marked blocks the instructions say to treat as data ([delimiters](05-prompt-and-context-engineering/apply/1-prompt-engineering/delimiters_data_vs_instructions.md)).
+- **Techniques:** zero/few-shot ([Zero-shot and few-shot prompting](05-prompt-and-context-engineering/apply/1-prompt-engineering/zero_few_shot.md)), chain-of-thought when reasoning pays and not for extraction ([Chain-of-thought](05-prompt-and-context-engineering/apply/1-prompt-engineering/chain_of_thought.md)), self-consistency ([Self-consistency](05-prompt-and-context-engineering/apply/1-prompt-engineering/self_consistency.md)), decomposition, negative examples and prefill ([Decomposition, negative examples, and prefilling](05-prompt-and-context-engineering/apply/1-prompt-engineering/decomposition_negative_examples_prefill.md)).
+- **Dynamic few-shot:** retrieve the k most similar solved cases. It is a mini-RAG and beats static examples on domain tasks ([Dynamic few-shot selection](05-prompt-and-context-engineering/apply/1-prompt-engineering/dynamic_few_shot_selection.md)).
+- **Structured outputs:** JSON schema, function calling, and validate-then-retry with the error fed back. Track schema violations as a metric ([Structured outputs & tool use](05-prompt-and-context-engineering/apply/1-prompt-engineering/structured_outputs_tool_use.md)).
+- **Prompts are code:** version them, diff them, run the eval suite on every change, and log the prompt version with every call ([Prompt versioning & evaluation](05-prompt-and-context-engineering/apply/1-prompt-engineering/prompt_versioning_evaluation.md)).
 
 ### Context engineering
 
-Context engineering manages *everything* in the window: instructions, retrieved documents, tool results, memory and history. The goal is the right information, in the right position, with minimal noise ([what it is](05-prompt-and-context-engineering/apply/2-context-engineering/03.1_what_is_context_engineering.md)).
+Context engineering manages *everything* in the window: instructions, retrieved documents, tool results, memory and history. The goal is the right information, in the right position, with minimal noise ([what it is](05-prompt-and-context-engineering/apply/2-context-engineering/what_is_context_engineering.md)).
 
-- Keep a rolling summary plus the last N turns verbatim ([compaction](05-prompt-and-context-engineering/apply/2-context-engineering/03.2_compaction_summarization.md)).
-- Put the most relevant chunk first or last, never buried in the middle ([lost in the middle](05-prompt-and-context-engineering/apply/2-context-engineering/03.3_lost_in_the_middle.md)).
-- Cap tokens per source so one verbose tool result cannot crowd out the rest ([budgets](05-prompt-and-context-engineering/apply/2-context-engineering/03.4_per_source_truncation_budgets.md)).
-- Cache static prefixes; often the single biggest cost lever in a chat product ([prompt caching](05-prompt-and-context-engineering/apply/2-context-engineering/03.5_prompt_caching.md)).
-- Give subagents their own window instead of appending to the orchestrator's ([isolation](05-prompt-and-context-engineering/apply/2-context-engineering/03.6_context_isolation.md)).
-- Name the failure modes: poisoning, distraction, confusion and clash ([failure modes](05-prompt-and-context-engineering/apply/2-context-engineering/03.7_context_failure_modes.md)).
+- Keep a rolling summary plus the last N turns verbatim ([compaction](05-prompt-and-context-engineering/apply/2-context-engineering/compaction_summarization.md)).
+- Put the most relevant chunk first or last, never buried in the middle ([lost in the middle](05-prompt-and-context-engineering/apply/2-context-engineering/lost_in_the_middle.md)).
+- Cap tokens per source so one verbose tool result cannot crowd out the rest ([budgets](05-prompt-and-context-engineering/apply/2-context-engineering/per_source_truncation_budgets.md)).
+- Cache static prefixes; often the single biggest cost lever in a chat product ([prompt caching](05-prompt-and-context-engineering/apply/2-context-engineering/prompt_caching.md)).
+- Give subagents their own window instead of appending to the orchestrator's ([isolation](05-prompt-and-context-engineering/apply/2-context-engineering/context_isolation.md)).
+- Name the failure modes: poisoning, distraction, confusion and clash ([failure modes](05-prompt-and-context-engineering/apply/2-context-engineering/context_failure_modes.md)).
 
 **Learn:** [prompting deep dive](05-prompt-and-context-engineering/learn/01-prompting-deep-dive.md) (anatomy, roles, styles, task playbooks, parameters, iteration method, anti-patterns, and a worked case from playground to template).
 
@@ -231,47 +231,47 @@ RAG is a pipeline, and quality is capped by its weakest stage. Work through it i
 
 Garbage parsing caps everything downstream. No reranker recovers a table flattened into word soup.
 
-- **Ingest:** connectors with auth, pagination and rate limits ([00.1.1](06-rag/apply/1-ingestion-parsing/00.1.1_connectors.md)); change detection with a size/mtime then SHA-256 ladder so you only re-embed what changed ([00.1.2](06-rag/apply/1-ingestion-parsing/00.1.2_change_detection.md)); exact and near-duplicate removal ([00.1.3](06-rag/apply/1-ingestion-parsing/00.1.3_deduplication.md)); `doc_id + version` with soft-deleted stale chunks ([00.1.4](06-rag/apply/1-ingestion-parsing/00.1.4_document_versioning.md)); tenant and ACL captured at ingest, never retrofitted ([00.1.5](06-rag/apply/1-ingestion-parsing/00.1.5_tenant_acl_capture_at_ingest.md)).
-- **Route per page, not per document** ([00.2.0](06-rag/apply/1-ingestion-parsing/00.2.0_per_page_routing.md)): digital pages to a native text-layer parser ([00.2.1](06-rag/apply/1-ingestion-parsing/00.2.1_digital_document_docling.md)), scans to OCR ([00.2.2](06-rag/apply/1-ingestion-parsing/00.2.2_scanned_page_ocr.md)), complex layouts to a layout model ([00.2.3](06-rag/apply/1-ingestion-parsing/00.2.3_complex_layout_ocr.md)), formulas to LaTeX extraction ([00.2.4](06-rag/apply/1-ingestion-parsing/00.2.4_formula_heavy_mineru.md)), charts to VLM captions ([00.2.5](06-rag/apply/1-ingestion-parsing/00.2.5_charts_images_vlm_captioning.md)).
-- **Preserve structure:** reading order ([00.3.1](06-rag/apply/1-ingestion-parsing/00.3.1_reading_order.md)), tables as HTML/Markdown ([00.3.2](06-rag/apply/1-ingestion-parsing/00.3.2_tables.md)), heading breadcrumbs ([00.3.3](06-rag/apply/1-ingestion-parsing/00.3.3_headings_hierarchy.md)), page numbers and bounding boxes for citations ([00.3.4](06-rag/apply/1-ingestion-parsing/00.3.4_page_numbers_bounding_boxes.md)), boilerplate stripped ([00.3.5](06-rag/apply/1-ingestion-parsing/00.3.5_boilerplate_stripping.md)).
-- **Validate:** CER/WER and table-cell accuracy on a golden sample ([00.4.1](06-rag/apply/1-ingestion-parsing/00.4.1_validation_golden_sample.md)); cheap per-page heuristics in production ([00.4.2](06-rag/apply/1-ingestion-parsing/00.4.2_validation_production_heuristics.md)); a bounded retry ladder that ends in a visible human queue, never silent empty text ([00.5.1](06-rag/apply/1-ingestion-parsing/00.5.1_retry_ladder.md)).
+- **Ingest:** connectors with auth, pagination and rate limits ([Connectors](06-rag/apply/1-ingestion-parsing/connectors.md)); change detection with a size/mtime then SHA-256 ladder so you only re-embed what changed ([Change detection](06-rag/apply/1-ingestion-parsing/change_detection.md)); exact and near-duplicate removal ([Deduplication](06-rag/apply/1-ingestion-parsing/deduplication.md)); `doc_id + version` with soft-deleted stale chunks ([Document versioning](06-rag/apply/1-ingestion-parsing/document_versioning.md)); tenant and ACL captured at ingest, never retrofitted ([Tenant / ACL capture at ingest](06-rag/apply/1-ingestion-parsing/tenant_acl_capture_at_ingest.md)).
+- **Route per page, not per document** ([Per-page classification and routing](06-rag/apply/1-ingestion-parsing/per_page_routing.md)): digital pages to a native text-layer parser ([Digital document](06-rag/apply/1-ingestion-parsing/digital_document_docling.md)), scans to OCR ([Scanned page](06-rag/apply/1-ingestion-parsing/scanned_page_ocr.md)), complex layouts to a layout model ([Complex layout](06-rag/apply/1-ingestion-parsing/complex_layout_ocr.md)), formulas to LaTeX extraction ([Formula-heavy page](06-rag/apply/1-ingestion-parsing/formula_heavy_mineru.md)), charts to VLM captions ([Charts, images, diagrams](06-rag/apply/1-ingestion-parsing/charts_images_vlm_captioning.md)).
+- **Preserve structure:** reading order ([Reading order](06-rag/apply/1-ingestion-parsing/reading_order.md)), tables as HTML/Markdown ([Tables](06-rag/apply/1-ingestion-parsing/tables.md)), heading breadcrumbs ([Headings hierarchy](06-rag/apply/1-ingestion-parsing/headings_hierarchy.md)), page numbers and bounding boxes for citations ([Page numbers + bounding boxes](06-rag/apply/1-ingestion-parsing/page_numbers_bounding_boxes.md)), boilerplate stripped ([Headers / footers / boilerplate stripping](06-rag/apply/1-ingestion-parsing/boilerplate_stripping.md)).
+- **Validate:** CER/WER and table-cell accuracy on a golden sample ([Test-time validation against a golden sample](06-rag/apply/1-ingestion-parsing/validation_golden_sample.md)); cheap per-page heuristics in production ([Production per-page heuristics](06-rag/apply/1-ingestion-parsing/validation_production_heuristics.md)); a bounded retry ladder that ends in a visible human queue, never silent empty text ([Bounded escalation with visible failure](06-rag/apply/1-ingestion-parsing/retry_ladder.md)).
 
 ### Chunking
 
 | Strategy | Use it when | File |
 |---|---|---|
-| Fixed-size + overlap | Baseline only | [04.1.1](06-rag/apply/2-chunking/04.1.1_fixed_size_overlap.md) |
-| Recursive character splitting | Good general default | [04.1.2](06-rag/apply/2-chunking/04.1.2_recursive_character_splitting.md) |
-| Layout/structure-aware | The parser preserved headings and tables | [04.1.3](06-rag/apply/2-chunking/04.1.3_layout_structure_aware.md) |
-| Semantic | Cohesion matters more than ingest cost | [04.1.4](06-rag/apply/2-chunking/04.1.4_semantic_chunking.md) |
-| **Parent–child (small-to-big)** | **Highest-ROI upgrade in most systems** | [04.1.5](06-rag/apply/2-chunking/04.1.5_parent_child_small_to_big.md) |
-| Contextual retrieval | Chunks full of pronouns and bare numbers | [04.1.6](06-rag/apply/2-chunking/04.1.6_contextual_retrieval.md) |
-| Late chunking | You have a long-context embedder | [04.1.7](06-rag/apply/2-chunking/04.1.7_late_chunking.md) |
+| Fixed-size + overlap | Baseline only | [Fixed-size + overlap](06-rag/apply/2-chunking/fixed_size_overlap.md) |
+| Recursive character splitting | Good general default | [Recursive character splitting](06-rag/apply/2-chunking/recursive_character_splitting.md) |
+| Layout/structure-aware | The parser preserved headings and tables | [Layout / structure-aware](06-rag/apply/2-chunking/layout_structure_aware.md) |
+| Semantic | Cohesion matters more than ingest cost | [Semantic chunking](06-rag/apply/2-chunking/semantic_chunking.md) |
+| **Parent–child (small-to-big)** | **Highest-ROI upgrade in most systems** | [Parent–child](06-rag/apply/2-chunking/parent_child_small_to_big.md) |
+| Contextual retrieval | Chunks full of pronouns and bare numbers | [Contextual retrieval](06-rag/apply/2-chunking/contextual_retrieval.md) |
+| Late chunking | You have a long-context embedder | [Late chunking](06-rag/apply/2-chunking/late_chunking.md) |
 
-Every chunk carries metadata: `doc_id`, title, breadcrumb, page, section, dates, tenant, ACL, source URL ([04.1.8](06-rag/apply/2-chunking/04.1.8_chunk_metadata.md)).
+Every chunk carries metadata: `doc_id`, title, breadcrumb, page, section, dates, tenant, ACL, source URL ([Metadata on every chunk](06-rag/apply/2-chunking/chunk_metadata.md)).
 
 ### Embeddings and indexing
 
-- Choose the embedder for your domain and language, and validate on *your* golden set, not only a leaderboard ([04.2.1](06-rag/apply/3-embeddings/04.2.1_embedding_model_choice.md)). Get query/passage prefixes right ([04.2.2](06-rag/apply/3-embeddings/04.2.2_symmetric_vs_asymmetric.md)). Fine-tuning the embedder on your own triplets is often a bigger win than a bigger LLM ([04.2.3](06-rag/apply/3-embeddings/04.2.3_fine_tuning_embeddings.md)). A model change means a full re-index; store the version per chunk and dual-index during migration ([04.2.4](06-rag/apply/3-embeddings/04.2.4_embedding_versioning.md)).
-- HNSW is the default index; flat for small corpora; IVF-PQ when memory-bound ([04.3.1](06-rag/apply/4-indexing/04.3.1_index_types_flat_hnsw_ivfpq.md)). Choose the store by what else you need: pgvector for joins and transactional ACLs, Qdrant/Weaviate/Milvus for scale and filtering, a managed service for no ops, OpenSearch when you also need BM25 and aggregations ([04.3.2](06-rag/apply/4-indexing/04.3.2_vector_store_choice.md)). Prefer native filtered ANN; post-filtering by tenant can return zero rows ([04.3.3](06-rag/apply/4-indexing/04.3.3_filtered_search.md)).
+- Choose the embedder for your domain and language, and validate on *your* golden set, not only a leaderboard ([Model choice](06-rag/apply/3-embeddings/embedding_model_choice.md)). Get query/passage prefixes right ([Symmetric vs asymmetric](06-rag/apply/3-embeddings/symmetric_vs_asymmetric.md)). Fine-tuning the embedder on your own triplets is often a bigger win than a bigger LLM ([Fine-tuning embeddings on your own logs](06-rag/apply/3-embeddings/fine_tuning_embeddings.md)). A model change means a full re-index; store the version per chunk and dual-index during migration ([Versioning & migration](06-rag/apply/3-embeddings/embedding_versioning.md)).
+- HNSW is the default index; flat for small corpora; IVF-PQ when memory-bound ([Index types: Flat, HNSW, IVF-PQ](06-rag/apply/4-indexing/index_types_flat_hnsw_ivfpq.md)). Choose the store by what else you need: pgvector for joins and transactional ACLs, Qdrant/Weaviate/Milvus for scale and filtering, a managed service for no ops, OpenSearch when you also need BM25 and aggregations ([Vector store choice](06-rag/apply/4-indexing/vector_store_choice.md)). Prefer native filtered ANN; post-filtering by tenant can return zero rows ([Filtered search](06-rag/apply/4-indexing/filtered_search.md)).
 
 ### Query understanding
 
-Rewrite follow-ups using chat history, or multi-turn RAG falls apart by turn three ([04.4.1](06-rag/apply/5-query-understanding/04.4.1_query_rewriting.md)). Add multi-query with Reciprocal Rank Fusion for cheap recall ([04.4.2](06-rag/apply/5-query-understanding/04.4.2_multi_query_rrf.md)), HyDE for short queries against verbose documents ([04.4.3](06-rag/apply/5-query-understanding/04.4.3_hyde.md)), decomposition for multi-hop questions ([04.4.4](06-rag/apply/5-query-understanding/04.4.4_decomposition.md)), self-query to turn language into hard filters ([04.4.5](06-rag/apply/5-query-understanding/04.4.5_self_query_metadata_filters.md)), and routing so that not every question hits the index ([04.4.6](06-rag/apply/5-query-understanding/04.4.6_query_routing.md)).
+Rewrite follow-ups using chat history, or multi-turn RAG falls apart by turn three ([Query rewriting](06-rag/apply/5-query-understanding/query_rewriting.md)). Add multi-query with Reciprocal Rank Fusion for cheap recall ([Multi-query + Reciprocal Rank Fusion](06-rag/apply/5-query-understanding/multi_query_rrf.md)), HyDE for short queries against verbose documents ([HyDE](06-rag/apply/5-query-understanding/hyde.md)), decomposition for multi-hop questions ([Decomposition](06-rag/apply/5-query-understanding/decomposition.md)), self-query to turn language into hard filters ([Self-query](06-rag/apply/5-query-understanding/self_query_metadata_filters.md)), and routing so that not every question hits the index ([Routing](06-rag/apply/5-query-understanding/query_routing.md)).
 
 ### Retrieval and ranking
 
-- **Hybrid search** (BM25 + dense, fused) beats either alone on virtually every real corpus, because IDs, part numbers and names are where dense retrieval fails ([04.5.1](06-rag/apply/6-retrieval-ranking/04.5.1_hybrid_search.md)).
-- **Rerank:** retrieve top-50 cheaply, cross-encoder rerank to top-5. Usually the largest single quality jump ([04.5.2](06-rag/apply/6-retrieval-ranking/04.5.2_reranking.md)).
-- Diversify with MMR ([04.5.3](06-rag/apply/6-retrieval-ranking/04.5.3_mmr_diversity.md)), abstain below a tuned score floor ([04.5.4](06-rag/apply/6-retrieval-ranking/04.5.4_score_thresholding_abstention.md)), and bound any follow-up searches ([04.5.5](06-rag/apply/6-retrieval-ranking/04.5.5_recursive_agentic_retrieval.md)).
+- **Hybrid search** (BM25 + dense, fused) beats either alone on virtually every real corpus, because IDs, part numbers and names are where dense retrieval fails ([Hybrid search](06-rag/apply/6-retrieval-ranking/hybrid_search.md)).
+- **Rerank:** retrieve top-50 cheaply, cross-encoder rerank to top-5. Usually the largest single quality jump ([Reranking](06-rag/apply/6-retrieval-ranking/reranking.md)).
+- Diversify with MMR ([MMR / diversity](06-rag/apply/6-retrieval-ranking/mmr_diversity.md)), abstain below a tuned score floor ([Score thresholding & abstention](06-rag/apply/6-retrieval-ranking/score_thresholding_abstention.md)), and bound any follow-up searches ([Recursive / agentic retrieval](06-rag/apply/6-retrieval-ranking/recursive_agentic_retrieval.md)).
 
 ### Advanced patterns
 
-Reach for these only when the basics are measured and insufficient: agentic RAG ([04.6.1](06-rag/apply/7-advanced-rag/04.6.1_agentic_rag.md)), corrective RAG ([04.6.2](06-rag/apply/7-advanced-rag/04.6.2_corrective_rag.md)), Self-RAG ([04.6.3](06-rag/apply/7-advanced-rag/04.6.3_self_rag.md)), GraphRAG for global and multi-hop questions ([04.6.4](06-rag/apply/7-advanced-rag/04.6.4_graphrag.md)), multimodal RAG for slides and scans ([04.6.5](06-rag/apply/7-advanced-rag/04.6.5_multimodal_rag.md)), and SQL for aggregates alongside vectors for narrative, because many "RAG failures" are analytics questions ([04.6.6](06-rag/apply/7-advanced-rag/04.6.6_structured_unstructured_hybrid.md)).
+Reach for these only when the basics are measured and insufficient: agentic RAG ([Agentic RAG](06-rag/apply/7-advanced-rag/agentic_rag.md)), corrective RAG ([Corrective RAG (CRAG): grade, then rewrite or fall back](06-rag/apply/7-advanced-rag/corrective_rag.md)), Self-RAG ([Self-RAG](06-rag/apply/7-advanced-rag/self_rag.md)), GraphRAG for global and multi-hop questions ([GraphRAG / knowledge graph](06-rag/apply/7-advanced-rag/graphrag.md)), multimodal RAG for slides and scans ([Multimodal RAG](06-rag/apply/7-advanced-rag/multimodal_rag.md)), and SQL for aggregates alongside vectors for narrative, because many "RAG failures" are analytics questions ([Structured + unstructured hybrid](06-rag/apply/7-advanced-rag/structured_unstructured_hybrid.md)).
 
 ### Generation and grounding
 
-Answer only from context, then verify ([04.7.1](06-rag/apply/8-generation-grounding/04.7.1_grounded_prompting.md)). Require citations in the output schema and validate every cited ID ([04.7.2](06-rag/apply/8-generation-grounding/04.7.2_citations.md)). Run a cheap faithfulness pass ([04.7.3](06-rag/apply/8-generation-grounding/04.7.3_faithfulness_check.md)). Surface conflicting sources with dates instead of picking one ([04.7.4](06-rag/apply/8-generation-grounding/04.7.4_conflict_handling.md)). Design and evaluate the refusal path ([04.7.5](06-rag/apply/8-generation-grounding/04.7.5_refusal_no_answer_path.md)).
+Answer only from context, then verify ([Grounded prompting](06-rag/apply/8-generation-grounding/grounded_prompting.md)). Require citations in the output schema and validate every cited ID ([Citations](06-rag/apply/8-generation-grounding/citations.md)). Run a cheap faithfulness pass ([Faithfulness check](06-rag/apply/8-generation-grounding/faithfulness_check.md)). Surface conflicting sources with dates instead of picking one ([Conflict handling](06-rag/apply/8-generation-grounding/conflict_handling.md)). Design and evaluate the refusal path ([Refusal / no-answer path](06-rag/apply/8-generation-grounding/refusal_no_answer_path.md)).
 
 **Rules**
 
@@ -289,29 +289,29 @@ Answer only from context, then verify ([04.7.1](06-rag/apply/8-generation-ground
 
 ### Tools and structured output
 
-Tools beat hallucinated actions: the model proposes a call, your code validates and executes it. A good tool has a precise name, a description that says when *not* to use it, a strict argument schema, and an explicit side-effect contract. Prefer fewer, well-described, idempotent tools over one "supertool" ([tool design](07-agents-tools-memory/apply/1-agents/05.7_tool_design.md)).
+Tools beat hallucinated actions: the model proposes a call, your code validates and executes it. A good tool has a precise name, a description that says when *not* to use it, a strict argument schema, and an explicit side-effect contract. Prefer fewer, well-described, idempotent tools over one "supertool" ([tool design](07-agents-tools-memory/apply/1-agents/tool_design.md)).
 
 ### Agent shapes, simplest first
 
 1. **Single tool call** inside a fixed workflow. Most production "agents" should be this.
 2. **Plan-then-execute or a DAG** for predictable pipelines.
-3. **Single agent loop** (LLM → tool → observe → repeat) with a termination condition, max iterations, per-step timeouts and errors fed back to the model ([05.1](07-agents-tools-memory/apply/1-agents/05.1_single_agent_loop.md)).
-4. **Orchestrator and subagents** with explicit task contracts, narrow scope and isolated context ([05.2](07-agents-tools-memory/apply/1-agents/05.2_task_decomposition.md), [05.3](07-agents-tools-memory/apply/1-agents/05.3_orchestrator_subagent.md)), fan-out/fan-in with partial-failure handling ([05.4](07-agents-tools-memory/apply/1-agents/05.4_fan_out_fan_in.md)), and bounded reflection ([05.5](07-agents-tools-memory/apply/1-agents/05.5_loop_back_reflection.md)).
+3. **Single agent loop** (LLM → tool → observe → repeat) with a termination condition, max iterations, per-step timeouts and errors fed back to the model ([Single agent loop](07-agents-tools-memory/apply/1-agents/single_agent_loop.md)).
+4. **Orchestrator and subagents** with explicit task contracts, narrow scope and isolated context ([Task decomposition](07-agents-tools-memory/apply/1-agents/task_decomposition.md), [Orchestrator / subagent](07-agents-tools-memory/apply/1-agents/orchestrator_subagent.md)), fan-out/fan-in with partial-failure handling ([Fan-out / fan-in](07-agents-tools-memory/apply/1-agents/fan_out_fan_in.md)), and bounded reflection ([Loop-back / reflection](07-agents-tools-memory/apply/1-agents/loop_back_reflection.md)).
 
-Choose ReAct for exploration, plan-then-execute for predictable work, and search only when steps are cheap and reversible ([planning styles](07-agents-tools-memory/apply/1-agents/05.6_planning_styles.md)).
+Choose ReAct for exploration, plan-then-execute for predictable work, and search only when steps are cheap and reversible ([planning styles](07-agents-tools-memory/apply/1-agents/planning_styles.md)).
 
 ### Making agents safe to run
 
-- **Human-in-the-loop** approval before irreversible actions (send, pay, delete, deploy), with a clear resume path ([05.8](07-agents-tools-memory/apply/1-agents/05.8_human_in_the_loop.md)).
-- **Durability:** checkpoint after each step and use idempotency keys so a resumed run does not double-send ([05.9](07-agents-tools-memory/apply/1-agents/05.9_state_durability.md)).
-- **Sandboxing:** code runs in a container with no secrets, egress policy, resource limits and read-only mounts ([05.10](07-agents-tools-memory/apply/1-agents/05.10_sandboxing.md)).
-- **Interoperability:** MCP for tool discovery and reuse, A2A-style handoffs, or a shared blackboard ([05.11](07-agents-tools-memory/apply/1-agents/05.11_multi_agent_communication_mcp.md)).
-- **Budgets:** hard caps on tokens, tool calls, wall clock and dollars, enforced by the runtime ([05.12](07-agents-tools-memory/apply/1-agents/05.12_cost_step_budgets.md)).
-- **Least privilege:** a read-only agent with a read-only token cannot be talked into a delete ([excessive agency](10-production/apply/5-guardrails/08.5_excessive_agency.md)).
+- **Human-in-the-loop** approval before irreversible actions (send, pay, delete, deploy), with a clear resume path ([Human-in-the-loop](07-agents-tools-memory/apply/1-agents/human_in_the_loop.md)).
+- **Durability:** checkpoint after each step and use idempotency keys so a resumed run does not double-send ([State & durability](07-agents-tools-memory/apply/1-agents/state_durability.md)).
+- **Sandboxing:** code runs in a container with no secrets, egress policy, resource limits and read-only mounts ([Sandboxing](07-agents-tools-memory/apply/1-agents/sandboxing.md)).
+- **Interoperability:** MCP for tool discovery and reuse, A2A-style handoffs, or a shared blackboard ([Multi-agent communication](07-agents-tools-memory/apply/1-agents/multi_agent_communication_mcp.md)).
+- **Budgets:** hard caps on tokens, tool calls, wall clock and dollars, enforced by the runtime ([Cost & step budgets](07-agents-tools-memory/apply/1-agents/cost_step_budgets.md)).
+- **Least privilege:** a read-only agent with a read-only token cannot be talked into a delete ([excessive agency](10-production/apply/5-guardrails/excessive_agency.md)).
 
 ### Memory
 
-Short-term (the window), working (a scratchpad), episodic (past interactions), semantic (durable facts) and procedural (how-tos) ([06.1](07-agents-tools-memory/apply/2-memory/06.1_memory_types.md)). Write only what an extraction step judges memory-worthy ([06.2](07-agents-tools-memory/apply/2-memory/06.2_what_to_write.md)); retrieve by relevance and recency with a cap ([06.3](07-agents-tools-memory/apply/2-memory/06.3_when_to_retrieve.md)); forget with TTLs and user controls ([06.4](07-agents-tools-memory/apply/2-memory/06.4_how_to_forget.md)); supersede changed facts with `valid_from` ([06.5](07-agents-tools-memory/apply/2-memory/06.5_conflict_resolution.md)); and treat memory as data, because it is an injection surface ([06.6](07-agents-tools-memory/apply/2-memory/06.6_memory_security.md)).
+Short-term (the window), working (a scratchpad), episodic (past interactions), semantic (durable facts) and procedural (how-tos) ([Memory types](07-agents-tools-memory/apply/2-memory/memory_types.md)). Write only what an extraction step judges memory-worthy ([What to write to memory](07-agents-tools-memory/apply/2-memory/what_to_write.md)); retrieve by relevance and recency with a cap ([When to retrieve memory](07-agents-tools-memory/apply/2-memory/when_to_retrieve.md)); forget with TTLs and user controls ([How to forget](07-agents-tools-memory/apply/2-memory/how_to_forget.md)); supersede changed facts with `valid_from` ([Memory conflict resolution](07-agents-tools-memory/apply/2-memory/conflict_resolution.md)); and treat memory as data, because it is an injection surface ([Memory security](07-agents-tools-memory/apply/2-memory/memory_security.md)).
 
 **Learn:** [tools, agents and structured output](07-agents-tools-memory/learn/01-tools-agents-and-structured-output.md) (argument validation catalogue, tool result hygiene, deterministic test stubs, cost model, worked refund assistant, and a pre-production orchestrator checklist).
 
@@ -330,9 +330,9 @@ Short-term (the window), working (a scratchpad), episodic (past interactions), s
 
 **Rule of thumb:** if the failure is *"it doesn't know,"* use RAG. If it is *"it knows but says it wrong,"* fix the prompt, and fine-tune only if prompting cannot scale. Production systems usually combine all three.
 
-**Fine-tuning, when you get there:** SFT on a few hundred to a few thousand high-quality pairs ([11.1](08-choosing-the-lever/apply/fine-tuning/11.1_sft.md)); LoRA/QLoRA adapters as the default ([11.2](08-choosing-the-lever/apply/fine-tuning/11.2_peft_lora_qlora.md)); DPO for subjective quality ([11.3](08-choosing-the-lever/apply/fine-tuning/11.3_preference_tuning_dpo_rlhf.md)); distillation to cut cost once behaviour is stable ([11.4](08-choosing-the-lever/apply/fine-tuning/11.4_distillation.md)). Do not fine-tune for changing knowledge, unstable tasks, or anything a better prompt fixes ([11.5](08-choosing-the-lever/apply/fine-tuning/11.5_when_not_to_fine_tune.md)). Version datasets with checkpoints and keep a held-out split from day one ([11.6](08-choosing-the-lever/apply/fine-tuning/11.6_fine_tuning_ops.md)).
+**Fine-tuning, when you get there:** SFT on a few hundred to a few thousand high-quality pairs ([SFT](08-choosing-the-lever/apply/fine-tuning/sft.md)); LoRA/QLoRA adapters as the default ([PEFT / LoRA / QLoRA](08-choosing-the-lever/apply/fine-tuning/peft_lora_qlora.md)); DPO for subjective quality ([Preference tuning](08-choosing-the-lever/apply/fine-tuning/preference_tuning_dpo_rlhf.md)); distillation to cut cost once behaviour is stable ([Distillation](08-choosing-the-lever/apply/fine-tuning/distillation.md)). Do not fine-tune for changing knowledge, unstable tasks, or anything a better prompt fixes ([When *not* to fine-tune](08-choosing-the-lever/apply/fine-tuning/when_not_to_fine_tune.md)). Version datasets with checkpoints and keep a held-out split from day one ([Fine-tuning ops](08-choosing-the-lever/apply/fine-tuning/fine_tuning_ops.md)).
 
-**Learn:** [fine-tuning vs RAG vs prompt](08-choosing-the-lever/learn/01-fine-tuning-vs-rag-vs-prompt.md) (decision flowchart, scenario workshop, LoRA intuition, data pipeline, eval gates, a copy-paste decision worksheet). **Apply:** [prompting vs RAG vs fine-tuning](08-choosing-the-lever/apply/01.3_prompting_vs_rag_vs_finetuning.md).
+**Learn:** [fine-tuning vs RAG vs prompt](08-choosing-the-lever/learn/01-fine-tuning-vs-rag-vs-prompt.md) (decision flowchart, scenario workshop, LoRA intuition, data pipeline, eval gates, a copy-paste decision worksheet). **Apply:** [prompting vs RAG vs fine-tuning](08-choosing-the-lever/apply/prompting_vs_rag_vs_finetuning.md).
 
 ---
 
@@ -342,18 +342,18 @@ Short-term (the window), working (a scratchpad), episodic (past interactions), s
 
 Evaluation is the skill that most separates AI engineers from people who call APIs. Treat it as a first-class release control.
 
-- **Golden dataset first:** 50 to 200 real, hand-labelled cases beat any generic benchmark. Grow it from production failures; every incident becomes a test case ([07.1](09-evaluation/apply/07.1_golden_dataset.md)).
-- **Prompt evaluation:** run variants against the golden set and track regressions per prompt version ([07.2](09-evaluation/apply/07.2_prompt_evaluation.md)).
-- **LLM-as-judge:** use it for scale, calibrate it against human labels, report agreement, and watch for position, length and self-preference bias. Never the sole truth ([07.3](09-evaluation/apply/07.3_llm_as_judge.md)).
-- **Separate the failure sources in RAG:** retrieval (recall@k, MRR, nDCG) versus generation (faithfulness, relevance, citation accuracy) ([07.4](09-evaluation/apply/07.4_retrieval_evals.md), [07.5](09-evaluation/apply/07.5_generation_evals.md)).
-- **Agents:** evaluate the trajectory and the cost, not only the final answer. A 2% gain for 4× the tool calls is usually a loss ([07.6](09-evaluation/apply/07.6_agent_evals.md)).
-- **Component then end-to-end:** end-to-end-only evals tell you something broke, not what ([07.7](09-evaluation/apply/07.7_component_vs_end_to_end.md)).
-- **Statistical hygiene:** temperature 0, multiple seeds where sampling matters, confidence intervals, and scepticism about a 3-point move on 50 cases ([07.8](09-evaluation/apply/07.8_statistical_hygiene.md)).
-- **Online signals:** thumbs, edit distance to what the user shipped, task completion and escalation rate, with production traffic sampled back into the eval set ([07.9](09-evaluation/apply/07.9_online_eval.md)).
+- **Golden dataset first:** 50 to 200 real, hand-labelled cases beat any generic benchmark. Grow it from production failures; every incident becomes a test case ([Golden dataset first](09-evaluation/apply/golden_dataset.md)).
+- **Prompt evaluation:** run variants against the golden set and track regressions per prompt version ([Prompt evaluation](09-evaluation/apply/prompt_evaluation.md)).
+- **LLM-as-judge:** use it for scale, calibrate it against human labels, report agreement, and watch for position, length and self-preference bias. Never the sole truth ([LLM-as-judge](09-evaluation/apply/llm_as_judge.md)).
+- **Separate the failure sources in RAG:** retrieval (recall@k, MRR, nDCG) versus generation (faithfulness, relevance, citation accuracy) ([Retrieval evals](09-evaluation/apply/retrieval_evals.md), [Generation evals](09-evaluation/apply/generation_evals.md)).
+- **Agents:** evaluate the trajectory and the cost, not only the final answer. A 2% gain for 4× the tool calls is usually a loss ([Agent evals](09-evaluation/apply/agent_evals.md)).
+- **Component then end-to-end:** end-to-end-only evals tell you something broke, not what ([Component vs end-to-end](09-evaluation/apply/component_vs_end_to_end.md)).
+- **Statistical hygiene:** temperature 0, multiple seeds where sampling matters, confidence intervals, and scepticism about a 3-point move on 50 cases ([Statistical hygiene](09-evaluation/apply/statistical_hygiene.md)).
+- **Online signals:** thumbs, edit distance to what the user shipped, task completion and escalation rate, with production traffic sampled back into the eval set ([Online eval](09-evaluation/apply/online_eval.md)).
 - **Score abstention correctly.** Most RAG systems are never measured on whether they correctly decline.
 - **Report by slice** (customer tier, language, document type), because averages hide the segment that is failing.
 
-**Testing pyramid:** unit tests for tools and parsers → eval suites for prompts → integration tests for agent flows with mocked tools → red-team tests → evals in CI that block merges on regression ([08.1](09-evaluation/apply/08.1_testing_pyramid.md)).
+**Testing pyramid:** unit tests for tools and parsers → eval suites for prompts → integration tests for agent flows with mocked tools → red-team tests → evals in CI that block merges on regression ([The testing pyramid](09-evaluation/apply/testing_pyramid.md)).
 
 **Learn:** [evaluation for LLM systems](09-evaluation/learn/01-evaluation-for-llm-systems.md) (metric formulas, rubrics, pairwise comparison, regression gates, human review session recipe, eval harness sketch, release checklist). **Practise:** [Stages 4–9 capstone: prompt library + eval set](09-evaluation/learn/02-exercises-and-checklist.md).
 
@@ -390,16 +390,16 @@ If a wrong answer can move money, change access or give regulated advice, treat 
 
 ### Data pipelines and MLOps
 
-Version datasets and RAG corpora, track experiments, and promote models, prompts and indexes through a registry with eval gates. Separate dev, staging and prod indexes; never evaluate against the prod index you are mutating ([Lesson 10.2](10-production/learn/02-data-pipelines-and-mlops.md), [environments](10-production/apply/1-serving-cost-latency/09.6_environments.md)).
+Version datasets and RAG corpora, track experiments, and promote models, prompts and indexes through a registry with eval gates. Separate dev, staging and prod indexes; never evaluate against the prod index you are mutating ([Lesson 10.2](10-production/learn/02-data-pipelines-and-mlops.md), [environments](10-production/apply/1-serving-cost-latency/environments.md)).
 
 ### Serving
 
 - **Shapes:** batch, sync API, async queue, streaming. Add a worker queue when work exceeds a request timeout or needs retries and review ([Lesson 10.3](10-production/learn/03-serving-architectures.md)).
-- **Cost levers:** prompt caching, batching, routing, per-request token budgets, shorter system prompts, trimming top-k after reranking. Know your $/task and $/user/month ([09.1](10-production/apply/1-serving-cost-latency/09.1_cost_levers.md)).
-- **Latency levers:** streaming (perceived latency is what users judge), semantic caching, parallel retrieval and tool calls, smaller models on the critical path ([09.2](10-production/apply/1-serving-cost-latency/09.2_latency_levers.md)).
-- **Self-hosting:** vLLM/TGI with continuous batching, paged KV cache, quantisation and tensor parallelism ([09.3](10-production/apply/1-serving-cost-latency/09.3_self_hosted_serving.md)). Rate limits, per-tenant throttling, backpressure and load shedding ([09.4](10-production/apply/1-serving-cost-latency/09.4_capacity_limits.md)).
-- **Rollouts:** prompts, models, indexes and chunking configs are versioned artefacts. Shadow, canary or A/B; pin model versions; keep rollback one command away ([09.5](10-production/apply/1-serving-cost-latency/09.5_versioning_rollout.md)).
-- **Cloud deployment:** host the app on Fargate, run small stateless tasks on Lambda, and call the model through Bedrock ([16.1](10-production/apply/3-deployment/16.1_aws_bedrock_fargate_lambda.md)).
+- **Cost levers:** prompt caching, batching, routing, per-request token budgets, shorter system prompts, trimming top-k after reranking. Know your $/task and $/user/month ([Cost levers](10-production/apply/1-serving-cost-latency/cost_levers.md)).
+- **Latency levers:** streaming (perceived latency is what users judge), semantic caching, parallel retrieval and tool calls, smaller models on the critical path ([Latency levers](10-production/apply/1-serving-cost-latency/latency_levers.md)).
+- **Self-hosting:** vLLM/TGI with continuous batching, paged KV cache, quantisation and tensor parallelism ([Self-hosted serving](10-production/apply/1-serving-cost-latency/self_hosted_serving.md)). Rate limits, per-tenant throttling, backpressure and load shedding ([Capacity & limits](10-production/apply/1-serving-cost-latency/capacity_limits.md)).
+- **Rollouts:** prompts, models, indexes and chunking configs are versioned artefacts. Shadow, canary or A/B; pin model versions; keep rollback one command away ([Versioning & rollout](10-production/apply/1-serving-cost-latency/versioning_rollout.md)).
+- **Cloud deployment:** host the app on Fargate, run small stateless tasks on Lambda, and call the model through Bedrock ([AWS: Fargate, Lambda, Bedrock](10-production/apply/3-deployment/aws_bedrock_fargate_lambda.md)).
 
 ### GPU capacity
 
@@ -407,21 +407,21 @@ On GPUs the card is the unit of capacity and most clouds cannot hot-swap GPU typ
 
 ### Monitoring, drift and cost
 
-Log enough to replay any request: prompt version, model, tokens, latency, cost, tool calls, retrieved chunk IDs and scores, outcome, and a trace ID ([observability](10-production/apply/4-observability-reliability/08.6_observability_tracing.md)). Monitor quality, drift, latency and cost against SLOs; route thumbs-down, empty retrieval and low-confidence traffic to human review queues; and run a weekly operating rhythm ([Lesson 10.4](10-production/learn/04-monitoring-drift-and-cost.md)).
+Log enough to replay any request: prompt version, model, tokens, latency, cost, tool calls, retrieved chunk IDs and scores, outcome, and a trace ID ([observability](10-production/apply/4-observability-reliability/observability_tracing.md)). Monitor quality, drift, latency and cost against SLOs; route thumbs-down, empty retrieval and low-confidence traffic to human review queues; and run a weekly operating rhythm ([Lesson 10.4](10-production/learn/04-monitoring-drift-and-cost.md)).
 
 ### Safety, privacy and security
 
 Start with a threat model, then layer defences ([Lesson 10.5](10-production/learn/05-safety-privacy-and-hitl.md)):
 
-- **Input guardrails:** PII detection and masking, topic and abuse classification ([08.2](10-production/apply/5-guardrails/08.2_input_guardrails.md)). **Output guardrails:** leakage, toxicity, schema, banned claims ([08.3](10-production/apply/5-guardrails/08.3_output_guardrails.md)).
-- **Prompt injection:** all retrieved content, tool output and memory is data, never instructions; privileged actions sit behind a policy check the model does not control ([08.4](10-production/apply/5-guardrails/08.4_prompt_injection_defense.md)).
-- **Access and tenancy:** filter at query time with the caller's identity; isolation belongs in the index ([10.1](10-production/apply/6-security-privacy-governance/10.1_authn_authz_permission_filtered_retrieval.md)).
-- **Privacy and governance:** data residency and retention ([10.2](10-production/apply/6-security-privacy-governance/10.2_data_residency_retention.md)), PII with reversible mapping ([10.3](10-production/apply/6-security-privacy-governance/10.3_pii.md)), queryable audit trails ([10.4](10-production/apply/6-security-privacy-governance/10.4_auditability.md)), pinned and vetted dependencies and MCP servers ([10.5](10-production/apply/6-security-privacy-governance/10.5_supply_chain_hygiene.md)), and the OWASP LLM Top 10 as a checklist ([10.6](10-production/apply/6-security-privacy-governance/10.6_owasp_llm_top10.md)).
+- **Input guardrails:** PII detection and masking, topic and abuse classification ([Input guardrails](10-production/apply/5-guardrails/input_guardrails.md)). **Output guardrails:** leakage, toxicity, schema, banned claims ([Output guardrails](10-production/apply/5-guardrails/output_guardrails.md)).
+- **Prompt injection:** all retrieved content, tool output and memory is data, never instructions; privileged actions sit behind a policy check the model does not control ([Prompt-injection defence](10-production/apply/5-guardrails/prompt_injection_defense.md)).
+- **Access and tenancy:** filter at query time with the caller's identity; isolation belongs in the index ([Authentication & authorization](10-production/apply/6-security-privacy-governance/authn_authz_permission_filtered_retrieval.md)).
+- **Privacy and governance:** data residency and retention ([Data residency & retention](10-production/apply/6-security-privacy-governance/data_residency_retention.md)), PII with reversible mapping ([PII](10-production/apply/6-security-privacy-governance/pii.md)), queryable audit trails ([Auditability](10-production/apply/6-security-privacy-governance/auditability.md)), pinned and vetted dependencies and MCP servers ([Model & supply-chain hygiene](10-production/apply/6-security-privacy-governance/supply_chain_hygiene.md)), and the OWASP LLM Top 10 as a checklist ([Threat checklist](10-production/apply/6-security-privacy-governance/owasp_llm_top10.md)).
 - **HITL rate:** set it from error cost, volume and reviewer capacity (see [starting HITL rates](#starting-hitl-rates)), keep kill switches, and use an escalation ladder: auto-allow → soft flag → hard flag (HITL required) → deny and log.
 
 ### Reliability and incidents
 
-Timeouts on every external call, retries with exponential backoff and jitter, idempotency, circuit breakers, fallback models across providers, and graceful degradation (return the sources with "couldn't summarise" rather than a 500) ([08.7](10-production/apply/4-observability-reliability/08.7_failure_handling.md)). Write runbooks for AI-specific failures, version everything so rollback is real, and run postmortems that ask which eval would have caught the incident ([Lesson 10.6](10-production/learn/06-reliability-and-incident-response.md)).
+Timeouts on every external call, retries with exponential backoff and jitter, idempotency, circuit breakers, fallback models across providers, and graceful degradation (return the sources with "couldn't summarise" rather than a 500) ([Failure handling](10-production/apply/4-observability-reliability/failure_handling.md)). Write runbooks for AI-specific failures, version everything so rollback is real, and run postmortems that ask which eval would have caught the incident ([Lesson 10.6](10-production/learn/06-reliability-and-incident-response.md)).
 
 ### The data flywheel
 
@@ -430,7 +430,7 @@ prod traffic → traces + feedback → weekly triage → new golden cases
   → prompt / retrieval / model fix → eval → canary → prod
 ```
 
-Bucket failures into parse, retrieval, ranking, generation and tooling; the buckets tell you where to spend. Mine hard negatives to fine-tune the embedder or reranker. Every fixed bug becomes a permanent regression test ([12.1](10-production/apply/8-data-flywheel/12.1_data_flywheel.md), [12.2](10-production/apply/8-data-flywheel/12.2_feedback_capture_triage.md)).
+Bucket failures into parse, retrieval, ranking, generation and tooling; the buckets tell you where to spend. Mine hard negatives to fine-tune the embedder or reranker. Every fixed bug becomes a permanent regression test ([Data flywheel](10-production/apply/8-data-flywheel/data_flywheel.md), [Feedback capture & triage](10-production/apply/8-data-flywheel/feedback_capture_triage.md)).
 
 **Practise:** [Stage 10 exercises and production design-doc capstone](10-production/learn/07-exercises-and-checklist.md).
 
@@ -458,7 +458,7 @@ Patterns compose. A multi-tenant RAG SaaS product is typically patterns 15 + 6 +
 | 14 | Offline train → registry → online serving | Release cycle | All MLOps |
 | 15 | Multi-tenant SaaS AI | Same as product | High |
 
-For the RAG and agent patterns, the field-manual counterpart is the [reference architecture](11-architecture-patterns/apply/13.1_reference_architecture.md).
+For the RAG and agent patterns, the field-manual counterpart is the [reference architecture](11-architecture-patterns/apply/reference_architecture.md).
 
 ---
 
@@ -507,7 +507,7 @@ For the RAG and agent patterns, the field-manual counterpart is the [reference a
 | Production | p50/p95 latency, TTFT, $/request, error rate, cache-hit rate | SLOs and unit economics |
 | Business | Deflection, time saved, human-escalation rate | The numbers leadership funds |
 
-More: [metrics cheat sheet](10-production/apply/7-metrics-failure-modes/14.1_metrics_cheat_sheet.md).
+More: [metrics cheat sheet](10-production/apply/7-metrics-failure-modes/metrics_cheat_sheet.md).
 
 ### Failure modes and fixes
 
@@ -524,7 +524,7 @@ More: [metrics cheat sheet](10-production/apply/7-metrics-failure-modes/14.1_met
 | Great offline score, bad in prod (classical) | Leakage or training/serving skew | Fit preprocessing on train only; share feature code |
 | Quality silently drops after a vendor update | Unpinned model version | Pin versions; canary every upgrade |
 
-More: [common failure modes](10-production/apply/7-metrics-failure-modes/15.1_common_failure_modes.md).
+More: [common failure modes](10-production/apply/7-metrics-failure-modes/common_failure_modes.md).
 
 ### Starting HITL rates
 
@@ -554,16 +554,16 @@ More: [common failure modes](10-production/apply/7-metrics-failure-modes/15.1_co
 | RAG pipeline | [06-rag](06-rag/README.md) | [RAG deep dive](06-rag/learn/01-rag-deep-dive.md) | [2-chunking/ through 8-generation-grounding/](06-rag/apply/) |
 | Tools and agents | [07-agents-tools-memory](07-agents-tools-memory/README.md) | [tools, agents, structured output](07-agents-tools-memory/learn/01-tools-agents-and-structured-output.md) | [1-agents/](07-agents-tools-memory/apply/1-agents/) |
 | Memory | [07-agents-tools-memory](07-agents-tools-memory/README.md) | [conversation state](04-llm-foundations/learn/01-foundation-models-basics.md) | [2-memory/](07-agents-tools-memory/apply/2-memory/) |
-| Prompt vs RAG vs fine-tune | [08-choosing-the-lever](08-choosing-the-lever/README.md) | [decision framework](08-choosing-the-lever/learn/01-fine-tuning-vs-rag-vs-prompt.md) | [01.3](08-choosing-the-lever/apply/01.3_prompting_vs_rag_vs_finetuning.md), [fine-tuning/](08-choosing-the-lever/apply/fine-tuning/) |
+| Prompt vs RAG vs fine-tune | [08-choosing-the-lever](08-choosing-the-lever/README.md) | [decision framework](08-choosing-the-lever/learn/01-fine-tuning-vs-rag-vs-prompt.md) | [Prompting vs RAG vs fine-tuning](08-choosing-the-lever/apply/prompting_vs_rag_vs_finetuning.md), [fine-tuning/](08-choosing-the-lever/apply/fine-tuning/) |
 | Evaluation and testing | [09-evaluation](09-evaluation/README.md) | [evaluation for LLM systems](09-evaluation/learn/01-evaluation-for-llm-systems.md) | [evals and testing pyramid](09-evaluation/apply/) |
-| Decision framework and risk tiers | [10-production](10-production/README.md) | [production mindset](10-production/learn/01-production-mindset-and-decision-framework.md) | [build vs buy](04-llm-foundations/apply/01.4_build_vs_buy.md) |
-| Data pipelines and MLOps | [10-production](10-production/README.md) | [data pipelines and MLOps](10-production/learn/02-data-pipelines-and-mlops.md) | [environments](10-production/apply/1-serving-cost-latency/09.6_environments.md), [fine-tuning ops](08-choosing-the-lever/apply/fine-tuning/11.6_fine_tuning_ops.md) |
+| Decision framework and risk tiers | [10-production](10-production/README.md) | [production mindset](10-production/learn/01-production-mindset-and-decision-framework.md) | [build vs buy](04-llm-foundations/apply/build_vs_buy.md) |
+| Data pipelines and MLOps | [10-production](10-production/README.md) | [data pipelines and MLOps](10-production/learn/02-data-pipelines-and-mlops.md) | [environments](10-production/apply/1-serving-cost-latency/environments.md), [fine-tuning ops](08-choosing-the-lever/apply/fine-tuning/fine_tuning_ops.md) |
 | Serving, cost, latency | [10-production](10-production/README.md) | [serving architectures](10-production/learn/03-serving-architectures.md) | [1-serving-cost-latency/](10-production/apply/1-serving-cost-latency/), [3-deployment/](10-production/apply/3-deployment/) |
 | GPU capacity | [10-production](10-production/README.md) | [PyTorch devices](03-deep-learning/learn/02-pytorch-training-loop.md) | [GPUResizing.md](10-production/apply/2-gpu/GPUResizing.md), [2-gpu/details/](10-production/apply/2-gpu/details/) |
 | Monitoring and drift | [10-production](10-production/README.md) | [monitoring, drift, cost](10-production/learn/04-monitoring-drift-and-cost.md) | [4-observability-reliability/](10-production/apply/4-observability-reliability/), [7-metrics-failure-modes/](10-production/apply/7-metrics-failure-modes/) |
-| Guardrails, security, HITL | [10-production](10-production/README.md) | [safety, privacy, HITL](10-production/learn/05-safety-privacy-and-hitl.md) | [5-guardrails/](10-production/apply/5-guardrails/), [6-security-privacy-governance/](10-production/apply/6-security-privacy-governance/), [HITL](07-agents-tools-memory/apply/1-agents/05.8_human_in_the_loop.md) |
-| Reliability and incidents | [10-production](10-production/README.md) | [reliability and incidents](10-production/learn/06-reliability-and-incident-response.md) | [failure handling](10-production/apply/4-observability-reliability/08.7_failure_handling.md), [failure modes](10-production/apply/7-metrics-failure-modes/15.1_common_failure_modes.md) |
+| Guardrails, security, HITL | [10-production](10-production/README.md) | [safety, privacy, HITL](10-production/learn/05-safety-privacy-and-hitl.md) | [5-guardrails/](10-production/apply/5-guardrails/), [6-security-privacy-governance/](10-production/apply/6-security-privacy-governance/), [HITL](07-agents-tools-memory/apply/1-agents/human_in_the_loop.md) |
+| Reliability and incidents | [10-production](10-production/README.md) | [reliability and incidents](10-production/learn/06-reliability-and-incident-response.md) | [failure handling](10-production/apply/4-observability-reliability/failure_handling.md), [failure modes](10-production/apply/7-metrics-failure-modes/common_failure_modes.md) |
 | Data flywheel | [10-production](10-production/README.md) | [monitoring, drift, cost](10-production/learn/04-monitoring-drift-and-cost.md) | [8-data-flywheel/](10-production/apply/8-data-flywheel/) |
-| Architecture patterns | [11-architecture-patterns](11-architecture-patterns/README.md) | [15 production patterns](11-architecture-patterns/learn/01-ai-architecture-patterns-for-prod.md) | [reference architecture](11-architecture-patterns/apply/13.1_reference_architecture.md) |
-| Capstones | [12-capstones-and-interviews](12-capstones-and-interviews/README.md) | [overview](12-capstones-and-interviews/learn/00-overview.md) | [reference architecture](11-architecture-patterns/apply/13.1_reference_architecture.md) |
+| Architecture patterns | [11-architecture-patterns](11-architecture-patterns/README.md) | [15 production patterns](11-architecture-patterns/learn/01-ai-architecture-patterns-for-prod.md) | [reference architecture](11-architecture-patterns/apply/reference_architecture.md) |
+| Capstones | [12-capstones-and-interviews](12-capstones-and-interviews/README.md) | [overview](12-capstones-and-interviews/learn/00-overview.md) | [reference architecture](11-architecture-patterns/apply/reference_architecture.md) |
 | Scenario drills | [12-capstones-and-interviews](12-capstones-and-interviews/README.md) | [60 scenarios](12-capstones-and-interviews/learn/05-scenario-based-prod-ai-questions.md) | All of the above |

@@ -1,4 +1,4 @@
-# 02 — Decision tree: whether to resize, and which axis
+# — Decision tree: whether to resize, and which axis
 
 Back to [GPUResizing.md](../GPUResizing.md).
 

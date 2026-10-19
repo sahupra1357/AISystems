@@ -1,4 +1,4 @@
-# 09 — Trade-off matrices
+# — Trade-off matrices
 
 Back to [GPUResizing.md](../GPUResizing.md).
 

@@ -1,4 +1,4 @@
-# 14 — Prod checklist and metrics
+# — Prod checklist and metrics
 
 Back to [GPUResizing.md](../GPUResizing.md).
 
