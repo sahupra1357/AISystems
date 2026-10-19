@@ -2,7 +2,7 @@
 
 Work Beginner items first. Some exercises need an API key or a local model; if you lack access, write designs, templates, and offline golden sets, then run when you can. Depth matters more than polish—show your reasoning.
 
-Suggested pairing with the 6–8 week plan in `00-overview.md`: do each lesson’s exercises in the same week you study it; save the capstone for the final week.
+Do each lesson’s exercises right after you study it, and save the capstone for last.
 
 ---
 

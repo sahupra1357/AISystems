@@ -8,7 +8,7 @@ You do not need a startup. You need a finished slice with honest limitations.
 
 By the end of Stage 12, you should be able to:
 
-- Pick a project scoped to a few weeks with clear success criteria
+- Pick a project with a tight, finishable scope and clear success criteria
 - Choose from a catalog of ideas matched to skills you want to showcase
 - Follow (or adapt) an end-to-end build guide for a Docs Q&A RAG system
 - Follow (or adapt) an end-to-end build guide for a tabular ML + LLM hybrid report
@@ -23,15 +23,13 @@ You should have completed **Stages 1–11** checklists (or equivalent experience
 - Comfort calling LLMs and validating outputs
 - Awareness of RAG failure modes and production basics
 
-## Suggested time
-
-About **3–6 weeks** part-time for one solid capstone (longer if you attempt both major builds).
+## Phases
 
 | Phase | Focus |
 |-------|--------|
-| Week 1 | Pick project; write proposal; gather data rights |
-| Weeks 2–4 | Build MVP; evaluate; harden README |
-| Weeks 5–6 | Polish demo; write postmortem; portfolio packaging |
+| Plan | Pick project; write proposal; gather data rights |
+| Build | Build MVP; evaluate; harden README |
+| Ship | Polish demo; write postmortem; portfolio packaging |
 
 ## Order to study
 

@@ -2,7 +2,7 @@
 
 Python, the math intuition training relies on, and honest data handling.
 
-Summary, rules and context: [AI Engineering Guide, section 3](../AI_ENGINEERING_GUIDE.md#3-stage-1-foundations).
+Summary, rules and context: [AI Engineering Guide, Stage 1](../AI_ENGINEERING_GUIDE.md#stage-1-foundations).
 
 ## Learn
 

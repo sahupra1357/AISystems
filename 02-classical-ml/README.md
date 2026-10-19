@@ -2,7 +2,7 @@
 
 Supervised and unsupervised models on tabular data, with the scikit-learn workflow.
 
-Summary, rules and context: [AI Engineering Guide, section 4](../AI_ENGINEERING_GUIDE.md#4-stage-2-classical-machine-learning).
+Summary, rules and context: [AI Engineering Guide, Stage 2](../AI_ENGINEERING_GUIDE.md#stage-2-classical-machine-learning).
 
 ## Learn
 

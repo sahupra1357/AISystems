@@ -2,7 +2,7 @@
 
 Decision framework, MLOps, serving, cost and latency, GPUs, monitoring, safety, reliability and the data flywheel.
 
-Summary, rules and context: [AI Engineering Guide, section 12](../AI_ENGINEERING_GUIDE.md#12-stage-10-production-engineering).
+Summary, rules and context: [AI Engineering Guide, Stage 10](../AI_ENGINEERING_GUIDE.md#stage-10-production-engineering).
 
 ## Learn
 

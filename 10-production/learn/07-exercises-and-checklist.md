@@ -189,18 +189,9 @@ Implement a thin slice: FastAPI `/health` + stub orchestrator + manifest + fake 
 
 ---
 
-## How to pace the exercises (4–6 week map)
+## If you are short on time
 
-| Week | Lesson read | Exercises to complete |
-|------|-------------|------------------------|
-| 1 | 00–01 | Lesson 10.1 beginner 1–4; start one-pager for capstone topic |
-| 2 | 02 | Lesson 10.2 beginner + stretch 5 or 6 |
-| 3 | 03 | FastAPI stub + canary plan stretch |
-| 4 | 04 | Log schema + capacity math |
-| 5 | 05 | Threat model + HITL rates + red-team set |
-| 6 | 06–07 | Runbook + full design-doc capstone; checklist |
-
-If short on time: prioritize **Lesson 10.1 one-pager**, **promotion gates**, **HITL rate design**, and the **full capstone doc**—those transfer directly into Stage 12.
+Prioritize **Lesson 10.1 one-pager**, **promotion gates**, **HITL rate design**, and the **full capstone doc**—those transfer directly into Stage 12.
 
 ---
 

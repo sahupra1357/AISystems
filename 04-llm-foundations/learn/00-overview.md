@@ -2,7 +2,7 @@
 
 Deep learning taught you how neural nets train. **Generative AI** and **large language models (LLMs)** shift the day-to-day work: you often start from a **foundation model** trained by others, then adapt it with prompts, retrieval, tools, or light fine-tuning—and you ship that as a **system**, not a single API call.
 
-This part is the **weeks 15–22** style curriculum: using foundation models well, deciding among prompt / RAG / fine-tune, evaluating seriously, and understanding the production shape of an LLM app (orchestrator, retriever, model, tools, logging, cost). Every lesson teaches **why** and **how**—not skimmy definitions.
+This part covers using foundation models well, deciding among prompt / RAG / fine-tune, evaluating seriously, and understanding the production shape of an LLM app (orchestrator, retriever, model, tools, logging, cost). Every lesson teaches **why** and **how**—not skimmy definitions.
 
 ## Goals for Stages 4–9
 
@@ -28,22 +28,7 @@ python -m pip install numpy
 # Later: vector store client / sentence-transformers / jsonschema / pydantic as needed
 ```
 
-## Suggested time
-
-About **6–8 weeks** part-time (this is a full systems block, not a quick API tour):
-
-| Week | Focus |
-|------|--------|
-| 1 | Foundation models basics (01): tokens, embeddings, chat APIs, decoding, cost, failure modes |
-| 2 | Prompting deep dive (02): anatomy, roles, first half of prompting styles |
-| 3 | Prompting deep dive (02): remaining styles, task playbooks, parameters, iteration, anti-patterns |
-| 4 | RAG deep dive (03): chunking, retrieval, hybrid search, citations, debugging |
-| 5 | Tools, agents, structured output (04); production app shape |
-| 6 | Fine-tune vs RAG vs prompt (05) |
-| 7 | Evaluation for LLM systems (06) |
-| 8 | Exercises, prompt library + eval capstone, Ready-for-Stage-10 checklist (07) |
-
-Experienced practitioners may compress weeks 1–2; still do prompting practice and golden-set work—those catch most production bugs.
+Experienced practitioners may skim the foundation-model basics and the first half of prompting; still do prompting practice and golden-set work—those catch most production bugs.
 
 ## Order to study
 
@@ -72,22 +57,6 @@ Experienced practitioners may compress weeks 1–2; still do prompting practice 
 ```
 
 Lessons 4.1–5.1 deepen the LLM box. Lesson 6.1 deepens the Retriever. Lesson 7.1 deepens Tools and orchestration. Lessons 8.1–9.1 decide adaptation strategy and prove quality. Stage 10 hardens the outer ring (serving, monitors, safety, privacy).
-
-
-
-## Weeks 15–22 mapping (curriculum view)
-
-If you are following a longer AI engineer path where Stages 4–9 spans roughly weeks 15–22:
-
-| Weeks | Lessons | Outcome |
-|-------|---------|---------|
-| 15 | 01 Foundation models basics | Comfortable with tokens, APIs, cost, failure modes |
-| 16–17 | 02 Prompting deep dive | Style selection + shipping checklist habits |
-| 18 | 03 RAG deep dive | Designed and debugged grounded Q&A |
-| 19 | 04 Tools / agents / structured output | Safe tool schemas and capped orchestration |
-| 20 | 05 Fine-tune vs RAG vs prompt | Decision memos with baselines |
-| 21 | 06 Evaluation | Gold set + regression gate |
-| 22 | 07 Capstone week | Prompt library + eval harness (+ optional RAG) |
 
 ## Success criteria before Stage 10
 

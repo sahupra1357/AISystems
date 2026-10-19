@@ -2,7 +2,7 @@
 
 How LLMs behave, what they cost, how they fail, and how to choose and route between them.
 
-Summary, rules and context: [AI Engineering Guide, section 6](../AI_ENGINEERING_GUIDE.md#6-stage-4-foundation-models-and-llms).
+Summary, rules and context: [AI Engineering Guide, Stage 4](../AI_ENGINEERING_GUIDE.md#stage-4-foundation-models-and-llms).
 
 ## Learn
 

@@ -23,18 +23,7 @@ By the end of Stage 1, you should be able to:
 
 You do **not** need prior programming, calculus courses, or a math degree. We build intuition first and add only the math that AI engineers use daily.
 
-## Suggested time
-
-About **2–4 weeks** part-time:
-
-| Week | Focus |
-|------|--------|
-| 1 | Python programming (lesson 1.1), lots of typing practice |
-| 2 | Finish Python; start math for AI (lesson 1.2) |
-| 3 | Finish math; data literacy (lesson 1.3) |
-| 4 | Exercises, checklist, Stage 1 capstone |
-
-If you already know some Python, spend more time on math intuition and data literacy. If Python is new, give yourself the full four weeks without rushing.
+If you already know some Python, spend more time on math intuition and data literacy. If Python is new, take it slowly and type every example.
 
 ## Order to study
 

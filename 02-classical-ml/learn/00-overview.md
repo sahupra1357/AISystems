@@ -30,17 +30,7 @@ Install for this part (in your course venv):
 python -m pip install numpy pandas scikit-learn matplotlib
 ```
 
-## Suggested time
-
-About **2–3 weeks** part-time:
-
-| Week | Focus |
-|------|--------|
-| 1 | ML concepts (lesson 2.1); start supervised algorithms (lesson 2.2) |
-| 2 | Finish algorithms; scikit-learn workflow (lesson 2.3) |
-| 3 | Exercises, checklist, Stage 2 capstone |
-
-If scikit-learn is new, give yourself the full three weeks. If you have used it before, spend more time on evaluation discipline and algorithm intuition.
+If scikit-learn is new, take your time with the workflow lesson. If you have used it before, spend more time on evaluation discipline and algorithm intuition.
 
 ## Order to study
 

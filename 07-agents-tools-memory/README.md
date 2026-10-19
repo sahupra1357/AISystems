@@ -2,7 +2,7 @@
 
 Letting models act safely, with bounded cost and a clear stop point.
 
-Summary, rules and context: [AI Engineering Guide, section 9](../AI_ENGINEERING_GUIDE.md#9-stage-7-tools-agents-and-memory).
+Summary, rules and context: [AI Engineering Guide, Stage 7](../AI_ENGINEERING_GUIDE.md#stage-7-tools-agents-and-memory).
 
 ## Learn
 

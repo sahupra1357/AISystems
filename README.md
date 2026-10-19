@@ -37,5 +37,3 @@ Also at the root:
 2. **Type the code yourself.** Copy-paste is fine for checking answers, but muscle memory comes from typing and breaking things.
 3. **Use `apply/` when you build.** Skim it during study so you know it exists, then come back to the exact scenario when you need it.
 4. **Finish each checklist** before moving on, and revisit earlier stages freely.
-
-Suggested pace, part-time: 2–4 weeks each for stages 1–3, 6–8 weeks for stages 4–9, 4–6 weeks for stages 10–11, and 3–6 weeks for a solid capstone in stage 12. The guide also has a fast track and an interview sprint.

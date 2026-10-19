@@ -2,7 +2,7 @@
 
 Prompting vs RAG vs fine-tuning, and how to fine-tune when you need to.
 
-Summary, rules and context: [AI Engineering Guide, section 10](../AI_ENGINEERING_GUIDE.md#10-stage-8-choosing-the-lever).
+Summary, rules and context: [AI Engineering Guide, Stage 8](../AI_ENGINEERING_GUIDE.md#stage-8-choosing-the-lever).
 
 ## Learn
 
