@@ -1,5 +1,9 @@
 # Testing & reliability → Observability & tracing
 
+## Video takeaway
+
+"When someone says the answer was wrong, you need to know what the model read. So log the retrieved chunk IDs and their scores — the pool and the final set — on every single request. That one field turns an unanswerable complaint into a five-minute diagnosis. Add the version vector: which prompt, which model, which index, which parser, which chunking config, so a quality drop maps to the thing that changed. Track tokens and cost per call, including cached ones. Sample the big payloads, but keep the metadata on everything and all the errors. And govern it — your trace store holds user queries and document contents, which makes it one of the most sensitive things you own."
+
 ## What it is
 
 AI systems fail in ways logs don't capture. "The answer was wrong" has a dozen possible causes across parsing, retrieval, ranking, assembly, and generation ([component vs end-to-end](../../../09-evaluation/apply/component_vs_end_to_end.md)), and without a trace you're guessing.
@@ -195,7 +199,3 @@ From the first production deployment. Retrofitting tracing after an incident is 
 - [Cost levers](../1-serving-cost-latency/cost_levers.md), [Rollout](../1-serving-cost-latency/versioning_rollout.md) — attribution and canaries
 - [Data residency & retention](../6-security-privacy-governance/data_residency_retention.md) / [PII](../6-security-privacy-governance/pii.md) / [auditability](../6-security-privacy-governance/auditability.md) — governance of trace data
 - [Data flywheel](../8-data-flywheel/data_flywheel.md) / [feedback capture & triage](../8-data-flywheel/feedback_capture_triage.md) — traces feed the flywheel and triage
-
-## Video takeaway (30 seconds)
-
-"When someone says the answer was wrong, you need to know what the model read. So log the retrieved chunk IDs and their scores — the pool and the final set — on every single request. That one field turns an unanswerable complaint into a five-minute diagnosis. Add the version vector: which prompt, which model, which index, which parser, which chunking config, so a quality drop maps to the thing that changed. Track tokens and cost per call, including cached ones. Sample the big payloads, but keep the metadata on everything and all the errors. And govern it — your trace store holds user queries and document contents, which makes it one of the most sensitive things you own."

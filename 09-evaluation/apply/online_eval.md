@@ -1,5 +1,9 @@
 # Evaluation → Online eval (production signals)
 
+## Video takeaway
+
+"Offline evals tell you about the cases you thought of. Production tells you about the ones you didn't. Two signals do most of the work. Automated checks on every single request — are the cited IDs real, is each claim supported, did it abstain — because those are cheap enough to run on everything and they catch regressions between releases. And implicit behaviour, especially edit distance: in any drafting product, the gap between what you generated and what the user actually sent is the closest thing to ground truth that exists at scale. Thumbs are useful for triage and terrible as a metric — only frustrated people click them. Slice everything by prompt and model version, or you'll see quality drop and have no idea which change did it."
+
 ## What it is
 
 Offline evals measure a frozen set of cases you chose. Production shows you the cases you didn't think of, the queries users actually ask, and quality under real retrieval, real load, and real corpus drift.
@@ -167,7 +171,3 @@ From launch. Automated online checks and implicit signals should ship with the f
 - [Observability](../../10-production/apply/4-observability-reliability/observability_tracing.md) — the trace and version vector
 - [Data flywheel](../../10-production/apply/8-data-flywheel/data_flywheel.md), [Triage](../../10-production/apply/8-data-flywheel/feedback_capture_triage.md)
 - [Versioning & rollout](../../10-production/apply/1-serving-cost-latency/versioning_rollout.md) — canary comparisons
-
-## Video takeaway (30 seconds)
-
-"Offline evals tell you about the cases you thought of. Production tells you about the ones you didn't. Two signals do most of the work. Automated checks on every single request — are the cited IDs real, is each claim supported, did it abstain — because those are cheap enough to run on everything and they catch regressions between releases. And implicit behaviour, especially edit distance: in any drafting product, the gap between what you generated and what the user actually sent is the closest thing to ground truth that exists at scale. Thumbs are useful for triage and terrible as a metric — only frustrated people click them. Slice everything by prompt and model version, or you'll see quality drop and have no idea which change did it."

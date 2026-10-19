@@ -1,5 +1,9 @@
 # Query understanding → Query rewriting (coreference over chat history)
 
+## Video takeaway
+
+"'What about its termination notice?' — the retriever has no idea what 'its' is. Before you search, rewrite the turn into a standalone query using the conversation: 'termination notice period of the Acme MSA'. One cheap model call, skippable when the query is already self-contained. Guard against the model inventing entities: if the rewrite is way longer than the original or mentions something never discussed, fall back. Keep the user's original words for the answer prompt — the rewrite is for search only. This is the fix for RAG that works on turn one and falls apart on turn three."
+
 ## What it is
 
 Users talk in context: "and the notice period?", "same for the UK entity", "what did you say the limit was?", "compare it with the 2023 version". The retriever sees only the current turn. Query rewriting (a.k.a. contextual query reformulation, conversational query rewriting) uses a cheap LLM call to produce a **self-contained search query** that carries the entities and intent from prior turns:
@@ -127,7 +131,3 @@ def rewrite(history_block: str, message: str) -> str:
 - [Multi-query](multi_query_rrf.md), [Decomposition](decomposition.md), [Self-query](self_query_metadata_filters.md) — can share the call
 - [Retrieval evals](../../../09-evaluation/apply/retrieval_evals.md)
 - 15 Common failure modes — "correct at turn 1, wrong at turn 3"
-
-## Video takeaway (30 seconds)
-
-"'What about its termination notice?' — the retriever has no idea what 'its' is. Before you search, rewrite the turn into a standalone query using the conversation: 'termination notice period of the Acme MSA'. One cheap model call, skippable when the query is already self-contained. Guard against the model inventing entities: if the rewrite is way longer than the original or mentions something never discussed, fall back. Keep the user's original words for the answer prompt — the rewrite is for search only. This is the fix for RAG that works on turn one and falls apart on turn three."

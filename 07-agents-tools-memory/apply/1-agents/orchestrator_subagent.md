@@ -1,5 +1,9 @@
 # Agents → Orchestrator / subagent
 
+## Video takeaway
+
+"One agent reviewing forty contracts ends up with a window full of forty documents and can't reason about any of them. Split it: an orchestrator that holds the plan and the results, and forty subagents that each see one contract, one tool, and nothing else. Each returns a small structured result — not its transcript, which goes to the trace store. The orchestrator's window grows by a few hundred tokens per contract instead of ten thousand, and the work runs on a cheap model. Enforce the output schema with a length limit, or your subagents will hand back essays and you've rebuilt the problem."
+
 ## What it is
 
 A single agent doing everything ends up with a window containing thirty tool results, three abandoned approaches, and the actual task buried at the top. The orchestrator/subagent split separates **coordination** from **execution**:
@@ -170,7 +174,3 @@ def orchestrate(goal, doc_ids, caller, max_parallel=8, run_budget_usd=5.0):
 - [Context isolation](../../../05-prompt-and-context-engineering/apply/2-context-engineering/context_isolation.md) — the rationale
 - [Budgets](cost_step_budgets.md), [Excessive agency](../../../10-production/apply/5-guardrails/excessive_agency.md)
 - [Agent evals](../../../09-evaluation/apply/agent_evals.md)
-
-## Video takeaway (30 seconds)
-
-"One agent reviewing forty contracts ends up with a window full of forty documents and can't reason about any of them. Split it: an orchestrator that holds the plan and the results, and forty subagents that each see one contract, one tool, and nothing else. Each returns a small structured result — not its transcript, which goes to the trace store. The orchestrator's window grows by a few hundred tokens per contract instead of ten thousand, and the work runs on a cheap model. Enforce the output schema with a length limit, or your subagents will hand back essays and you've rebuilt the problem."

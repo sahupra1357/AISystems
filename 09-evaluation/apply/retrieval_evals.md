@@ -1,5 +1,9 @@
 # Evaluation → Retrieval evals (recall@k, precision@k, MRR, nDCG)
 
+## Video takeaway
+
+"Measure retrieval on its own, because if the answer-bearing passage never made it into the context, every generation metric you compute is noise. Two numbers, not one: recall of the fifty-candidate pool tells you whether retrieval found it at all, and nDCG of the final five tells you whether ranking put it where the model will use it. Low pool recall means fix chunking, embeddings, or hybrid search. High pool recall but low nDCG means fix the reranker. Label the ground truth as document spans rather than chunk IDs, or your labels break the next time you change chunking. And always run it with the real permission filters on."
+
 ## What it is
 
 RAG has two failure sources. Retrieval evaluation isolates the first one:
@@ -174,7 +178,3 @@ Always, and first. Before tuning prompts, before changing models, before adding 
 - [Component vs end-to-end](component_vs_end_to_end.md) — the diagnostic split
 - [Hybrid](../../06-rag/apply/6-retrieval-ranking/hybrid_search.md), [Reranking](../../06-rag/apply/6-retrieval-ranking/reranking.md) — what ablations measure
 - [Index types](../../06-rag/apply/4-indexing/index_types_flat_hnsw_ivfpq.md) — ANN recall canary
-
-## Video takeaway (30 seconds)
-
-"Measure retrieval on its own, because if the answer-bearing passage never made it into the context, every generation metric you compute is noise. Two numbers, not one: recall of the fifty-candidate pool tells you whether retrieval found it at all, and nDCG of the final five tells you whether ranking put it where the model will use it. Low pool recall means fix chunking, embeddings, or hybrid search. High pool recall but low nDCG means fix the reranker. Label the ground truth as document spans rather than chunk IDs, or your labels break the next time you change chunking. And always run it with the real permission filters on."

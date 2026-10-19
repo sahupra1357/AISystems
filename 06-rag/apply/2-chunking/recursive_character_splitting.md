@@ -1,5 +1,9 @@
 # Chunking → Recursive character splitting
 
+## Video takeaway
+
+"Recursive splitting is fixed-size with manners: it tries paragraph breaks first, then sentences, then words. Same cost, far fewer sentences cut in half. It's the default for wikis, tickets, and docs. Two production traps: greedy merging glues headings onto the *previous* chunk, and English punctuation rules break on other languages. Version your separator list — changing it means re-embedding everything."
+
 ## What it is
 
 Recursive splitting takes an **ordered list of separators** — typically `["\n\n", "\n", ". ", " ", ""]` — and applies them hierarchically. It first splits the text on the coarsest separator (paragraphs). Any resulting piece larger than `chunk_size` is split again with the next separator (lines), then sentences, then words, and finally characters as a last resort. Small adjacent pieces are merged back together until they approach `chunk_size`.
@@ -121,7 +125,3 @@ Equivalent off-the-shelf: `langchain_text_splitters.RecursiveCharacterTextSplitt
 - [Layout-aware](layout_structure_aware.md) — when the parser gives you structure
 - [Parent–child](parent_child_small_to_big.md) Parent–child — pair with small recursive chunks for best precision
 - [Headings hierarchy](../1-ingestion-parsing/headings_hierarchy.md) — where heading breadcrumbs come from
-
-## Video takeaway (30 seconds)
-
-"Recursive splitting is fixed-size with manners: it tries paragraph breaks first, then sentences, then words. Same cost, far fewer sentences cut in half. It's the default for wikis, tickets, and docs. Two production traps: greedy merging glues headings onto the *previous* chunk, and English punctuation rules break on other languages. Version your separator list — changing it means re-embedding everything."

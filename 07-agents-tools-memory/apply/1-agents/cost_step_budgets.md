@@ -1,5 +1,9 @@
 # Agents → Cost & step budgets
 
+## Video takeaway
+
+"Most agent runs take four steps. Some take thirty. One takes as many as you allow — and that one is your invoice. So enforce four separate budgets in code: steps, tokens, wall-clock, and dollars, checked before every model call and every tool call. Asking the model to be efficient in the prompt is a suggestion; a check in the runtime is a control. When a budget runs out, don't crash — force a final answer from what you have and mark it incomplete. And watch *which* budget binds: steps means it's looping, tokens means your tool results are too big, dollars means it's escalating to the expensive model too often. Each one is a different bug."
+
 ## What it is
 
 A scripted pipeline's cost is roughly constant. An agent's is a distribution: most runs take 4 steps, some take 30, and a looping one takes as many as you let it. Without enforcement, the worst case is unbounded — and it's the worst case that appears on the invoice and in the incident review.
@@ -178,7 +182,3 @@ Every agent, every fan-out, every recursive retrieval loop, every reflection loo
 - [Reflection](loop_back_reflection.md) — rounds consume budget
 - [Compaction / summarisation of long history](../../../05-prompt-and-context-engineering/apply/2-context-engineering/compaction_summarization.md) / [per-source truncation budgets](../../../05-prompt-and-context-engineering/apply/2-context-engineering/per_source_truncation_budgets.md) — the levers when the token budget binds
 - [Cost levers](../../../10-production/apply/1-serving-cost-latency/cost_levers.md), [Capacity & limits](../../../10-production/apply/1-serving-cost-latency/capacity_limits.md)
-
-## Video takeaway (30 seconds)
-
-"Most agent runs take four steps. Some take thirty. One takes as many as you allow — and that one is your invoice. So enforce four separate budgets in code: steps, tokens, wall-clock, and dollars, checked before every model call and every tool call. Asking the model to be efficient in the prompt is a suggestion; a check in the runtime is a control. When a budget runs out, don't crash — force a final answer from what you have and mark it incomplete. And watch *which* budget binds: steps means it's looping, tokens means your tool results are too big, dollars means it's escalating to the expensive model too often. Each one is a different bug."

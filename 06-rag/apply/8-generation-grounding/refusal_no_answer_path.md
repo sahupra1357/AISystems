@@ -1,5 +1,9 @@
 # Generation & grounding → Refusal / no-answer path
 
+## Video takeaway
+
+"Most RAG systems are never measured on whether they correctly decline — and that's the metric that decides whether anyone trusts them. Design the no-answer path like a feature: name the reason, say what you searched and what that corpus covers, answer whatever part you can, and give a real next step — the team to ask, the system to try. Make permission refusals reveal nothing about whether the document exists. Give users a 'search anyway' button, because every click on it is free evidence your threshold is too strict. And track two numbers forever: how often you correctly say you don't know, and how often you refuse something you actually had."
+
 ## What it is
 
 Every RAG system needs an answer for questions it cannot answer:
@@ -161,7 +165,3 @@ Every production RAG system. The refusal path is not optional; the only choice i
 - [Retry ladder](../1-ingestion-parsing/retry_ladder.md) — degraded-source notes
 - [AuthZ](../../../10-production/apply/6-security-privacy-governance/authn_authz_permission_filtered_retrieval.md) — non-disclosing permission refusals
 - [Golden dataset](../../../09-evaluation/apply/golden_dataset.md) — must contain unanswerable questions
-
-## Video takeaway (30 seconds)
-
-"Most RAG systems are never measured on whether they correctly decline — and that's the metric that decides whether anyone trusts them. Design the no-answer path like a feature: name the reason, say what you searched and what that corpus covers, answer whatever part you can, and give a real next step — the team to ask, the system to try. Make permission refusals reveal nothing about whether the document exists. Give users a 'search anyway' button, because every click on it is free evidence your threshold is too strict. And track two numbers forever: how often you correctly say you don't know, and how often you refuse something you actually had."

@@ -1,5 +1,9 @@
 # Embeddings → Model choice (domain, language, dimensions, Matryoshka)
 
+## Video takeaway
+
+"The leaderboard tells you which embedding models are worth trying. Your golden set tells you which one to use — models that are neighbours on MTEB can differ by fifteen points of recall on your contracts. Check domain, language, max input length, and dimensions: a thousand dimensions costs four times the memory of two-fifty-six, and Matryoshka models let you truncate and rescore. Then pin the version, stamp it on every chunk, and don't swap models for marginal gains — every swap is a full re-index. Fine-tune or fix chunking first."
+
 ## What it is
 
 The embedding model maps text to vectors such that semantically similar texts land close together. Everything about dense retrieval quality, index size, and query latency follows from this choice. Axes:
@@ -127,7 +131,3 @@ print(evaluate("nomic-v1.5", corpus_sample, golden, dims=256))
 - [Versioning](embedding_versioning.md) — migration
 - [Index types](../4-indexing/index_types_flat_hnsw_ivfpq.md) — dimension/quantisation interplay
 - [Retrieval evals](../../../09-evaluation/apply/retrieval_evals.md)
-
-## Video takeaway (30 seconds)
-
-"The leaderboard tells you which embedding models are worth trying. Your golden set tells you which one to use — models that are neighbours on MTEB can differ by fifteen points of recall on your contracts. Check domain, language, max input length, and dimensions: a thousand dimensions costs four times the memory of two-fifty-six, and Matryoshka models let you truncate and rescore. Then pin the version, stamp it on every chunk, and don't swap models for marginal gains — every swap is a full re-index. Fine-tune or fix chunking first."

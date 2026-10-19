@@ -1,5 +1,9 @@
 # Fine-tuning → PEFT / LoRA / QLoRA
 
+## Video takeaway
+
+"Full fine-tuning updates every parameter and needs a GPU cluster. LoRA freezes the base and trains two small low-rank matrices per layer — about a quarter of a percent of the parameters — and QLoRA quantises the frozen base to four bits so a seven-billion-parameter model trains on a single consumer GPU. The adapter is forty megabytes, not sixteen gigabytes, which means you can version dozens of them and serve many from one base model, swapping per request. Start at rank sixteen, watch validation loss because small datasets overfit within three epochs, and always evaluate in the exact configuration you'll serve in — training on a four-bit base and serving on a sixteen-bit one changes behaviour."
+
 ## What it is
 
 Full fine-tuning updates every parameter — for a 70B model that means ~280 GB of optimiser state and a multi-GPU cluster. **LoRA** (Low-Rank Adaptation) instead freezes the base weights and learns a small pair of low-rank matrices per target layer:
@@ -169,7 +173,3 @@ Essentially always, when fine-tuning at all. Full fine-tuning is justified only 
 - [Fine-tuning ops](fine_tuning_ops.md) — registry and reproducibility
 - [Self-hosted serving](../../../10-production/apply/1-serving-cost-latency/self_hosted_serving.md) — where adapters are served
 - [Versioning](../../../10-production/apply/1-serving-cost-latency/versioning_rollout.md) — base upgrades invalidate adapters
-
-## Video takeaway (30 seconds)
-
-"Full fine-tuning updates every parameter and needs a GPU cluster. LoRA freezes the base and trains two small low-rank matrices per layer — about a quarter of a percent of the parameters — and QLoRA quantises the frozen base to four bits so a seven-billion-parameter model trains on a single consumer GPU. The adapter is forty megabytes, not sixteen gigabytes, which means you can version dozens of them and serve many from one base model, swapping per request. Start at rank sixteen, watch validation loss because small datasets overfit within three epochs, and always evaluate in the exact configuration you'll serve in — training on a four-bit base and serving on a sixteen-bit one changes behaviour."

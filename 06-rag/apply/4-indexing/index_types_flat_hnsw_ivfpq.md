@@ -1,5 +1,9 @@
 # Indexing → Index types: Flat, HNSW, IVF-PQ (and tuning the recall/latency curve)
 
+## Video takeaway
+
+"Three index families. Flat compares your query to every vector — exact, fine up to about a million, and the yardstick for everything else. HNSW is a graph you walk greedily — fast, near-exact, and the default, but it lives entirely in RAM. IVF with product quantisation compresses vectors ten to sixty times for hundreds of millions of vectors, at some recall cost you win back by rescoring the top few hundred exactly. Whatever you pick, tune ef-search or nprobe against a flat index with your real tenant filters on — and run that recall check every day, because approximate search fails silently."
+
 ## What it is
 
 Approximate nearest-neighbour (ANN) search trades exactness for speed and memory. The main families:
@@ -135,7 +139,3 @@ for nprobe in (8, 32, 128):
 - [Store choice](vector_store_choice.md), [Filtered search](filtered_search.md)
 - [Versioning](../3-embeddings/embedding_versioning.md) — rebuilds
 - [Document versioning](../1-ingestion-parsing/document_versioning.md) — deletes and tombstones
-
-## Video takeaway (30 seconds)
-
-"Three index families. Flat compares your query to every vector — exact, fine up to about a million, and the yardstick for everything else. HNSW is a graph you walk greedily — fast, near-exact, and the default, but it lives entirely in RAM. IVF with product quantisation compresses vectors ten to sixty times for hundreds of millions of vectors, at some recall cost you win back by rescoring the top few hundred exactly. Whatever you pick, tune ef-search or nprobe against a flat index with your real tenant filters on — and run that recall check every day, because approximate search fails silently."

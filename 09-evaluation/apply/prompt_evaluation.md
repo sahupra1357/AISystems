@@ -1,5 +1,9 @@
 # Evaluation → Prompt evaluation
 
+## Video takeaway
+
+"A prompt change without an eval run is a deploy without a test. Pin everything except the prompt — temperature zero, fixed model, cached retrieval — run your golden cases against both versions, and report the *diff*: which cases newly pass, and which ones broke. That second list is the gate. Aggregate improvement with three individual regressions is not a win; it's a change someone needs to look at. Score with free deterministic checks first — schema valid, required phrase present, citations real — and only pay for a judge on the open-ended parts. And always break the results down by question type, because a change that helps factoids and breaks abstention looks flat in the average."
+
 ## What it is
 
 Prompt evaluation is A/B testing for prompts, run offline against fixed ground truth. Given a call site ([prompt versioning & evaluation](../../05-prompt-and-context-engineering/apply/1-prompt-engineering/prompt_versioning_evaluation.md)), you have several candidate prompts and need to know which is better on *your* cases — and, later, whether a change regressed anything.
@@ -161,7 +165,3 @@ Every prompt change, every model upgrade, every schema change. Non-negotiable fo
 - [Statistical hygiene](statistical_hygiene.md) — reading the numbers
 - [Prompt versioning](../../05-prompt-and-context-engineering/apply/1-prompt-engineering/prompt_versioning_evaluation.md) — what's being evaluated
 - [Testing pyramid](testing_pyramid.md) — where this runs
-
-## Video takeaway (30 seconds)
-
-"A prompt change without an eval run is a deploy without a test. Pin everything except the prompt — temperature zero, fixed model, cached retrieval — run your golden cases against both versions, and report the *diff*: which cases newly pass, and which ones broke. That second list is the gate. Aggregate improvement with three individual regressions is not a win; it's a change someone needs to look at. Score with free deterministic checks first — schema valid, required phrase present, citations real — and only pay for a judge on the open-ended parts. And always break the results down by question type, because a change that helps factoids and breaks abstention looks flat in the average."

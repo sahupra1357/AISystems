@@ -1,5 +1,9 @@
 # Query understanding → Multi-query + Reciprocal Rank Fusion
 
+## Video takeaway
+
+"Users ask 'can I roll over vacation days'; the policy says 'carry-forward of annual leave entitlement'. One query embedding might miss it. Multi-query asks a cheap model for four rephrasings — plain, keyword-only, formal, and a likely section title — searches for all of them in parallel, and merges the lists with reciprocal rank fusion, which rewards documents that show up near the top of several lists without needing comparable scores. Then rerank with the original question. Gate it to short or ambiguous queries, cap the variants, and apply the same permission filters to every list."
+
 ## What it is
 
 A single query embedding is one point in space; documents that answer the question but are phrased differently may sit just outside its neighbourhood. Multi-query asks an LLM for several rephrasings from different angles — formal/informal, different key terms, a hypothetical document title, a keyword-only version for BM25 — runs retrieval for each, and fuses.
@@ -127,7 +131,3 @@ async def retrieve_multi(q: str, caller, k_each: int = 25, k_out: int = 50):
 - [Hybrid search](../6-retrieval-ranking/hybrid_search.md) — RRF is the fusion there too
 - [Reranking](../6-retrieval-ranking/reranking.md) — required after fusion
 - [Score thresholding](../6-retrieval-ranking/score_thresholding_abstention.md) — gating signal
-
-## Video takeaway (30 seconds)
-
-"Users ask 'can I roll over vacation days'; the policy says 'carry-forward of annual leave entitlement'. One query embedding might miss it. Multi-query asks a cheap model for four rephrasings — plain, keyword-only, formal, and a likely section title — searches for all of them in parallel, and merges the lists with reciprocal rank fusion, which rewards documents that show up near the top of several lists without needing comparable scores. Then rerank with the original question. Gate it to short or ambiguous queries, cap the variants, and apply the same permission filters to every list."

@@ -1,5 +1,9 @@
 # Testing & reliability → The testing pyramid
 
+## Video takeaway
+
+"AI systems still have a lot of ordinary deterministic code, and that's where your real guarantees live: the function that builds the permission filter, the one that generates chunk IDs, the idempotency key, the citation validator. Unit-test those hard. Above that, mock the model and test your agent flows — error recovery, approval gates, budget limits — deterministically in seconds. Then run scoped eval suites on whatever artefact changed, blocking the merge on any case that used to pass and now doesn't. And keep one separate gate that's absolute: cross-tenant retrieval, PII leakage, injection following. Those block regardless of how good the quality numbers look."
+
 ## What it is
 
 AI systems have deterministic parts and probabilistic parts, and they need different test strategies. The pyramid layers them by speed, determinism, and cost:
@@ -185,7 +189,3 @@ Every production AI system. The unit and integration layers especially — they'
 - [Prompt versioning](../../05-prompt-and-context-engineering/apply/1-prompt-engineering/prompt_versioning_evaluation.md) — what triggers eval runs
 - [Versioning & rollout](../../10-production/apply/1-serving-cost-latency/versioning_rollout.md) — the layer after CI
 - [Data flywheel](../../10-production/apply/8-data-flywheel/data_flywheel.md) — incidents become tests
-
-## Video takeaway (30 seconds)
-
-"AI systems still have a lot of ordinary deterministic code, and that's where your real guarantees live: the function that builds the permission filter, the one that generates chunk IDs, the idempotency key, the citation validator. Unit-test those hard. Above that, mock the model and test your agent flows — error recovery, approval gates, budget limits — deterministically in seconds. Then run scoped eval suites on whatever artefact changed, blocking the merge on any case that used to pass and now doesn't. And keep one separate gate that's absolute: cross-tenant retrieval, PII leakage, injection following. Those block regardless of how good the quality numbers look."

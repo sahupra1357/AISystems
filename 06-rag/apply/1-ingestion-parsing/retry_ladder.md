@@ -1,5 +1,9 @@
 # Retry ladder → Bounded escalation with visible failure
 
+## Video takeaway
+
+"When the parser fails a page, you have three choices: crash, silently emit nothing, or escalate. Only the third is acceptable. Build a ladder: a second engine, then a vision model, then — for documents that justify it — a human. Every rung costs more, so bound it with budgets per page, per document, per day. Pass the failure reason down so each rung tries something smarter, not just something more expensive. And when the ladder runs out, mark the page degraded and say so all the way to the user — an empty page that looks like success is the worst outcome in the whole pipeline."
+
 ## What it is
 
 ```
@@ -137,7 +141,3 @@ result = run_ladder(page, rungs, validate_page, budget_cents=6.0, human_eligible
 - [VLM](charts_images_vlm_captioning.md) — rung 3
 - [Golden sample](validation_golden_sample.md) — human review output
 - [Refusal / limits](../8-generation-grounding/refusal_no_answer_path.md) — surfacing degraded documents
-
-## Video takeaway (30 seconds)
-
-"When the parser fails a page, you have three choices: crash, silently emit nothing, or escalate. Only the third is acceptable. Build a ladder: a second engine, then a vision model, then — for documents that justify it — a human. Every rung costs more, so bound it with budgets per page, per document, per day. Pass the failure reason down so each rung tries something smarter, not just something more expensive. And when the ladder runs out, mark the page degraded and say so all the way to the user — an empty page that looks like success is the worst outcome in the whole pipeline."

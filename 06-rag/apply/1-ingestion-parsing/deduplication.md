@@ -1,5 +1,9 @@
 # Source ingestion → Deduplication (exact + near-duplicate)
 
+## Video takeaway
+
+"Enterprise data is full of copies: the same PDF in email, SharePoint, and the wiki. Index them all and your top-5 results are five copies of one paragraph. Exact duplicates are a hash lookup — skip them before parsing. Near-duplicates need MinHash and LSH, tuned per source, because 'similar' means different things for wiki drafts and contract templates. Always dedupe within a tenant, never across. And record every decision — someone will ask why their file isn't showing up."
+
 ## What it is
 
 Enterprise corpora are full of copies. Exact copies (same bytes) are easy: same SHA-256. Near copies are the hard part: the same policy PDF re-exported with a new date in the footer, a wiki page cloned and lightly edited, a contract template instantiated 400 times with different names. These have different hashes but 95% identical text.
@@ -133,7 +137,3 @@ Chunk-level exact dedupe in one line: `seen.add(hashlib.sha256(normalise(chunk).
 - [Boilerplate stripping](boilerplate_stripping.md) — normalisation input; consumer of chunk-frequency signal
 - [MMR](../6-retrieval-ranking/mmr_diversity.md) — query-time diversity for what dedupe missed
 - [Tenant/ACL capture](tenant_acl_capture_at_ingest.md) — dedupe must respect it
-
-## Video takeaway (30 seconds)
-
-"Enterprise data is full of copies: the same PDF in email, SharePoint, and the wiki. Index them all and your top-5 results are five copies of one paragraph. Exact duplicates are a hash lookup — skip them before parsing. Near-duplicates need MinHash and LSH, tuned per source, because 'similar' means different things for wiki drafts and contract templates. Always dedupe within a tenant, never across. And record every decision — someone will ask why their file isn't showing up."

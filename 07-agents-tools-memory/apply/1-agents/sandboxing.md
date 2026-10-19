@@ -1,5 +1,9 @@
 # Agents → Sandboxing (code execution and shell tools)
 
+## Video takeaway
+
+"Letting an agent run code is genuinely useful and genuinely dangerous, because the model can be steered by any document it reads — so treat generated code as hostile. Separate container, never your application process. No credentials in the environment, because credential theft is the loss that actually happens. Network denied by default, and explicitly block the cloud metadata endpoint. Read-only filesystem with a small writable temp, CPU and memory and process limits, wall-clock timeout enforced from outside, container destroyed afterwards. And if you can, don't build the runner yourself — use a managed sandbox that has already solved container escape."
+
 ## What it is
 
 Giving an agent the ability to run code is enormously useful — data analysis, calculations, file transformations, chart generation — and it means an LLM, which can be steered by any document it reads ([prompt-injection defence](../../../10-production/apply/5-guardrails/prompt_injection_defense.md)), is now writing programs that execute on your infrastructure.
@@ -168,7 +172,3 @@ Managed alternatives worth preferring: provider-hosted code execution (Anthropic
 - [Budgets](cost_step_budgets.md) — sandbox minutes count
 - [Supply-chain hygiene](../../../10-production/apply/6-security-privacy-governance/supply_chain_hygiene.md) — image and dependency pinning
 - [Structured hybrid](../../../06-rag/apply/7-advanced-rag/structured_unstructured_hybrid.md) — often a better answer than generated code
-
-## Video takeaway (30 seconds)
-
-"Letting an agent run code is genuinely useful and genuinely dangerous, because the model can be steered by any document it reads — so treat generated code as hostile. Separate container, never your application process. No credentials in the environment, because credential theft is the loss that actually happens. Network denied by default, and explicitly block the cloud metadata endpoint. Read-only filesystem with a small writable temp, CPU and memory and process limits, wall-clock timeout enforced from outside, container destroyed afterwards. And if you can, don't build the runner yourself — use a managed sandbox that has already solved container escape."

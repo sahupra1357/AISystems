@@ -1,5 +1,9 @@
 # Testing & reliability → Output guardrails
 
+## Video takeaway
+
+"Output guardrails are the last thing between a bad answer and a user. Run the free checks on everything: is the schema valid, do the cited IDs actually exist, is there an API key in the text, and — the one people forget — is this output about to be rendered as HTML or interpolated into SQL, because that's an injection vector no matter how well-behaved the model was. Then tier the expensive checks by risk: faithfulness and toxicity on external-facing answers, deterministic only internally. Define the action per violation — redact, regenerate once, or block with an honest message — and treat rising violation rates as a symptom to fix upstream, not just a block that worked."
+
 ## What it is
 
 Output guardrails inspect the generated response before delivery:
@@ -183,7 +187,3 @@ def deliver(output, retrieved, caller, policy, risk):
 - [PII](../6-security-privacy-governance/pii.md), [OWASP](../6-security-privacy-governance/owasp_llm_top10.md) — insecure output handling
 - [Structured outputs](../../../05-prompt-and-context-engineering/apply/1-prompt-engineering/structured_outputs_tool_use.md) — schema validation and retry
 - [Triage](../8-data-flywheel/feedback_capture_triage.md) — violations as symptoms
-
-## Video takeaway (30 seconds)
-
-"Output guardrails are the last thing between a bad answer and a user. Run the free checks on everything: is the schema valid, do the cited IDs actually exist, is there an API key in the text, and — the one people forget — is this output about to be rendered as HTML or interpolated into SQL, because that's an injection vector no matter how well-behaved the model was. Then tier the expensive checks by risk: faithfulness and toxicity on external-facing answers, deterministic only internally. Define the action per violation — redact, regenerate once, or block with an honest message — and treat rising violation rates as a symptom to fix upstream, not just a block that worked."

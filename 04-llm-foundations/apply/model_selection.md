@@ -1,5 +1,9 @@
 # Foundations → Model selection & tradeoffs
 
+## Video takeaway
+
+"Your system makes ten kinds of LLM calls, and they don't all need the same model. Classifying intent, rewriting a query, extracting a field — a fast, cheap model does those at a fraction of the cost and latency. Writing the final answer or planning an agent's next step — that's where you spend on a reasoning model. Put the tiers in config, pin the versions, and choose per call site by measuring on your own eval set, not by feel. Know your dollars per task; someone will ask."
+
 ## What it is
 
 An AI system makes many different kinds of LLM calls: classify the intent, rewrite the query, extract fields, rerank candidates, generate the answer, critique the answer, summarise the history. They have wildly different requirements. Treating "the model" as one global choice means either overpaying (a frontier model classifying yes/no) or underdelivering (a tiny model writing a legal summary).
@@ -131,7 +135,3 @@ r = llm("intent_classifier", "Classify the user's request as one of: search, chi
 - [Versioning & rollout](../../10-production/apply/1-serving-cost-latency/versioning_rollout.md) — pinned models
 - [Failure handling](../../10-production/apply/4-observability-reliability/failure_handling.md) — fallbacks
 - [Prompt evaluation](../../09-evaluation/apply/prompt_evaluation.md) — per-site evals
-
-## Video takeaway (30 seconds)
-
-"Your system makes ten kinds of LLM calls, and they don't all need the same model. Classifying intent, rewriting a query, extracting a field — a fast, cheap model does those at a fraction of the cost and latency. Writing the final answer or planning an agent's next step — that's where you spend on a reasoning model. Put the tiers in config, pin the versions, and choose per call site by measuring on your own eval set, not by feel. Know your dollars per task; someone will ask."

@@ -1,5 +1,9 @@
 # Reference architecture (end to end)
 
+## Video takeaway
+
+"Two pipelines and a loop. Offline: ingest with permissions and versions attached, parse per page, chunk with structure, embed, index into vector and keyword stores. Online: authenticate, guard the input, understand and route the query, retrieve hybrid with the caller's permission filter, rerank, assemble a budgeted context, generate with grounding, check citations and faithfulness, guard the output, stream. Then traces and feedback flow into the flywheel. Build the thin slice first and measure it — but put permission capture and document versioning in from day one, because those two are the ones you cannot retrofit without re-ingesting everything you own."
+
 ## What it is
 
 ```
@@ -170,7 +174,3 @@ As the map for any document-grounded AI system. Use it to locate what you're bui
 ## Related
 
 Every file in this reference maps to a stage in the diagram above; see the table in *What it is*.
-
-## Video takeaway (30 seconds)
-
-"Two pipelines and a loop. Offline: ingest with permissions and versions attached, parse per page, chunk with structure, embed, index into vector and keyword stores. Online: authenticate, guard the input, understand and route the query, retrieve hybrid with the caller's permission filter, rerank, assemble a budgeted context, generate with grounding, check citations and faithfulness, guard the output, stream. Then traces and feedback flow into the flywheel. Build the thin slice first and measure it — but put permission capture and document versioning in from day one, because those two are the ones you cannot retrofit without re-ingesting everything you own."

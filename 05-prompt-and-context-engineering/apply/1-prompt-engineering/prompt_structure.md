@@ -1,5 +1,9 @@
 # Prompt engineering → Prompt structure (stable-first, ordered sections)
 
+## Video takeaway
+
+"A prompt has an order for two reasons. First, caching: the provider caches the longest identical prefix, so put everything that never changes — role, task, rules, examples, tools — first, and everything that changes per call — documents, history, the question — last. One timestamp in the wrong place and your cache hit rate goes to zero. Second, attention: models remember the beginning and the end best, so the rules go up front and the question goes at the end, with the most important rule restated right before it."
+
 ## What it is
 
 A production prompt is a layered document:
@@ -135,7 +139,3 @@ Every production prompt. Especially high-volume chat/RAG where the system prompt
 - [Lost in the middle](../2-context-engineering/lost_in_the_middle.md) — ordering inside dynamic context
 - [Prompt caching](../2-context-engineering/prompt_caching.md) — why stable-first
 - [Prompt injection defence](../../../10-production/apply/5-guardrails/prompt_injection_defense.md)
-
-## Video takeaway (30 seconds)
-
-"A prompt has an order for two reasons. First, caching: the provider caches the longest identical prefix, so put everything that never changes — role, task, rules, examples, tools — first, and everything that changes per call — documents, history, the question — last. One timestamp in the wrong place and your cache hit rate goes to zero. Second, attention: models remember the beginning and the end best, so the rules go up front and the question goes at the end, with the most important rule restated right before it."

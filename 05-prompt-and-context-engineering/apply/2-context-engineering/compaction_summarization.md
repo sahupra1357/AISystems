@@ -1,5 +1,9 @@
 # Context engineering → Compaction / summarisation of long history
 
+## Video takeaway
+
+"By turn forty, the chat history is thirty thousand tokens. Sending it all is slow, expensive, and the model stops paying attention to the middle anyway. Keep a structured rolling summary — goal, decisions, constraints, IDs, open questions — plus the last handful of turns verbatim. Two rules keep it safe: pin the original request and hard constraints outside the summary so they can never be summarised away, and update the summary incrementally, never from scratch. Then test it: does the answer at turn thirty still respect the rule the user stated at turn two?"
+
 ## What it is
 
 Turn 40 of a support chat, or step 60 of an agent run, has 30k tokens of history. Sending all of it every call is expensive, slow, and degrades attention (["Lost in the middle"](lost_in_the_middle.md)). Truncating the oldest turns loses the constraint the user stated at turn 2.
@@ -125,7 +129,3 @@ class Session:
 - [State & durability](../../../07-agents-tools-memory/apply/1-agents/state_durability.md) — summary as checkpoint
 - [Memory conflict resolution](../../../07-agents-tools-memory/apply/2-memory/conflict_resolution.md)
 - [Query rewriting](../../../06-rag/apply/5-query-understanding/query_rewriting.md) — uses history to resolve references
-
-## Video takeaway (30 seconds)
-
-"By turn forty, the chat history is thirty thousand tokens. Sending it all is slow, expensive, and the model stops paying attention to the middle anyway. Keep a structured rolling summary — goal, decisions, constraints, IDs, open questions — plus the last handful of turns verbatim. Two rules keep it safe: pin the original request and hard constraints outside the summary so they can never be summarised away, and update the summary incrementally, never from scratch. Then test it: does the answer at turn thirty still respect the rule the user stated at turn two?"

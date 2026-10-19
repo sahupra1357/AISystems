@@ -1,5 +1,9 @@
 # Advanced RAG → Agentic RAG (retrieval as a tool)
 
+## Video takeaway
+
+"Agentic RAG turns retrieval from a fixed step into a tool the model calls as often as it likes, with queries and filters it chooses. That's genuinely more capable for research questions where you can't know the path in advance. It's also how the same question costs two cents one time and two dollars the next. The rules that make it survivable: budgets enforced in code — tool calls, tokens, seconds, dollars — not asked for in the prompt; security filters applied inside the tool, never passed by the model; and a scripted pipeline still handling the ninety percent of questions that never needed an agent."
+
 ## What it is
 
 Classic RAG is a pipeline: rewrite → retrieve → rerank → generate. The retrieval strategy is decided by your code. Agentic RAG inverts control: the model decides *whether* to retrieve, *what* to retrieve, *from where*, and *when it has enough*:
@@ -143,7 +147,3 @@ def agentic_rag(question, caller, max_tool_calls=6, deadline_s=20, max_cost_usd=
 - [Agent loop](../../../07-agents-tools-memory/apply/1-agents/single_agent_loop.md), [Tool design](../../../07-agents-tools-memory/apply/1-agents/tool_design.md), [Budgets](../../../07-agents-tools-memory/apply/1-agents/cost_step_budgets.md)
 - [Routing](../5-query-understanding/query_routing.md) — decides who takes this path
 - [Agent evals](../../../09-evaluation/apply/agent_evals.md), [Injection](../../../10-production/apply/5-guardrails/prompt_injection_defense.md)
-
-## Video takeaway (30 seconds)
-
-"Agentic RAG turns retrieval from a fixed step into a tool the model calls as often as it likes, with queries and filters it chooses. That's genuinely more capable for research questions where you can't know the path in advance. It's also how the same question costs two cents one time and two dollars the next. The rules that make it survivable: budgets enforced in code — tool calls, tokens, seconds, dollars — not asked for in the prompt; security filters applied inside the tool, never passed by the model; and a scripted pipeline still handling the ninety percent of questions that never needed an agent."

@@ -1,5 +1,9 @@
 # Query understanding → Decomposition (multi-hop into sub-questions)
 
+## Video takeaway
+
+"Ask 'how does our parental leave compare to the German minimum, and what changed in 2024' and a single top-k search answers maybe one third of it — the passages for the other parts aren't near that query. Split it into sub-questions, retrieve for each in parallel, label the evidence by part, and require the synthesis step to address every part and say so out loud when a part has no evidence. Gate it, because decomposing 'how many sick days' is pure waste. And if a sub-question needs the previous answer, bound the chain at two or three hops — that's where a query quietly becomes an expensive agent run."
+
 ## What it is
 
 Top-k retrieval returns the k passages nearest one query vector. A compound question has multiple information needs, and the passages that satisfy need B may be nowhere near the query's centroid. Symptoms: the answer covers one clause of the question and silently ignores the rest.
@@ -139,7 +143,3 @@ Cite passage ids per claim."""
 - [Recursive/agentic retrieval](../6-retrieval-ranking/recursive_agentic_retrieval.md) — the unbounded, model-driven cousin
 - [Structured hybrid](../7-advanced-rag/structured_unstructured_hybrid.md) — for aggregation questions decomposition can't fix
 - [Component vs end-to-end](../../../09-evaluation/apply/component_vs_end_to_end.md) — per-part attribution
-
-## Video takeaway (30 seconds)
-
-"Ask 'how does our parental leave compare to the German minimum, and what changed in 2024' and a single top-k search answers maybe one third of it — the passages for the other parts aren't near that query. Split it into sub-questions, retrieve for each in parallel, label the evidence by part, and require the synthesis step to address every part and say so out loud when a part has no evidence. Gate it, because decomposing 'how many sick days' is pure waste. And if a sub-question needs the previous answer, bound the chain at two or three hops — that's where a query quietly becomes an expensive agent run."

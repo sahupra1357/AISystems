@@ -1,5 +1,9 @@
 # Structure extraction → Page numbers + bounding boxes (verifiable citations)
 
+## Video takeaway
+
+"An answer with 'source: contract.pdf' gets ignored. An answer that opens page 47 with the clause highlighted gets trusted. That requires page numbers and bounding boxes on every element, carried through chunking into the citation. The production pain is coordinates: PDF points versus pixels, origin bottom-left versus top-left, rotated pages — pick one system and unit-test every parser against it. And the model never writes page numbers; it cites chunk IDs, and you resolve the page server-side. Protect the highlight endpoint with the same access check as retrieval."
+
 ## What it is
 
 A citation that says "source: contract.pdf" makes the user open a 90-page PDF and search. A citation that says "contract.pdf, page 47" is better. A citation that opens page 47 with the exact clause highlighted is what makes people *trust and use* the system — and what lets reviewers verify answers at scale.
@@ -127,7 +131,3 @@ def resolve_citation(chunk_id, chunk_store):
 - [Chunk metadata](../2-chunking/chunk_metadata.md) — where provenance lives
 - [Citations](../8-generation-grounding/citations.md) — generation-side contract
 - [AuthN/AuthZ](../../../10-production/apply/6-security-privacy-governance/authn_authz_permission_filtered_retrieval.md) — rendering must be filtered too
-
-## Video takeaway (30 seconds)
-
-"An answer with 'source: contract.pdf' gets ignored. An answer that opens page 47 with the clause highlighted gets trusted. That requires page numbers and bounding boxes on every element, carried through chunking into the citation. The production pain is coordinates: PDF points versus pixels, origin bottom-left versus top-left, rotated pages — pick one system and unit-test every parser against it. And the model never writes page numbers; it cites chunk IDs, and you resolve the page server-side. Protect the highlight endpoint with the same access check as retrieval."

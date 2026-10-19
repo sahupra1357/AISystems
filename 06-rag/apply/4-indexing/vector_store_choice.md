@@ -1,5 +1,9 @@
 # Indexing → Vector store choice
 
+## Video takeaway
+
+"Don't pick a vector database from a benchmark of unfiltered queries — your queries have a tenant filter, a permission filter, and a current-version filter on every one. Pick by what you actually need: already on Postgres with under twenty million vectors and permissions that need joins? pgvector. Tens of millions, rich filters, quantisation, multi-tenant? A dedicated store like Qdrant, Weaviate, or Milvus. Zero ops? Managed. Need BM25 and aggregations in the same box? OpenSearch. Whatever you choose, keep your chunk registry outside it so you can rebuild — and leave."
+
 ## What it is
 
 The vector store holds `(id, vector, payload)` and answers "top-k nearest to this vector, subject to these filters". Beyond that, the products differ on what production actually needs:
@@ -134,7 +138,3 @@ def retrieve_qdrant(qvec, caller, k=30):
 - [Versioning](../1-ingestion-parsing/document_versioning.md), [ACL](../1-ingestion-parsing/tenant_acl_capture_at_ingest.md) — consistency and isolation
 - [Build vs buy](../../../04-llm-foundations/apply/build_vs_buy.md)
 - [Hybrid search](../6-retrieval-ranking/hybrid_search.md) — engine capabilities
-
-## Video takeaway (30 seconds)
-
-"Don't pick a vector database from a benchmark of unfiltered queries — your queries have a tenant filter, a permission filter, and a current-version filter on every one. Pick by what you actually need: already on Postgres with under twenty million vectors and permissions that need joins? pgvector. Tens of millions, rich filters, quantisation, multi-tenant? A dedicated store like Qdrant, Weaviate, or Milvus. Zero ops? Managed. Need BM25 and aggregations in the same box? OpenSearch. Whatever you choose, keep your chunk registry outside it so you can rebuild — and leave."

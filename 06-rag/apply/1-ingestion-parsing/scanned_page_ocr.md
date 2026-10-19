@@ -1,5 +1,9 @@
 # OCR / digitization → Scanned page (PaddleOCR)
 
+## Video takeaway
+
+"A scanned page is a photo. OCR turns it into text, but never perfectly — one to three percent of characters on a clean scan, far worse on a fax. The dangerous errors are in numbers: a 0 read as an O in a contract value. In production, run OCR on GPU workers that pull pages, not documents, so a 500-page scan doesn't block the queue. Keep every confidence score, validate every page, and escalate the bad ones to a second engine or a vision model. And store the page images — you'll need them for citations and for re-OCR when the engine improves."
+
 ## What it is
 
 Optical character recognition detects text regions on an image and recognises the characters in each. Modern OCR (PaddleOCR PP-OCRv4/v5, Tesseract 5, Surya, cloud OCR APIs) is a two-stage pipeline: **detection** (where are the text lines) → **recognition** (what do they say), optionally with **layout analysis** ([complex layout](complex_layout_ocr.md)) and **table recognition** on top. Output per line: text, bounding box, confidence.
@@ -121,7 +125,3 @@ def ocr_page(page: fitz.Page, page_no: int) -> dict:
 - [Test-time validation against a golden sample](validation_golden_sample.md) / [Validation](validation_production_heuristics.md) — golden CER/WER and prod heuristics
 - [Retry ladder](retry_ladder.md)
 - [Page numbers + bounding boxes](page_numbers_bounding_boxes.md) — citation highlighting
-
-## Video takeaway (30 seconds)
-
-"A scanned page is a photo. OCR turns it into text, but never perfectly — one to three percent of characters on a clean scan, far worse on a fax. The dangerous errors are in numbers: a 0 read as an O in a contract value. In production, run OCR on GPU workers that pull pages, not documents, so a 500-page scan doesn't block the queue. Keep every confidence score, validate every page, and escalate the bad ones to a second engine or a vision model. And store the page images — you'll need them for citations and for re-OCR when the engine improves."

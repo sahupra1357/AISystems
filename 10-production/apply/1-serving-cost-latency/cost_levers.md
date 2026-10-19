@@ -1,5 +1,9 @@
 # Production → Cost levers
 
+## Video takeaway
+
+"Cost is tokens times price, and the levers are ranked. Prompt caching first — it's the biggest single win, it's quality-neutral, and it can cut input costs by ninety percent, but one variable token in your prefix silently kills it, so monitor the hit rate like an error rate. Then tiering: classification and query rewriting don't need your best model. Then rerank fifty candidates and send six, not twenty. Batch everything offline at half price. Together that's routinely a ten to twenty-five times reduction. And track cost per *successful task*, not per request — a cheap system that fails half the time isn't cheap."
+
 ## What it is
 
 LLM cost is `tokens × price`, and every lever moves one of those two. In rough order of impact for a typical chat/RAG product:
@@ -157,7 +161,3 @@ From the first production deployment, in this order: instrument → cache → ti
 - [Latency levers](latency_levers.md) (semantic cache overlaps), [Self-hosting](self_hosted_serving.md)
 - [Change detection](../../../06-rag/apply/1-ingestion-parsing/change_detection.md) / [deduplication](../../../06-rag/apply/1-ingestion-parsing/deduplication.md) / [per-page classification and routing](../../../06-rag/apply/1-ingestion-parsing/per_page_routing.md) — ingest cost
 - [Observability](../4-observability-reliability/observability_tracing.md) — attribution
-
-## Video takeaway (30 seconds)
-
-"Cost is tokens times price, and the levers are ranked. Prompt caching first — it's the biggest single win, it's quality-neutral, and it can cut input costs by ninety percent, but one variable token in your prefix silently kills it, so monitor the hit rate like an error rate. Then tiering: classification and query rewriting don't need your best model. Then rerank fifty candidates and send six, not twenty. Batch everything offline at half price. Together that's routinely a ten to twenty-five times reduction. And track cost per *successful task*, not per request — a cheap system that fails half the time isn't cheap."

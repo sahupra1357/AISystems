@@ -1,5 +1,9 @@
 # Evaluation → Golden dataset first
 
+## Video takeaway
+
+"Before you build the retriever or write the prompt, build the golden set: fifty to two hundred real questions from real users, labelled by someone who knows the domain, with the chunks that contain the answer and the answer you'd accept. Two things almost everyone leaves out. Questions your corpus genuinely *cannot* answer — without those you can never measure whether the system correctly says 'I don't know'. And the same question asked by two users with different permissions, which is the only test that catches leaks. Then grow it from every production failure, and make running it one command."
+
 ## What it is
 
 The golden dataset is the ground truth your system is measured against. Not MMLU, not MTEB, not a vendor's benchmark — your questions, your documents, your correct answers.
@@ -172,7 +176,3 @@ Before anything else. The first artifact of an AI system is not the retriever or
 - [Testing pyramid](testing_pyramid.md) — CI gating
 - [Data flywheel](../../10-production/apply/8-data-flywheel/data_flywheel.md) — how it grows
 - [Abstention](../../06-rag/apply/6-retrieval-ranking/score_thresholding_abstention.md) — why unanswerable cases matter
-
-## Video takeaway (30 seconds)
-
-"Before you build the retriever or write the prompt, build the golden set: fifty to two hundred real questions from real users, labelled by someone who knows the domain, with the chunks that contain the answer and the answer you'd accept. Two things almost everyone leaves out. Questions your corpus genuinely *cannot* answer — without those you can never measure whether the system correctly says 'I don't know'. And the same question asked by two users with different permissions, which is the only test that catches leaks. Then grow it from every production failure, and make running it one command."

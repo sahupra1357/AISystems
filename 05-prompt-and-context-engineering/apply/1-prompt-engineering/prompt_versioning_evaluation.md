@@ -1,5 +1,9 @@
 # Prompt engineering → Prompt versioning & evaluation (prompts are code)
 
+## Video takeaway
+
+"A prompt is code that runs on a random interpreter. So treat it like code: files in git, a version on every one, a PR with a diff for every change, an eval run that blocks the merge if quality drops, and the version ID logged on every single call. Then when answers change on Tuesday, you can see which edit did it and roll back in five minutes. Pin versions per environment — production never loads 'latest' — and keep tenant variants as overlays, not forks."
+
 ## What it is
 
 A prompt is a program that runs on a stochastic interpreter. Treat it accordingly:
@@ -140,7 +144,3 @@ Always, from the first production prompt. Retrofitting versioning after a year o
 - [Testing pyramid](../../../09-evaluation/apply/testing_pyramid.md) — CI gates
 - [Observability](../../../10-production/apply/4-observability-reliability/observability_tracing.md) — logging versions
 - [Versioning & rollout](../../../10-production/apply/1-serving-cost-latency/versioning_rollout.md) — canary/rollback
-
-## Video takeaway (30 seconds)
-
-"A prompt is code that runs on a random interpreter. So treat it like code: files in git, a version on every one, a PR with a diff for every change, an eval run that blocks the merge if quality drops, and the version ID logged on every single call. Then when answers change on Tuesday, you can see which edit did it and roll back in five minutes. Pin versions per environment — production never loads 'latest' — and keep tenant variants as overlays, not forks."

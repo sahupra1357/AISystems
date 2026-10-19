@@ -1,5 +1,9 @@
 # Context engineering → What it is (managing everything in the window)
 
+## Video takeaway
+
+"Prompt engineering is what you tell the model. Context engineering is everything else in the window — retrieved documents, tool results, memory, chat history — and how much of each, in what order. Build one assembler that every call goes through: budget per source, rank and dedupe, cap and truncate with a marker, put the best chunk first or last, keep the stable prefix identical for caching, and log what got dropped. Most 'the model is dumb' complaints are really 'the model was handed a mess'."
+
 ## What it is
 
 The context window is a finite, expensive, attention-limited resource. What goes into it on each call is a design decision with its own component — the **context assembler** — sitting between retrieval/tools/memory and the model:
@@ -136,7 +140,3 @@ Every system with more than a trivial prompt — i.e. any RAG or agent system. T
 - [Reranking](../../../06-rag/apply/6-retrieval-ranking/reranking.md) — selection quality
 - [Parent–child](../../../06-rag/apply/2-chunking/parent_child_small_to_big.md) Parent–child — what enters as "chunks"
 - [Observability](../../../10-production/apply/4-observability-reliability/observability_tracing.md)
-
-## Video takeaway (30 seconds)
-
-"Prompt engineering is what you tell the model. Context engineering is everything else in the window — retrieved documents, tool results, memory, chat history — and how much of each, in what order. Build one assembler that every call goes through: budget per source, rank and dedupe, cap and truncate with a marker, put the best chunk first or last, keep the stable prefix identical for caching, and log what got dropped. Most 'the model is dumb' complaints are really 'the model was handed a mess'."

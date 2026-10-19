@@ -1,5 +1,9 @@
 # Production → Latency levers
 
+## Video takeaway
+
+"Users judge time to first token, not total time. A six-second answer that starts in four hundred milliseconds feels faster than a three-second one that appears all at once. So stream, and fill the pre-token gap with real information: 'searching documents', then the list of sources you found. Parallelise everything independent — guardrails, embedding, permission resolution, dense and keyword search. Skip optional stages when a cheap heuristic says they won't help. And if you add a semantic cache, scope it by tenant *and* the caller's permissions — a cache hit across a permission boundary isn't a latency win, it's a data leak."
+
 ## What it is
 
 Users judge **time to first token** and whether the interface feels alive, far more than total completion time. A 6-second answer that starts streaming in 400 ms feels faster than a 3-second answer that appears all at once.
@@ -187,7 +191,3 @@ async def on_typing_pause(partial_query, caller):
 - [Output guardrails](../5-guardrails/output_guardrails.md) — the streaming conflict
 - [Capacity & limits](capacity_limits.md) — shedding under load
 - [Cost levers](cost_levers.md) — semantic caching overlaps
-
-## Video takeaway (30 seconds)
-
-"Users judge time to first token, not total time. A six-second answer that starts in four hundred milliseconds feels faster than a three-second one that appears all at once. So stream, and fill the pre-token gap with real information: 'searching documents', then the list of sources you found. Parallelise everything independent — guardrails, embedding, permission resolution, dense and keyword search. Skip optional stages when a cheap heuristic says they won't help. And if you add a semantic cache, scope it by tenant *and* the caller's permissions — a cache hit across a permission boundary isn't a latency win, it's a data leak."

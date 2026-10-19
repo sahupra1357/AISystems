@@ -1,5 +1,9 @@
 # Memory → What to write (the extraction step)
 
+## Video takeaway
+
+"The fastest way to ruin agent memory is to write everything to it. After two hundred conversations you have three thousand fragments, and 'user works on the German entity' is buried under four hundred instances of 'user said thanks'. So put a gate in front: after each interaction, a cheap async call decides what's worth remembering — durable, reusable, specific — and the expected answer is 'nothing'. Constrain it to a fixed list of typed fields so it can't invent categories. Record whether the user actually said it or you inferred it. And when a user explicitly asks you to remember something, confirm it back to them — that's your cheapest correction mechanism."
+
 ## What it is
 
 The naive implementation writes every turn to memory. After 200 conversations the store contains 3,000 fragments, most of them "user said thanks", "user asked about the weather", "user rephrased their question". Similarity search now returns noise, injection budget is consumed by trivia, and the one fact that mattered — "this user works on the German entity" — competes with 400 others.
@@ -166,7 +170,3 @@ Whenever you have long-term memory at all. Unfiltered writing is not a viable pr
 - [Conflict resolution](conflict_resolution.md) — supersede-or-insert
 - [Security](memory_security.md) — writes are an injection surface
 - [PII](../../../10-production/apply/6-security-privacy-governance/pii.md)
-
-## Video takeaway (30 seconds)
-
-"The fastest way to ruin agent memory is to write everything to it. After two hundred conversations you have three thousand fragments, and 'user works on the German entity' is buried under four hundred instances of 'user said thanks'. So put a gate in front: after each interaction, a cheap async call decides what's worth remembering — durable, reusable, specific — and the expected answer is 'nothing'. Constrain it to a fixed list of typed fields so it can't invent categories. Record whether the user actually said it or you inferred it. And when a user explicitly asks you to remember something, confirm it back to them — that's your cheapest correction mechanism."

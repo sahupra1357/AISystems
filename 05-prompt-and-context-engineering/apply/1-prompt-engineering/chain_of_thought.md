@@ -1,5 +1,9 @@
 # Prompt engineering → Chain-of-thought (when it pays, when it doesn't)
 
+## Video takeaway
+
+"Chain-of-thought means letting the model reason before it answers. On multi-step problems — eligibility rules with conditions, comparisons, planning — it's a big accuracy win. On classification or extraction it's just slower and pricier, and sometimes worse. So decide per call site by measuring. Structure the reasoning as a short checklist, bound its length, parse the answer separately, and never show the reasoning to users — it can contain context they shouldn't see. And remember the rationale isn't proof: verify the answer, don't trust the story."
+
 ## What it is
 
 Chain-of-thought (CoT) prompts the model to produce intermediate reasoning — "think step by step", or a structured `<thinking>` section — before the final answer. The reasoning tokens give the model "scratch space" to decompose the problem, check constraints, and avoid jumping to a plausible-looking wrong answer.
@@ -111,7 +115,3 @@ def decide(passages, situation):
 - [Self-consistency](self_consistency.md) — CoT sampled n times
 - [Reflection](../../../07-agents-tools-memory/apply/1-agents/loop_back_reflection.md), [Planning styles](../../../07-agents-tools-memory/apply/1-agents/planning_styles.md)
 - [Faithfulness check](../../../06-rag/apply/8-generation-grounding/faithfulness_check.md) — verify answers, don't trust rationales
-
-## Video takeaway (30 seconds)
-
-"Chain-of-thought means letting the model reason before it answers. On multi-step problems — eligibility rules with conditions, comparisons, planning — it's a big accuracy win. On classification or extraction it's just slower and pricier, and sometimes worse. So decide per call site by measuring. Structure the reasoning as a short checklist, bound its length, parse the answer separately, and never show the reasoning to users — it can contain context they shouldn't see. And remember the rationale isn't proof: verify the answer, don't trust the story."

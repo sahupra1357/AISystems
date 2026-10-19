@@ -1,5 +1,9 @@
 # Memory → Types (short-term, working, episodic, semantic, procedural)
 
+## Video takeaway
+
+"Agent memory isn't one thing, it's five. Short-term is just the context window. Working memory is the scratchpad for the current run. Episodic is what happened before — past questions and how they went. Semantic is durable facts about the user: their role, their region, their default entity. Procedural is learned how-tos. The key production split: exact facts go in a relational store where you can read, update, and delete them precisely; fuzzy recall goes in a vector store. Put the user's timezone only in a vector index and you're *hoping* to retrieve it. And build working memory first, episodic last — that's where the privacy and quality problems live."
+
 ## What it is
 
 | Type | What it holds | Lifetime | Store | Retrieval |
@@ -153,7 +157,3 @@ def assemble_memory(user, task_type, query, token_budget=600) -> list[dict]:
 - [State & durability](../1-agents/state_durability.md) — working memory
 - [Dynamic few-shot](../../../05-prompt-and-context-engineering/apply/1-prompt-engineering/dynamic_few_shot_selection.md) — procedural memory's cousin
 - [Data residency & retention](../../../10-production/apply/6-security-privacy-governance/data_residency_retention.md) / [PII](../../../10-production/apply/6-security-privacy-governance/pii.md) — retention and PII
-
-## Video takeaway (30 seconds)
-
-"Agent memory isn't one thing, it's five. Short-term is just the context window. Working memory is the scratchpad for the current run. Episodic is what happened before — past questions and how they went. Semantic is durable facts about the user: their role, their region, their default entity. Procedural is learned how-tos. The key production split: exact facts go in a relational store where you can read, update, and delete them precisely; fuzzy recall goes in a vector store. Put the user's timezone only in a vector index and you're *hoping* to retrieve it. And build working memory first, episodic last — that's where the privacy and quality problems live."

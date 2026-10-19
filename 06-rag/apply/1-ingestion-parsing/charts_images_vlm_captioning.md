@@ -1,5 +1,9 @@
 # OCR / digitization → Charts, images, diagrams (VLM captioning)
 
+## Video takeaway
+
+"Your quarterly report's most important fact is in a bar chart, and your text parser can't see it. Send the figure to a vision model with its caption and section title, and ask for a dense, factual description in JSON. Index that as its own chunk, store the image, and attach the image again when you generate the answer. Production rules: filter out logos and icons before you pay, mark chart numbers as approximate because VLMs misread bars, cache by image hash, and sample captions for human review — a confident wrong number in the index is worse than nothing."
+
 ## What it is
 
 Figures carry facts: the bar chart with Q3 revenue by region, the architecture diagram, the flowchart of the approval process, the photo of the damaged part. Text parsers return the caption at best. OCR returns the axis labels as random words. The knowledge in the picture is invisible to retrieval.
@@ -133,7 +137,3 @@ def describe_figure(png_bytes: bytes, caption: str, breadcrumb: str, nearby: str
 - [Retry ladder](retry_ladder.md) — VLM as a rung for tables/formulas
 - [Faithfulness check](../8-generation-grounding/faithfulness_check.md) — handle "approximately" correctly
 - [Data residency](../../../10-production/apply/6-security-privacy-governance/data_residency_retention.md)
-
-## Video takeaway (30 seconds)
-
-"Your quarterly report's most important fact is in a bar chart, and your text parser can't see it. Send the figure to a vision model with its caption and section title, and ask for a dense, factual description in JSON. Index that as its own chunk, store the image, and attach the image again when you generate the answer. Production rules: filter out logos and icons before you pay, mark chart numbers as approximate because VLMs misread bars, cache by image hash, and sample captions for human review — a confident wrong number in the index is worse than nothing."

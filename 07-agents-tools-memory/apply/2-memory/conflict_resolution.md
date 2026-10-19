@@ -1,5 +1,9 @@
 # Memory → Conflict resolution (supersede, don't accumulate)
 
+## Video takeaway
+
+"In January the user said they work on the German entity. In June they moved to the UK. If your memory store just appends, both facts are now live and the model picks one at random. Supersede instead: insert the new fact, mark the old one superseded with a valid-from date, and make every retrieval filter out superseded records. Keep a precedence order — what the user explicitly told you beats what a nightly sync asserts, or your users will correct the same thing every week. And two active values for one field isn't a case to handle gracefully; it's a bug to alert on."
+
 ## What it is
 
 A user says in January "I work on the German entity", and in June "I've moved to the UK entity". A naive memory store now contains both. Retrieval returns both. The model picks one — and which one depends on retrieval order, embedding scores, and luck.
@@ -162,7 +166,3 @@ Any system storing durable facts about users or entities. Supersession should be
 - [How to forget](how_to_forget.md) — superseded record retention
 - [Conflict handling](../../../06-rag/apply/8-generation-grounding/conflict_handling.md) — the document-side analogue
 - [Context poisoning](../../../05-prompt-and-context-engineering/apply/2-context-engineering/context_failure_modes.md) — what unresolved conflicts cause
-
-## Video takeaway (30 seconds)
-
-"In January the user said they work on the German entity. In June they moved to the UK. If your memory store just appends, both facts are now live and the model picks one at random. Supersede instead: insert the new fact, mark the old one superseded with a valid-from date, and make every retrieval filter out superseded records. Keep a precedence order — what the user explicitly told you beats what a nightly sync asserts, or your users will correct the same thing every week. And two active values for one field isn't a case to handle gracefully; it's a bug to alert on."

@@ -1,5 +1,9 @@
 # Agents → Loop-back / reflection (critic, verifier, replanning)
 
+## Video takeaway
+
+"Reflection is having a critic check the output and sending it back with feedback. It works — when the criteria are explicit and checkable, like 'every claim has a citation' rather than 'is this good'. Two rules make it safe. Run the free checks first: schema validity, citation existence, required fields — code catches half the problems for nothing. And cap it at one or two rounds, with oscillation detection, because a critic and a reviser can argue forever on your budget. If your critic is rejecting half of all first attempts, don't add a third round — fix the generator prompt."
+
 ## What it is
 
 Reflection is the agent asking "is this actually right?" before delivering, and doing something about the answer. Three distinct patterns often lumped together:
@@ -162,7 +166,3 @@ def replan_on_failure(plan, failed_step, error, max_replans=1, attempt=0):
 - [Faithfulness](../../../06-rag/apply/8-generation-grounding/faithfulness_check.md) — a specialised, cheap verifier
 - [Budgets](cost_step_budgets.md) — reflection consumes them
 - [LLM-as-judge](../../../09-evaluation/apply/llm_as_judge.md) — evaluating the critic
-
-## Video takeaway (30 seconds)
-
-"Reflection is having a critic check the output and sending it back with feedback. It works — when the criteria are explicit and checkable, like 'every claim has a citation' rather than 'is this good'. Two rules make it safe. Run the free checks first: schema validity, citation existence, required fields — code catches half the problems for nothing. And cap it at one or two rounds, with oscillation detection, because a critic and a reviser can argue forever on your budget. If your critic is rejecting half of all first attempts, don't add a third round — fix the generator prompt."

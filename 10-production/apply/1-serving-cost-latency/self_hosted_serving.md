@@ -1,5 +1,9 @@
 # Production → Self-hosted serving (vLLM/TGI, quantisation, GPU sizing)
 
+## Video takeaway
+
+"Self-hosting means vLLM with continuous batching, paged KV cache, and quantised weights on your own GPUs. It wins on two things: unit cost at high steady volume, and data residency you can't get from an API. The sizing math is weights plus KV cache, and at production concurrency the KV cache dominates — which is why long RAG prompts are expensive to self-host. Most teams land on a hybrid: small self-hosted models for classification, rewriting, embeddings, and reranking, where volume is high and quality is easy; API models for the hard reasoning. And before you self-host to save money, check whether prompt caching and model tiering would have fixed it for a fraction of the effort."
+
 ## What it is
 
 Self-hosting means running open-weight models on your own GPUs instead of calling an API. The machinery that makes it viable:
@@ -172,7 +176,3 @@ def scaling_decision(metrics, target_queue_depth=4, ttft_slo_ms=800):
 - [Embeddings](../../../06-rag/apply/3-embeddings/embedding_model_choice.md), [Reranking](../../../06-rag/apply/6-retrieval-ranking/reranking.md) — the best self-host candidates
 - [Data residency](../6-security-privacy-governance/data_residency_retention.md) — often the real driver
 - [Failure handling](../4-observability-reliability/failure_handling.md) — API fallback
-
-## Video takeaway (30 seconds)
-
-"Self-hosting means vLLM with continuous batching, paged KV cache, and quantised weights on your own GPUs. It wins on two things: unit cost at high steady volume, and data residency you can't get from an API. The sizing math is weights plus KV cache, and at production concurrency the KV cache dominates — which is why long RAG prompts are expensive to self-host. Most teams land on a hybrid: small self-hosted models for classification, rewriting, embeddings, and reranking, where volume is high and quality is easy; API models for the hard reasoning. And before you self-host to save money, check whether prompt caching and model tiering would have fixed it for a fraction of the effort."

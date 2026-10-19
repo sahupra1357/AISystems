@@ -1,5 +1,9 @@
 # Evaluation → Statistical hygiene
 
+## Video takeaway
+
+"On fifty test cases, a score of eighty percent has a confidence interval of roughly sixty-seven to eighty-nine. So the three-point improvement someone just shipped was almost certainly noise. Three habits fix this. Run both variants on the *same* cases and compare per case — a paired test on the handful of cases that changed is far more sensitive than comparing two averages. Report the sample size and the interval with every number, on every dashboard. And run a power calculation once: if you need to detect three-point gains, you'll learn that fifty cases can never do it, and that tells you exactly how much to invest in your golden set."
+
 ## What it is
 
 Eval numbers come from small samples of a stochastic system. Four disciplines separate signal from noise:
@@ -158,7 +162,3 @@ Every reported eval comparison, especially before a release decision or a public
 - [LLM-as-judge](llm_as_judge.md) — bias that CIs don't capture
 - [Agent evals](agent_evals.md) — run-to-run variance
 - [Online eval](online_eval.md) — larger samples, noisier signals
-
-## Video takeaway (30 seconds)
-
-"On fifty test cases, a score of eighty percent has a confidence interval of roughly sixty-seven to eighty-nine. So the three-point improvement someone just shipped was almost certainly noise. Three habits fix this. Run both variants on the *same* cases and compare per case — a paired test on the handful of cases that changed is far more sensitive than comparing two averages. Report the sample size and the interval with every number, on every dashboard. And run a power calculation once: if you need to detect three-point gains, you'll learn that fifty cases can never do it, and that tells you exactly how much to invest in your golden set."

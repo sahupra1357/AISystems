@@ -1,5 +1,9 @@
 # Agents → Human-in-the-loop (approval gates and resume)
 
+## Video takeaway
+
+"An agent that sends an email or issues a refund has crossed from producing text to changing the world, and the fix isn't a better prompt — it's a stop. Classify each tool in the runtime: auto, needs approval, never automated. On a gated action, checkpoint the run durably, show a human the rendered effect and the evidence it was based on, and let them approve, *modify*, or reject with a reason. Then resume with an idempotency key so a retried webhook can't send twice. And watch your approval rate: if ninety-eight percent get waved through, the gate is theatre — automate that class or raise the bar."
+
 ## What it is
 
 Some actions can't be undone. An agent that sends an email, issues a refund, deletes a record, or deploys code has crossed from "produces text" to "changes the world", and the failure modes change with it: a hallucinated recipient, an injected instruction ([prompt-injection defence](../../../10-production/apply/5-guardrails/prompt_injection_defense.md)), a misread amount.
@@ -181,7 +185,3 @@ def expire_stale_approvals():
 - [Tool design](tool_design.md) — which tools are gated
 - [Injection](../../../10-production/apply/5-guardrails/prompt_injection_defense.md) — flagged evidence as a trigger
 - [Auditability](../../../10-production/apply/6-security-privacy-governance/auditability.md)
-
-## Video takeaway (30 seconds)
-
-"An agent that sends an email or issues a refund has crossed from producing text to changing the world, and the fix isn't a better prompt — it's a stop. Classify each tool in the runtime: auto, needs approval, never automated. On a gated action, checkpoint the run durably, show a human the rendered effect and the evidence it was based on, and let them approve, *modify*, or reject with a reason. Then resume with an idempotency key so a retried webhook can't send twice. And watch your approval rate: if ninety-eight percent get waved through, the gate is theatre — automate that class or raise the bar."

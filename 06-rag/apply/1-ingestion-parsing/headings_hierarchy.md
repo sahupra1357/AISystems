@@ -1,5 +1,9 @@
 # Structure extraction → Headings hierarchy (breadcrumbs)
 
+## Video takeaway
+
+"'The limit is five days' means nothing on its own. 'Handbook › Leave › Sick leave › The limit is five days' is findable. Headings give you that for free: walk the document, keep a stack of the current heading path, and prepend it to every chunk before embedding. Use numbering like 3.2.1 as your best signal for levels, cluster font sizes per document not globally, and exclude the running header that repeats on every page — otherwise it resets your stack on every page. Cap the breadcrumb; deep legal hierarchies will otherwise eat your chunk budget."
+
 ## What it is
 
 Authors organise documents with headings. The heading path above any paragraph tells you what the paragraph is *about* even when the paragraph itself uses pronouns and bare numbers. Parsers detect headings (font size/weight, numbering, layout-model `section_header` label, Markdown `#`, DOCX styles) and assign them a **level**. Walking the document while maintaining a heading stack gives each element its **breadcrumb**.
@@ -128,7 +132,3 @@ Always when the source has headings — Office docs, Markdown, HTML, structured 
 - [Layout-aware chunking](../2-chunking/layout_structure_aware.md), [parent–child](../2-chunking/parent_child_small_to_big.md) Parent–child — consumers
 - [Contextual retrieval](../2-chunking/contextual_retrieval.md) — LLM complement for uninformative headings
 - [Citations](../8-generation-grounding/citations.md)
-
-## Video takeaway (30 seconds)
-
-"'The limit is five days' means nothing on its own. 'Handbook › Leave › Sick leave › The limit is five days' is findable. Headings give you that for free: walk the document, keep a stack of the current heading path, and prepend it to every chunk before embedding. Use numbering like 3.2.1 as your best signal for levels, cluster font sizes per document not globally, and exclude the running header that repeats on every page — otherwise it resets your stack on every page. Cap the breadcrumb; deep legal hierarchies will otherwise eat your chunk budget."

@@ -1,5 +1,9 @@
 # Retrieval & ranking → MMR / diversity
 
+## Video takeaway
+
+"You retrieve five passages and they're all the same paragraph — overlapping chunks, a duplicated document, the same clause from three copies of the contract. Now the model sees one fact where the question needed three. Maximal marginal relevance fixes it: at each step pick the chunk that's most relevant *and* least like what you've already picked. Lambda around zero-point-seven is a sane default. But first try the cheaper version — cap it at two chunks per document, one per section — and measure whether you actually have a duplicate problem. And always keep the top result no matter what."
+
 ## What it is
 
 Relevance ranking is greedy: if one paragraph is highly relevant, its overlapping neighbour and the same paragraph from a duplicate document are also highly relevant. A top-5 can easily be five views of one fact — and the model then sees one fact where the user asked a question needing three.
@@ -133,7 +137,3 @@ def cap_per_document(candidates, k=6, max_per_doc=2, max_per_parent=1):
 - [Reranking](reranking.md) — supplies relevance scores
 - [Multi-query](../5-query-understanding/multi_query_rrf.md) — increases duplicate hits
 - [Budgets](../../../05-prompt-and-context-engineering/apply/2-context-engineering/per_source_truncation_budgets.md) — why wasted slots matter
-
-## Video takeaway (30 seconds)
-
-"You retrieve five passages and they're all the same paragraph — overlapping chunks, a duplicated document, the same clause from three copies of the contract. Now the model sees one fact where the question needed three. Maximal marginal relevance fixes it: at each step pick the chunk that's most relevant *and* least like what you've already picked. Lambda around zero-point-seven is a sane default. But first try the cheaper version — cap it at two chunks per document, one per section — and measure whether you actually have a duplicate problem. And always keep the top result no matter what."

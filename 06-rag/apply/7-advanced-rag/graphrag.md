@@ -1,5 +1,9 @@
 # Advanced RAG → GraphRAG / knowledge graph
 
+## Video takeaway
+
+"Ask 'what themes recur across our four thousand incident reports' and top-k retrieval has nothing to give you — no single passage contains the answer. GraphRAG extracts entities and relationships from every chunk, clusters them into communities, summarises each community, and answers global questions by mapping over those summaries. It also follows real relationship chains for multi-hop questions. The catch is cost: an LLM call per chunk at ingest, often ten to a hundred times plain embedding, plus entity resolution, which is genuinely hard. Prototype on one percent of your corpus, measure the gain on global questions specifically, and check whether a summary tree or a SQL query answers the same question for a fraction of the price."
+
 ## What it is
 
 Vector RAG retrieves the k passages most similar to a query. That structurally cannot answer two classes of question:
@@ -149,7 +153,3 @@ def local_search(question, graph, caller, hops=2):
 - [Decomposition](../5-query-understanding/decomposition.md) — the cheap approach to some multi-hop questions
 - [ACL capture](../1-ingestion-parsing/tenant_acl_capture_at_ingest.md) — must propagate to the graph
 - [Citations](../8-generation-grounding/citations.md) — chunk IDs on nodes and edges
-
-## Video takeaway (30 seconds)
-
-"Ask 'what themes recur across our four thousand incident reports' and top-k retrieval has nothing to give you — no single passage contains the answer. GraphRAG extracts entities and relationships from every chunk, clusters them into communities, summarises each community, and answers global questions by mapping over those summaries. It also follows real relationship chains for multi-hop questions. The catch is cost: an LLM call per chunk at ingest, often ten to a hundred times plain embedding, plus entity resolution, which is genuinely hard. Prototype on one percent of your corpus, measure the gain on global questions specifically, and check whether a summary tree or a SQL query answers the same question for a fraction of the price."

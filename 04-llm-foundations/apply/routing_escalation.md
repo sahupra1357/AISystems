@@ -1,5 +1,9 @@
 # Foundations → Routing & escalation (cheap model first)
 
+## Video takeaway
+
+"Most questions are easy. Send them to the cheap model first, check the answer with a cheap verifier, and only escalate the hard ones to the expensive model. Done well, you cut cost by half or more. Done badly, you pay for the router, the cheap attempt, and the expensive model — on nearly every request. The rule of thumb: if you're escalating more than about forty percent, the router isn't earning its keep. And sample the answers that didn't escalate — that's where the silent failures hide."
+
 ## What it is
 
 Static tiering ([model selection & tradeoffs](model_selection.md)) assigns a model per call site. Routing/escalation makes it dynamic per *request*: most questions are easy; some are hard; you can't tell from the call site alone. So:
@@ -133,7 +137,3 @@ def answer_with_escalation(q, ctx, llm, tau_ok=True):
 - [Faithfulness check](../../06-rag/apply/8-generation-grounding/faithfulness_check.md) — verifier as a trigger
 - [LLM-as-judge](../../09-evaluation/apply/llm_as_judge.md) — measuring escalation precision
 - [Cost levers](../../10-production/apply/1-serving-cost-latency/cost_levers.md)
-
-## Video takeaway (30 seconds)
-
-"Most questions are easy. Send them to the cheap model first, check the answer with a cheap verifier, and only escalate the hard ones to the expensive model. Done well, you cut cost by half or more. Done badly, you pay for the router, the cheap attempt, and the expensive model — on nearly every request. The rule of thumb: if you're escalating more than about forty percent, the router isn't earning its keep. And sample the answers that didn't escalate — that's where the silent failures hide."

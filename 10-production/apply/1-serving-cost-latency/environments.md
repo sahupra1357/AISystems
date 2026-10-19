@@ -1,5 +1,9 @@
 # Production → Environments
 
+## Video takeaway
+
+"Vector indexes are expensive, so teams share one across environments — and then a dev experiment writes chunks into the index real users are searching. Separate them physically, and make the wrong write impossible: production credentials that don't exist in CI, and a client that refuses to start if the environment and endpoint disagree. Run evals against a read-only, pinned corpus snapshot so results are reproducible and can't touch live data. And when you build the snapshot for lower environments, sample it stratified and pseudonymise consistently — replace every name with 'PERSON_1' and you've destroyed the keyword matching behaviour you were trying to test."
+
 ## What it is
 
 AI systems have more stateful, expensive-to-rebuild components than typical applications: vector indexes, chunk registries, document stores, memory stores, eval datasets, and trace stores. Environment separation applies to all of them, and the vector index is the one teams most often share "just to save money".
@@ -164,7 +168,3 @@ Always for production systems, and from the start — retrofitting separation af
 - [Capacity & limits](capacity_limits.md) — quota isolation
 - [Data residency & retention](../6-security-privacy-governance/data_residency_retention.md) / [PII](../6-security-privacy-governance/pii.md) — anonymisation and trace-store governance
 - [Versioning & rollout](versioning_rollout.md) — config per environment
-
-## Video takeaway (30 seconds)
-
-"Vector indexes are expensive, so teams share one across environments — and then a dev experiment writes chunks into the index real users are searching. Separate them physically, and make the wrong write impossible: production credentials that don't exist in CI, and a client that refuses to start if the environment and endpoint disagree. Run evals against a read-only, pinned corpus snapshot so results are reproducible and can't touch live data. And when you build the snapshot for lower environments, sample it stratified and pseudonymise consistently — replace every name with 'PERSON_1' and you've destroyed the keyword matching behaviour you were trying to test."

@@ -1,5 +1,9 @@
 # Advanced RAG → Multimodal RAG (page images, ColPali, VLM descriptions)
 
+## Video takeaway
+
+"Your slide deck's key fact is a bar chart, and every step of your parsing pipeline is a lossy attempt to turn that picture into words. ColPali-style retrieval skips it: render the page, embed the image as a thousand patch vectors, and match query tokens against patches directly — then hand the actual page image to a vision model to answer. It beats text pipelines on visual documents and the ingest is just 'render and embed'. The price is storage: a thousand vectors per page instead of one. Pool them, quantise them, use two-stage retrieval, and keep a keyword leg alongside — visual embeddings still can't match an exact part number."
+
 ## What it is
 
 Two complementary approaches to making visual content retrievable:
@@ -142,7 +146,3 @@ def answer_visual(question, pages):
 - [Index types](../4-indexing/index_types_flat_hnsw_ivfpq.md) — two-stage compressed-then-rescore
 - [Hybrid search](../6-retrieval-ranking/hybrid_search.md) — fuse visual with text legs
 - [Page images and citations](../1-ingestion-parsing/page_numbers_bounding_boxes.md)
-
-## Video takeaway (30 seconds)
-
-"Your slide deck's key fact is a bar chart, and every step of your parsing pipeline is a lossy attempt to turn that picture into words. ColPali-style retrieval skips it: render the page, embed the image as a thousand patch vectors, and match query tokens against patches directly — then hand the actual page image to a vision model to answer. It beats text pipelines on visual documents and the ingest is just 'render and embed'. The price is storage: a thousand vectors per page instead of one. Pool them, quantise them, use two-stage retrieval, and keep a keyword leg alongside — visual embeddings still can't match an exact part number."

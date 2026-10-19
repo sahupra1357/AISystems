@@ -1,5 +1,9 @@
 # Foundations → Build vs buy (managed retrieval vs owning the pipeline)
 
+## Video takeaway
+
+"A managed knowledge base gets you a working demo in a day, and for an internal tool over clean documents it might be all you need. But the moment you need permissions that match the source exactly, tables that answer correctly, reranking tuned to your data, or to *see* why a chunk was retrieved — you own the pipeline. Most enterprises land in the middle: own parsing, chunking, metadata, ACLs, and evals; buy the vector database, embeddings, and models. Whatever you choose, build the golden set first and keep your own chunk registry so you can leave."
+
 ## What it is
 
 **Buy (managed)**: a service ingests your documents, parses, chunks, embeds, indexes, retrieves, and often generates, behind one API. You configure; you don't operate.
@@ -126,7 +130,3 @@ def answer(q, caller, retriever: Retriever):
 - [Chunking](../../06-rag/apply/2-chunking/) Chunking, [retrieval & ranking](../../06-rag/apply/6-retrieval-ranking/) Retrieval — the quality levers you gain by owning
 - [Golden dataset](../../09-evaluation/apply/golden_dataset.md) — the first thing to build either way
 - [Cost levers](../../10-production/apply/1-serving-cost-latency/cost_levers.md)
-
-## Video takeaway (30 seconds)
-
-"A managed knowledge base gets you a working demo in a day, and for an internal tool over clean documents it might be all you need. But the moment you need permissions that match the source exactly, tables that answer correctly, reranking tuned to your data, or to *see* why a chunk was retrieved — you own the pipeline. Most enterprises land in the middle: own parsing, chunking, metadata, ACLs, and evals; buy the vector database, embeddings, and models. Whatever you choose, build the golden set first and keep your own chunk registry so you can leave."

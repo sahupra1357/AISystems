@@ -1,5 +1,9 @@
 # Source ingestion → Change detection (the size/mtime → SHA-256 ladder)
 
+## Video takeaway
+
+"The most common avoidable cost in an AI system is re-embedding documents that didn't change. Use a ladder: if size and modified-time match, skip without even opening the file. If they changed, hash the bytes; if the hash matches, it was a resave — skip. Only a real content change hits parse and embed. And when you upgrade a parser or embedding model, don't let it re-process the world by accident — run that as a deliberate, rate-limited migration."
+
 ## What it is
 
 Re-processing a document costs parse time (seconds to minutes for OCR), embedding tokens (money), and index writes. Most sync runs touch documents that haven't actually changed — someone re-saved a file, a backup restore reset every mtime, a migration copied a folder. Change detection is a ladder of increasingly expensive checks that stops at the first proof of "unchanged":
@@ -135,7 +139,3 @@ Always, from day one. Retrofitting change detection onto a pipeline that re-inde
 - [Deduplication](deduplication.md) — same hash, *different* documents
 - [Document versioning](document_versioning.md) — what "processed" creates
 - [Embedding versioning](../3-embeddings/embedding_versioning.md) — the config-driven wave
-
-## Video takeaway (30 seconds)
-
-"The most common avoidable cost in an AI system is re-embedding documents that didn't change. Use a ladder: if size and modified-time match, skip without even opening the file. If they changed, hash the bytes; if the hash matches, it was a resave — skip. Only a real content change hits parse and embed. And when you upgrade a parser or embedding model, don't let it re-process the world by accident — run that as a deliberate, rate-limited migration."

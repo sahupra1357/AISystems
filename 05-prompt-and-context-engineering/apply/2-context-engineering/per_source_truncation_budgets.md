@@ -1,5 +1,9 @@
 # Context engineering → Per-source truncation budgets
 
+## Video takeaway
+
+"One tool call returns thirty thousand tokens of log file, and everything else — including the passage with the answer — gets pushed out of the window. Fix it with budgets at three levels: per item, per source, and global, with output tokens reserved. Truncate visibly: show the model how much it's seeing and how to fetch more. Truncate smartly: keep the matched span for chunks, head and tail for logs. And never let the top-ranked chunk be the thing that gets cut — drop the weak ones instead, and alert if that ever fails."
+
 ## What it is
 
 Sources are not equally sized: a `read_file` tool returns 30k tokens; a web page returns 15k; a parent chunk is 1.5k; a memory is 50. Without caps, the first big item fills the window and the assembler drops the rest — or the call fails on the context limit, or the bill spikes.
@@ -126,7 +130,3 @@ def apply_tool_budget(name: str, result: str, cfg) -> str:
 - [Tool design](../../../07-agents-tools-memory/apply/1-agents/tool_design.md) — output caps and pagination
 - [Parent–child](../../../06-rag/apply/2-chunking/parent_child_small_to_big.md) Parent–child — parents as the big items
 - [Observability](../../../10-production/apply/4-observability-reliability/observability_tracing.md)
-
-## Video takeaway (30 seconds)
-
-"One tool call returns thirty thousand tokens of log file, and everything else — including the passage with the answer — gets pushed out of the window. Fix it with budgets at three levels: per item, per source, and global, with output tokens reserved. Truncate visibly: show the model how much it's seeing and how to fetch more. Truncate smartly: keep the matched span for chunks, head and tail for logs. And never let the top-ranked chunk be the thing that gets cut — drop the weak ones instead, and alert if that ever fails."

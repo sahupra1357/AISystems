@@ -1,5 +1,9 @@
 # OCR / digitization → Digital document (native text layer → Docling)
 
+## Video takeaway
+
+"Most PDFs are born digital — the characters are right there. The problem isn't reading them, it's reconstructing structure: columns, headings, tables. A structure-preserving parser like Docling gives you exact text plus layout, tables as cells, and a bounding box for every element, in seconds on CPU. The production traps: PDFs with broken font maps that look digital but decode as gibberish — detect and send those to OCR — and parser upgrades that silently change your chunks. Pin the version, run the parsing eval, then upgrade on purpose."
+
 ## What it is
 
 A born-digital PDF (exported from Word, LaTeX, a web page, a reporting tool) contains the actual characters with their positions and fonts. No OCR is needed — extraction is exact. What is *not* free is structure: the PDF format stores glyphs at coordinates, not paragraphs, columns, headings, or tables. A naive extractor (`pdftotext`) gives you a text soup in drawing order.
@@ -126,7 +130,3 @@ def parse_digital(path: str) -> list[dict]:
 - [Structure extraction](../../../AI_System.md#structure-extraction-what-the-parser-must-preserve) Structure extraction — what this parser must preserve
 - [Test-time validation against a golden sample](validation_golden_sample.md) / [Validation](validation_production_heuristics.md)
 - [Layout-aware chunking](../2-chunking/layout_structure_aware.md) — consumer
-
-## Video takeaway (30 seconds)
-
-"Most PDFs are born digital — the characters are right there. The problem isn't reading them, it's reconstructing structure: columns, headings, tables. A structure-preserving parser like Docling gives you exact text plus layout, tables as cells, and a bounding box for every element, in seconds on CPU. The production traps: PDFs with broken font maps that look digital but decode as gibberish — detect and send those to OCR — and parser upgrades that silently change your chunks. Pin the version, run the parsing eval, then upgrade on purpose."

@@ -1,5 +1,9 @@
 # Prompt engineering → Structured outputs & tool use (schema, validate, retry)
 
+## Video takeaway
+
+"Anywhere code reads a model's output — a pipeline step, a database write, an agent's tool call — the output has to be structured and checked. Define the schema as code, use the provider's native enforcement so the shape is right, then validate the meaning: does the cited ID exist, is the amount non-negative, is the date real. When validation fails, send the error back and retry, at most twice. And watch the schema-violation rate like you watch error rate — it's the earliest signal that a prompt or model change broke something."
+
 ## What it is
 
 Free text is for humans. Every place a model output is consumed by *code* — a pipeline step, a database write, a tool invocation, a UI component — the output must be structured and validated:
@@ -135,7 +139,3 @@ def extract(text: str, valid_ids: set[str], max_retries: int = 2) -> Extraction 
 - [Citations](../../../06-rag/apply/8-generation-grounding/citations.md) — referential validation
 - [Excessive agency](../../../10-production/apply/5-guardrails/excessive_agency.md) — authorisation outside the model
 - [Versioning & rollout](../../../10-production/apply/1-serving-cost-latency/versioning_rollout.md)
-
-## Video takeaway (30 seconds)
-
-"Anywhere code reads a model's output — a pipeline step, a database write, an agent's tool call — the output has to be structured and checked. Define the schema as code, use the provider's native enforcement so the shape is right, then validate the meaning: does the cited ID exist, is the amount non-negative, is the date real. When validation fails, send the error back and retry, at most twice. And watch the schema-violation rate like you watch error rate — it's the earliest signal that a prompt or model change broke something."

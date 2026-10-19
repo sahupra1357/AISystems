@@ -1,5 +1,9 @@
 # Security → Data residency & retention
 
+## Video takeaway
+
+"Your customer data is in more places than you think: the vector index, the document store, the trace store, the memory store, eval samples, caches, and the model provider. Every one needs a region, a retention period, and an erasure path. Two things catch teams out. The trace store is usually the richest pile of sensitive content you hold and it's often configured to keep everything forever for debugging — set a real period. And embeddings are increasingly treated as personal data, so they're in scope for residency and deletion; don't argue that one in a security review. Enforce regional routing in code so a cross-region call can't be constructed, and verify every erasure rather than assuming it worked."
+
 ## What it is
 
 An AI system spreads data across more places than teams expect. Every one is a residency and retention question:
@@ -181,7 +185,3 @@ Any system serving EU, UK, healthcare, financial, or public-sector customers —
 - [PII](pii.md), [Auditability](auditability.md), [Supply chain](supply_chain_hygiene.md)
 - [Environments](../1-serving-cost-latency/environments.md) — regional and per-environment separation
 - [Self-hosted serving](../1-serving-cost-latency/self_hosted_serving.md) — the residency answer when APIs can't comply
-
-## Video takeaway (30 seconds)
-
-"Your customer data is in more places than you think: the vector index, the document store, the trace store, the memory store, eval samples, caches, and the model provider. Every one needs a region, a retention period, and an erasure path. Two things catch teams out. The trace store is usually the richest pile of sensitive content you hold and it's often configured to keep everything forever for debugging — set a real period. And embeddings are increasingly treated as personal data, so they're in scope for residency and deletion; don't argue that one in a security review. Enforce regional routing in code so a cross-region call can't be constructed, and verify every erasure rather than assuming it worked."

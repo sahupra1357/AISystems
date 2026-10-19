@@ -1,5 +1,9 @@
 # Chunking → Contextual retrieval (LLM-generated chunk context)
 
+## Video takeaway
+
+"A chunk that says 'revenue grew 3%' can't be found by 'Acme Q3 revenue' — the context got cut off. Contextual retrieval asks a cheap LLM to write one sentence situating each chunk in its document, and prepends it before embedding. Retrieval failures drop by a third to two-thirds. At scale the trick is prompt caching: the document is the cached prefix, each chunk is a tiny suffix. Cache the blurbs, version the model, keep the blurb out of what users see."
+
 ## What it is
 
 A chunk in isolation often loses the information that makes it findable. "Revenue grew 3% over the previous quarter" — which company, which quarter? "It must be returned within 14 days" — what must? The original document made that clear from context; the chunk didn't keep it.
@@ -132,7 +136,3 @@ def contextualize(doc_text: str, chunks: list[str], cache: dict) -> list[str]:
 - [Reranking](../6-retrieval-ranking/reranking.md) — compounds the gain
 - [Prompt caching](../../../05-prompt-and-context-engineering/apply/2-context-engineering/prompt_caching.md) — what makes this affordable
 - [Change detection](../1-ingestion-parsing/change_detection.md) — avoid regenerating unchanged docs
-
-## Video takeaway (30 seconds)
-
-"A chunk that says 'revenue grew 3%' can't be found by 'Acme Q3 revenue' — the context got cut off. Contextual retrieval asks a cheap LLM to write one sentence situating each chunk in its document, and prepends it before embedding. Retrieval failures drop by a third to two-thirds. At scale the trick is prompt caching: the document is the cached prefix, each chunk is a tiny suffix. Cache the blurbs, version the model, keep the blurb out of what users see."

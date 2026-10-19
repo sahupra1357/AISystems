@@ -1,5 +1,9 @@
 # Security → Model & supply-chain hygiene
 
+## Video takeaway
+
+"AI systems have a supply-chain risk with no equivalent in normal software: a dependency can ship text your model obeys. A third-party tool server's description is an instruction the model reads and follows — so review every one before you enable it, hash the descriptions, and diff them on upgrade, because a dependency bump that changes a description is a prompt change. Refuse tool schemas that accept a tenant or user ID as a parameter; identity comes from the session, not from something the model can choose. Pin model IDs exactly, never aliases, verify weight hashes, insist on safetensors rather than pickle. And track deprecation dates as scheduled work, because migrating under a sunset deadline is how regressions ship."
+
 ## What it is
 
 AI systems have the usual software supply chain — packages, containers, base images — plus three novel surfaces:
@@ -176,7 +180,3 @@ Any production system. The MCP-review gate specifically applies the moment you e
 - [Excessive agency](../5-guardrails/excessive_agency.md) — no ambient credentials
 - [Versioning & rollout](../1-serving-cost-latency/versioning_rollout.md) — pinning and deprecations
 - [Sandboxing](../../../07-agents-tools-memory/apply/1-agents/sandboxing.md) — isolating untrusted execution
-
-## Video takeaway (30 seconds)
-
-"AI systems have a supply-chain risk with no equivalent in normal software: a dependency can ship text your model obeys. A third-party tool server's description is an instruction the model reads and follows — so review every one before you enable it, hash the descriptions, and diff them on upgrade, because a dependency bump that changes a description is a prompt change. Refuse tool schemas that accept a tenant or user ID as a parameter; identity comes from the session, not from something the model can choose. Pin model IDs exactly, never aliases, verify weight hashes, insist on safetensors rather than pickle. And track deprecation dates as scheduled work, because migrating under a sunset deadline is how regressions ship."

@@ -1,5 +1,9 @@
 # Query understanding → Self-query (natural language → metadata filters)
 
+## Video takeaway
+
+"'Contracts signed after 2023 with EMEA vendors' — an embedding can't tell 2019 from 2024, but your metadata can. Self-query has a cheap model pull the constraints out as real filters and leaves the rest as the semantic query. Two things make or break it: validate every extracted field and value against a closed schema built from what's actually in your index, because a hallucinated filter silently hides the right answer; and show the parsed filters in the UI as chips the user can remove. Security filters get ANDed on top and are never relaxed, no matter how empty the result set is."
+
 ## What it is
 
 Embeddings are bad at constraints. Dates, numeric ranges, enumerated categories, and negations ("not the draft version") are structural facts that vector similarity approximates poorly — a 2019 contract and a 2024 contract embed almost identically. But your chunks already carry that metadata ([metadata on every chunk](../2-chunking/chunk_metadata.md)). Self-query uses an LLM to parse the user's question into:
@@ -156,7 +160,3 @@ def self_query(question: str, caller):
 - [Tenant/ACL](../1-ingestion-parsing/tenant_acl_capture_at_ingest.md) — security filters are separate and mandatory
 - [Query rewriting](query_rewriting.md) — share the call
 - [Abstention](../6-retrieval-ranking/score_thresholding_abstention.md) — when filters legitimately yield nothing
-
-## Video takeaway (30 seconds)
-
-"'Contracts signed after 2023 with EMEA vendors' — an embedding can't tell 2019 from 2024, but your metadata can. Self-query has a cheap model pull the constraints out as real filters and leaves the rest as the semantic query. Two things make or break it: validate every extracted field and value against a closed schema built from what's actually in your index, because a hallucinated filter silently hides the right answer; and show the parsed filters in the UI as chips the user can remove. Security filters get ANDed on top and are never relaxed, no matter how empty the result set is."

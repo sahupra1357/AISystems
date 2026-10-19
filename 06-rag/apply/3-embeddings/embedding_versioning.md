@@ -1,5 +1,9 @@
 # Embeddings → Versioning & migration (dual-index cutover)
 
+## Video takeaway
+
+"Change the embedding model and every vector in your index is instantly meaningless to the new query embeddings. So a model change — or a prefix change, a dimension change, a chunking change — is a migration: build the new index alongside the old one from your chunk registry, write new documents to both while it builds, gate the cutover on your golden set, flip a flag, keep the old index for a rollback window, then delete it. Stamp the version on every chunk and make the query service refuse to start if its embedder doesn't match the index."
+
 ## What it is
 
 An embedding space is defined by the model that produced it. Query vectors from model B searched against document vectors from model A return garbage — not slightly worse, garbage. So any of these events is a **migration**:
@@ -132,7 +136,3 @@ Every embedding-affecting change. There is no safe in-place migration.
 - [Document versioning](../1-ingestion-parsing/document_versioning.md) — same pointer-flip idea
 - [Model choice](embedding_model_choice.md) / [fine-tuning embeddings on your own logs](fine_tuning_embeddings.md) — what triggers migrations
 - [Versioning & rollout](../../../10-production/apply/1-serving-cost-latency/versioning_rollout.md)
-
-## Video takeaway (30 seconds)
-
-"Change the embedding model and every vector in your index is instantly meaningless to the new query embeddings. So a model change — or a prefix change, a dimension change, a chunking change — is a migration: build the new index alongside the old one from your chunk registry, write new documents to both while it builds, gate the cutover on your golden set, flip a flag, keep the old index for a rollback window, then delete it. Stamp the version on every chunk and make the query service refuse to start if its embedder doesn't match the index."

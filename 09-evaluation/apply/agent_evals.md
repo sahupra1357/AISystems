@@ -1,5 +1,9 @@
 # Evaluation → Agent evals (trajectory, cost, task success)
 
+## Video takeaway
+
+"Judging an agent by whether it got the right answer misses most of what matters. Evaluate three levels: did it accomplish the task, how did it get there, and was each step sound. For the trajectory, don't match against a reference path — there are many valid ones. Check properties instead: did it use the required tools, avoid the forbidden ones, stay under the step and cost budget, avoid repeating the same call, and terminate explicitly. Run each task five times, because agents are stochastic and one lucky run proves nothing. And put success rate, mean cost, and ninety-fifth-percentile cost in one table — a two percent quality gain for four times the tool calls is a loss, and that table is the only place it shows up."
+
 ## What it is
 
 An agent that gets the right answer by making 40 tool calls, two of which were destructive attempts that failed for the wrong reason, is not a working agent. Agent evaluation has three levels:
@@ -169,7 +173,3 @@ Any agent reaching production, especially any agent with write tools. The step-l
 - [LLM-as-judge](llm_as_judge.md) — outcome scoring
 - [Statistical hygiene](statistical_hygiene.md) — run counts and intervals
 - [Testing pyramid](testing_pyramid.md) — safety gates in CI
-
-## Video takeaway (30 seconds)
-
-"Judging an agent by whether it got the right answer misses most of what matters. Evaluate three levels: did it accomplish the task, how did it get there, and was each step sound. For the trajectory, don't match against a reference path — there are many valid ones. Check properties instead: did it use the required tools, avoid the forbidden ones, stay under the step and cost budget, avoid repeating the same call, and terminate explicitly. Run each task five times, because agents are stochastic and one lucky run proves nothing. And put success rate, mean cost, and ninety-fifth-percentile cost in one table — a two percent quality gain for four times the tool calls is a loss, and that table is the only place it shows up."

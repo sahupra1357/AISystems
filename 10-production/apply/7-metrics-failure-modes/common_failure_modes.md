@@ -1,5 +1,9 @@
 # Common failure modes (and the fix)
 
+## Video takeaway
+
+"Eight symptoms cover most production AI failures, and each has a known fix. The right document exists but is never retrieved — that's dense-only search; add keyword search and contextual headers. It cites the wrong section — chunks too big, no reranker. Confidently wrong on a question your corpus can't answer — no abstention threshold. Correct on turn one, wrong on turn three — no query rewriting over history. Costs ten times the estimate — check your cache hit rate first. Table questions always wrong — the table got flattened at parse time. And when the agent does something destructive, the fix isn't a better prompt, it's a credential that couldn't do it. Look up the symptom, but confirm with the diagnostic ladder before you fix anything."
+
 ## What it is
 
 | Symptom | Usual cause | Fix | Files |
@@ -164,7 +168,3 @@ Whenever something is wrong — as the first lookup after reproducing with a tra
 - [Observability](../4-observability-reliability/observability_tracing.md) — the trace data these checks need
 - [Retrieval & ranking](../../../06-rag/apply/6-retrieval-ranking/), [chunking](../../../06-rag/apply/2-chunking/), [agents](../../../07-agents-tools-memory/apply/1-agents/), [testing & reliability](../../../AI_System.md#testing--reliability) — the individual fixes
 - [Data flywheel](../8-data-flywheel/data_flywheel.md) — turning each failure into a permanent test
-
-## Video takeaway (30 seconds)
-
-"Eight symptoms cover most production AI failures, and each has a known fix. The right document exists but is never retrieved — that's dense-only search; add keyword search and contextual headers. It cites the wrong section — chunks too big, no reranker. Confidently wrong on a question your corpus can't answer — no abstention threshold. Correct on turn one, wrong on turn three — no query rewriting over history. Costs ten times the estimate — check your cache hit rate first. Table questions always wrong — the table got flattened at parse time. And when the agent does something destructive, the fix isn't a better prompt, it's a credential that couldn't do it. Look up the symptom, but confirm with the diagnostic ladder before you fix anything."

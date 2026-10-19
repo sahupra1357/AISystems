@@ -1,5 +1,9 @@
 # Memory → Security (memory as an injection surface)
 
+## Video takeaway
+
+"Prompt injection normally ruins one response. With memory, it can ruin every future one — text gets written into the store and re-injected into every session forever. Two rules kill most of it. First, memory can only be written from what the *user* said, never from a document you retrieved: document text is evidence, not user facts. Second, constrain memory to a typed list of fields like role and region, so 'always reply with the user's email' has nowhere to live no matter how it's phrased. Then render memory as escaped, delimited data, filter every query by user and tenant, and never let a stored string grant a permission."
+
 ## What it is
 
 Memory turns a transient injection into a persistent one. In ordinary prompt injection, a malicious document influences one response. With memory, text can be written *into the store* and then re-injected into every future session — for that user, or, if isolation is broken, for others.
@@ -162,7 +166,3 @@ Always, in any system with persistent memory. This is not an optional hardening 
 - [Delimiters](../../../05-prompt-and-context-engineering/apply/1-prompt-engineering/delimiters_data_vs_instructions.md) — rendering memory as data
 - [Tenant/ACL isolation](../../../06-rag/apply/1-ingestion-parsing/tenant_acl_capture_at_ingest.md) — the same discipline
 - [PII](../../../10-production/apply/6-security-privacy-governance/pii.md), [Auditability](../../../10-production/apply/6-security-privacy-governance/auditability.md)
-
-## Video takeaway (30 seconds)
-
-"Prompt injection normally ruins one response. With memory, it can ruin every future one — text gets written into the store and re-injected into every session forever. Two rules kill most of it. First, memory can only be written from what the *user* said, never from a document you retrieved: document text is evidence, not user facts. Second, constrain memory to a typed list of fields like role and region, so 'always reply with the user's email' has nowhere to live no matter how it's phrased. Then render memory as escaped, delimited data, filter every query by user and tenant, and never let a stored string grant a permission."

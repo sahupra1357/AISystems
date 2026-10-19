@@ -1,5 +1,9 @@
 # Fine-tuning → SFT (supervised fine-tuning)
 
+## Video takeaway
+
+"Supervised fine-tuning teaches form, not facts: your house format, your domain's phrasing, your edge-case conventions. The surprising part is how little data you need and how much curation matters — a thousand verified, diverse, consistently formatted examples usually beat fifty thousand scraped ones, because the model faithfully learns your labellers' inconsistencies too. Two rules save most projects. Train in exactly the format you serve in: same system prompt, same message structure, same schemas, or it underperforms for no visible reason. And evaluate refusal behaviour afterwards, because fine-tuning on task data quietly erodes the model's willingness to say 'I don't know'."
+
 ## What it is
 
 SFT continues training a base model on your own (prompt, completion) pairs so the behaviour you want becomes the default rather than something you request in a long prompt. It teaches **form, style, and procedure** — not facts ([prompting vs RAG vs fine-tuning](../prompting_vs_rag_vs_finetuning.md)).
@@ -193,7 +197,3 @@ def evaluate_sft(base_model, tuned_model, golden_cases, safety_cases):
 - [Distillation](distillation.md), [When not to](when_not_to_fine_tune.md), [Ops](fine_tuning_ops.md)
 - [Golden dataset first](../../../09-evaluation/apply/golden_dataset.md) / [prompt evaluation](../../../09-evaluation/apply/prompt_evaluation.md) — the eval suite it must pass
 - [Data flywheel](../../../10-production/apply/8-data-flywheel/data_flywheel.md) — where the examples come from
-
-## Video takeaway (30 seconds)
-
-"Supervised fine-tuning teaches form, not facts: your house format, your domain's phrasing, your edge-case conventions. The surprising part is how little data you need and how much curation matters — a thousand verified, diverse, consistently formatted examples usually beat fifty thousand scraped ones, because the model faithfully learns your labellers' inconsistencies too. Two rules save most projects. Train in exactly the format you serve in: same system prompt, same message structure, same schemas, or it underperforms for no visible reason. And evaluate refusal behaviour afterwards, because fine-tuning on task data quietly erodes the model's willingness to say 'I don't know'."

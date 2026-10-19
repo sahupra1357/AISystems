@@ -1,5 +1,9 @@
 # Structure extraction → Headers / footers / boilerplate stripping
 
+## Video takeaway
+
+"Every page says 'CONFIDENTIAL — Acme — Page 12 of 90'. Every email ends with a 60-word disclaimer. Index that and a third of every chunk is noise: embeddings drift toward 'confidentiality notice', the model quotes disclaimers, and you pay tokens for nothing. Strip it — by position and repetition within a document, and by frequency across documents, scoped per tenant. But don't throw away page labels, classification markings, or effective dates: parse those into metadata first. Watch the stripped fraction per source; a spike means a template changed or a rule broke."
+
 ## What it is
 
 Boilerplate is content that repeats across pages or documents and carries no answer: "CONFIDENTIAL — Acme Corp — Page 12 of 90", "This email and any attachments…", "© 2024 All rights reserved", navigation menus, cookie notices, "Table of Contents", running chapter titles, letterhead, fax cover text, forwarded-message headers.
@@ -129,7 +133,3 @@ def strip(pages):
 - [Headings](headings_hierarchy.md) — running headers must not enter the stack
 - [Page labels](page_numbers_bounding_boxes.md) — extracted from footers
 - [ACL](tenant_acl_capture_at_ingest.md) — classification markings
-
-## Video takeaway (30 seconds)
-
-"Every page says 'CONFIDENTIAL — Acme — Page 12 of 90'. Every email ends with a 60-word disclaimer. Index that and a third of every chunk is noise: embeddings drift toward 'confidentiality notice', the model quotes disclaimers, and you pay tokens for nothing. Strip it — by position and repetition within a document, and by frequency across documents, scoped per tenant. But don't throw away page labels, classification markings, or effective dates: parse those into metadata first. Watch the stripped fraction per source; a spike means a template changed or a rule broke."

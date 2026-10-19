@@ -1,5 +1,9 @@
 # Security → Authentication & authorization (permission-filtered retrieval)
 
+## Video takeaway
+
+"The security model of a RAG system is one sentence: the model must never receive a chunk the caller can't see. Not 'the model shouldn't reveal it' — never receives it. That means the caller's groups become a mandatory filter inside the vector search, alongside tenant and current-version, built by one function that every read path is forced to use. Post-filtering the top hundred results isn't just insecure, it's broken — for a user who can see one percent of the corpus you'll return nothing. And remember search isn't the only read: fetching a parent chunk, serving a page image for a citation, reading memory — each is a separate authorisation, and one missed path is the leak."
+
 ## What it is
 
 The security model of a RAG system is simple to state and easy to get wrong: **the model must never receive a chunk the caller cannot see.** Everything else follows.
@@ -179,7 +183,3 @@ Every system with more than one user or more than one permission level. Which is
 - [Excessive agency](../5-guardrails/excessive_agency.md) — agents act as the caller
 - [Refusal](../../../06-rag/apply/8-generation-grounding/refusal_no_answer_path.md) — non-disclosing messages
 - [Auditability](auditability.md)
-
-## Video takeaway (30 seconds)
-
-"The security model of a RAG system is one sentence: the model must never receive a chunk the caller can't see. Not 'the model shouldn't reveal it' — never receives it. That means the caller's groups become a mandatory filter inside the vector search, alongside tenant and current-version, built by one function that every read path is forced to use. Post-filtering the top hundred results isn't just insecure, it's broken — for a user who can see one percent of the corpus you'll return nothing. And remember search isn't the only read: fetching a parent chunk, serving a page image for a citation, reading memory — each is a separate authorisation, and one missed path is the leak."

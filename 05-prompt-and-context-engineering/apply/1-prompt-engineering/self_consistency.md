@@ -1,5 +1,9 @@
 # Prompt engineering → Self-consistency (sample n, majority vote)
 
+## Video takeaway
+
+"Ask once and the model might take one wrong turn. Ask five times with a bit of randomness and take the majority answer — wrong turns scatter, the right answer clusters. It costs five times the output tokens, so use it only for discrete, high-stakes answers: eligible or not, what's the amount, which category. The bonus is a real confidence score: five out of five, accept; three out of five, escalate; two out of five, abstain. Cache the prompt so you only pay once for the input, and stop early when the first three agree."
+
 ## What it is
 
 A single sample can land on a plausible wrong path. If you sample the reasoning several times (typically 3–10) with some randomness, the correct answer tends to be reached by more paths than any particular wrong one. Majority vote over the *final answers* (not the reasoning) picks it. The fraction of samples agreeing is a useful confidence estimate: 9/10 agreeing is trustworthy; 4/10 is a coin flip and a trigger for escalation ([routing & escalation](../../../04-llm-foundations/apply/routing_escalation.md)) or abstention ([refusal / no-answer path](../../../06-rag/apply/8-generation-grounding/refusal_no_answer_path.md)).
@@ -120,7 +124,3 @@ def normalise(a):
 - [Refusal path](../../../06-rag/apply/8-generation-grounding/refusal_no_answer_path.md) — abstain on low agreement
 - [LLM-as-judge](../../../09-evaluation/apply/llm_as_judge.md) — for free-text selection
 - [Prompt caching](../2-context-engineering/prompt_caching.md) — makes n× affordable
-
-## Video takeaway (30 seconds)
-
-"Ask once and the model might take one wrong turn. Ask five times with a bit of randomness and take the majority answer — wrong turns scatter, the right answer clusters. It costs five times the output tokens, so use it only for discrete, high-stakes answers: eligible or not, what's the amount, which category. The bonus is a real confidence score: five out of five, accept; three out of five, escalate; two out of five, abstain. Cache the prompt so you only pay once for the input, and stop early when the first three agree."

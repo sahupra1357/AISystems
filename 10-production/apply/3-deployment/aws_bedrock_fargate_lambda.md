@@ -1,5 +1,9 @@
 # Deployment → AWS: Fargate, Lambda, Bedrock
 
+## Video takeaway
+
+"Three services, three jobs. Fargate hosts your application — the API, the streaming responses, the retrieval service, the agent runtime — anything that needs to stay warm and hold connections. Lambda runs short stateless work: one invocation per document for parsing, connector polls, webhooks, scheduled cleanup jobs. Bedrock runs the model. The traps are predictable: Lambda's fifteen-minute limit kills large OCR jobs, so split per page or escalate to Fargate; cold starts hurt on the request path, so keep streaming on Fargate; and Bedrock quotas are regional, so capacity planning is per region. For durable agent runs with human approval waits, Step Functions gives you checkpointing and the pause for free."
+
 ## What it is
 
 Three compute models with different shapes, and AI workloads stress exactly the dimensions where they differ:
@@ -192,7 +196,3 @@ STATE_MACHINE = {
 - [State & durability](../../../07-agents-tools-memory/apply/1-agents/state_durability.md) — Step Functions as the durable runtime
 - [Excessive agency](../5-guardrails/excessive_agency.md), [AuthZ](../6-security-privacy-governance/authn_authz_permission_filtered_retrieval.md) — IAM as the boundary
 - [Connectors](../../../06-rag/apply/1-ingestion-parsing/connectors.md), [Routing](../../../06-rag/apply/1-ingestion-parsing/per_page_routing.md) — the ingestion fan-out
-
-## Video takeaway (30 seconds)
-
-"Three services, three jobs. Fargate hosts your application — the API, the streaming responses, the retrieval service, the agent runtime — anything that needs to stay warm and hold connections. Lambda runs short stateless work: one invocation per document for parsing, connector polls, webhooks, scheduled cleanup jobs. Bedrock runs the model. The traps are predictable: Lambda's fifteen-minute limit kills large OCR jobs, so split per page or escalate to Fargate; cold starts hurt on the request path, so keep streaming on Fargate; and Bedrock quotas are regional, so capacity planning is per region. For durable agent runs with human approval waits, Step Functions gives you checkpointing and the pause for free."

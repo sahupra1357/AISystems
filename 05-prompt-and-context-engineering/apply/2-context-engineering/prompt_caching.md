@@ -1,5 +1,9 @@
 # Context engineering → Prompt caching of static prefixes
 
+## Video takeaway
+
+"Every call re-sends your four-thousand-token system prompt, your tools, your examples. Prompt caching stores that prefix on the provider's side and charges about a tenth to reuse it, with faster time-to-first-token. The rule is that the prefix must be byte-identical: one timestamp, one user name, one reshuffled tool list, and your hit rate is zero — and you find out from the invoice. So put everything stable first, set breakpoints after the global block, the tenant block, and the conversation, log the cache-read tokens on every call, and alert when the hit rate drops."
+
 ## What it is
 
 Every call re-processes the whole prompt. A 4k-token system prompt + 2k of tool definitions + 3k of examples = 9k tokens of *identical* input on every request. Prompt caching lets the provider store the attention state for that prefix and reuse it: cached input tokens are billed at a steep discount and skip most of the prefill compute, cutting time-to-first-token.
@@ -130,7 +134,3 @@ def test_cache_hit():
 - [Contextual retrieval](../../../06-rag/apply/2-chunking/contextual_retrieval.md) — caching at ingest
 - [Cost levers](../../../10-production/apply/1-serving-cost-latency/cost_levers.md), [Latency levers](../../../10-production/apply/1-serving-cost-latency/latency_levers.md)
 - [Agent loop](../../../07-agents-tools-memory/apply/1-agents/single_agent_loop.md) — same prefix each step
-
-## Video takeaway (30 seconds)
-
-"Every call re-sends your four-thousand-token system prompt, your tools, your examples. Prompt caching stores that prefix on the provider's side and charges about a tenth to reuse it, with faster time-to-first-token. The rule is that the prefix must be byte-identical: one timestamp, one user name, one reshuffled tool list, and your hit rate is zero — and you find out from the invoice. So put everything stable first, set breakpoints after the global block, the tenant block, and the conversation, log the cache-read tokens on every call, and alert when the hit rate drops."
