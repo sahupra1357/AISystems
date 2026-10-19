@@ -1,12 +1,8 @@
 # Prompt engineering → Zero-shot and few-shot prompting
 
-## Video takeaway
-
 ![Zero-shot vs one-shot — the same review classified with no example, then with one example](demo/zero-few-shot-demo.gif)
 
 *([full-resolution MP4 with audio](demo/zero-few-shot-demo.mp4) — 29s · [watch on YouTube](https://youtu.be/iBipBulxNg0))*
-
-"Zero-shot: tell the model what to do. Few-shot: show it three or four worked examples and it copies the pattern — the exact format, how to handle 'not found', where the boundary is between two labels. Use real-looking examples from your failures, balance the labels, shuffle the order once because models over-predict the last example's label, and always include one 'no answer' case. Put them in the cached part of the prompt so they cost nothing per call. And still validate the output — examples improve the odds, they don't guarantee the format."
 
 ## What it is
 
