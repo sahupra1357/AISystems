@@ -1,5 +1,9 @@
 # OCR / digitization → Per-page classification and routing
 
+## Video takeaway
+
+"A 200-page PDF is rarely one kind of thing: a digital body, a scanned appendix, a few charts. Route per document and you either OCR pages that had perfect text, or skip the scanned pages entirely. Route per page instead: a cheap classifier looks at text density and image area, then sends each page to the fast extractor, the OCR engine, the formula parser, or the vision model. Watch for scanners that embed garbage text layers — validate after parsing and re-route. Put the GPU parsers in their own queue so one huge scan doesn't block everything."
+
 ## What it is
 
 Parsers are specialists. A native-PDF text extractor is fast and exact on born-digital pages and returns nothing on a scan. An OCR engine reads scans but is slower and introduces errors on pages that had a perfectly good text layer. A formula extractor understands LaTeX and mangles tables. A vision-language model describes charts and is far too expensive to run on 200 pages of plain text.
@@ -139,7 +143,3 @@ def parse_pdf(path):
 - [Production validation heuristics](validation_production_heuristics.md) — catches mis-routes
 - [Retry ladder](retry_ladder.md) — what happens when a route fails
 - [Layout-aware chunking](../2-chunking/layout_structure_aware.md) — consumes the common element schema
-
-## Video takeaway (30 seconds)
-
-"A 200-page PDF is rarely one kind of thing: a digital body, a scanned appendix, a few charts. Route per document and you either OCR pages that had perfect text, or skip the scanned pages entirely. Route per page instead: a cheap classifier looks at text density and image area, then sends each page to the fast extractor, the OCR engine, the formula parser, or the vision model. Watch for scanners that embed garbage text layers — validate after parsing and re-route. Put the GPU parsers in their own queue so one huge scan doesn't block everything."

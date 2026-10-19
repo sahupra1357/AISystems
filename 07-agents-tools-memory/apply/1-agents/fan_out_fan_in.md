@@ -1,5 +1,9 @@
 # Agents → Fan-out / fan-in
 
+## Video takeaway
+
+"Fan-out is the easy half: dispatch forty subagents in parallel with a semaphore so you don't melt your rate limit. Fan-in is where systems break. Two rules. First, account for every single subtask — thirty-seven succeeded, three timed out — and put that in the answer and the UI, because a report on thirty-seven of forty contracts that doesn't mention the missing three is a dangerous document. Second, make the output deterministic: sort by a stable key, not by whoever finished first, and use temperature zero for the synthesis. Otherwise regenerating the same report gives a different answer every time, and nobody trusts either version."
+
 ## What it is
 
 ```
@@ -167,7 +171,3 @@ def dedupe_findings(findings, threshold=0.93):
 - [Budgets](cost_step_budgets.md) — run-level ceiling
 - [Failure handling](../../../10-production/apply/4-observability-reliability/failure_handling.md) — backoff, breakers
 - [Conflict handling](../../../06-rag/apply/8-generation-grounding/conflict_handling.md) — in fan-in
-
-## Video takeaway (30 seconds)
-
-"Fan-out is the easy half: dispatch forty subagents in parallel with a semaphore so you don't melt your rate limit. Fan-in is where systems break. Two rules. First, account for every single subtask — thirty-seven succeeded, three timed out — and put that in the answer and the UI, because a report on thirty-seven of forty contracts that doesn't mention the missing three is a dangerous document. Second, make the output deterministic: sort by a stable key, not by whoever finished first, and use temperature zero for the synthesis. Otherwise regenerating the same report gives a different answer every time, and nobody trusts either version."

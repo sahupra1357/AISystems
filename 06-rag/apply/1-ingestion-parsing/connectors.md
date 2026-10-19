@@ -1,5 +1,9 @@
 # Source ingestion → Connectors
 
+## Video takeaway
+
+"Connectors are the plumbing nobody wants to build and everybody regrets skimping on. Each source needs auth, pagination, rate limits, and — critically — ACL capture at fetch time. Use cursors so daily sync only touches what changed. Two things tutorials skip: deletions need a periodic reconciliation pass or deleted docs stay searchable, and one tenant's expired token must never stall everyone else."
+
 ## What it is
 
 A connector is the adapter between an external system and your ingestion pipeline. Its job: enumerate the documents that exist, fetch their bytes and metadata (owner, permissions, modified time, URL), and hand them to the parser — reliably, incrementally, and without getting your API keys banned.
@@ -156,7 +160,3 @@ Always — but choose **buy vs build** per source. Managed connector frameworks 
 - [Tenant/ACL capture at ingest](tenant_acl_capture_at_ingest.md)
 - [State & durability](../../../07-agents-tools-memory/apply/1-agents/state_durability.md) — checkpointed bootstrap jobs
 - [Failure handling](../../../10-production/apply/4-observability-reliability/failure_handling.md) — backoff, breakers
-
-## Video takeaway (30 seconds)
-
-"Connectors are the plumbing nobody wants to build and everybody regrets skimping on. Each source needs auth, pagination, rate limits, and — critically — ACL capture at fetch time. Use cursors so daily sync only touches what changed. Two things tutorials skip: deletions need a periodic reconciliation pass or deleted docs stay searchable, and one tenant's expired token must never stall everyone else."

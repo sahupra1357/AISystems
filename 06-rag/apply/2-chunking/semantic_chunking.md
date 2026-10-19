@@ -1,5 +1,9 @@
 # Chunking → Semantic chunking
 
+## Video takeaway
+
+"Semantic chunking cuts where the topic changes: embed each sentence, find the dips in similarity, cut there. You get chunks that are about one thing. The cost is a second embedding pass at ingest, and boundaries that move whenever you change the model. It wins on transcripts and narrative text, loses to heading-aware splitting on anything structured. Always guard min and max size, always A/B it against recursive splitting before you pay for it."
+
 ## What it is
 
 Semantic chunking replaces the "every N tokens" rule with a "wherever the meaning changes" rule. The document is split into sentences; each sentence (or a small sliding window of sentences) is embedded; the cosine similarity between consecutive windows is computed; and a chunk boundary is placed where similarity drops below a threshold (absolute, percentile-based, or a local minimum). Sentences between two boundaries are merged into a chunk.
@@ -125,7 +129,3 @@ for i, c in enumerate(semantic_chunks(open("report.txt").read())):
 - [Layout-aware](layout_structure_aware.md) — the better choice for structured docs; hybrid option
 - [Late chunking](late_chunking.md) — a different way to get document context into chunk vectors
 - [Embedding model choice](../3-embeddings/embedding_model_choice.md)
-
-## Video takeaway (30 seconds)
-
-"Semantic chunking cuts where the topic changes: embed each sentence, find the dips in similarity, cut there. You get chunks that are about one thing. The cost is a second embedding pass at ingest, and boundaries that move whenever you change the model. It wins on transcripts and narrative text, loses to heading-aware splitting on anything structured. Always guard min and max size, always A/B it against recursive splitting before you pay for it."

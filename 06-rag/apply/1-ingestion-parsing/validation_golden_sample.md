@@ -1,5 +1,9 @@
 # Validation → Test-time validation against a golden sample
 
+## Video takeaway
+
+"You'd never ship a model without an eval. Don't ship a parser without one either. Take a couple of hundred real pages — stratified by source and page type, including the ugly scans — and label the truth: text, key fields, table cells, reading order. Measure character error rate, field F1, cell accuracy, order agreement, per stratum, and gate every parser upgrade on them in CI. Weight what matters: a flipped digit in a total is worse than a typo in a footnote. Grow the set from every production failure."
+
 ## What it is
 
 A **golden sample** is a set of pages from your corpus (50–300, stratified by source and page class) with ground truth produced or verified by humans: the correct text, the correct fields, the correct table cells, the correct reading order. The parser's output on those pages is compared to ground truth with standard metrics:
@@ -141,7 +145,3 @@ def evaluate(golden_dir, parser):
 - [Golden dataset](../../../09-evaluation/apply/golden_dataset.md), [Component vs end-to-end](../../../09-evaluation/apply/component_vs_end_to_end.md)
 - [Testing pyramid](../../../09-evaluation/apply/testing_pyramid.md) — CI gating
 - [Data flywheel](../../../10-production/apply/8-data-flywheel/data_flywheel.md)
-
-## Video takeaway (30 seconds)
-
-"You'd never ship a model without an eval. Don't ship a parser without one either. Take a couple of hundred real pages — stratified by source and page type, including the ugly scans — and label the truth: text, key fields, table cells, reading order. Measure character error rate, field F1, cell accuracy, order agreement, per stratum, and gate every parser upgrade on them in CI. Weight what matters: a flipped digit in a total is worse than a typo in a footnote. Grow the set from every production failure."

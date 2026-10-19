@@ -1,5 +1,9 @@
 # Fine-tuning → When *not* to fine-tune
 
+## Video takeaway
+
+"'Let's fine-tune it' is the most common wrong answer to an AI quality problem. Three cases where it's definitely wrong. The model doesn't know your facts — that's retrieval; facts in weights go stale, can't be cited, and can't be deleted when someone asks. The task is still changing — you'll retrain every sprint. And a better prompt would fix it, which you can only know by measuring. Before anyone proposes training, run the diagnostic ladder: is the answer even in the retrieved context? If not, no fine-tune helps. And check the cheaper alternative first — retrieving the most similar solved cases as few-shot examples often gets most of the benefit with no training at all."
+
 ## What it is
 
 Fine-tuning is the most-reached-for and least-often-correct lever. The decision gate:
@@ -157,7 +161,3 @@ Every time someone proposes fine-tuning — including yourself. It takes fifteen
 - [Dynamic few-shot](../../../05-prompt-and-context-engineering/apply/1-prompt-engineering/dynamic_few_shot_selection.md) — the main alternative
 - [Embedding/reranker fine-tuning](../../../06-rag/apply/3-embeddings/fine_tuning_embeddings.md) — often the better target
 - [SFT](sft.md) — what to do once the gate passes
-
-## Video takeaway (30 seconds)
-
-"'Let's fine-tune it' is the most common wrong answer to an AI quality problem. Three cases where it's definitely wrong. The model doesn't know your facts — that's retrieval; facts in weights go stale, can't be cited, and can't be deleted when someone asks. The task is still changing — you'll retrain every sprint. And a better prompt would fix it, which you can only know by measuring. Before anyone proposes training, run the diagnostic ladder: is the answer even in the retrieved context? If not, no fine-tune helps. And check the cheaper alternative first — retrieving the most similar solved cases as few-shot examples often gets most of the benefit with no training at all."

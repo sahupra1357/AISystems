@@ -1,5 +1,9 @@
 # Generation & grounding → Citations (span-level, validated)
 
+## Video takeaway
+
+"A citation is only useful if it can be checked. So make the model emit chunk IDs — never page numbers, never URLs, never titles — and resolve all of that yourself from metadata. Then validate: does that ID exist in what we actually retrieved for this request, and if there's a quote, does it really appear in that chunk? Invalid IDs and phantom quotes are fabrication, and you can catch them with string comparison, no model needed. Track the invalid-citation rate like an error rate. And remember ID-valid doesn't mean supported — that's a separate check."
+
 ## What it is
 
 A citation is a machine-checkable link from a claim to the evidence for it. Three levels of granularity:
@@ -149,7 +153,3 @@ Every RAG system with a factual answer surface. Chunk-level as the minimum; span
 - [Page numbers and bounding boxes](../1-ingestion-parsing/page_numbers_bounding_boxes.md) — where highlights come from
 - [Parent–child](../2-chunking/parent_child_small_to_big.md) Parent–child — cite child, show parent
 - [Auditability](../../../10-production/apply/6-security-privacy-governance/auditability.md)
-
-## Video takeaway (30 seconds)
-
-"A citation is only useful if it can be checked. So make the model emit chunk IDs — never page numbers, never URLs, never titles — and resolve all of that yourself from metadata. Then validate: does that ID exist in what we actually retrieved for this request, and if there's a quote, does it really appear in that chunk? Invalid IDs and phantom quotes are fabrication, and you can catch them with string comparison, no model needed. Track the invalid-citation rate like an error rate. And remember ID-valid doesn't mean supported — that's a separate check."

@@ -1,5 +1,9 @@
 # Query understanding → HyDE (Hypothetical Document Embeddings)
 
+## Video takeaway
+
+"A seven-word question and a two-hundred-word legal clause don't look alike to an embedding model. HyDE fixes that by having the model write a fake answer — confidently, inventing details — and searching with the embedding of *that* instead. The invented specifics don't matter; the style and vocabulary do, and real passages that look like it are the ones you want. Two rules: embed the fake answer with your document prefix, not your query prefix, or the whole thing silently does nothing. And never let that fake answer reach the generation prompt — it's a hallucination you created on purpose."
+
 ## What it is
 
 Dense retrieval matches a query vector against passage vectors. But "how long is the notice period?" (7 words) and the actual clause (200 words of legal prose) are stylistically very different, even when semantically related. HyDE (Gao et al., 2022) closes the gap by generating a **fake document** that answers the query, then embedding the fake document instead of (or alongside) the query:
@@ -132,7 +136,3 @@ def should_hyde(query, top_score): return SHORT(query) or top_score < 0.35
 - [Multi-query + RRF](multi_query_rrf.md) — HyDE is one more list to fuse
 - [Score thresholding](../6-retrieval-ranking/score_thresholding_abstention.md) — the gating signal and the abstention risk
 - [Context poisoning](../../../05-prompt-and-context-engineering/apply/2-context-engineering/context_failure_modes.md) — why the hypothetical must never reach the context
-
-## Video takeaway (30 seconds)
-
-"A seven-word question and a two-hundred-word legal clause don't look alike to an embedding model. HyDE fixes that by having the model write a fake answer — confidently, inventing details — and searching with the embedding of *that* instead. The invented specifics don't matter; the style and vocabulary do, and real passages that look like it are the ones you want. Two rules: embed the fake answer with your document prefix, not your query prefix, or the whole thing silently does nothing. And never let that fake answer reach the generation prompt — it's a hallucination you created on purpose."

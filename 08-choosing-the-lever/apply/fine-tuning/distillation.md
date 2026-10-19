@@ -1,5 +1,9 @@
 # Fine-tuning → Distillation
 
+## Video takeaway
+
+"Distillation is how the cheap tier gets good enough to use: run your best model over real production inputs, keep only the outputs it agrees with itself on across several samples, and fine-tune a small model on those pairs. Five to fifty times cheaper on that one narrow task. The step everyone skips is verification — an unfiltered teacher's mistakes get baked into a smaller model that has less capacity to hedge, so you've amplified the errors. Then deploy it with escalation rather than as a replacement: the student handles ninety percent, low confidence goes to the teacher, and your blended cost stays near the student's while quality stays near the teacher's."
+
 ## What it is
 
 Distillation transfers behaviour from a large "teacher" model to a small "student":
@@ -178,7 +182,3 @@ def distilled_with_escalation(x, student, teacher, confidence_floor=0.85):
 - [Self-consistency](../../../05-prompt-and-context-engineering/apply/1-prompt-engineering/self_consistency.md) — the filtering method
 - [Cost levers](../../../10-production/apply/1-serving-cost-latency/cost_levers.md), [Self-hosted serving](../../../10-production/apply/1-serving-cost-latency/self_hosted_serving.md) — the payoff
 - [Data flywheel](../../../10-production/apply/8-data-flywheel/data_flywheel.md) — the retraining loop
-
-## Video takeaway (30 seconds)
-
-"Distillation is how the cheap tier gets good enough to use: run your best model over real production inputs, keep only the outputs it agrees with itself on across several samples, and fine-tune a small model on those pairs. Five to fifty times cheaper on that one narrow task. The step everyone skips is verification — an unfiltered teacher's mistakes get baked into a smaller model that has less capacity to hedge, so you've amplified the errors. Then deploy it with escalation rather than as a replacement: the student handles ninety percent, low confidence goes to the teacher, and your blended cost stays near the student's while quality stays near the teacher's."

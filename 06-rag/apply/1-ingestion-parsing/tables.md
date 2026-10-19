@@ -1,5 +1,9 @@
 # Structure extraction → Tables (emit as HTML/Markdown, never flattened)
 
+## Video takeaway
+
+"Flatten a table to text and 'EMEA Q3 revenue' becomes a guess among forty numbers. Keep the grid: Markdown or HTML, header row repeated in every chunk, caption and section attached, cell values stored as data. Split big tables into row groups, never mid-row. Merge tables that continue across pages. Validate — if the Total row doesn't add up, the parser got a cell wrong, and that page goes to the retry ladder. And if the question is 'sum across regions', don't ask the LLM to do arithmetic; route it to code."
+
 ## What it is
 
 "What was the EMEA revenue in Q3?" is a lookup: row = EMEA, column = Q3. A flattened table (`Region Q1 Q2 Q3 EMEA 3.8 4.0 4.2 APAC …`) makes the LLM guess which number belongs to which cell; a 30-column table makes guessing hopeless. Structure-preserving output keeps the grid:
@@ -130,7 +134,3 @@ def validate_table(df: pd.DataFrame) -> list[str]:
 - [Layout-aware chunking](../2-chunking/layout_structure_aware.md) — atomic tables, row groups
 - [Structured + unstructured hybrid](../7-advanced-rag/structured_unstructured_hybrid.md) — SQL for aggregates
 - [Citations](../8-generation-grounding/citations.md) — cell-level provenance
-
-## Video takeaway (30 seconds)
-
-"Flatten a table to text and 'EMEA Q3 revenue' becomes a guess among forty numbers. Keep the grid: Markdown or HTML, header row repeated in every chunk, caption and section attached, cell values stored as data. Split big tables into row groups, never mid-row. Merge tables that continue across pages. Validate — if the Total row doesn't add up, the parser got a cell wrong, and that page goes to the retry ladder. And if the question is 'sum across regions', don't ask the LLM to do arithmetic; route it to code."

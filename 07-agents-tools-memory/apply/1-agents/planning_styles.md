@@ -1,5 +1,9 @@
 # Agents → Planning styles (ReAct, plan-then-execute, search)
 
+## Video takeaway
+
+"The literature is full of free-form agents reasoning their way to a solution. Production is full of scripts with model calls inside them — and that's the right default, because every step you move from 'the model decides' to 'the code decides' is a step you can test, cache, budget, and monitor. Use plan-then-execute when the order varies but the step types don't, and reserve interleaved reasoning for the one phase that genuinely can't be enumerated. The number that should decide it: with a script, your ninety-ninth-percentile cost looks like your median. With a free-form agent, it can be twenty times higher."
+
 ## What it is
 
 Four points on a spectrum from "code decides" to "model decides":
@@ -139,7 +143,3 @@ def research_phase(question, caller):
 - [Agentic RAG](../../../06-rag/apply/7-advanced-rag/agentic_rag.md) — the retrieval-specific version of this trade-off
 - [Routing/escalation](../../../04-llm-foundations/apply/routing_escalation.md) — choosing the path per request
 - [Agent evals](../../../09-evaluation/apply/agent_evals.md)
-
-## Video takeaway (30 seconds)
-
-"The literature is full of free-form agents reasoning their way to a solution. Production is full of scripts with model calls inside them — and that's the right default, because every step you move from 'the model decides' to 'the code decides' is a step you can test, cache, budget, and monitor. Use plan-then-execute when the order varies but the step types don't, and reserve interleaved reasoning for the one phase that genuinely can't be enumerated. The number that should decide it: with a script, your ninety-ninth-percentile cost looks like your median. With a free-form agent, it can be twenty times higher."

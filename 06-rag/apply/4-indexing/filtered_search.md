@@ -1,5 +1,9 @@
 # Indexing → Filtered search (pre-filter vs post-filter)
 
+## Video takeaway
+
+"Fetch the hundred nearest vectors, then drop the ones that aren't this tenant's — and for a small tenant you're left with nothing. That's post-filtering, and it's the wrong way to do permissions. The filter has to be applied inside the search: filter-aware graph traversal, or exact search over the small matching subset, which good stores switch between automatically. Index every field you filter on, raise the candidate count for selective filters, test with a small tenant and a narrow-permission user, and apply the exact same filters to your keyword index before you fuse results — or you've built a leak."
+
 ## What it is
 
 Three ways to combine "nearest vectors" with "must satisfy filter":
@@ -116,7 +120,3 @@ Every multi-tenant or permission-aware system — which is nearly every enterpri
 - [ACL capture](../1-ingestion-parsing/tenant_acl_capture_at_ingest.md), [AuthZ](../../../10-production/apply/6-security-privacy-governance/authn_authz_permission_filtered_retrieval.md) — security filters
 - [Hybrid search](../6-retrieval-ranking/hybrid_search.md) — consistent filtering across indexes
 - [Self-query](../5-query-understanding/self_query_metadata_filters.md) — user-driven filters
-
-## Video takeaway (30 seconds)
-
-"Fetch the hundred nearest vectors, then drop the ones that aren't this tenant's — and for a small tenant you're left with nothing. That's post-filtering, and it's the wrong way to do permissions. The filter has to be applied inside the search: filter-aware graph traversal, or exact search over the small matching subset, which good stores switch between automatically. Index every field you filter on, raise the candidate count for selective filters, test with a small tenant and a narrow-permission user, and apply the exact same filters to your keyword index before you fuse results — or you've built a leak."

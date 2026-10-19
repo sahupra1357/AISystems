@@ -1,5 +1,9 @@
 # Prompt engineering → Dynamic few-shot selection (retrieve the k most similar solved cases)
 
+## Video takeaway
+
+"Static few-shot shows the model the same five examples every time. Dynamic few-shot finds the five past cases most like *this* one — the three SSO tickets you already resolved, the contract clauses an expert already annotated — and shows those. It's often as good as fine-tuning, with no training. But it's a retrieval system in disguise: curate the store hard, because a wrong accepted answer gets copied; scope examples per tenant so nothing leaks; and keep your golden set out of the store or your evals will lie to you."
+
 ## What it is
 
 Static few-shot ([zero-shot and few-shot prompting](zero_few_shot.md)) teaches format. Dynamic few-shot teaches *judgement*: for a support ticket about SSO redirects, show the model three previously resolved SSO tickets with their correct labels/replies; for a contract clause, show three similar clauses with their expert annotations. The examples come from an **example store** — a curated set of (input, ideal output) pairs — retrieved by similarity to the current input.
@@ -121,7 +125,3 @@ def classify_dynamic(ticket, tenant):
 - [Data flywheel](../../../10-production/apply/8-data-flywheel/data_flywheel.md) — where examples come from
 - [SFT](../../../08-choosing-the-lever/apply/fine-tuning/sft.md) — when the store outgrows the prompt
 - [Authentication & authorization](../../../10-production/apply/6-security-privacy-governance/authn_authz_permission_filtered_retrieval.md) / [PII](../../../10-production/apply/6-security-privacy-governance/pii.md) — tenant isolation and PII
-
-## Video takeaway (30 seconds)
-
-"Static few-shot shows the model the same five examples every time. Dynamic few-shot finds the five past cases most like *this* one — the three SSO tickets you already resolved, the contract clauses an expert already annotated — and shows those. It's often as good as fine-tuning, with no training. But it's a retrieval system in disguise: curate the store hard, because a wrong accepted answer gets copied; scope examples per tenant so nothing leaks; and keep your golden set out of the store or your evals will lie to you."

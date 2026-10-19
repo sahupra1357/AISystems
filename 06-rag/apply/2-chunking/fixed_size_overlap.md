@@ -1,5 +1,9 @@
 # Chunking → Fixed-size + overlap
 
+## Video takeaway
+
+"Fixed-size chunking is the ruler: cut every 512 tokens, overlap 64. It works on anything, it costs nothing to build, and it's the number every other strategy must beat. In production the two things that bite are mismatched tokenizers silently truncating your chunks, and overlap flooding your top-k with duplicates. Ship it as the baseline, measure recall, then move on."
+
 ## What it is
 
 Fixed-size chunking slides a window of a fixed length (measured in **tokens**, not characters) over the document and emits one chunk per step. The **overlap** means the last M tokens of chunk *i* are repeated as the first M tokens of chunk *i+1*, so a sentence that straddles a boundary is fully present in at least one chunk.
@@ -126,7 +130,3 @@ print(len(chunks), chunks[0]["text"][:80])
 - [Chunk metadata](chunk_metadata.md) — what every chunk must carry
 - [MMR](../6-retrieval-ranking/mmr_diversity.md) — removes overlap duplicates from top-k
 - [Embedding versioning](../3-embeddings/embedding_versioning.md) — same discipline applies to chunking config changes
-
-## Video takeaway (30 seconds)
-
-"Fixed-size chunking is the ruler: cut every 512 tokens, overlap 64. It works on anything, it costs nothing to build, and it's the number every other strategy must beat. In production the two things that bite are mismatched tokenizers silently truncating your chunks, and overlap flooding your top-k with duplicates. Ship it as the baseline, measure recall, then move on."

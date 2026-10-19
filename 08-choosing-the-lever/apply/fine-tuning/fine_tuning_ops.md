@@ -1,5 +1,9 @@
 # Fine-tuning → Ops (datasets, checkpoints, reproducibility)
 
+## Video takeaway
+
+"A fine-tuned model is only as good as your ability to rebuild it. So hash the dataset and store it immutably with a manifest saying where every example came from; record the base model *and its exact revision*, the hyperparameters, the seed, and the library versions; and register the checkpoint with that lineage plus its eval scores. Freeze the test split by input hash on day one and assert at training time that nothing leaked into it. Gate promotion on the same eval suite you use for prompts, including the refusal cases, because fine-tuning quietly erodes those. And watch base-model deprecations — every sunset invalidates every adapter you built on it."
+
 ## What it is
 
 Fine-tuning adds a model artifact to a system that previously had only code and config. That artifact needs the same lifecycle rigour as everything else, plus some specifics:
@@ -184,7 +188,3 @@ The moment a fine-tuned model reaches staging. Ad-hoc training in notebooks is f
 - [Versioning & rollout](../../../10-production/apply/1-serving-cost-latency/versioning_rollout.md) — pins, canaries, rollback
 - [Retention](../../../10-production/apply/6-security-privacy-governance/data_residency_retention.md), [Supply chain](../../../10-production/apply/6-security-privacy-governance/supply_chain_hygiene.md) — dataset governance and base deprecation
 - [Observability](../../../10-production/apply/4-observability-reliability/observability_tracing.md) — model version in the trace
-
-## Video takeaway (30 seconds)
-
-"A fine-tuned model is only as good as your ability to rebuild it. So hash the dataset and store it immutably with a manifest saying where every example came from; record the base model *and its exact revision*, the hyperparameters, the seed, and the library versions; and register the checkpoint with that lineage plus its eval scores. Freeze the test split by input hash on day one and assert at training time that nothing leaked into it. Gate promotion on the same eval suite you use for prompts, including the refusal cases, because fine-tuning quietly erodes those. And watch base-model deprecations — every sunset invalidates every adapter you built on it."

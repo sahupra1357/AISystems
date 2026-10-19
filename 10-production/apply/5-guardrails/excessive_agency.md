@@ -1,5 +1,9 @@
 # Testing & reliability → Excessive agency (least privilege)
 
+## Video takeaway
+
+"The strongest control in an agent system isn't a prompt — it's a credential. A read-only agent with a read-only token cannot be talked into a delete, no matter how clever the injection or how confused the model. So enumerate exactly what the task needs and remove everything else: if deletion isn't part of the product, the delete tool shouldn't exist in the catalogue at all. Make the agent act with the *user's* permissions, not a shared service account that can see every tenant. Put write tools only in the phase that writes. And write the negative tests — assert the agent *cannot* do the dangerous thing even when you explicitly tell it to. That test is your proof the control is real."
+
 ## What it is
 
 Excessive agency is granting an agent more capability, permission, or autonomy than its task requires. It's the OWASP LLM Top 10 entry that turns a model failure into a business incident, and it has three dimensions:
@@ -165,7 +169,3 @@ Every agent with any tool access. Non-negotiable for any agent with write, finan
 - [Tool design](../../../07-agents-tools-memory/apply/1-agents/tool_design.md), [Human-in-the-loop](../../../07-agents-tools-memory/apply/1-agents/human_in_the_loop.md), [Context isolation](../../../05-prompt-and-context-engineering/apply/2-context-engineering/context_isolation.md)
 - [AuthN/AuthZ](../6-security-privacy-governance/authn_authz_permission_filtered_retrieval.md), [Auditability](../6-security-privacy-governance/auditability.md), [OWASP](../6-security-privacy-governance/owasp_llm_top10.md)
 - [Sandboxing](../../../07-agents-tools-memory/apply/1-agents/sandboxing.md) — no credentials in the sandbox
-
-## Video takeaway (30 seconds)
-
-"The strongest control in an agent system isn't a prompt — it's a credential. A read-only agent with a read-only token cannot be talked into a delete, no matter how clever the injection or how confused the model. So enumerate exactly what the task needs and remove everything else: if deletion isn't part of the product, the delete tool shouldn't exist in the catalogue at all. Make the agent act with the *user's* permissions, not a shared service account that can see every tenant. Put write tools only in the phase that writes. And write the negative tests — assert the agent *cannot* do the dangerous thing even when you explicitly tell it to. That test is your proof the control is real."

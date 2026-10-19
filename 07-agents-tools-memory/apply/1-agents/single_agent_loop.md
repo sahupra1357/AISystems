@@ -1,5 +1,9 @@
 # Agents → Single agent loop
 
+## Video takeaway
+
+"The agent loop itself is twenty lines: ask the model, run the tool it picked, hand back the result, repeat. Everything that makes it production-ready sits around it. Decide explicitly how it ends — a final-answer tool with a schema, not just 'the model stopped calling things'. Cap steps, tokens, seconds, and dollars in code, because the prompt can only ask. Put a timeout on every call. And when a tool fails, don't throw — send the error text back to the model. 'File not found, check the path' is something it recovers from; a stack trace in your logs is something it never sees."
+
 ## What it is
 
 The agent loop is twenty lines of code. Everything that makes it production-worthy is around it:
@@ -192,7 +196,3 @@ def finalize_forced(messages, system, model, reason, trace):
 - [Structured outputs](../../../05-prompt-and-context-engineering/apply/1-prompt-engineering/structured_outputs_tool_use.md) — argument validation
 - [Excessive agency](../../../10-production/apply/5-guardrails/excessive_agency.md) — authorisation
 - [Agent evals](../../../09-evaluation/apply/agent_evals.md)
-
-## Video takeaway (30 seconds)
-
-"The agent loop itself is twenty lines: ask the model, run the tool it picked, hand back the result, repeat. Everything that makes it production-ready sits around it. Decide explicitly how it ends — a final-answer tool with a schema, not just 'the model stopped calling things'. Cap steps, tokens, seconds, and dollars in code, because the prompt can only ask. Put a timeout on every call. And when a tool fails, don't throw — send the error text back to the model. 'File not found, check the path' is something it recovers from; a stack trace in your logs is something it never sees."

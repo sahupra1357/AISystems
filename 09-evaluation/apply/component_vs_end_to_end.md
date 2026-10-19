@@ -1,5 +1,9 @@
 # Evaluation → Component vs end-to-end
 
+## Video takeaway
+
+"When end-to-end accuracy drops eight points, that number tells you something broke and nothing about what. So build a ladder and run it in order: is the answer text even in the parsed document; is it inside a single chunk; did that chunk make it into the retrieval pool; did it survive reranking; did it survive the context budget; and only then, did the model get it wrong. Stop at the first failure and you have your diagnosis in seconds. Run it across your whole golden set and the histogram of first-failing stages is your roadmap — most teams are surprised to find a fifth of their failures are parsing problems they were trying to fix with prompts."
+
 ## What it is
 
 A RAG answer passes through six or more stages, each of which can be the failure point:
@@ -153,7 +157,3 @@ Always, as the standard eval structure. The ladder costs little once ground trut
 - [Testing pyramid](testing_pyramid.md) — per-artefact gates
 - [Triage](../../10-production/apply/8-data-flywheel/feedback_capture_triage.md) — the diagnosis histogram feeds bucket assignment
 - [Observability](../../10-production/apply/4-observability-reliability/observability_tracing.md) — version vectors
-
-## Video takeaway (30 seconds)
-
-"When end-to-end accuracy drops eight points, that number tells you something broke and nothing about what. So build a ladder and run it in order: is the answer text even in the parsed document; is it inside a single chunk; did that chunk make it into the retrieval pool; did it survive reranking; did it survive the context budget; and only then, did the model get it wrong. Stop at the first failure and you have your diagnosis in seconds. Run it across your whole golden set and the histogram of first-failing stages is your roadmap — most teams are surprised to find a fifth of their failures are parsing problems they were trying to fix with prompts."

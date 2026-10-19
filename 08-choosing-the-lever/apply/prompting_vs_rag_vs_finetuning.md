@@ -1,5 +1,9 @@
 # Foundations → Prompting vs RAG vs fine-tuning
 
+## Video takeaway
+
+"Three levers, three problems. The model doesn't *know* something — your contracts, this week's prices — that's retrieval: RAG. The model knows but says it wrong — wrong format, wrong tone, wrong procedure — that's prompting. Prompting works but the prompt is huge, slow, and still flaky at scale — that's fine-tuning, for style and format, never for facts. Facts in weights go stale and can't be deleted. Diagnose the failure first, pull the matching lever, and re-run the same eval so you know which lever actually moved the number."
+
 ## What it is
 
 | Lever | Changes | Cost to iterate | Typical use |
@@ -113,7 +117,3 @@ prompt = f"<transcript>{transcript}</transcript>\n<records>{ctx}</records>\nWrit
 - [Retrieval / RAG pipeline](../../AI_System.md#retrieval--rag-pipeline) RAG pipeline
 - [Fine-tuning](fine-tuning/) Fine-tuning, [When not to](fine-tuning/when_not_to_fine_tune.md)
 - [Prompt evaluation](../../09-evaluation/apply/prompt_evaluation.md), [Feedback triage](../../10-production/apply/8-data-flywheel/feedback_capture_triage.md)
-
-## Video takeaway (30 seconds)
-
-"Three levers, three problems. The model doesn't *know* something — your contracts, this week's prices — that's retrieval: RAG. The model knows but says it wrong — wrong format, wrong tone, wrong procedure — that's prompting. Prompting works but the prompt is huge, slow, and still flaky at scale — that's fine-tuning, for style and format, never for facts. Facts in weights go stale and can't be deleted. Diagnose the failure first, pull the matching lever, and re-run the same eval so you know which lever actually moved the number."

@@ -1,5 +1,9 @@
 # Advanced RAG → Corrective RAG (CRAG): grade, then rewrite or fall back
 
+## Video takeaway
+
+"Corrective RAG puts a grader between retrieval and generation. If the passages are clearly relevant, keep only the sentences that matter and answer. If they're borderline, rewrite the query and search again, maybe adding an outside source. If they're plainly irrelevant, don't generate from them at all — fall back or say you don't know. In production, use your reranker's score as the grader for free and save the LLM grading for the borderline cases. And watch the branch mix week over week: a rising 'irrelevant' rate tells you your corpus is drifting before any user files a ticket."
+
 ## What it is
 
 Corrective RAG (Yan et al., 2024) inserts a **retrieval evaluator** between retrieval and generation, and branches on its verdict:
@@ -144,7 +148,3 @@ def corrective_rag(question, caller, allow_web=True):
 - [Self-RAG](self_rag.md) — model-driven rather than pipeline-driven correction
 - [Faithfulness check](../8-generation-grounding/faithfulness_check.md) — the post-generation counterpart
 - [Injection](../../../10-production/apply/5-guardrails/prompt_injection_defense.md) — web fallback risk
-
-## Video takeaway (30 seconds)
-
-"Corrective RAG puts a grader between retrieval and generation. If the passages are clearly relevant, keep only the sentences that matter and answer. If they're borderline, rewrite the query and search again, maybe adding an outside source. If they're plainly irrelevant, don't generate from them at all — fall back or say you don't know. In production, use your reranker's score as the grader for free and save the LLM grading for the borderline cases. And watch the branch mix week over week: a rising 'irrelevant' rate tells you your corpus is drifting before any user files a ticket."

@@ -1,5 +1,9 @@
 # Production → Versioning & rollout
 
+## Video takeaway
+
+"An AI system's behaviour isn't one version — it's a vector: prompts, model, retrieval config, index, parser, chunking, reranker, guardrails. Pin every one of them per environment, because an unpinned model alias means a provider can change your behaviour on a Tuesday without telling you. Ship changes through the same path every time: eval gate, then canary on sticky user buckets starting with internal users, then compare online quality, cost, and latency by version. Roll back automatically on hard metrics like errors and cost. Change one thing at a time, or you'll never know which one did it. And drill the rollback — a rollback you've never run is a hypothesis, not a plan."
+
 ## What it is
 
 An AI system's behaviour is determined by a **version vector**, not a single code version:
@@ -185,7 +189,3 @@ Every behaviour-affecting change in a production system. Especially model upgrad
 - [Online eval](../../../09-evaluation/apply/online_eval.md) — canary comparison
 - [Observability](../4-observability-reliability/observability_tracing.md) — the version vector
 - [Failure handling](../4-observability-reliability/failure_handling.md) — fallbacks during rollout
-
-## Video takeaway (30 seconds)
-
-"An AI system's behaviour isn't one version — it's a vector: prompts, model, retrieval config, index, parser, chunking, reranker, guardrails. Pin every one of them per environment, because an unpinned model alias means a provider can change your behaviour on a Tuesday without telling you. Ship changes through the same path every time: eval gate, then canary on sticky user buckets starting with internal users, then compare online quality, cost, and latency by version. Roll back automatically on hard metrics like errors and cost. Change one thing at a time, or you'll never know which one did it. And drill the rollback — a rollback you've never run is a hypothesis, not a plan."

@@ -1,5 +1,9 @@
 # Evaluation → LLM-as-judge
 
+## Video takeaway
+
+"For open-ended answers there's no exact match, so you have a strong model grade against a rubric. Three things make it trustworthy. Anchor it to the reference answer from your golden set — reference-free judging is much weaker. Use a different model family than the one generating, because models prefer their own output. And calibrate: have humans label eighty cases, measure agreement, and publish that number next to every judge score. 'Judge score four-point-two, agreement zero-point-eight-three' is a metric. 'Judge score four-point-two' is a decoration. And watch whether longer answers are quietly scoring higher — they usually are."
+
 ## What it is
 
 Open-ended outputs — summaries, explanations, drafted replies — have no exact match. Human grading doesn't scale. LLM-as-judge fills the gap: a model scores outputs against explicit criteria, cheaply, on thousands of cases.
@@ -167,7 +171,3 @@ def check_length_bias(results):
 - [Statistical hygiene](statistical_hygiene.md) — confidence intervals on judge scores
 - [Online eval](online_eval.md) — sampled production grading
 - [Reflection](../../07-agents-tools-memory/apply/1-agents/loop_back_reflection.md) — critics need the same calibration
-
-## Video takeaway (30 seconds)
-
-"For open-ended answers there's no exact match, so you have a strong model grade against a rubric. Three things make it trustworthy. Anchor it to the reference answer from your golden set — reference-free judging is much weaker. Use a different model family than the one generating, because models prefer their own output. And calibrate: have humans label eighty cases, measure agreement, and publish that number next to every judge score. 'Judge score four-point-two, agreement zero-point-eight-three' is a metric. 'Judge score four-point-two' is a decoration. And watch whether longer answers are quietly scoring higher — they usually are."

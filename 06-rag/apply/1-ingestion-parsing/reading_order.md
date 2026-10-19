@@ -1,5 +1,9 @@
 # Structure extraction → Reading order
 
+## Video takeaway
+
+"A PDF doesn't know what order you read it in; it just has letters at coordinates. Get the order wrong on a two-column page and every sentence is chopped in half — the text is all there, but scrambled, and nothing downstream can fix it. Use a layout-aware parser, emit tables and footnotes as separate elements instead of splicing them into paragraphs, and verify every page with a cheap continuity check: a block ending mid-sentence followed by a block starting a new one is a red flag. Send the failures up the retry ladder."
+
 ## What it is
 
 A PDF stores glyphs at coordinates; a scanned page stores pixels. Neither stores "read this paragraph, then that one". Parsers must *infer* reading order. Failure modes:
@@ -128,7 +132,3 @@ Always — verification is cheap, and errors are silent. Especially for multi-co
 - [Tables](tables.md), [Boilerplate](boilerplate_stripping.md) — floating elements
 - [Production validation](validation_production_heuristics.md) — where the check runs
 - [Recursive splitting](../2-chunking/recursive_character_splitting.md) — depends on coherent paragraphs
-
-## Video takeaway (30 seconds)
-
-"A PDF doesn't know what order you read it in; it just has letters at coordinates. Get the order wrong on a two-column page and every sentence is chopped in half — the text is all there, but scrambled, and nothing downstream can fix it. Use a layout-aware parser, emit tables and footnotes as separate elements instead of splicing them into paragraphs, and verify every page with a cheap continuity check: a block ending mid-sentence followed by a block starting a new one is a red flag. Send the failures up the retry ladder."

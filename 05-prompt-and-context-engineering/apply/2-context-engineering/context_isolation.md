@@ -1,5 +1,9 @@
 # Context engineering → Context isolation (subagents get their own window)
 
+## Video takeaway
+
+"One agent doing everything ends up with a window full of thirty tool outputs and can't think straight. Isolation fixes it: the orchestrator keeps a clean window with the goal and the plan, and hands each subtask to a subagent that starts fresh — narrow task, only the inputs it needs, only the tools it needs, its own budget. The subagent returns a small structured result with citations; its whole transcript goes to the trace store, not back into the orchestrator. Pass document IDs, not documents. And write the contract for each subagent type first — that's the real design work."
+
 ## What it is
 
 A single agent that does everything accumulates every tool result, every retrieved document, every intermediate draft in one window. By step 30 it is expensive, slow, distracted, and prone to confusing old observations with current state ([failure modes: poisoning, distraction, confusion, clash](context_failure_modes.md)).
@@ -128,7 +132,3 @@ def orchestrate(question, doc_ids):
 - [Cost & step budgets](../../../07-agents-tools-memory/apply/1-agents/cost_step_budgets.md)
 - [Excessive agency](../../../10-production/apply/5-guardrails/excessive_agency.md) — least privilege per subagent
 - [Observability](../../../10-production/apply/4-observability-reliability/observability_tracing.md) — child traces
-
-## Video takeaway (30 seconds)
-
-"One agent doing everything ends up with a window full of thirty tool outputs and can't think straight. Isolation fixes it: the orchestrator keeps a clean window with the goal and the plan, and hands each subtask to a subagent that starts fresh — narrow task, only the inputs it needs, only the tools it needs, its own budget. The subagent returns a small structured result with citations; its whole transcript goes to the trace store, not back into the orchestrator. Pass document IDs, not documents. And write the contract for each subagent type first — that's the real design work."

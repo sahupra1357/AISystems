@@ -1,5 +1,9 @@
 # Security → Auditability
 
+## Video takeaway
+
+"Audit is not the same as observability. Observability is sampled, short-lived, and for engineers. Audit is complete, long-lived, append-only, and for the moment someone disputes an answer. The record that matters is the evidence chain: not just 'the system said X', but 'it said X based on document D version three, page twelve, retrieved under these permissions, with prompt version seven'. That means keeping old document versions for the audit period, or you can't reproduce what the user actually saw. Log denials too — they're your proof the access controls fired. And test reconstruction once a quarter, because that exercise is where you discover the gaps."
+
 ## What it is
 
 Audit logging is distinct from observability ([observability & tracing](../4-observability-reliability/observability_tracing.md)), though they share a source. Observability is for engineers debugging; **audit is for accountability** — proving after the fact what happened, to a regulator, an auditor, a customer, or a court.
@@ -209,7 +213,3 @@ def reconstruct(event_id: str) -> dict:
 - [Human-in-the-loop](../../../07-agents-tools-memory/apply/1-agents/human_in_the_loop.md) — approval records
 - [Document versioning](../../../06-rag/apply/1-ingestion-parsing/document_versioning.md) — reproducing what was shown
 - [Retention](data_residency_retention.md) — the audit/erasure tension
-
-## Video takeaway (30 seconds)
-
-"Audit is not the same as observability. Observability is sampled, short-lived, and for engineers. Audit is complete, long-lived, append-only, and for the moment someone disputes an answer. The record that matters is the evidence chain: not just 'the system said X', but 'it said X based on document D version three, page twelve, retrieved under these permissions, with prompt version seven'. That means keeping old document versions for the audit period, or you can't reproduce what the user actually saw. Log denials too — they're your proof the access controls fired. And test reconstruction once a quarter, because that exercise is where you discover the gaps."

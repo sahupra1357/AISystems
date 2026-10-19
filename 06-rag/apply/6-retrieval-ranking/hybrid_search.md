@@ -1,5 +1,9 @@
 # Retrieval & ranking → Hybrid search (BM25 + dense, fused)
 
+## Video takeaway
+
+"Ask for 'SKU-4471' and a dense embedding shrugs — every alphanumeric code looks alike in vector space. Ask for 'time off' when the policy says 'annual leave entitlement' and keyword search finds nothing. So run both: BM25 for exact terms and identifiers, vectors for meaning, and merge the two ranked lists with reciprocal rank fusion, which needs no score calibration at all. Then rerank. The one thing you must get right: both legs get the exact same tenant and permission filter, from the same function — fusing a filtered list with an unfiltered one is a data leak, not a feature."
+
 ## What it is
 
 Two retrieval paradigms with complementary failure modes:
@@ -136,7 +140,3 @@ Essentially always for enterprise/document corpora. Especially when the corpus c
 - [Filtered search](../4-indexing/filtered_search.md) — filter parity
 - [Contextual retrieval](../2-chunking/contextual_retrieval.md) — enriched text helps BM25 too
 - [Abstention](score_thresholding_abstention.md) — RRF's loss of score magnitude complicates thresholds
-
-## Video takeaway (30 seconds)
-
-"Ask for 'SKU-4471' and a dense embedding shrugs — every alphanumeric code looks alike in vector space. Ask for 'time off' when the policy says 'annual leave entitlement' and keyword search finds nothing. So run both: BM25 for exact terms and identifiers, vectors for meaning, and merge the two ranked lists with reciprocal rank fusion, which needs no score calibration at all. Then rerank. The one thing you must get right: both legs get the exact same tenant and permission filter, from the same function — fusing a filtered list with an unfiltered one is a data leak, not a feature."

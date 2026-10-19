@@ -1,5 +1,9 @@
 # Prompt engineering → Delimiters: instructions vs data
 
+## Video takeaway
+
+"Your prompt contains your instructions and a pile of stuff the model should work on — documents, search results, tool output, the user's message. If the model can't tell them apart, a document that says 'ignore your instructions' gets obeyed. Wrap all data in named XML blocks — context, passage, tool output — escape anything inside that looks like a tag, and tell the model in the system prompt that everything inside those blocks is data, never commands. It cuts injection a lot, but it's not a wall: the real protection is that dangerous actions are approved by policy code, not by the model."
+
 ## What it is
 
 A prompt mixes two kinds of text: what *you* tell the model to do, and material the model should *work on* — documents, search results, tool output, prior conversation, the user's message. If they are visually indistinguishable, two things go wrong:
@@ -130,7 +134,3 @@ Every call that includes anything not authored by you: retrieved text, tool outp
 - [Prompt-injection defence](../../../10-production/apply/5-guardrails/prompt_injection_defense.md), [Excessive agency](../../../10-production/apply/5-guardrails/excessive_agency.md)
 - [Citations](../../../06-rag/apply/8-generation-grounding/citations.md) — passage IDs
 - [Memory security](../../../07-agents-tools-memory/apply/2-memory/memory_security.md)
-
-## Video takeaway (30 seconds)
-
-"Your prompt contains your instructions and a pile of stuff the model should work on — documents, search results, tool output, the user's message. If the model can't tell them apart, a document that says 'ignore your instructions' gets obeyed. Wrap all data in named XML blocks — context, passage, tool output — escape anything inside that looks like a tag, and tell the model in the system prompt that everything inside those blocks is data, never commands. It cuts injection a lot, but it's not a wall: the real protection is that dangerous actions are approved by policy code, not by the model."

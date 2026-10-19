@@ -1,5 +1,9 @@
 # Memory → How to forget (TTL, decay, deletion, user controls)
 
+## Video takeaway
+
+"Every memory system needs a forget path, and it's harder than it sounds, because a memory isn't in one place — it's in your database, your vector index, the rolling conversation summaries, your caches, your traces, and any eval set it got sampled into. So build the erasure function first, make it cover every store, and then *verify*: query each one afterwards and assert it's gone. Add time-to-live for context that ages out, supersession for facts that change, and a user-facing list where people can see and delete what you remember about them. That last one isn't just GDPR — it's your best source of corrections."
+
 ## What it is
 
 Four distinct forgetting mechanisms, each solving a different problem:
@@ -163,7 +167,3 @@ Always. A memory system without deletion is a compliance liability and a quality
 - [Conflict resolution](conflict_resolution.md) — supersession
 - [Compaction](../../../05-prompt-and-context-engineering/apply/2-context-engineering/compaction_summarization.md) — derived summaries hold copies
 - [Data residency & retention](../../../10-production/apply/6-security-privacy-governance/data_residency_retention.md), [Auditability](../../../10-production/apply/6-security-privacy-governance/auditability.md)
-
-## Video takeaway (30 seconds)
-
-"Every memory system needs a forget path, and it's harder than it sounds, because a memory isn't in one place — it's in your database, your vector index, the rolling conversation summaries, your caches, your traces, and any eval set it got sampled into. So build the erasure function first, make it cover every store, and then *verify*: query each one afterwards and assert it's gone. Add time-to-live for context that ages out, supersession for facts that change, and a user-facing list where people can see and delete what you remember about them. That last one isn't just GDPR — it's your best source of corrections."

@@ -1,5 +1,9 @@
 # Retrieval & ranking → Recursive / agentic retrieval (bounded follow-up searches)
 
+## Video takeaway
+
+"After reading the first five passages, the model knows things it didn't know when it wrote the query — the real term of art, a cross-reference to Schedule 3, the fact that the answer depends on jurisdiction. Recursive retrieval lets it search again with that knowledge. It's genuinely better on research questions. It's also how a two-second query becomes a twenty-second, two-dollar agent run. So bound it in code, not in the prompt: three hops maximum, a wall-clock deadline, a guard that stops it re-searching the same thing, and a rule that a hop adding nothing relevant ends the loop. And always exit with a real decision — answer, or admit you don't have it."
+
 ## What it is
 
 Single-shot retrieval commits to one query before seeing any evidence. But real research is iterative: you search, discover the actual term of art, discover a cross-reference ("as defined in Schedule 3"), notice the answer depends on a jurisdiction you now know to ask about — and search again.
@@ -141,7 +145,3 @@ def recursive_retrieve(question, caller, max_hops=3, max_passages=20, deadline_s
 - [Cost & step budgets](../../../07-agents-tools-memory/apply/1-agents/cost_step_budgets.md) — enforcement
 - [Abstention](score_thresholding_abstention.md) — the terminal decision
 - [Context poisoning](../../../05-prompt-and-context-engineering/apply/2-context-engineering/context_failure_modes.md) — error compounding across hops
-
-## Video takeaway (30 seconds)
-
-"After reading the first five passages, the model knows things it didn't know when it wrote the query — the real term of art, a cross-reference to Schedule 3, the fact that the answer depends on jurisdiction. Recursive retrieval lets it search again with that knowledge. It's genuinely better on research questions. It's also how a two-second query becomes a twenty-second, two-dollar agent run. So bound it in code, not in the prompt: three hops maximum, a wall-clock deadline, a guard that stops it re-searching the same thing, and a rule that a hop adding nothing relevant ends the loop. And always exit with a real decision — answer, or admit you don't have it."

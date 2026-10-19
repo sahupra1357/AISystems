@@ -1,5 +1,9 @@
 # Retrieval & ranking → Reranking (cross-encoder / late interaction)
 
+## Video takeaway
+
+"Your embedding model turned each passage into a single vector months ago, without ever seeing this question. A cross-encoder reads the question and the passage together and scores them properly — far more accurate, far too slow for the whole corpus, perfect for fifty candidates. So retrieve wide and cheap, rerank, keep the best five. It's usually the biggest single quality jump in a RAG pipeline, it needs no re-indexing, and its scores are the best abstention signal you'll get. Two rules: rerank small child chunks, not giant parents, and always have a timeout and a fallback — a reranker outage should cost you quality, not uptime."
+
 ## What it is
 
 Retrieval and ranking are different problems:
@@ -137,7 +141,3 @@ Essentially always, once you have a working retrieval baseline. If you can add o
 - [Score thresholding](score_thresholding_abstention.md) — uses reranker scores
 - [Fine-tuning](../3-embeddings/fine_tuning_embeddings.md) — applies to rerankers, with no re-index
 - [Lost in the middle](../../../05-prompt-and-context-engineering/apply/2-context-engineering/lost_in_the_middle.md) — reranking is what makes ordering meaningful
-
-## Video takeaway (30 seconds)
-
-"Your embedding model turned each passage into a single vector months ago, without ever seeing this question. A cross-encoder reads the question and the passage together and scores them properly — far more accurate, far too slow for the whole corpus, perfect for fifty candidates. So retrieve wide and cheap, rerank, keep the best five. It's usually the biggest single quality jump in a RAG pipeline, it needs no re-indexing, and its scores are the best abstention signal you'll get. Two rules: rerank small child chunks, not giant parents, and always have a timeout and a fallback — a reranker outage should cost you quality, not uptime."

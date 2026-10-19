@@ -1,5 +1,9 @@
 # Security → Threat checklist (OWASP LLM Top 10)
 
+## Video takeaway
+
+"Use the OWASP list for LLM applications as a review checklist, not a reading list: for each of the ten threats, name the control, name the test, name the owner. Most of them you've already handled — permission-filtered retrieval covers sensitive disclosure, least privilege covers excessive agency, budgets cover denial of service. Two get missed. Insecure output handling: your model's text rendered as HTML or dropped into SQL is an injection no matter how well-behaved the model is. And prompt injection, where the honest answer isn't 'we prevent it' but 'we contain it' — a successful injection reaches only what the caller could already see and can't take an irreversible action without a human. Write that down, back it with tests, and re-run the whole thing on every model change."
+
 ## What it is
 
 The OWASP Top 10 for LLM Applications is the standard threat taxonomy for AI systems. Its value is as a **structured review checklist**: for each item, name the control, name the test, and name the owner.
@@ -172,7 +176,3 @@ def test_recursive_loop_bounded():
 - [Budgets](../../../07-agents-tools-memory/apply/1-agents/cost_step_budgets.md), [Capacity](../1-serving-cost-latency/capacity_limits.md) — DoS controls
 - [Generation & grounding](../../../06-rag/apply/8-generation-grounding/) Grounding and citations — overreliance
 - [Testing pyramid](../../../09-evaluation/apply/testing_pyramid.md) — where the tests live
-
-## Video takeaway (30 seconds)
-
-"Use the OWASP list for LLM applications as a review checklist, not a reading list: for each of the ten threats, name the control, name the test, name the owner. Most of them you've already handled — permission-filtered retrieval covers sensitive disclosure, least privilege covers excessive agency, budgets cover denial of service. Two get missed. Insecure output handling: your model's text rendered as HTML or dropped into SQL is an injection no matter how well-behaved the model is. And prompt injection, where the honest answer isn't 'we prevent it' but 'we contain it' — a successful injection reaches only what the caller could already see and can't take an irreversible action without a human. Write that down, back it with tests, and re-run the whole thing on every model change."

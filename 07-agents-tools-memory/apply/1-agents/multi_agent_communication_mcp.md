@@ -1,5 +1,9 @@
 # Agents → Multi-agent communication (MCP, A2A, shared blackboard)
 
+## Video takeaway
+
+"Three different problems get called multi-agent. Sharing tools: that's MCP — implement your search tool once as a server and every client and agent can discover and call it. Handing a task to another agent across a real boundary: that's an envelope with a goal, an output schema, a budget, and the original caller's identity, sent over a durable queue. And several agents co-authoring one artifact: that's a shared blackboard with versioned section writes. Two warnings. A third-party MCP server's tool descriptions are instructions your model will follow — review them. And most 'multi-agent systems' should just be an orchestrator calling subagents in one process."
+
 ## What it is
 
 Three distinct problems, often conflated:
@@ -162,7 +166,3 @@ def write_section(store, artifact_id: str, section: str, content: dict, agent: s
 - [State & durability](state_durability.md) — durable handoffs
 - [Excessive agency](../../../10-production/apply/5-guardrails/excessive_agency.md), [AuthZ](../../../10-production/apply/6-security-privacy-governance/authn_authz_permission_filtered_retrieval.md) — identity propagation
 - [Supply-chain hygiene](../../../10-production/apply/6-security-privacy-governance/supply_chain_hygiene.md) — third-party servers
-
-## Video takeaway (30 seconds)
-
-"Three different problems get called multi-agent. Sharing tools: that's MCP — implement your search tool once as a server and every client and agent can discover and call it. Handing a task to another agent across a real boundary: that's an envelope with a goal, an output schema, a budget, and the original caller's identity, sent over a durable queue. And several agents co-authoring one artifact: that's a shared blackboard with versioned section writes. Two warnings. A third-party MCP server's tool descriptions are instructions your model will follow — review them. And most 'multi-agent systems' should just be an orchestrator calling subagents in one process."

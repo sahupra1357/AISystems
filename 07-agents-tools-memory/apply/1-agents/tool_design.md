@@ -1,5 +1,9 @@
 # Agents → Tool design
 
+## Video takeaway
+
+"A tool definition is a prompt with a schema attached — the model picks tools almost entirely from their names and descriptions. So write the description like an instruction: what it's for, what it returns, and crucially what *not* to use it for, naming the tool it should use instead. Fewer tools beat more: fourteen overlapping tools is how agents call the wrong one. Type every parameter, use enums so values can't be invented, and separate reading from writing — write tools get an idempotency key, an authorisation check against the caller's permissions, and usually a human approval gate. And measure tool-selection accuracy separately from task success."
+
 ## What it is
 
 A tool definition is a prompt fragment plus an API contract. The model chooses tools based almost entirely on their names and descriptions, so tool design is prompt engineering with a schema attached.
@@ -164,7 +168,3 @@ Every agent system. Tool design is not an optimisation; it's the primary interfa
 - [Confusion](../../../05-prompt-and-context-engineering/apply/2-context-engineering/context_failure_modes.md) — the failure this prevents
 - [Structured outputs](../../../05-prompt-and-context-engineering/apply/1-prompt-engineering/structured_outputs_tool_use.md) — argument schemas
 - [Excessive agency](../../../10-production/apply/5-guardrails/excessive_agency.md), [Supply chain](../../../10-production/apply/6-security-privacy-governance/supply_chain_hygiene.md) — write tools and third-party tools
-
-## Video takeaway (30 seconds)
-
-"A tool definition is a prompt with a schema attached — the model picks tools almost entirely from their names and descriptions. So write the description like an instruction: what it's for, what it returns, and crucially what *not* to use it for, naming the tool it should use instead. Fewer tools beat more: fourteen overlapping tools is how agents call the wrong one. Type every parameter, use enums so values can't be invented, and separate reading from writing — write tools get an idempotency key, an authorisation check against the caller's permissions, and usually a human approval gate. And measure tool-selection accuracy separately from task success."

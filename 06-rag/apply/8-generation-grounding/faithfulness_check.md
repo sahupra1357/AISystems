@@ -1,5 +1,9 @@
 # Generation & grounding → Faithfulness check (is each claim entailed?)
 
+## Video takeaway
+
+"Validating that a citation ID exists proves nothing about whether the passage says what the answer claims. So run a second pass: split the answer into claims, and for each one ask whether the passage it cites actually entails it. A small NLI model does this in milliseconds. Add a dumb regex check that every number in the claim appears in the evidence — that catches invented amounts and dates better than any entailment model. Then *act* on the result: never deliver a contradicted claim, regenerate once when the score is low, abstain when it's very low. Measuring hallucination is a metric. Blocking it is a control."
+
 ## What it is
 
 Citation validation ([citations](citations.md)) proves an ID exists. It does not prove the cited passage *says* what the claim asserts. Faithfulness checking closes that gap: decompose the answer into atomic claims and, for each, ask whether the retrieved context entails it.
@@ -157,7 +161,3 @@ def faithfulness_gate(response: dict, retrieved: list[dict], tau_deliver=0.9, ta
 - [Score thresholding](../6-retrieval-ranking/score_thresholding_abstention.md) — the retrieval-side control
 - [LLM-as-judge](../../../09-evaluation/apply/llm_as_judge.md), [Generation evals](../../../09-evaluation/apply/generation_evals.md)
 - [VLM captioning](../1-ingestion-parsing/charts_images_vlm_captioning.md) — approximate values
-
-## Video takeaway (30 seconds)
-
-"Validating that a citation ID exists proves nothing about whether the passage says what the answer claims. So run a second pass: split the answer into claims, and for each one ask whether the passage it cites actually entails it. A small NLI model does this in milliseconds. Add a dumb regex check that every number in the claim appears in the evidence — that catches invented amounts and dates better than any entailment model. Then *act* on the result: never deliver a contradicted claim, regenerate once when the score is low, abstain when it's very low. Measuring hallucination is a metric. Blocking it is a control."

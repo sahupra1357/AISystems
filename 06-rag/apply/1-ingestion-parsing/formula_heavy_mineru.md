@@ -1,5 +1,9 @@
 # OCR / digitization → Formula-heavy page (MinerU / LaTeX extraction)
 
+## Video takeaway
+
+"To a normal parser an equation is a pile of symbols in random order — or nothing at all. A formula-aware parser like MinerU emits LaTeX, which the model can actually read and you can render. Two production rules: route only the math-heavy pages there, because it's GPU-expensive; and index a plain-English version of each formula alongside the LaTeX, because embeddings don't speak LaTeX. Keep the equation glued to the sentence before it and the 'where x is…' after it, or it's meaningless."
+
 ## What it is
 
 Scientific papers, engineering specs, actuarial tables, and financial models are full of mathematics. In a PDF, an equation is a scatter of glyphs from math fonts at fractional positions; the text layer yields symbol soup in the wrong order, and OCR does worse. Neither preserves the *structure* (fraction, subscript, summation limits) that gives the formula meaning.
@@ -124,7 +128,3 @@ for f in extract_formulas(md)[:5]:
 - [VLM captioning](charts_images_vlm_captioning.md) — fallback rung for hard formulas
 - [Layout-aware chunking](../2-chunking/layout_structure_aware.md) — atomic equation units
 - [Validation against golden sample](validation_golden_sample.md)
-
-## Video takeaway (30 seconds)
-
-"To a normal parser an equation is a pile of symbols in random order — or nothing at all. A formula-aware parser like MinerU emits LaTeX, which the model can actually read and you can render. Two production rules: route only the math-heavy pages there, because it's GPU-expensive; and index a plain-English version of each formula alongside the LaTeX, because embeddings don't speak LaTeX. Keep the equation glued to the sentence before it and the 'where x is…' after it, or it's meaningless."

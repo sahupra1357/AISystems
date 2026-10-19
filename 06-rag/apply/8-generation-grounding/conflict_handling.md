@@ -1,5 +1,9 @@
 # Generation & grounding → Conflict handling (when sources disagree)
 
+## Video takeaway
+
+"Your index has the 2022 policy and the 2024 policy, and the model answers from whichever one it happened to attend to — so the same question gets different answers on different days. First, fix it upstream: superseded versions shouldn't be retrievable at all. For what's left, put effective dates, authority tiers, and scope on every passage and give the model an ordered rule: different scope isn't a conflict, newer wins, higher authority wins, and if you still can't resolve it, show both with their dates and say they disagree. Never pick silently. And when two *current* documents genuinely contradict, that's not a nuisance — it's a data-quality ticket someone needs to close."
+
 ## What it is
 
 Real corpora contradict themselves constantly:
@@ -153,7 +157,3 @@ def answer_with_conflicts(question, chunks):
 - [Context clash](../../../05-prompt-and-context-engineering/apply/2-context-engineering/context_failure_modes.md) — the failure mode this addresses
 - [Self-query](../5-query-understanding/self_query_metadata_filters.md) — scope filtering
 - [Triage](../../../10-production/apply/8-data-flywheel/feedback_capture_triage.md) — where unresolved conflicts go
-
-## Video takeaway (30 seconds)
-
-"Your index has the 2022 policy and the 2024 policy, and the model answers from whichever one it happened to attend to — so the same question gets different answers on different days. First, fix it upstream: superseded versions shouldn't be retrievable at all. For what's left, put effective dates, authority tiers, and scope on every passage and give the model an ordered rule: different scope isn't a conflict, newer wins, higher authority wins, and if you still can't resolve it, show both with their dates and say they disagree. Never pick silently. And when two *current* documents genuinely contradict, that's not a nuisance — it's a data-quality ticket someone needs to close."

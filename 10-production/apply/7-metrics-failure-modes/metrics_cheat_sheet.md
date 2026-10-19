@@ -1,5 +1,9 @@
 # Metrics cheat sheet
 
+## Video takeaway
+
+"One metric per stage, each answering a specific question. Parsing accuracy caps everything downstream. Retrieval recall tells you whether the answer was even available. Reranking nDCG isolates the ranking gain. Faithfulness and citation validity cover hallucination. Then the one almost nobody has: correct-abstention and false-refusal rates, which need questions your corpus genuinely can't answer. For agents, always report cost and steps next to accuracy. And for leadership, report cost per *successful* task, not per request — a cheap system that fails half the time isn't cheap. Every number needs a sample size, an interval, and the ability to slice by which prompt and model produced it."
+
 ## What it is
 
 | Stage | Metric | Why it matters | Detail |
@@ -161,7 +165,3 @@ From the first production deployment. Start with the deterministic ones — cita
 - [Cost levers](../1-serving-cost-latency/cost_levers.md) / [latency levers](../1-serving-cost-latency/latency_levers.md) — cost and latency metrics
 - [Triage](../8-data-flywheel/feedback_capture_triage.md) — the histogram that complements this table
 - [Statistical hygiene](../../../09-evaluation/apply/statistical_hygiene.md) — how to read the numbers
-
-## Video takeaway (30 seconds)
-
-"One metric per stage, each answering a specific question. Parsing accuracy caps everything downstream. Retrieval recall tells you whether the answer was even available. Reranking nDCG isolates the ranking gain. Faithfulness and citation validity cover hallucination. Then the one almost nobody has: correct-abstention and false-refusal rates, which need questions your corpus genuinely can't answer. For agents, always report cost and steps next to accuracy. And for leadership, report cost per *successful* task, not per request — a cheap system that fails half the time isn't cheap. Every number needs a sample size, an interval, and the ability to slice by which prompt and model produced it."

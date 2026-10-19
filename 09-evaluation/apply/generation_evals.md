@@ -1,5 +1,9 @@
 # Evaluation → Generation evals (faithfulness, relevance, citation accuracy)
 
+## Video takeaway
+
+"Once retrieval is doing its job, measure what the model does with the passages. Four separate things, because they have different fixes. Faithfulness: is every claim supported by the passage it cites — check that against the cited passage only, not the whole context, or you'll inflate it. Context recall: does the retrieved text actually contain what the reference answer needs — if that's low while retrieval recall is high, you have a chunking problem, not a prompt problem. Citation accuracy: do the IDs exist and support the claims. And behaviour: did it abstain when it should have. That last one needs unanswerable questions in your golden set, and almost nobody has them."
+
 ## What it is
 
 Generation evaluation asks four separate questions, and conflating them hides which part is broken:
@@ -161,7 +165,3 @@ After retrieval evals show the right passages are being retrieved. Running gener
 - [Generation & grounding](../../06-rag/apply/8-generation-grounding/) — the generation controls being measured
 - [Component vs end-to-end](component_vs_end_to_end.md) — the diagnostic ladder
 - [Online eval](online_eval.md) — the same metrics on live traffic
-
-## Video takeaway (30 seconds)
-
-"Once retrieval is doing its job, measure what the model does with the passages. Four separate things, because they have different fixes. Faithfulness: is every claim supported by the passage it cites — check that against the cited passage only, not the whole context, or you'll inflate it. Context recall: does the retrieved text actually contain what the reference answer needs — if that's low while retrieval recall is high, you have a chunking problem, not a prompt problem. Citation accuracy: do the IDs exist and support the claims. And behaviour: did it abstain when it should have. That last one needs unanswerable questions in your golden set, and almost nobody has them."

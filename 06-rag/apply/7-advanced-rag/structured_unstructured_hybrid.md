@@ -1,5 +1,9 @@
 # Advanced RAG → Structured + unstructured hybrid (SQL for numbers, vectors for narrative)
 
+## Video takeaway
+
+"'How many contracts did we sign last quarter' is not a retrieval question, and answering it by retrieving five contracts and counting them is how RAG systems produce confident wrong numbers. Route aggregates to SQL over a small, curated set of views — not your raw warehouse — with a library of verified example queries as few-shot prompts. Validate the generated SQL before it runs: read-only role, table allow-list, injected limit, row-level security in the database. Then show the user the query. And for the best questions — 'why did revenue drop and what does the post-mortem say' — run both legs and let the numbers come from the query and the story come from the documents."
+
 ## What it is
 
 "How many contracts did we sign in Q3?" retrieved five contracts and the model counted five. "What's our average deal size by region?" retrieved three deals and the model averaged them. These aren't retrieval failures — they're questions with a *computational* answer that lives in structured data, being routed to a system that returns text passages.
@@ -164,7 +168,3 @@ def hybrid_answer(question, caller):
 - [Tables](../1-ingestion-parsing/tables.md) — extracted fields feeding structured tables
 - [Injection](../../../10-production/apply/5-guardrails/prompt_injection_defense.md) — user text to SQL
 - [Refusal](../8-generation-grounding/refusal_no_answer_path.md) — when there's no structured source
-
-## Video takeaway (30 seconds)
-
-"'How many contracts did we sign last quarter' is not a retrieval question, and answering it by retrieving five contracts and counting them is how RAG systems produce confident wrong numbers. Route aggregates to SQL over a small, curated set of views — not your raw warehouse — with a library of verified example queries as few-shot prompts. Validate the generated SQL before it runs: read-only role, table allow-list, injected limit, row-level security in the database. Then show the user the query. And for the best questions — 'why did revenue drop and what does the post-mortem say' — run both legs and let the numbers come from the query and the story come from the documents."

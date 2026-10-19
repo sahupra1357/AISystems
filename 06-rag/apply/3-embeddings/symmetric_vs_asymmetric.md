@@ -1,5 +1,9 @@
 # Embeddings → Symmetric vs asymmetric (query/passage prefixes)
 
+## Video takeaway
+
+"A question and the passage that answers it look nothing alike, so many embedding models want to be told which one they're looking at: 'query:' on one side, 'passage:' on the other, or an input-type flag in the API. Leave it off and you still get vectors — just worse ones, and nothing errors. Wrap the model in two functions, embed-queries and embed-documents, make them the only way anyone embeds anything, bake the prefix into the version string, and test that the prefixed recall is actually higher. It's several points of recall for free."
+
 ## What it is
 
 **Symmetric** retrieval: both sides are the same kind of text (sentence ↔ sentence similarity, duplicate detection, example retrieval). One embedding function for both.
@@ -116,7 +120,3 @@ def test_prefix_effect(golden, corpus_vecs):
 - [HyDE](../5-query-understanding/hyde.md) — document-side embedding of a pseudo-answer
 - [Dynamic few-shot](../../../05-prompt-and-context-engineering/apply/1-prompt-engineering/dynamic_few_shot_selection.md) — symmetric case
 - [Retrieval evals](../../../09-evaluation/apply/retrieval_evals.md)
-
-## Video takeaway (30 seconds)
-
-"A question and the passage that answers it look nothing alike, so many embedding models want to be told which one they're looking at: 'query:' on one side, 'passage:' on the other, or an input-type flag in the API. Leave it off and you still get vectors — just worse ones, and nothing errors. Wrap the model in two functions, embed-queries and embed-documents, make them the only way anyone embeds anything, bake the prefix into the version string, and test that the prefixed recall is actually higher. It's several points of recall for free."

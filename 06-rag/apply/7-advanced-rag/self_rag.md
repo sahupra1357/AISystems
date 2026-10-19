@@ -1,5 +1,9 @@
 # Advanced RAG → Self-RAG (reflection tokens: retrieve? supported? useful?)
 
+## Video takeaway
+
+"Self-RAG has the model reflect as it writes: do I even need to retrieve for this, is this passage relevant, is the sentence I just wrote actually supported. In production, take the first part seriously — a lot of conversational turns need no retrieval at all, and skipping it saves latency and noise. Take the self-grading with salt: a model that made something up will often also mark it supported. So validate every citation ID in code, verify a sample independently, and publish how often 'fully supported' really means fully supported before you put that word in your UI."
+
 ## What it is
 
 Self-RAG (Asai et al., 2023) trains a model to produce **reflection tokens** alongside its output:
@@ -144,7 +148,3 @@ def self_rag_answer(question, caller, max_retrieval_rounds=2):
 - [Faithfulness check](../8-generation-grounding/faithfulness_check.md) — the independent verifier
 - [Routing](../5-query-understanding/query_routing.md) — an easier place to make the retrieve/don't-retrieve call
 - [Data flywheel](../../../10-production/apply/8-data-flywheel/data_flywheel.md)
-
-## Video takeaway (30 seconds)
-
-"Self-RAG has the model reflect as it writes: do I even need to retrieve for this, is this passage relevant, is the sentence I just wrote actually supported. In production, take the first part seriously — a lot of conversational turns need no retrieval at all, and skipping it saves latency and noise. Take the self-grading with salt: a model that made something up will often also mark it supported. So validate every citation ID in code, verify a sample independently, and publish how often 'fully supported' really means fully supported before you put that word in your UI."

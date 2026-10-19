@@ -1,5 +1,9 @@
 # Generation & grounding → Grounded prompting
 
+## Video takeaway
+
+"Telling the model 'answer only from the context and say so if it's not there' is the foundation of grounded RAG — and it's about sixty percent of a solution, not a hundred. Models still bridge gaps when the passages almost answer the question. So write the rules precisely, say what reasoning *is* allowed so it doesn't refuse to add two numbers, include a worked example where the context is insufficient, and then verify: validate every citation ID in code and check faithfulness separately. Grounding is a stack. The prompt is just the first layer."
+
 ## What it is
 
 Grounded prompting is the instruction layer that tells the model to treat retrieved passages as its only source of truth for factual claims:
@@ -130,7 +134,3 @@ Every RAG generation call, always. This is the baseline, not an enhancement.
 - [Citations](citations.md), [Faithfulness](faithfulness_check.md), [Conflicts](conflict_handling.md), [Refusal](refusal_no_answer_path.md)
 - [Score thresholding](../6-retrieval-ranking/score_thresholding_abstention.md) — the retrieval-side control
 - [Generation evals](../../../09-evaluation/apply/generation_evals.md)
-
-## Video takeaway (30 seconds)
-
-"Telling the model 'answer only from the context and say so if it's not there' is the foundation of grounded RAG — and it's about sixty percent of a solution, not a hundred. Models still bridge gaps when the passages almost answer the question. So write the rules precisely, say what reasoning *is* allowed so it doesn't refuse to add two numbers, include a worked example where the context is insufficient, and then verify: validate every citation ID in code and check faithfulness separately. Grounding is a stack. The prompt is just the first layer."

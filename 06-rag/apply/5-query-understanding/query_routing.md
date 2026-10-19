@@ -1,5 +1,9 @@
 # Query understanding → Routing (vector, SQL, graph, web, or no retrieval)
 
+## Video takeaway
+
+"'How many contracts did we sign last quarter' is not a retrieval question. Send it to your vector index and you get five contracts and a made-up number. Route first: greetings and formatting need no retrieval at all — that's often a quarter of your traffic and it's free to skip. Aggregations go to SQL. Relationship questions go to a graph. Live record lookups go to the API. Rules catch most of it, a cheap classifier handles the rest, and low confidence defaults to hybrid search. Log the route on every request — it's the first thing you check when an answer is wrong."
+
 ## What it is
 
 A RAG system that sends everything to the vector index answers "how many contracts did we sign last quarter" by retrieving five contracts and letting the model guess a count. The question needed `SELECT COUNT(*)`. Routing classifies the information need and dispatches:
@@ -134,7 +138,3 @@ def handle(query, caller, history):
 - [Routing/escalation](../../../04-llm-foundations/apply/routing_escalation.md) — model tiers, same pattern
 - [Refusal path](../8-generation-grounding/refusal_no_answer_path.md) — "I don't have that backend"
 - [Injection](../../../10-production/apply/5-guardrails/prompt_injection_defense.md) — text2SQL as an attack surface
-
-## Video takeaway (30 seconds)
-
-"'How many contracts did we sign last quarter' is not a retrieval question. Send it to your vector index and you get five contracts and a made-up number. Route first: greetings and formatting need no retrieval at all — that's often a quarter of your traffic and it's free to skip. Aggregations go to SQL. Relationship questions go to a graph. Live record lookups go to the API. Rules catch most of it, a cheap classifier handles the rest, and low confidence defaults to hybrid search. Log the route on every request — it's the first thing you check when an answer is wrong."

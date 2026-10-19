@@ -1,5 +1,9 @@
 # Context engineering → "Lost in the middle" (position matters)
 
+## Video takeaway
+
+"Models read the beginning and the end of the prompt carefully and skim the middle. Put the passage that answers the question at position seven of twelve and the model may never use it. So rerank properly, keep the top few chunks only, put the best one first — or last, right before the question — and repeat the question at the end. Run a quick probe: move the gold passage across positions and plot accuracy. That U-shaped curve tells you how much context your model can really handle, and it's usually less than the window size suggests."
+
 ## What it is
 
 The "lost in the middle" effect (Liu et al., 2023, and reproduced widely since) shows a U-shaped curve: retrieval-augmented answer accuracy is highest when the supporting passage is at the beginning or end of the context and drops when it's in the middle. Long contexts make it worse. Newer models have flattened the curve but not removed it, and long-context degradation compounds it.
@@ -117,7 +121,3 @@ def probe_positions(golden, llm, k=10):
 - [Context assembly](what_is_context_engineering.md), [Budgets](per_source_truncation_budgets.md)
 - [Compaction](compaction_summarization.md) — keeps edges clear
 - [Decomposition](../../../06-rag/apply/5-query-understanding/decomposition.md) — for "read everything" tasks
-
-## Video takeaway (30 seconds)
-
-"Models read the beginning and the end of the prompt carefully and skim the middle. Put the passage that answers the question at position seven of twelve and the model may never use it. So rerank properly, keep the top few chunks only, put the best one first — or last, right before the question — and repeat the question at the end. Run a quick probe: move the gold passage across positions and plot accuracy. That U-shaped curve tells you how much context your model can really handle, and it's usually less than the window size suggests."

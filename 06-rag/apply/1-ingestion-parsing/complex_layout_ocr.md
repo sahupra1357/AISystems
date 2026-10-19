@@ -1,5 +1,9 @@
 # OCR / digitization → Complex layout (multi-column, forms → layout model)
 
+## Video takeaway
+
+"Two-column page through plain OCR: line one of the left column, line one of the right, line two of the left… unreadable. A layout model fixes it by finding regions first — columns, titles, tables, form boxes — then reading each region in order. Forms become key-value pairs you can filter on. The silent failure to watch for: the layout model misses a region and that text just vanishes. Check coverage, check sentence continuity across regions, and send failures up the retry ladder."
+
 ## What it is
 
 Plain OCR returns text lines in whatever order the detector found them — typically top-to-bottom by y-coordinate, which for a two-column page means line 1 of column A, line 1 of column B, line 2 of column A… The result is unreadable and un-embeddable.
@@ -123,7 +127,3 @@ def parse_complex_page(page: fitz.Page, page_no: int) -> list[dict]:
 - [Reading order](reading_order.md), [Tables](tables.md)
 - [VLM captioning](charts_images_vlm_captioning.md) — fallback for hard tables/figures
 - [Retry ladder](retry_ladder.md)
-
-## Video takeaway (30 seconds)
-
-"Two-column page through plain OCR: line one of the left column, line one of the right, line two of the left… unreadable. A layout model fixes it by finding regions first — columns, titles, tables, form boxes — then reading each region in order. Forms become key-value pairs you can filter on. The silent failure to watch for: the layout model misses a region and that text just vanishes. Check coverage, check sentence continuity across regions, and send failures up the retry ladder."

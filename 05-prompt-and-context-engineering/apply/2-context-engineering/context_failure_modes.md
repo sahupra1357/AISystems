@@ -1,5 +1,9 @@
 # Context engineering → Failure modes: poisoning, distraction, confusion, clash
 
+## Video takeaway
+
+"When the model had the right information and still failed, it's usually one of four context problems. Poisoning: a wrong fact got in early and the summary keeps carrying it. Distraction: too much marginal text and the model anchors on the wrong passage. Confusion: fourteen overlapping tools and it picks the wrong one. Clash: the 2022 policy and the 2024 policy are both in the window and nothing says which wins. Each has its own fix — provenance and supersede, rerank and small k, fewer tools per step, version filters and surfacing conflicts — and its own metric. Name them, measure them."
+
 ## What it is
 
 | Failure | What happens | Typical source | Symptom |
@@ -136,7 +140,3 @@ def tools_for_step(step_kind):
 - [Tool design](../../../07-agents-tools-memory/apply/1-agents/tool_design.md) — confusion
 - [Injection](../../../10-production/apply/5-guardrails/prompt_injection_defense.md) — poisoning with intent
 - [Triage](../../../10-production/apply/8-data-flywheel/feedback_capture_triage.md)
-
-## Video takeaway (30 seconds)
-
-"When the model had the right information and still failed, it's usually one of four context problems. Poisoning: a wrong fact got in early and the summary keeps carrying it. Distraction: too much marginal text and the model anchors on the wrong passage. Confusion: fourteen overlapping tools and it picks the wrong one. Clash: the 2022 policy and the 2024 policy are both in the window and nothing says which wins. Each has its own fix — provenance and supersede, rerank and small k, fewer tools per step, version filters and surfacing conflicts — and its own metric. Name them, measure them."

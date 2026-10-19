@@ -1,5 +1,9 @@
 # Agents → Task decomposition ("define down")
 
+## Video takeaway
+
+"Before an orchestrator dispatches anything, it has to turn a vague goal into subtasks precise enough that a cheap model can execute them — each with an input schema, an output schema, and a success criterion you can check without redoing the work. And prefer writing that decomposition in code: per document, per section, per checklist item. LLM planning is the weak link. Validate the plan before you spend money on it, estimate its total cost before dispatch, and make the aggregation account for every single input — a summary of thirty-seven of forty contracts that doesn't mention the missing three is worse than no summary. A perfect subagent executing the wrong subtask is still wrong."
+
 ## What it is
 
 "Define down" means turning a vague goal into a set of subtasks each of which is precisely specified enough that a subagent (or a function, or a person) could execute it without further clarification. The unit of decomposition is a **contract**, not a sentence:
@@ -173,7 +177,3 @@ def plan_contract_review(doc_ids, checklist_version) -> Plan:
 - [Context isolation](../../../05-prompt-and-context-engineering/apply/2-context-engineering/context_isolation.md) — contracts define the subagent's window
 - [Budgets](cost_step_budgets.md) — per subtask and per plan
 - [Human-in-the-loop](human_in_the_loop.md) — plan approval
-
-## Video takeaway (30 seconds)
-
-"Before an orchestrator dispatches anything, it has to turn a vague goal into subtasks precise enough that a cheap model can execute them — each with an input schema, an output schema, and a success criterion you can check without redoing the work. And prefer writing that decomposition in code: per document, per section, per checklist item. LLM planning is the weak link. Validate the plan before you spend money on it, estimate its total cost before dispatch, and make the aggregation account for every single input — a summary of thirty-seven of forty contracts that doesn't mention the missing three is worse than no summary. A perfect subagent executing the wrong subtask is still wrong."

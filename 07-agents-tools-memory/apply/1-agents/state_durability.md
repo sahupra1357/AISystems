@@ -1,5 +1,9 @@
 # Agents → State & durability (checkpointing and idempotency)
 
+## Video takeaway
+
+"A forty-step agent run that crashes at step thirty-eight has already spent your money and possibly already sent the email. So checkpoint after every step, and give every side-effecting tool call a stable idempotency key derived from the run, the step, and the canonicalised arguments. Then a resume replays step thirty-eight, the key matches, and the service returns the original result instead of sending again. That crash window between 'action done' and 'checkpoint written' is exactly why the key is mandatory. And if you can, don't hand-roll any of this — use a durable workflow engine that gives you resume and idempotency as primitives."
+
 ## What it is
 
 An agent run is a long-lived, side-effecting computation. A 40-step run that crashes at step 38 has consumed real money and possibly performed real actions. Without durability, you restart — paying again and, worse, re-executing the emails you already sent.
@@ -170,7 +174,3 @@ For external services, prefer their native idempotency (Stripe `Idempotency-Key`
 - [Fan-out](fan_out_fan_in.md) — idempotent subtasks enable partial resume
 - [Failure handling](../../../10-production/apply/4-observability-reliability/failure_handling.md) — retries and backoff
 - [Retention](../../../10-production/apply/6-security-privacy-governance/data_residency_retention.md) — agent state is data
-
-## Video takeaway (30 seconds)
-
-"A forty-step agent run that crashes at step thirty-eight has already spent your money and possibly already sent the email. So checkpoint after every step, and give every side-effecting tool call a stable idempotency key derived from the run, the step, and the canonicalised arguments. Then a resume replays step thirty-eight, the key matches, and the service returns the original result instead of sending again. That crash window between 'action done' and 'checkpoint written' is exactly why the key is mandatory. And if you can, don't hand-roll any of this — use a durable workflow engine that gives you resume and idempotency as primitives."

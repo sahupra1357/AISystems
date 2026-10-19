@@ -1,5 +1,9 @@
 # Production → Capacity & limits
 
+## Video takeaway
+
+"Your capacity ceiling usually isn't your servers — it's a provider's tokens-per-minute quota, and hitting it turns a busy hour into an outage. So rate-limit on your side, fleet-wide, at about eighty-five percent of the quota to leave room for retries. Give every tenant a concurrency limit and a spend cap so one automation can't starve everyone. Bound your queues and reject fast with a retry hint instead of accepting work you can't finish. And write down the shed order *before* you need it: drop multi-query, then HyDE, then reranking depth, then downgrade the tier, then pause background jobs. Just never shed silently — flag the degradation in the response, or you'll watch quality metrics fall with no code change and no explanation."
+
 ## What it is
 
 AI systems have unusual capacity characteristics: the bottleneck is typically an external quota (tokens per minute, requests per minute) rather than your own CPU, and the cost of exceeding it is 429s that cascade into user-visible failures.
@@ -202,7 +206,3 @@ Any multi-tenant production system, and any system whose traffic can spike (supp
 - [Budgets](../../../07-agents-tools-memory/apply/1-agents/cost_step_budgets.md) — per-request and per-tenant caps
 - [Cost levers](cost_levers.md) — spend caps
 - [Re-indexing](../../../06-rag/apply/3-embeddings/embedding_versioning.md) — the classic capacity collision
-
-## Video takeaway (30 seconds)
-
-"Your capacity ceiling usually isn't your servers — it's a provider's tokens-per-minute quota, and hitting it turns a busy hour into an outage. So rate-limit on your side, fleet-wide, at about eighty-five percent of the quota to leave room for retries. Give every tenant a concurrency limit and a spend cap so one automation can't starve everyone. Bound your queues and reject fast with a retry hint instead of accepting work you can't finish. And write down the shed order *before* you need it: drop multi-query, then HyDE, then reranking depth, then downgrade the tier, then pause background jobs. Just never shed silently — flag the degradation in the response, or you'll watch quality metrics fall with no code change and no explanation."

@@ -1,5 +1,9 @@
 # Chunking → Late chunking
 
+## Video takeaway
+
+"Normally you cut the document into chunks, then embed each one blind. Late chunking embeds the whole document first, so every token already knows its neighbours, and only *then* cuts and pools per chunk. 'It must be returned in 14 days' now knows 'it' is the leased equipment. No LLM calls, fully deterministic. The catches: you need a long-context encoder that exposes token embeddings, it eats GPU on long docs, and it does nothing for keyword search. Measure it against naive embedding before you switch."
+
 ## What it is
 
 Normal ("naive") chunking embeds each chunk independently: the model never sees text outside the chunk, so "it" and "the company" embed as generic tokens. Late chunking (Jina AI, 2024) flips the order:
@@ -125,7 +129,3 @@ Jina's hosted API exposes this as `late_chunking=true` on the embeddings endpoin
 - [Embedding model choice](../3-embeddings/embedding_model_choice.md) — model must support token outputs
 - [Embedding versioning](../3-embeddings/embedding_versioning.md) — this *is* a model migration
 - [Hybrid search](../6-retrieval-ranking/hybrid_search.md) — still needed
-
-## Video takeaway (30 seconds)
-
-"Normally you cut the document into chunks, then embed each one blind. Late chunking embeds the whole document first, so every token already knows its neighbours, and only *then* cuts and pools per chunk. 'It must be returned in 14 days' now knows 'it' is the leased equipment. No LLM calls, fully deterministic. The catches: you need a long-context encoder that exposes token embeddings, it eats GPU on long docs, and it does nothing for keyword search. Measure it against naive embedding before you switch."

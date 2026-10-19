@@ -1,5 +1,9 @@
 # Source ingestion → Tenant / ACL capture at ingest
 
+## Video takeaway
+
+"If the model can read it, the model can leak it. So the fix isn't a prompt saying 'don't reveal HR documents' — it's never retrieving them for someone who can't see them. That means capturing tenant and permissions at ingest, on every chunk, from the source that knows. At query time the caller's groups become a hard filter inside the vector search. Never default open: an empty ACL must mean nobody. And permissions change without content changing, so you need a separate sync path with an SLA."
+
 ## What it is
 
 Who is allowed to see this chunk? The only system that knows is the source: SharePoint's permission list, Confluence's space and page restrictions, Drive's sharing settings, the database's row-level policy. The connector is the only component that talks to the source. So the connector must capture the permission information and it must travel with the document through parse → chunk → embed → index, ending up as filterable metadata on every chunk.
@@ -123,7 +127,3 @@ Always, from the first document. Even a single-tenant internal tool has "HR only
 - [Filtered search](../4-indexing/filtered_search.md) — pre- vs post-filter
 - [AuthN/AuthZ](../../../10-production/apply/6-security-privacy-governance/authn_authz_permission_filtered_retrieval.md) — query-time enforcement
 - [Auditability](../../../10-production/apply/6-security-privacy-governance/auditability.md)
-
-## Video takeaway (30 seconds)
-
-"If the model can read it, the model can leak it. So the fix isn't a prompt saying 'don't reveal HR documents' — it's never retrieving them for someone who can't see them. That means capturing tenant and permissions at ingest, on every chunk, from the source that knows. At query time the caller's groups become a hard filter inside the vector search. Never default open: an empty ACL must mean nobody. And permissions change without content changing, so you need a separate sync path with an SLA."

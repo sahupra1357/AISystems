@@ -1,5 +1,9 @@
 # Prompt engineering → Decomposition, negative examples, and prefilling
 
+## Video takeaway
+
+"Three small tricks that pay every day. One: don't ask one prompt to classify, extract, decide, and write — split it into narrow steps, each with its own model tier, validation, and eval, so when it breaks you know where. Two: for the mistake that keeps recurring, show the wrong output labelled wrong next to the right one — far more effective than another line of 'don't'. Three: prefill the assistant's reply with an opening brace or an answer tag, and the model skips the chatter and starts in the format you want."
+
 ## What it is
 
 **Prompt decomposition.** One prompt that does five things (classify, extract, decide, draft, format) fails unpredictably. Splitting it into a pipeline of narrow prompts — each with its own eval, tier ([model selection & tradeoffs](../../../04-llm-foundations/apply/model_selection.md)), and validation — makes each step reliable and debuggable. Different from *query* decomposition ([decomposition](../../../06-rag/apply/5-query-understanding/decomposition.md)), which splits a user question for retrieval; this splits the *task*.
@@ -120,7 +124,3 @@ def extract_json(call_site, system, text):
 - [Query decomposition](../../../06-rag/apply/5-query-understanding/decomposition.md) — the retrieval-side cousin
 - [Planning styles](../../../07-agents-tools-memory/apply/1-agents/planning_styles.md) — scripted workflows with LLM steps
 - [Feedback triage](../../../10-production/apply/8-data-flywheel/feedback_capture_triage.md) — source of negative examples
-
-## Video takeaway (30 seconds)
-
-"Three small tricks that pay every day. One: don't ask one prompt to classify, extract, decide, and write — split it into narrow steps, each with its own model tier, validation, and eval, so when it breaks you know where. Two: for the mistake that keeps recurring, show the wrong output labelled wrong next to the right one — far more effective than another line of 'don't'. Three: prefill the assistant's reply with an opening brace or an answer tag, and the model skips the chatter and starts in the format you want."

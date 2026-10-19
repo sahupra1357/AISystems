@@ -1,5 +1,9 @@
 # Source ingestion → Document versioning
 
+## Video takeaway
+
+"When a policy is updated, the old chunks don't disappear on their own — they sit in the index and answer questions with last year's rules. Versioning fixes it: every chunk carries doc ID plus version, a new version is written completely, then a pointer flips. Rollback is flipping it back. Old versions are soft-deleted and garbage-collected later, because deleting from a vector index synchronously is slow and crash-prone. And every query filters to current — enforce that in one shared function, not in every call site."
+
 ## What it is
 
 A document is not a static thing. Policies get amended, contracts get renewed, wiki pages get edited, prices change. Each edit produces a new **version**. If the index just contains "chunks of the doc", then after an edit it contains chunks of *both* versions until someone cleans up — and the old chunks, embedded and ranked identically, answer questions with outdated facts.
@@ -138,7 +142,3 @@ Always. Any corpus where documents change — which is every corpus except immut
 - [Parent–child](../2-chunking/parent_child_small_to_big.md) Parent–child — versioned together
 - [Embedding versioning](../3-embeddings/embedding_versioning.md) — same pointer-flip machinery
 - [Data residency & retention](../../../10-production/apply/6-security-privacy-governance/data_residency_retention.md) — erasure obligations
-
-## Video takeaway (30 seconds)
-
-"When a policy is updated, the old chunks don't disappear on their own — they sit in the index and answer questions with last year's rules. Versioning fixes it: every chunk carries doc ID plus version, a new version is written completely, then a pointer flips. Rollback is flipping it back. Old versions are soft-deleted and garbage-collected later, because deleting from a vector index synchronously is slow and crash-prone. And every query filters to current — enforce that in one shared function, not in every call site."

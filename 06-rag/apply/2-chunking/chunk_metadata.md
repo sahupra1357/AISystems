@@ -1,5 +1,9 @@
 # Chunking → Metadata on every chunk
 
+## Video takeaway
+
+"A chunk is not just text. It's text plus a passport: which document, which version, which tenant, who may read it, which page, which parser and embedding model made it. Design that schema before you embed anything. Tenant and ACL are required fields with no default — most retrieval leaks are a connector that forgot to set them. Keep filter fields small and indexed in the vector store, put bulky display fields elsewhere, and copy document-level fields down onto every chunk."
+
 ## What it is
 
 Metadata is the structured envelope around the chunk text. The vector store holds `(vector, payload)`; the payload is the metadata. It serves four masters:
@@ -160,7 +164,3 @@ Not applicable — but do **not** over-index: don't put free-text fields, full b
 - [Self-query](../5-query-understanding/self_query_metadata_filters.md) — NL → metadata filters
 - [Citations](../8-generation-grounding/citations.md)
 - [AuthN/AuthZ](../../../10-production/apply/6-security-privacy-governance/authn_authz_permission_filtered_retrieval.md)
-
-## Video takeaway (30 seconds)
-
-"A chunk is not just text. It's text plus a passport: which document, which version, which tenant, who may read it, which page, which parser and embedding model made it. Design that schema before you embed anything. Tenant and ACL are required fields with no default — most retrieval leaks are a connector that forgot to set them. Keep filter fields small and indexed in the vector store, put bulky display fields elsewhere, and copy document-level fields down onto every chunk."

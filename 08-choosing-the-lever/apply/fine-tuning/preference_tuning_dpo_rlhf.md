@@ -1,5 +1,9 @@
 # Fine-tuning → Preference tuning (DPO / RLHF)
 
+## Video takeaway
+
+"Supervised fine-tuning teaches the model to imitate good answers. It can't teach that one plausible answer is better than another — the right length, the right hedging, your house tone. That needs preference pairs, and DPO learns from them directly with no reward model and no reinforcement learning loop, just one training run. The best source of pairs is free: in a drafting product, your model's draft and what the user actually sent. Two failures to watch for. Verbosity inflation, because preference data quietly rewards longer answers — measure output length before and after. And safety erosion: preference tuning weakens the model's willingness to refuse, so run your refusal cases and gate on them."
+
 ## What it is
 
 SFT teaches the model to imitate good outputs. It cannot teach *relative* quality: that answer A is better than answer B when both are plausible. Many qualities are only expressible as comparisons — appropriately concise, correctly hedged, right level of detail, house tone.
@@ -176,7 +180,3 @@ def evaluate_preference_tuning(sft_model, dpo_model, cases, safety_cases):
 - [LLM-as-judge](../../../09-evaluation/apply/llm_as_judge.md) — pairwise evaluation
 - [Online eval](../../../09-evaluation/apply/online_eval.md) — edit distance as preference signal
 - [When not to fine-tune](when_not_to_fine_tune.md)
-
-## Video takeaway (30 seconds)
-
-"Supervised fine-tuning teaches the model to imitate good answers. It can't teach that one plausible answer is better than another — the right length, the right hedging, your house tone. That needs preference pairs, and DPO learns from them directly with no reward model and no reinforcement learning loop, just one training run. The best source of pairs is free: in a drafting product, your model's draft and what the user actually sent. Two failures to watch for. Verbosity inflation, because preference data quietly rewards longer answers — measure output length before and after. And safety erosion: preference tuning weakens the model's willingness to refuse, so run your refusal cases and gate on them."

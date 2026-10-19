@@ -1,5 +1,9 @@
 # Memory → When to retrieve (relevance + recency, with a cap)
 
+## Video takeaway
+
+"Memory retrieval isn't just similarity search. Two things differ from document retrieval: recency genuinely matters, so decay old episodes exponentially, and the budget is tiny — a few hundred tokens, because memory competes with the passages that actually answer the question. Split it: look up typed semantic facts by key, so the user's region is reliably there rather than hopefully retrieved; search episodic memories by similarity times recency times confidence, with a floor, and inject nothing when nothing clears it. Cap the count, attach provenance, and tell the model plainly that a memory never outranks a retrieved document."
+
 ## What it is
 
 Memory retrieval is a retrieval problem with two differences from document RAG: **recency matters intrinsically** (a preference stated last week beats one from a year ago), and **the budget is much smaller** (memory should be a few hundred tokens, not thousands).
@@ -170,7 +174,3 @@ def render_memory(blocks) -> str:
 - [Context engineering](../../../05-prompt-and-context-engineering/apply/2-context-engineering/what_is_context_engineering.md) / [Context assembly and budgets](../../../05-prompt-and-context-engineering/apply/2-context-engineering/per_source_truncation_budgets.md)
 - [Lost in the middle](../../../05-prompt-and-context-engineering/apply/2-context-engineering/lost_in_the_middle.md) — where the memory block sits
 - [Memory security](memory_security.md)
-
-## Video takeaway (30 seconds)
-
-"Memory retrieval isn't just similarity search. Two things differ from document retrieval: recency genuinely matters, so decay old episodes exponentially, and the budget is tiny — a few hundred tokens, because memory competes with the passages that actually answer the question. Split it: look up typed semantic facts by key, so the user's region is reliably there rather than hopefully retrieved; search episodic memories by similarity times recency times confidence, with a floor, and inject nothing when nothing clears it. Cap the count, attach provenance, and tell the model plainly that a memory never outranks a retrieved document."

@@ -1,5 +1,9 @@
 # Chunking → Layout / structure-aware
 
+## Video takeaway
+
+"Structure-aware chunking splits where the author split: headings, sections, tables. Every chunk carries a breadcrumb like 'Contract › Termination › Notice period', so 'the limit is 30 days' is actually findable. It is the fix for table questions. The catch: it's only as good as your parser. In production, define one internal element schema, keep tables atomic with header rows repeated, and treat a parser upgrade like an embedding-model change: it re-chunks the world."
+
 ## What it is
 
 Structure-aware chunking uses the **elements** emitted by a structure-preserving parser (Docling, Unstructured, MinerU, a Markdown/HTML parser) rather than raw text. Each element has a type — `title`, `section_header`, `paragraph`, `list_item`, `table`, `figure`, `caption`, `code` — and a position in the heading hierarchy. The chunker walks the element tree and assembles chunks that:
@@ -115,7 +119,3 @@ Hand-rolled equivalent on a Markdown AST: iterate nodes, maintain a heading stac
 - [Parent–child](parent_child_small_to_big.md) Parent–child — return the whole section after retrieving a sub-chunk
 - [Contextual retrieval](contextual_retrieval.md) — LLM header as an alternative to / on top of breadcrumbs
 - [Chunk metadata](chunk_metadata.md)
-
-## Video takeaway (30 seconds)
-
-"Structure-aware chunking splits where the author split: headings, sections, tables. Every chunk carries a breadcrumb like 'Contract › Termination › Notice period', so 'the limit is 30 days' is actually findable. It is the fix for table questions. The catch: it's only as good as your parser. In production, define one internal element schema, keep tables atomic with header rows repeated, and treat a parser upgrade like an embedding-model change: it re-chunks the world."

@@ -1,5 +1,9 @@
 # Embeddings → Fine-tuning embeddings on your own logs
 
+## Video takeaway
+
+"Your embedding model learned similarity from the web. Your corpus has its own words and its own idea of relevance. Fine-tune it on triplets from your own data: a real query, the passage that answered it, and a hard negative — a passage that looks relevant but isn't, mined from your current retriever. A few hours on one GPU often buys more recall than switching to a bigger LLM. Filter out false negatives, hold out test queries from day one, and remember every new version means re-embedding the whole corpus — so if you're multi-tenant, fine-tune the reranker first."
+
 ## What it is
 
 General embedding models learn similarity from web-scale data. Your corpus has its own vocabulary ("MSA", "SKU-4471", "Tier 2 escalation"), its own notion of relevance (a clause is relevant to a question about notice periods even if it never uses the word "notice"), and its own hard negatives (the 2022 policy vs the 2024 policy). Fine-tuning adapts the model with contrastive learning:
@@ -133,7 +137,3 @@ Evaluate before/after: `recall_at_k(embed_queries(test_queries), embed_documents
 - [Retrieval evals](../../../09-evaluation/apply/retrieval_evals.md), [Golden dataset](../../../09-evaluation/apply/golden_dataset.md)
 - [Data flywheel](../../../10-production/apply/8-data-flywheel/data_flywheel.md)
 - [Fine-tuning ops](../../../08-choosing-the-lever/apply/fine-tuning/fine_tuning_ops.md)
-
-## Video takeaway (30 seconds)
-
-"Your embedding model learned similarity from the web. Your corpus has its own words and its own idea of relevance. Fine-tune it on triplets from your own data: a real query, the passage that answered it, and a hard negative — a passage that looks relevant but isn't, mined from your current retriever. A few hours on one GPU often buys more recall than switching to a bigger LLM. Filter out false negatives, hold out test queries from day one, and remember every new version means re-embedding the whole corpus — so if you're multi-tenant, fine-tune the reranker first."

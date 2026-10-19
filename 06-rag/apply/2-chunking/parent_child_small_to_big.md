@@ -1,5 +1,9 @@
 # Chunking → Parent–child (small-to-big)
 
+## Video takeaway
+
+"Small chunks match well but starve the model. Big chunks feed the model but match badly. Parent–child does both: search on small children, then hand the model their big parent section. It's the highest-ROI chunking change most teams can make. In production the hard part isn't retrieval — it's keeping parents and children consistent across versions, and enforcing ACLs on both. Get the write and delete order right, add an orphan checker, and rerank the children before you collapse them."
+
 ## What it is
 
 There is a built-in tension in chunk size. Small chunks (100–200 tokens) embed precisely and match specific questions well, but they starve the generator: the model sees "the limit is 30 days" without the surrounding clause. Large chunks (1000+ tokens) give the model full context but embed as mush and match poorly.
@@ -136,7 +140,3 @@ Off-the-shelf: LlamaIndex `HierarchicalNodeParser` + `AutoMergingRetriever`; Lan
 - [Per-source truncation budgets](../../../05-prompt-and-context-engineering/apply/2-context-engineering/per_source_truncation_budgets.md) — fitting parents in the window
 - [Citations](../8-generation-grounding/citations.md) — span inside parent
 - [Document versioning](../1-ingestion-parsing/document_versioning.md) — the consistency problem's root
-
-## Video takeaway (30 seconds)
-
-"Small chunks match well but starve the model. Big chunks feed the model but match badly. Parent–child does both: search on small children, then hand the model their big parent section. It's the highest-ROI chunking change most teams can make. In production the hard part isn't retrieval — it's keeping parents and children consistent across versions, and enforcing ACLs on both. Get the write and delete order right, add an orphan checker, and rerank the children before you collapse them."

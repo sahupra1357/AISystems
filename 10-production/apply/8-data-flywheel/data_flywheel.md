@@ -1,5 +1,9 @@
 # Data flywheel → The compounding loop
 
+## Video takeaway
+
+"The flywheel is what separates systems that improve from systems that plateau. Production traffic produces traces and user signals; you triage the failures weekly; each confirmed failure becomes a permanent golden case; you fix it at the right layer, gate it in CI, and canary it. Every turn makes your eval set more representative and the next fix cheaper. Two things people miss. The new test case must *fail* before the fix — assert it, or you've written a test that protects nothing. And the same triage produces three other free assets: hard negatives for your retriever, preference pairs from user edits, and training examples from accepted outputs. Most teams collect the test cases and throw the rest away."
+
 ## What it is
 
 ```
@@ -198,7 +202,3 @@ Every production system, from the first week. The loop is cheap to start (harves
 - [Feedback capture & triage](feedback_capture_triage.md) — the mechanics
 - [Embedding fine-tuning](../../../06-rag/apply/3-embeddings/fine_tuning_embeddings.md), [Preference tuning](../../../08-choosing-the-lever/apply/fine-tuning/preference_tuning_dpo_rlhf.md), [Distillation](../../../08-choosing-the-lever/apply/fine-tuning/distillation.md) — data consumers
 - [Observability](../4-observability-reliability/observability_tracing.md), [Rollout](../1-serving-cost-latency/versioning_rollout.md) — capture and delivery
-
-## Video takeaway (30 seconds)
-
-"The flywheel is what separates systems that improve from systems that plateau. Production traffic produces traces and user signals; you triage the failures weekly; each confirmed failure becomes a permanent golden case; you fix it at the right layer, gate it in CI, and canary it. Every turn makes your eval set more representative and the next fix cheaper. Two things people miss. The new test case must *fail* before the fix — assert it, or you've written a test that protects nothing. And the same triage produces three other free assets: hard negatives for your retriever, preference pairs from user edits, and training examples from accepted outputs. Most teams collect the test cases and throw the rest away."

@@ -1,5 +1,9 @@
 # Retrieval & ranking → Score thresholding & abstention
 
+## Video takeaway
+
+"Vector search always returns five results, even when your corpus has nothing to say. That's how systems end up confidently answering from the five least-irrelevant passages. So put a floor under it: if the reranker's top score is below a calibrated threshold, don't answer — say what you searched and where to look instead. To calibrate it you need something most teams never build: a set of questions your corpus genuinely *cannot* answer. Then track two numbers forever — how often you correctly decline, and how often you refuse something you actually had. That second one is the most skipped metric in RAG."
+
 ## What it is
 
 Vector search always returns k results. Ask a question your corpus can't answer and you still get five passages — the five *least irrelevant* ones — and a model dutifully constructing an answer from them. This is the mechanism behind "confidently wrong on a fresh question" ([common failure modes](../../../AI_System.md#common-failure-modes-and-the-fix)).
@@ -151,7 +155,3 @@ def sweep_thresholds(answerable, unanswerable, taus=np.arange(0.1, 0.8, 0.05)):
 - [Faithfulness check](../8-generation-grounding/faithfulness_check.md) — the complementary control
 - [Escalation](../../../04-llm-foundations/apply/routing_escalation.md) — the middle band
 - [Golden dataset](../../../09-evaluation/apply/golden_dataset.md) — must include unanswerable questions
-
-## Video takeaway (30 seconds)
-
-"Vector search always returns five results, even when your corpus has nothing to say. That's how systems end up confidently answering from the five least-irrelevant passages. So put a floor under it: if the reranker's top score is below a calibrated threshold, don't answer — say what you searched and where to look instead. To calibrate it you need something most teams never build: a set of questions your corpus genuinely *cannot* answer. Then track two numbers forever — how often you correctly decline, and how often you refuse something you actually had. That second one is the most skipped metric in RAG."

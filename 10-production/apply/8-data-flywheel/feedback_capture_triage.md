@@ -1,5 +1,9 @@
 # Data flywheel → Feedback capture & triage
 
+## Video takeaway
+
+"Thumbs-down is a weak signal — only frustrated people click it. The strong signals are behavioural: did they copy the answer, retry the question, escalate to a human, and above all, how much did they edit the draft before sending it. Then triage weekly, and bucket every failure by stage: was the text even parsed, was it split across chunks, did retrieval find it, did ranking keep it, did the context budget drop it, or did the model just get it wrong. Run that ladder automatically so a human confirms in two minutes instead of investigating for thirty. The histogram of those buckets over time is your roadmap — and it usually shows that the thing you were about to fine-tune is actually a retrieval problem."
+
 ## What it is
 
 Two halves: getting the signal, and turning it into a decision about where to spend engineering time.
@@ -186,7 +190,3 @@ From launch. Start with implicit signal capture plus a weekly manual review of t
 - [Online eval](../../../09-evaluation/apply/online_eval.md) — the signal source
 - [Golden dataset](../../../09-evaluation/apply/golden_dataset.md) — the triage output
 - [Embedding fine-tuning](../../../06-rag/apply/3-embeddings/fine_tuning_embeddings.md) — hard negatives from retrieval buckets
-
-## Video takeaway (30 seconds)
-
-"Thumbs-down is a weak signal — only frustrated people click it. The strong signals are behavioural: did they copy the answer, retry the question, escalate to a human, and above all, how much did they edit the draft before sending it. Then triage weekly, and bucket every failure by stage: was the text even parsed, was it split across chunks, did retrieval find it, did ranking keep it, did the context budget drop it, or did the model just get it wrong. Run that ladder automatically so a human confirms in two minutes instead of investigating for thirty. The histogram of those buckets over time is your roadmap — and it usually shows that the thing you were about to fine-tune is actually a retrieval problem."

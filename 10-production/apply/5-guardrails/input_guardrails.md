@@ -1,5 +1,9 @@
 # Testing & reliability → Input guardrails
 
+## Video takeaway
+
+"Input guardrails are the cheapest place to stop a problem, because they run before you spend anything on retrieval or generation. Free checks first: size, rate limits, and a regex for API keys, because users paste secrets constantly. Then PII, with a per-tenant policy — mask reversibly and restore the real values in the answer, or block outright for regulated tenants. One subtlety worth knowing: masking at the front door can break retrieval, because 'Jane's contract' becomes 'PERSON_1's contract'. Often it's better to mask only at the boundary where data leaves for a third-party model. And review your blocked requests weekly — a guardrail blocking legitimate work never shows up in your quality metrics."
+
 ## What it is
 
 Input guardrails inspect the user's request (and anything attached to it) before it reaches the expensive parts of the pipeline:
@@ -174,7 +178,3 @@ def handle(request, caller, policy):
 - [PII](../6-security-privacy-governance/pii.md), [Residency](../6-security-privacy-governance/data_residency_retention.md) — the policy source
 - [Refusal](../../../06-rag/apply/8-generation-grounding/refusal_no_answer_path.md) — how out-of-scope is communicated
 - [Capacity & limits](../1-serving-cost-latency/capacity_limits.md) — rate limiting
-
-## Video takeaway (30 seconds)
-
-"Input guardrails are the cheapest place to stop a problem, because they run before you spend anything on retrieval or generation. Free checks first: size, rate limits, and a regex for API keys, because users paste secrets constantly. Then PII, with a per-tenant policy — mask reversibly and restore the real values in the answer, or block outright for regulated tenants. One subtlety worth knowing: masking at the front door can break retrieval, because 'Jane's contract' becomes 'PERSON_1's contract'. Often it's better to mask only at the boundary where data leaves for a third-party model. And review your blocked requests weekly — a guardrail blocking legitimate work never shows up in your quality metrics."

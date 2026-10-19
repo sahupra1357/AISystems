@@ -1,5 +1,9 @@
 # Validation → Production per-page heuristics (no ground truth)
 
+## Video takeaway
+
+"In production there's no answer key for a page. But you can still check what always holds for a good parse: enough words, no replacement characters or control garbage, mostly dictionary words, sentences that continue across blocks, boxes inside the page, tables that are rectangular and add up, OCR confidence above the floor. Each check is microseconds. Fail any and the page goes to the retry ladder with a reason. The one rule: a page that comes out empty must fail loudly — an empty page indexed silently becomes a confident wrong answer later."
+
 ## What it is
 
 The golden-sample evaluation ([test-time validation against a golden sample](validation_golden_sample.md)) tells you how good the parser is *on average*. It cannot tell you that *this* page, from a new scanner, just came out as `���� ���� ����` or as an empty string. Production validation is a set of per-page heuristic checks that need no ground truth:
@@ -148,7 +152,3 @@ Always, on every page, in every environment. This is the production safety net f
 - [Reading order](reading_order.md), [Tables](tables.md) — specific checks
 - [Routing](per_page_routing.md) — mis-route detection
 - [Data flywheel](../../../10-production/apply/8-data-flywheel/data_flywheel.md)
-
-## Video takeaway (30 seconds)
-
-"In production there's no answer key for a page. But you can still check what always holds for a good parse: enough words, no replacement characters or control garbage, mostly dictionary words, sentences that continue across blocks, boxes inside the page, tables that are rectangular and add up, OCR confidence above the floor. Each check is microseconds. Fail any and the page goes to the retry ladder with a reason. The one rule: a page that comes out empty must fail loudly — an empty page indexed silently becomes a confident wrong answer later."

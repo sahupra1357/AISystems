@@ -1,5 +1,9 @@
 # Testing & reliability → Prompt-injection defence
 
+## Video takeaway
+
+"Prompt injection is SQL injection without a syntax to escape — there's no reliable boundary between instructions and data in natural language. Direct attacks, where the user types it, mostly harm themselves. The dangerous kind is indirect: a poisoned document that gets retrieved while the model is acting with someone else's authority. Delimiters, escaping, and pattern screening all reduce the odds and none of them close it. The layer that actually works is that model output can never authorise an action — permissions are computed in code from the authenticated caller, before execution. Add one deterministic rule on top: if any passage in this turn was flagged, no write tools this turn. And re-run your injection tests on every model upgrade, because susceptibility changes."
+
 ## What it is
 
 Prompt injection is the LLM equivalent of SQL injection: text from an untrusted source is interpreted as instructions rather than data. The difference — and the reason it has no complete fix — is that there is no syntactic boundary between instructions and data in natural language.
@@ -187,7 +191,3 @@ Every system that puts non-first-party content into a prompt — which is every 
 - [Human-in-the-loop](../../../07-agents-tools-memory/apply/1-agents/human_in_the_loop.md) — approval for irreversible actions
 - [Memory security](../../../07-agents-tools-memory/apply/2-memory/memory_security.md) — persistent injection
 - [OWASP LLM Top 10](../6-security-privacy-governance/owasp_llm_top10.md), [Auditability](../6-security-privacy-governance/auditability.md)
-
-## Video takeaway (30 seconds)
-
-"Prompt injection is SQL injection without a syntax to escape — there's no reliable boundary between instructions and data in natural language. Direct attacks, where the user types it, mostly harm themselves. The dangerous kind is indirect: a poisoned document that gets retrieved while the model is acting with someone else's authority. Delimiters, escaping, and pattern screening all reduce the odds and none of them close it. The layer that actually works is that model output can never authorise an action — permissions are computed in code from the authenticated caller, before execution. Add one deterministic rule on top: if any passage in this turn was flagged, no write tools this turn. And re-run your injection tests on every model upgrade, because susceptibility changes."
