@@ -1,8 +1,8 @@
 # OCR / digitization → Charts, images, diagrams (VLM captioning)
 
-## Video takeaway
+![RAG Image Captioning with a VLM: Index Charts and Figures](demo/charts-images-vlm-captioning-demo.gif)
 
-"Your quarterly report's most important fact is in a bar chart, and your text parser can't see it. Send the figure to a vision model with its caption and section title, and ask for a dense, factual description in JSON. Index that as its own chunk, store the image, and attach the image again when you generate the answer. Production rules: filter out logos and icons before you pay, mark chart numbers as approximate because VLMs misread bars, cache by image hash, and sample captions for human review — a confident wrong number in the index is worse than nothing."
+*([full-resolution MP4 with audio](demo/charts-images-vlm-captioning-demo.mp4) — 37s · [watch on YouTube](https://youtu.be/RLfbY6QD_HM))*
 
 ## What it is
 
