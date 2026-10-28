@@ -1,8 +1,8 @@
 # Fine-tuning → Distillation
 
-## Video takeaway
+![LLM Distillation Explained: Cheap Student, Verified Teacher](demo/distillation-demo.gif)
 
-"Distillation is how the cheap tier gets good enough to use: run your best model over real production inputs, keep only the outputs it agrees with itself on across several samples, and fine-tune a small model on those pairs. Five to fifty times cheaper on that one narrow task. The step everyone skips is verification — an unfiltered teacher's mistakes get baked into a smaller model that has less capacity to hedge, so you've amplified the errors. Then deploy it with escalation rather than as a replacement: the student handles ninety percent, low confidence goes to the teacher, and your blended cost stays near the student's while quality stays near the teacher's."
+*([full-resolution MP4 with audio](demo/distillation-demo.mp4) — 40s · [watch on YouTube](https://youtu.be/wqhCXXNilvA))*
 
 ## What it is
 
