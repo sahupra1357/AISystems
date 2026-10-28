@@ -1,8 +1,8 @@
 # Prompt engineering → Chain-of-thought (when it pays, when it doesn't)
 
-## Video takeaway
+![Chain-of-thought prompting — when step-by-step reasoning helps and when it doesn't](demo/chain-of-thought-demo.gif)
 
-"Chain-of-thought means letting the model reason before it answers. On multi-step problems — eligibility rules with conditions, comparisons, planning — it's a big accuracy win. On classification or extraction it's just slower and pricier, and sometimes worse. So decide per call site by measuring. Structure the reasoning as a short checklist, bound its length, parse the answer separately, and never show the reasoning to users — it can contain context they shouldn't see. And remember the rationale isn't proof: verify the answer, don't trust the story."
+*([full-resolution MP4 with audio](demo/chain-of-thought-demo.mp4) — 38s · [watch on YouTube](https://youtu.be/Ox4Wo9zqwbs))*
 
 ## What it is
 
