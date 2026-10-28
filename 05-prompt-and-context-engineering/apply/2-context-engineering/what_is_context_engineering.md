@@ -1,8 +1,8 @@
 # Context engineering → What it is (managing everything in the window)
 
-## Video takeaway
+![What is context engineering — deciding what goes into the model's context window](demo/what-is-context-engineering-demo.gif)
 
-"Prompt engineering is what you tell the model. Context engineering is everything else in the window — retrieved documents, tool results, memory, chat history — and how much of each, in what order. Build one assembler that every call goes through: budget per source, rank and dedupe, cap and truncate with a marker, put the best chunk first or last, keep the stable prefix identical for caching, and log what got dropped. Most 'the model is dumb' complaints are really 'the model was handed a mess'."
+*([full-resolution MP4 with audio](demo/what-is-context-engineering-demo.mp4) — 36s · [watch on YouTube](https://youtu.be/UUH0-4K57Es))*
 
 ## What it is
 
