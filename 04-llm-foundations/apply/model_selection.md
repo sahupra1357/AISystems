@@ -1,8 +1,8 @@
 # Foundations → Model selection & tradeoffs
 
-## Video takeaway
+![LLM Model Selection: Cheap vs Reasoning Models Per Call](demo/model-selection-demo.gif)
 
-"Your system makes ten kinds of LLM calls, and they don't all need the same model. Classifying intent, rewriting a query, extracting a field — a fast, cheap model does those at a fraction of the cost and latency. Writing the final answer or planning an agent's next step — that's where you spend on a reasoning model. Put the tiers in config, pin the versions, and choose per call site by measuring on your own eval set, not by feel. Know your dollars per task; someone will ask."
+*([full-resolution MP4 with audio](demo/model-selection-demo.mp4) — 37s · [watch on YouTube](https://youtu.be/CRdNjzlvCiE))*
 
 ## What it is
 
