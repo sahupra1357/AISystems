@@ -1,8 +1,8 @@
 # Prompt engineering → Decomposition, negative examples, and prefilling
 
-## Video takeaway
+![3 Prompt Engineering Techniques: Decomposition, Negative Examples, Prefill](demo/decomposition-negative-examples-prefill-demo.gif)
 
-"Three small tricks that pay every day. One: don't ask one prompt to classify, extract, decide, and write — split it into narrow steps, each with its own model tier, validation, and eval, so when it breaks you know where. Two: for the mistake that keeps recurring, show the wrong output labelled wrong next to the right one — far more effective than another line of 'don't'. Three: prefill the assistant's reply with an opening brace or an answer tag, and the model skips the chatter and starts in the format you want."
+*([full-resolution MP4 with audio](demo/decomposition-negative-examples-prefill-demo.mp4) — 32s · [watch on YouTube](https://youtu.be/RemIiR4WZz0))*
 
 ## What it is
 
