@@ -1,8 +1,8 @@
 # Structure extraction → Headers / footers / boilerplate stripping
 
-## Video takeaway
+![Boilerplate stripping — removing repeated headers, footers and nav before chunking](demo/boilerplate-stripping-demo.gif)
 
-"Every page says 'CONFIDENTIAL — Acme — Page 12 of 90'. Every email ends with a 60-word disclaimer. Index that and a third of every chunk is noise: embeddings drift toward 'confidentiality notice', the model quotes disclaimers, and you pay tokens for nothing. Strip it — by position and repetition within a document, and by frequency across documents, scoped per tenant. But don't throw away page labels, classification markings, or effective dates: parse those into metadata first. Watch the stripped fraction per source; a spike means a template changed or a rule broke."
+*([full-resolution MP4 with audio](demo/boilerplate-stripping-demo.mp4) — 40s · [watch on YouTube](https://youtu.be/S1OvlTYS75g))*
 
 ## What it is
 
