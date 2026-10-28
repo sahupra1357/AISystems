@@ -1,8 +1,8 @@
 # Agents → Cost & step budgets
 
-## Video takeaway
+![AI Agent Cost and Step Budgets Explained: Steps, Tokens, Time, Dollars](demo/cost-step-budgets-demo.gif)
 
-"Most agent runs take four steps. Some take thirty. One takes as many as you allow — and that one is your invoice. So enforce four separate budgets in code: steps, tokens, wall-clock, and dollars, checked before every model call and every tool call. Asking the model to be efficient in the prompt is a suggestion; a check in the runtime is a control. When a budget runs out, don't crash — force a final answer from what you have and mark it incomplete. And watch *which* budget binds: steps means it's looping, tokens means your tool results are too big, dollars means it's escalating to the expensive model too often. Each one is a different bug."
+*([full-resolution MP4 with audio](demo/cost-step-budgets-demo.mp4) — 45s · [watch on YouTube](https://youtu.be/eH2HP40aoz4))*
 
 ## What it is
 
