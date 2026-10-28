@@ -1,8 +1,8 @@
 # Source ingestion → Change detection (the size/mtime → SHA-256 ladder)
 
-## Video takeaway
+![Incremental indexing — detect changed documents so unchanged ones aren't re-embedded](demo/change-detection-demo.gif)
 
-"The most common avoidable cost in an AI system is re-embedding documents that didn't change. Use a ladder: if size and modified-time match, skip without even opening the file. If they changed, hash the bytes; if the hash matches, it was a resave — skip. Only a real content change hits parse and embed. And when you upgrade a parser or embedding model, don't let it re-process the world by accident — run that as a deliberate, rate-limited migration."
+*([full-resolution MP4 with audio](demo/change-detection-demo.mp4) — 32s · [watch on YouTube](https://youtu.be/Ft9OnjPg6NA))*
 
 ## What it is
 
