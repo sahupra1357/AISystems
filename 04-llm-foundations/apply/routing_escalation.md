@@ -1,8 +1,8 @@
 # Foundations → Routing & escalation (cheap model first)
 
-## Video takeaway
+![LLM Routing and Escalation: Cheap Model First, Then Escalate](demo/routing-escalation-demo.gif)
 
-"Most questions are easy. Send them to the cheap model first, check the answer with a cheap verifier, and only escalate the hard ones to the expensive model. Done well, you cut cost by half or more. Done badly, you pay for the router, the cheap attempt, and the expensive model — on nearly every request. The rule of thumb: if you're escalating more than about forty percent, the router isn't earning its keep. And sample the answers that didn't escalate — that's where the silent failures hide."
+*([full-resolution MP4 with audio](demo/routing-escalation-demo.mp4) — 31s · [watch on YouTube](https://youtu.be/wqxmvXguKEs))*
 
 ## What it is
 
