@@ -1,8 +1,8 @@
 # Foundations → Build vs buy (managed retrieval vs owning the pipeline)
 
-## Video takeaway
+![Build vs buy — managed knowledge base or your own RAG pipeline](demo/build-vs-buy-demo.gif)
 
-"A managed knowledge base gets you a working demo in a day, and for an internal tool over clean documents it might be all you need. But the moment you need permissions that match the source exactly, tables that answer correctly, reranking tuned to your data, or to *see* why a chunk was retrieved — you own the pipeline. Most enterprises land in the middle: own parsing, chunking, metadata, ACLs, and evals; buy the vector database, embeddings, and models. Whatever you choose, build the golden set first and keep your own chunk registry so you can leave."
+*([full-resolution MP4 with audio](demo/build-vs-buy-demo.mp4) — 38s · [watch on YouTube](https://youtu.be/4F01zxyl2nM))*
 
 ## What it is
 
