@@ -1,8 +1,8 @@
 # Agents → Fan-out / fan-in
 
-## Video takeaway
+![Fan-Out Fan-In for AI Agents Explained: Why Fan-In Breaks](demo/fan-out-fan-in-demo.gif)
 
-"Fan-out is the easy half: dispatch forty subagents in parallel with a semaphore so you don't melt your rate limit. Fan-in is where systems break. Two rules. First, account for every single subtask — thirty-seven succeeded, three timed out — and put that in the answer and the UI, because a report on thirty-seven of forty contracts that doesn't mention the missing three is a dangerous document. Second, make the output deterministic: sort by a stable key, not by whoever finished first, and use temperature zero for the synthesis. Otherwise regenerating the same report gives a different answer every time, and nobody trusts either version."
+*([full-resolution MP4 with audio](demo/fan-out-fan-in-demo.mp4) — 40s · [watch on YouTube](https://youtu.be/8xyodd8Gt14))*
 
 ## What it is
 
