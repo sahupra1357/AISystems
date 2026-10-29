@@ -1,8 +1,8 @@
 # OCR / digitization → Complex layout (multi-column, forms → layout model)
 
-## Video takeaway
+![Layout Aware OCR for RAG: Fix Multi-Column Pages and Forms](demo/complex-layout-ocr-demo.gif)
 
-"Two-column page through plain OCR: line one of the left column, line one of the right, line two of the left… unreadable. A layout model fixes it by finding regions first — columns, titles, tables, form boxes — then reading each region in order. Forms become key-value pairs you can filter on. The silent failure to watch for: the layout model misses a region and that text just vanishes. Check coverage, check sentence continuity across regions, and send failures up the retry ladder."
+*([full-resolution MP4 with audio](demo/complex-layout-ocr-demo.mp4) — 35s · [watch on YouTube](https://youtu.be/1B932YZYV5c))*
 
 ## What it is
 
