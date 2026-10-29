@@ -1,8 +1,8 @@
 # Prompt engineering → Delimiters: instructions vs data
 
-## Video takeaway
+![How to Prevent Prompt Injection: XML Delimiters and Policy Code](demo/delimiters-data-vs-instructions-demo.gif)
 
-"Your prompt contains your instructions and a pile of stuff the model should work on — documents, search results, tool output, the user's message. If the model can't tell them apart, a document that says 'ignore your instructions' gets obeyed. Wrap all data in named XML blocks — context, passage, tool output — escape anything inside that looks like a tag, and tell the model in the system prompt that everything inside those blocks is data, never commands. It cuts injection a lot, but it's not a wall: the real protection is that dangerous actions are approved by policy code, not by the model."
+*([full-resolution MP4 with audio](demo/delimiters-data-vs-instructions-demo.mp4) — 43s · [watch on YouTube](https://youtu.be/qptr-kkmbK8))*
 
 ## What it is
 
