@@ -1,8 +1,8 @@
 # Fine-tuning → Ops (datasets, checkpoints, reproducibility)
 
-## Video takeaway
+![Fine-Tuning Reproducibility Explained: Datasets, Checkpoints, Lineage](demo/fine-tuning-ops-demo.gif)
 
-"A fine-tuned model is only as good as your ability to rebuild it. So hash the dataset and store it immutably with a manifest saying where every example came from; record the base model *and its exact revision*, the hyperparameters, the seed, and the library versions; and register the checkpoint with that lineage plus its eval scores. Freeze the test split by input hash on day one and assert at training time that nothing leaked into it. Gate promotion on the same eval suite you use for prompts, including the refusal cases, because fine-tuning quietly erodes those. And watch base-model deprecations — every sunset invalidates every adapter you built on it."
+*([full-resolution MP4 with audio](demo/fine-tuning-ops-demo.mp4) — 49s · [watch on YouTube](https://youtu.be/ngg6K80AJis))*
 
 ## What it is
 
