@@ -1,8 +1,8 @@
 # Source ingestion → Deduplication (exact + near-duplicate)
 
-## Video takeaway
+![RAG Deduplication Explained: Hashing, MinHash and LSH](demo/deduplication-demo.gif)
 
-"Enterprise data is full of copies: the same PDF in email, SharePoint, and the wiki. Index them all and your top-5 results are five copies of one paragraph. Exact duplicates are a hash lookup — skip them before parsing. Near-duplicates need MinHash and LSH, tuned per source, because 'similar' means different things for wiki drafts and contract templates. Always dedupe within a tenant, never across. And record every decision — someone will ask why their file isn't showing up."
+*([full-resolution MP4 with audio](demo/deduplication-demo.mp4) — 37s · [watch on YouTube](https://youtu.be/sShrNCP10r8))*
 
 ## What it is
 
