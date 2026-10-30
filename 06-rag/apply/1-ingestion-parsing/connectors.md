@@ -1,8 +1,8 @@
 # Source ingestion → Connectors
 
-## Video takeaway
+![RAG Data Connectors Explained: ACLs, Cursors, Deletions](demo/connectors-demo.gif)
 
-"Connectors are the plumbing nobody wants to build and everybody regrets skimping on. Each source needs auth, pagination, rate limits, and — critically — ACL capture at fetch time. Use cursors so daily sync only touches what changed. Two things tutorials skip: deletions need a periodic reconciliation pass or deleted docs stay searchable, and one tenant's expired token must never stall everyone else."
+*([full-resolution MP4 with audio](demo/connectors-demo.mp4) — 31s · [watch on YouTube](https://youtu.be/Y2lMFYqm-uk))*
 
 ## What it is
 
