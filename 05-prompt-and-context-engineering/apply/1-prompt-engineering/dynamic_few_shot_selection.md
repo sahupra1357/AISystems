@@ -1,8 +1,8 @@
 # Prompt engineering → Dynamic few-shot selection (retrieve the k most similar solved cases)
 
-## Video takeaway
+![Dynamic Few-Shot Prompting Explained: Retrieve the Right Examples](demo/dynamic-few-shot-selection-demo.gif)
 
-"Static few-shot shows the model the same five examples every time. Dynamic few-shot finds the five past cases most like *this* one — the three SSO tickets you already resolved, the contract clauses an expert already annotated — and shows those. It's often as good as fine-tuning, with no training. But it's a retrieval system in disguise: curate the store hard, because a wrong accepted answer gets copied; scope examples per tenant so nothing leaks; and keep your golden set out of the store or your evals will lie to you."
+*([full-resolution MP4 with audio](demo/dynamic-few-shot-selection-demo.mp4) — 35s · [watch on YouTube](https://youtu.be/aqf7kMcLfUI))*
 
 ## What it is
 
