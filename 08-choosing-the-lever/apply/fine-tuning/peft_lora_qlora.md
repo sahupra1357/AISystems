@@ -1,8 +1,8 @@
 # Fine-tuning → PEFT / LoRA / QLoRA
 
-## Video takeaway
+![LoRA vs QLoRA Fine-Tuning Explained: Tiny Adapters, One Base](demo/peft-lora-qlora-demo.gif)
 
-"Full fine-tuning updates every parameter and needs a GPU cluster. LoRA freezes the base and trains two small low-rank matrices per layer — about a quarter of a percent of the parameters — and QLoRA quantises the frozen base to four bits so a seven-billion-parameter model trains on a single consumer GPU. The adapter is forty megabytes, not sixteen gigabytes, which means you can version dozens of them and serve many from one base model, swapping per request. Start at rank sixteen, watch validation loss because small datasets overfit within three epochs, and always evaluate in the exact configuration you'll serve in — training on a four-bit base and serving on a sixteen-bit one changes behaviour."
+*([full-resolution MP4 with audio](demo/peft-lora-qlora-demo.mp4) — 52s · [watch on YouTube](https://youtu.be/qTvMoLM4-UQ))*
 
 ## What it is
 
