@@ -1,8 +1,8 @@
 # Prompt engineering → Prompt structure (stable-first, ordered sections)
 
-## Video takeaway
+![How to Structure a Prompt for Prompt Caching and Attention](demo/prompt-structure-demo.gif)
 
-"A prompt has an order for two reasons. First, caching: the provider caches the longest identical prefix, so put everything that never changes — role, task, rules, examples, tools — first, and everything that changes per call — documents, history, the question — last. One timestamp in the wrong place and your cache hit rate goes to zero. Second, attention: models remember the beginning and the end best, so the rules go up front and the question goes at the end, with the most important rule restated right before it."
+*([full-resolution MP4 with audio](demo/prompt-structure-demo.mp4) — 36s · [watch on YouTube](https://youtu.be/5q1gyUpoUZI))*
 
 ## What it is
 
