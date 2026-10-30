@@ -1,8 +1,8 @@
 # Agents → Human-in-the-loop (approval gates and resume)
 
-## Video takeaway
+![Human in the Loop AI Agents Explained: Approval Gates and Resume](demo/human-in-the-loop-demo.gif)
 
-"An agent that sends an email or issues a refund has crossed from producing text to changing the world, and the fix isn't a better prompt — it's a stop. Classify each tool in the runtime: auto, needs approval, never automated. On a gated action, checkpoint the run durably, show a human the rendered effect and the evidence it was based on, and let them approve, *modify*, or reject with a reason. Then resume with an idempotency key so a retried webhook can't send twice. And watch your approval rate: if ninety-eight percent get waved through, the gate is theatre — automate that class or raise the bar."
+*([full-resolution MP4 with audio](demo/human-in-the-loop-demo.mp4) — 36s · [watch on YouTube](https://youtu.be/I2FBJ3G6zos))*
 
 ## What it is
 
