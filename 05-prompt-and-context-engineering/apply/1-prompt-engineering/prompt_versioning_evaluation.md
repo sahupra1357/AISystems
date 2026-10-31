@@ -1,8 +1,8 @@
 # Prompt engineering → Prompt versioning & evaluation (prompts are code)
 
-## Video takeaway
+![Prompt Versioning and Evaluation: Treat Prompts Like Code](demo/prompt-versioning-evaluation-demo.gif)
 
-"A prompt is code that runs on a random interpreter. So treat it like code: files in git, a version on every one, a PR with a diff for every change, an eval run that blocks the merge if quality drops, and the version ID logged on every single call. Then when answers change on Tuesday, you can see which edit did it and roll back in five minutes. Pin versions per environment — production never loads 'latest' — and keep tenant variants as overlays, not forks."
+*([full-resolution MP4 with audio](demo/prompt-versioning-evaluation-demo.mp4) — 29s · [watch on YouTube](https://youtu.be/l2MSG4MvuLY))*
 
 ## What it is
 
