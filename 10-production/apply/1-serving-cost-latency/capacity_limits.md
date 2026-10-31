@@ -1,8 +1,8 @@
 # Production → Capacity & limits
 
-## Video takeaway
+![LLM Rate Limits and Capacity Planning Explained: Quota Is Your Ceiling](demo/capacity-limits-demo.gif)
 
-"Your capacity ceiling usually isn't your servers — it's a provider's tokens-per-minute quota, and hitting it turns a busy hour into an outage. So rate-limit on your side, fleet-wide, at about eighty-five percent of the quota to leave room for retries. Give every tenant a concurrency limit and a spend cap so one automation can't starve everyone. Bound your queues and reject fast with a retry hint instead of accepting work you can't finish. And write down the shed order *before* you need it: drop multi-query, then HyDE, then reranking depth, then downgrade the tier, then pause background jobs. Just never shed silently — flag the degradation in the response, or you'll watch quality metrics fall with no code change and no explanation."
+*([full-resolution MP4 with audio](demo/capacity-limits-demo.mp4) — 47s · [watch on YouTube](https://youtu.be/yK-jk1VJDZk))*
 
 ## What it is
 
