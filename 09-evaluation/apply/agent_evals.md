@@ -1,8 +1,8 @@
 # Evaluation → Agent evals (trajectory, cost, task success)
 
-## Video takeaway
+![AI Agent Evaluation Explained: Trajectory, Cost and Task Success](demo/agent-evals-demo.gif)
 
-"Judging an agent by whether it got the right answer misses most of what matters. Evaluate three levels: did it accomplish the task, how did it get there, and was each step sound. For the trajectory, don't match against a reference path — there are many valid ones. Check properties instead: did it use the required tools, avoid the forbidden ones, stay under the step and cost budget, avoid repeating the same call, and terminate explicitly. Run each task five times, because agents are stochastic and one lucky run proves nothing. And put success rate, mean cost, and ninety-fifth-percentile cost in one table — a two percent quality gain for four times the tool calls is a loss, and that table is the only place it shows up."
+*([full-resolution MP4 with audio](demo/agent-evals-demo.mp4) — 49s · [watch on YouTube](https://youtu.be/dsDjd9Ncepk))*
 
 ## What it is
 
