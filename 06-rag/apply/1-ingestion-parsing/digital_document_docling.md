@@ -1,8 +1,8 @@
 # OCR / digitization → Digital document (native text layer → Docling)
 
-## Video takeaway
+![Docling PDF Parsing Explained: Structure, Traps and Pinning](demo/digital-document-docling-demo.gif)
 
-"Most PDFs are born digital — the characters are right there. The problem isn't reading them, it's reconstructing structure: columns, headings, tables. A structure-preserving parser like Docling gives you exact text plus layout, tables as cells, and a bounding box for every element, in seconds on CPU. The production traps: PDFs with broken font maps that look digital but decode as gibberish — detect and send those to OCR — and parser upgrades that silently change your chunks. Pin the version, run the parsing eval, then upgrade on purpose."
+*([full-resolution MP4 with audio](demo/digital-document-docling-demo.mp4) — 38s · [watch on YouTube](https://youtu.be/_ZWZRcwwA0w))*
 
 ## What it is
 
