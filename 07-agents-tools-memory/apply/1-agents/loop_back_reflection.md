@@ -1,8 +1,8 @@
 # Agents → Loop-back / reflection (critic, verifier, replanning)
 
-## Video takeaway
+![LLM Reflection Loop Explained: Critic Checks That Don't Run Forever](demo/loop-back-reflection-demo.gif)
 
-"Reflection is having a critic check the output and sending it back with feedback. It works — when the criteria are explicit and checkable, like 'every claim has a citation' rather than 'is this good'. Two rules make it safe. Run the free checks first: schema validity, citation existence, required fields — code catches half the problems for nothing. And cap it at one or two rounds, with oscillation detection, because a critic and a reviser can argue forever on your budget. If your critic is rejecting half of all first attempts, don't add a third round — fix the generator prompt."
+*([full-resolution MP4 with audio](demo/loop-back-reflection-demo.mp4) — 43s · [watch on YouTube](https://youtu.be/svf0A4naSAA))*
 
 ## What it is
 
