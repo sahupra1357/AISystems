@@ -1,8 +1,8 @@
 # Fine-tuning → Preference tuning (DPO / RLHF)
 
-## Video takeaway
+![DPO Preference Tuning Explained: What SFT Can't Teach](demo/preference-tuning-dpo-rlhf-demo.gif)
 
-"Supervised fine-tuning teaches the model to imitate good answers. It can't teach that one plausible answer is better than another — the right length, the right hedging, your house tone. That needs preference pairs, and DPO learns from them directly with no reward model and no reinforcement learning loop, just one training run. The best source of pairs is free: in a drafting product, your model's draft and what the user actually sent. Two failures to watch for. Verbosity inflation, because preference data quietly rewards longer answers — measure output length before and after. And safety erosion: preference tuning weakens the model's willingness to refuse, so run your refusal cases and gate on them."
+*([full-resolution MP4 with audio](demo/preference-tuning-dpo-rlhf-demo.mp4) — 51s · [watch on YouTube](https://youtu.be/DHXTkArvxDc))*
 
 ## What it is
 
