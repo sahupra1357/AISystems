@@ -1,8 +1,8 @@
 # Agents → Multi-agent communication (MCP, A2A, shared blackboard)
 
-## Video takeaway
+![Multi-Agent Communication (MCP) Explained: Tools, Handoffs, Blackboards](demo/multi-agent-communication-mcp-demo.gif)
 
-"Three different problems get called multi-agent. Sharing tools: that's MCP — implement your search tool once as a server and every client and agent can discover and call it. Handing a task to another agent across a real boundary: that's an envelope with a goal, an output schema, a budget, and the original caller's identity, sent over a durable queue. And several agents co-authoring one artifact: that's a shared blackboard with versioned section writes. Two warnings. A third-party MCP server's tool descriptions are instructions your model will follow — review them. And most 'multi-agent systems' should just be an orchestrator calling subagents in one process."
+*([full-resolution MP4 with audio](demo/multi-agent-communication-mcp-demo.mp4) — 44s · [watch on YouTube](https://youtu.be/5rQEShY1pLI))*
 
 ## What it is
 
