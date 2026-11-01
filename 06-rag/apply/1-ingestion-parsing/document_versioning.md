@@ -1,8 +1,8 @@
 # Source ingestion → Document versioning
 
-## Video takeaway
+![RAG Document Versioning Explained: Stop Stale Chunks](demo/document-versioning-demo.gif)
 
-"When a policy is updated, the old chunks don't disappear on their own — they sit in the index and answer questions with last year's rules. Versioning fixes it: every chunk carries doc ID plus version, a new version is written completely, then a pointer flips. Rollback is flipping it back. Old versions are soft-deleted and garbage-collected later, because deleting from a vector index synchronously is slow and crash-prone. And every query filters to current — enforce that in one shared function, not in every call site."
+*([full-resolution MP4 with audio](demo/document-versioning-demo.mp4) — 39s · [watch on YouTube](https://youtu.be/KT9QYCBsMG0))*
 
 ## What it is
 
