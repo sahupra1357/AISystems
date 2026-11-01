@@ -1,8 +1,8 @@
 # Fine-tuning → SFT (supervised fine-tuning)
 
-## Video takeaway
+![Supervised Fine-Tuning (SFT) Explained: Form, Not Facts](demo/sft-demo.gif)
 
-"Supervised fine-tuning teaches form, not facts: your house format, your domain's phrasing, your edge-case conventions. The surprising part is how little data you need and how much curation matters — a thousand verified, diverse, consistently formatted examples usually beat fifty thousand scraped ones, because the model faithfully learns your labellers' inconsistencies too. Two rules save most projects. Train in exactly the format you serve in: same system prompt, same message structure, same schemas, or it underperforms for no visible reason. And evaluate refusal behaviour afterwards, because fine-tuning on task data quietly erodes the model's willingness to say 'I don't know'."
+*([full-resolution MP4 with audio](demo/sft-demo.mp4) — 45s · [watch on YouTube](https://youtu.be/16yZV-Tmmy8))*
 
 ## What it is
 
