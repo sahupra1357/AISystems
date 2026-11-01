@@ -1,8 +1,8 @@
 # Prompt engineering → Self-consistency (sample n, majority vote)
 
-## Video takeaway
+![Self-Consistency Prompting Explained: Sample, Vote, Trust the Majority](demo/self-consistency-demo.gif)
 
-"Ask once and the model might take one wrong turn. Ask five times with a bit of randomness and take the majority answer — wrong turns scatter, the right answer clusters. It costs five times the output tokens, so use it only for discrete, high-stakes answers: eligible or not, what's the amount, which category. The bonus is a real confidence score: five out of five, accept; three out of five, escalate; two out of five, abstain. Cache the prompt so you only pay once for the input, and stop early when the first three agree."
+*([full-resolution MP4 with audio](demo/self-consistency-demo.mp4) — 35s · [watch on YouTube](https://youtu.be/_ypaDA_t73E))*
 
 ## What it is
 
