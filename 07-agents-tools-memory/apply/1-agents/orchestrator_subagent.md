@@ -1,8 +1,8 @@
 # Agents → Orchestrator / subagent
 
-## Video takeaway
+![Orchestrator Subagent Pattern Explained: Keep Context Small](demo/orchestrator-subagent-demo.gif)
 
-"One agent reviewing forty contracts ends up with a window full of forty documents and can't reason about any of them. Split it: an orchestrator that holds the plan and the results, and forty subagents that each see one contract, one tool, and nothing else. Each returns a small structured result — not its transcript, which goes to the trace store. The orchestrator's window grows by a few hundred tokens per contract instead of ten thousand, and the work runs on a cheap model. Enforce the output schema with a length limit, or your subagents will hand back essays and you've rebuilt the problem."
+*([full-resolution MP4 with audio](demo/orchestrator-subagent-demo.mp4) — 40s · [watch on YouTube](https://youtu.be/cIRDIeIZTWA))*
 
 ## What it is
 
