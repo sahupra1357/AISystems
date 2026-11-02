@@ -1,8 +1,8 @@
 # Prompt engineering → Structured outputs & tool use (schema, validate, retry)
 
-## Video takeaway
+![LLM Structured Outputs: Schema, Validate, Retry](demo/structured-outputs-tool-use-demo.gif)
 
-"Anywhere code reads a model's output — a pipeline step, a database write, an agent's tool call — the output has to be structured and checked. Define the schema as code, use the provider's native enforcement so the shape is right, then validate the meaning: does the cited ID exist, is the amount non-negative, is the date real. When validation fails, send the error back and retry, at most twice. And watch the schema-violation rate like you watch error rate — it's the earliest signal that a prompt or model change broke something."
+*([full-resolution MP4 with audio](demo/structured-outputs-tool-use-demo.mp4) — 37s · [watch on YouTube](https://youtu.be/mAnyyJaq_2E))*
 
 ## What it is
 
