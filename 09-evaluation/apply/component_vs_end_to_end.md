@@ -1,8 +1,8 @@
 # Evaluation → Component vs end-to-end
 
-## Video takeaway
+![Component vs End-to-End RAG Evaluation: Find What Broke](demo/component-vs-end-to-end-demo.gif)
 
-"When end-to-end accuracy drops eight points, that number tells you something broke and nothing about what. So build a ladder and run it in order: is the answer text even in the parsed document; is it inside a single chunk; did that chunk make it into the retrieval pool; did it survive reranking; did it survive the context budget; and only then, did the model get it wrong. Stop at the first failure and you have your diagnosis in seconds. Run it across your whole golden set and the histogram of first-failing stages is your roadmap — most teams are surprised to find a fifth of their failures are parsing problems they were trying to fix with prompts."
+*([full-resolution MP4 with audio](demo/component-vs-end-to-end-demo.mp4) — 41s · [watch on YouTube](https://youtu.be/ANnP20jZNpo))*
 
 ## What it is
 
