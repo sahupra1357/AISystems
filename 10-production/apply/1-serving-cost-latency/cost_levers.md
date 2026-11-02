@@ -1,8 +1,8 @@
 # Production → Cost levers
 
-## Video takeaway
+![LLM Cost Optimization Explained: Caching, Tiering, Batching](demo/cost-levers-demo.gif)
 
-"Cost is tokens times price, and the levers are ranked. Prompt caching first — it's the biggest single win, it's quality-neutral, and it can cut input costs by ninety percent, but one variable token in your prefix silently kills it, so monitor the hit rate like an error rate. Then tiering: classification and query rewriting don't need your best model. Then rerank fifty candidates and send six, not twenty. Batch everything offline at half price. Together that's routinely a ten to twenty-five times reduction. And track cost per *successful task*, not per request — a cheap system that fails half the time isn't cheap."
+*([full-resolution MP4 with audio](demo/cost-levers-demo.mp4) — 40s · [watch on YouTube](https://youtu.be/xzOzFA7k7mU))*
 
 ## What it is
 
