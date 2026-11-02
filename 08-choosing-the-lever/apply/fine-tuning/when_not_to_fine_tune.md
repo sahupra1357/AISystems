@@ -1,8 +1,8 @@
 # Fine-tuning → When *not* to fine-tune
 
-## Video takeaway
+![When Not to Fine-Tune an LLM: Retrieve First, Train Last](demo/when-not-to-fine-tune-demo.gif)
 
-"'Let's fine-tune it' is the most common wrong answer to an AI quality problem. Three cases where it's definitely wrong. The model doesn't know your facts — that's retrieval; facts in weights go stale, can't be cited, and can't be deleted when someone asks. The task is still changing — you'll retrain every sprint. And a better prompt would fix it, which you can only know by measuring. Before anyone proposes training, run the diagnostic ladder: is the answer even in the retrieved context? If not, no fine-tune helps. And check the cheaper alternative first — retrieving the most similar solved cases as few-shot examples often gets most of the benefit with no training at all."
+*([full-resolution MP4 with audio](demo/when-not-to-fine-tune-demo.mp4) — 48s · [watch on YouTube](https://youtu.be/FM-udF97EJc))*
 
 ## What it is
 
