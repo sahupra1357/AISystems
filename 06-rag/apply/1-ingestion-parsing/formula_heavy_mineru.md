@@ -1,8 +1,8 @@
 # OCR / digitization → Formula-heavy page (MinerU / LaTeX extraction)
 
-## Video takeaway
+![LaTeX Formula Extraction for RAG: MinerU Explained](demo/formula-heavy-mineru-demo.gif)
 
-"To a normal parser an equation is a pile of symbols in random order — or nothing at all. A formula-aware parser like MinerU emits LaTeX, which the model can actually read and you can render. Two production rules: route only the math-heavy pages there, because it's GPU-expensive; and index a plain-English version of each formula alongside the LaTeX, because embeddings don't speak LaTeX. Keep the equation glued to the sentence before it and the 'where x is…' after it, or it's meaningless."
+*([full-resolution MP4 with audio](demo/formula-heavy-mineru-demo.mp4) — 40s · [watch on YouTube](https://youtu.be/7A3AcIN3jRc))*
 
 ## What it is
 
