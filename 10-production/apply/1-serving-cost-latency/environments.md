@@ -1,8 +1,8 @@
 # Production → Environments
 
-## Video takeaway
+![Vector Index Environments Explained: Separate Dev, CI and Prod](demo/environments-demo.gif)
 
-"Vector indexes are expensive, so teams share one across environments — and then a dev experiment writes chunks into the index real users are searching. Separate them physically, and make the wrong write impossible: production credentials that don't exist in CI, and a client that refuses to start if the environment and endpoint disagree. Run evals against a read-only, pinned corpus snapshot so results are reproducible and can't touch live data. And when you build the snapshot for lower environments, sample it stratified and pseudonymise consistently — replace every name with 'PERSON_1' and you've destroyed the keyword matching behaviour you were trying to test."
+*([full-resolution MP4 with audio](demo/environments-demo.mp4) — 45s · [watch on YouTube](https://youtu.be/LhefnEemDhg))*
 
 ## What it is
 
