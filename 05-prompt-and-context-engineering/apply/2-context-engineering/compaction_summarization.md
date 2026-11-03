@@ -1,8 +1,8 @@
 # Context engineering → Compaction / summarisation of long history
 
-## Video takeaway
+![LLM Context Compaction: Summarize Long Chat History Safely](demo/compaction-summarization-demo.gif)
 
-"By turn forty, the chat history is thirty thousand tokens. Sending it all is slow, expensive, and the model stops paying attention to the middle anyway. Keep a structured rolling summary — goal, decisions, constraints, IDs, open questions — plus the last handful of turns verbatim. Two rules keep it safe: pin the original request and hard constraints outside the summary so they can never be summarised away, and update the summary incrementally, never from scratch. Then test it: does the answer at turn thirty still respect the rule the user stated at turn two?"
+*([full-resolution MP4 with audio](demo/compaction-summarization-demo.mp4) — 39s · [watch on YouTube](https://youtu.be/1u45o9oHoTk))*
 
 ## What it is
 
