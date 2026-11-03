@@ -1,8 +1,8 @@
 # Agents → Planning styles (ReAct, plan-then-execute, search)
 
-## Video takeaway
+![Agent Planning Styles Explained: Scripts vs Free-Form Agents](demo/planning-styles-demo.gif)
 
-"The literature is full of free-form agents reasoning their way to a solution. Production is full of scripts with model calls inside them — and that's the right default, because every step you move from 'the model decides' to 'the code decides' is a step you can test, cache, budget, and monitor. Use plan-then-execute when the order varies but the step types don't, and reserve interleaved reasoning for the one phase that genuinely can't be enumerated. The number that should decide it: with a script, your ninety-ninth-percentile cost looks like your median. With a free-form agent, it can be twenty times higher."
+*([full-resolution MP4 with audio](demo/planning-styles-demo.mp4) — 42s · [watch on YouTube](https://youtu.be/BUwbzvjJ2SI))*
 
 ## What it is
 
