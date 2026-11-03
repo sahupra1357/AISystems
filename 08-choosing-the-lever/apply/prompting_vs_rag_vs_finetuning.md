@@ -1,8 +1,8 @@
 # Foundations → Prompting vs RAG vs fine-tuning
 
-## Video takeaway
+![Prompting vs RAG vs Fine-Tuning Explained: Pick the Right Lever](demo/prompting-vs-rag-vs-finetuning-demo.gif)
 
-"Three levers, three problems. The model doesn't *know* something — your contracts, this week's prices — that's retrieval: RAG. The model knows but says it wrong — wrong format, wrong tone, wrong procedure — that's prompting. Prompting works but the prompt is huge, slow, and still flaky at scale — that's fine-tuning, for style and format, never for facts. Facts in weights go stale and can't be deleted. Diagnose the failure first, pull the matching lever, and re-run the same eval so you know which lever actually moved the number."
+*([full-resolution MP4 with audio](demo/prompting-vs-rag-vs-finetuning-demo.mp4) — 36s · [watch on YouTube](https://youtu.be/0hALCedZpSg))*
 
 ## What it is
 
