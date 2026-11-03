@@ -1,8 +1,8 @@
 # Structure extraction → Headings hierarchy (breadcrumbs)
 
-## Video takeaway
+![Heading Hierarchy Breadcrumbs for RAG Chunking Explained](demo/headings-hierarchy-demo.gif)
 
-"'The limit is five days' means nothing on its own. 'Handbook › Leave › Sick leave › The limit is five days' is findable. Headings give you that for free: walk the document, keep a stack of the current heading path, and prepend it to every chunk before embedding. Use numbering like 3.2.1 as your best signal for levels, cluster font sizes per document not globally, and exclude the running header that repeats on every page — otherwise it resets your stack on every page. Cap the breadcrumb; deep legal hierarchies will otherwise eat your chunk budget."
+*([full-resolution MP4 with audio](demo/headings-hierarchy-demo.mp4) — 39s · [watch on YouTube](https://youtu.be/Hey4lvxcCpA))*
 
 ## What it is
 
