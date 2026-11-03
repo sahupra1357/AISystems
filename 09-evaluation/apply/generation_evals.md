@@ -1,8 +1,8 @@
 # Evaluation → Generation evals (faithfulness, relevance, citation accuracy)
 
-## Video takeaway
+![RAG Generation Evals Explained: Faithfulness, Recall, Citations](demo/generation-evals-demo.gif)
 
-"Once retrieval is doing its job, measure what the model does with the passages. Four separate things, because they have different fixes. Faithfulness: is every claim supported by the passage it cites — check that against the cited passage only, not the whole context, or you'll inflate it. Context recall: does the retrieved text actually contain what the reference answer needs — if that's low while retrieval recall is high, you have a chunking problem, not a prompt problem. Citation accuracy: do the IDs exist and support the claims. And behaviour: did it abstain when it should have. That last one needs unanswerable questions in your golden set, and almost nobody has them."
+*([full-resolution MP4 with audio](demo/generation-evals-demo.mp4) — 48s · [watch on YouTube](https://youtu.be/2Xl9TvvZDGY))*
 
 ## What it is
 
