@@ -1,8 +1,8 @@
 # Structure extraction → Page numbers + bounding boxes (verifiable citations)
 
-## Video takeaway
+![RAG Citations With Page Numbers and Bounding Boxes Explained](demo/page-numbers-bounding-boxes-demo.gif)
 
-"An answer with 'source: contract.pdf' gets ignored. An answer that opens page 47 with the clause highlighted gets trusted. That requires page numbers and bounding boxes on every element, carried through chunking into the citation. The production pain is coordinates: PDF points versus pixels, origin bottom-left versus top-left, rotated pages — pick one system and unit-test every parser against it. And the model never writes page numbers; it cites chunk IDs, and you resolve the page server-side. Protect the highlight endpoint with the same access check as retrieval."
+*([full-resolution MP4 with audio](demo/page-numbers-bounding-boxes-demo.mp4) — 40s · [watch on YouTube](https://youtu.be/4a3f8QGGhAA))*
 
 ## What it is
 
