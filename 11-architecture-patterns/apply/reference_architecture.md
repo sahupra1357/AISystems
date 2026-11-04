@@ -1,8 +1,8 @@
 # Reference architecture (end to end)
 
-## Video takeaway
+![RAG Reference Architecture Explained: Two Pipelines and a Loop](demo/reference-architecture-demo.gif)
 
-"Two pipelines and a loop. Offline: ingest with permissions and versions attached, parse per page, chunk with structure, embed, index into vector and keyword stores. Online: authenticate, guard the input, understand and route the query, retrieve hybrid with the caller's permission filter, rerank, assemble a budgeted context, generate with grounding, check citations and faithfulness, guard the output, stream. Then traces and feedback flow into the flywheel. Build the thin slice first and measure it — but put permission capture and document versioning in from day one, because those two are the ones you cannot retrofit without re-ingesting everything you own."
+*([full-resolution MP4 with audio](demo/reference-architecture-demo.mp4) — 43s · [watch on YouTube](https://youtu.be/PCV5zR1bldU))*
 
 ## What it is
 
