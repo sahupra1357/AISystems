@@ -1,8 +1,8 @@
 # Context engineering → Failure modes: poisoning, distraction, confusion, clash
 
-## Video takeaway
+![LLM Context Failure Modes: Poisoning, Distraction, Confusion, Clash](demo/context-failure-modes-demo.gif)
 
-"When the model had the right information and still failed, it's usually one of four context problems. Poisoning: a wrong fact got in early and the summary keeps carrying it. Distraction: too much marginal text and the model anchors on the wrong passage. Confusion: fourteen overlapping tools and it picks the wrong one. Clash: the 2022 policy and the 2024 policy are both in the window and nothing says which wins. Each has its own fix — provenance and supersede, rerank and small k, fewer tools per step, version filters and surfacing conflicts — and its own metric. Name them, measure them."
+*([full-resolution MP4 with audio](demo/context-failure-modes-demo.mp4) — 40s · [watch on YouTube](https://youtu.be/Jxf9WAoZN8s))*
 
 ## What it is
 
