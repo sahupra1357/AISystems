@@ -1,8 +1,8 @@
 # Production → Latency levers
 
-## Video takeaway
+![LLM Latency Optimization Explained: Streaming and Parallelism](demo/latency-levers-demo.gif)
 
-"Users judge time to first token, not total time. A six-second answer that starts in four hundred milliseconds feels faster than a three-second one that appears all at once. So stream, and fill the pre-token gap with real information: 'searching documents', then the list of sources you found. Parallelise everything independent — guardrails, embedding, permission resolution, dense and keyword search. Skip optional stages when a cheap heuristic says they won't help. And if you add a semantic cache, scope it by tenant *and* the caller's permissions — a cache hit across a permission boundary isn't a latency win, it's a data leak."
+*([full-resolution MP4 with audio](demo/latency-levers-demo.mp4) — 44s · [watch on YouTube](https://youtu.be/HLCM_rHjQJc))*
 
 ## What it is
 
