@@ -1,8 +1,8 @@
 # Evaluation → Golden dataset first
 
-## Video takeaway
+![Golden Dataset for LLM Evaluation: Build It First](demo/golden-dataset-demo.gif)
 
-"Before you build the retriever or write the prompt, build the golden set: fifty to two hundred real questions from real users, labelled by someone who knows the domain, with the chunks that contain the answer and the answer you'd accept. Two things almost everyone leaves out. Questions your corpus genuinely *cannot* answer — without those you can never measure whether the system correctly says 'I don't know'. And the same question asked by two users with different permissions, which is the only test that catches leaks. Then grow it from every production failure, and make running it one command."
+*([full-resolution MP4 with audio](demo/golden-dataset-demo.mp4) — 37s · [watch on YouTube](https://youtu.be/P0qYiTKCz3c))*
 
 ## What it is
 
