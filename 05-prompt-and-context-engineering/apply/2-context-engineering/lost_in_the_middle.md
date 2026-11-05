@@ -1,8 +1,8 @@
 # Context engineering → "Lost in the middle" (position matters)
 
-## Video takeaway
+![Lost in the Middle: Why LLMs Miss Context in Long Prompts](demo/lost-in-the-middle-demo.gif)
 
-"Models read the beginning and the end of the prompt carefully and skim the middle. Put the passage that answers the question at position seven of twelve and the model may never use it. So rerank properly, keep the top few chunks only, put the best one first — or last, right before the question — and repeat the question at the end. Run a quick probe: move the gold passage across positions and plot accuracy. That U-shaped curve tells you how much context your model can really handle, and it's usually less than the window size suggests."
+*([full-resolution MP4 with audio](demo/lost-in-the-middle-demo.mp4) — 36s · [watch on YouTube](https://youtu.be/FodxiJMx73k))*
 
 ## What it is
 
