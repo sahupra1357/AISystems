@@ -1,8 +1,8 @@
 # Production → Self-hosted serving (vLLM/TGI, quantisation, GPU sizing)
 
-## Video takeaway
+![Self-Hosted LLM Serving with vLLM Explained: When It Pays Off](demo/self-hosted-serving-demo.gif)
 
-"Self-hosting means vLLM with continuous batching, paged KV cache, and quantised weights on your own GPUs. It wins on two things: unit cost at high steady volume, and data residency you can't get from an API. The sizing math is weights plus KV cache, and at production concurrency the KV cache dominates — which is why long RAG prompts are expensive to self-host. Most teams land on a hybrid: small self-hosted models for classification, rewriting, embeddings, and reranking, where volume is high and quality is easy; API models for the hard reasoning. And before you self-host to save money, check whether prompt caching and model tiering would have fixed it for a fraction of the effort."
+*([full-resolution MP4 with audio](demo/self-hosted-serving-demo.mp4) — 48s · [watch on YouTube](https://youtu.be/Of-zU5xuWBk))*
 
 ## What it is
 
