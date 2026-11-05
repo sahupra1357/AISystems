@@ -1,8 +1,8 @@
 # Evaluation → LLM-as-judge
 
-## Video takeaway
+![LLM as a Judge Explained: Make the Score Trustworthy](demo/llm-as-judge-demo.gif)
 
-"For open-ended answers there's no exact match, so you have a strong model grade against a rubric. Three things make it trustworthy. Anchor it to the reference answer from your golden set — reference-free judging is much weaker. Use a different model family than the one generating, because models prefer their own output. And calibrate: have humans label eighty cases, measure agreement, and publish that number next to every judge score. 'Judge score four-point-two, agreement zero-point-eight-three' is a metric. 'Judge score four-point-two' is a decoration. And watch whether longer answers are quietly scoring higher — they usually are."
+*([full-resolution MP4 with audio](demo/llm-as-judge-demo.mp4) — 43s · [watch on YouTube](https://youtu.be/BX5CK_HT35U))*
 
 ## What it is
 
