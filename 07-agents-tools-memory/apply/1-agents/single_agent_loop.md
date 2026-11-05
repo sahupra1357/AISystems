@@ -1,8 +1,8 @@
 # Agents → Single agent loop
 
-## Video takeaway
+![AI Agent Loop Explained: What Makes It Production Ready](demo/single-agent-loop-demo.gif)
 
-"The agent loop itself is twenty lines: ask the model, run the tool it picked, hand back the result, repeat. Everything that makes it production-ready sits around it. Decide explicitly how it ends — a final-answer tool with a schema, not just 'the model stopped calling things'. Cap steps, tokens, seconds, and dollars in code, because the prompt can only ask. Put a timeout on every call. And when a tool fails, don't throw — send the error text back to the model. 'File not found, check the path' is something it recovers from; a stack trace in your logs is something it never sees."
+*([full-resolution MP4 with audio](demo/single-agent-loop-demo.mp4) — 37s · [watch on YouTube](https://youtu.be/8UtU_Bs3SYE))*
 
 ## What it is
 
