@@ -1,8 +1,8 @@
 # Context engineering → Context isolation (subagents get their own window)
 
-## Video takeaway
+![Context Isolation for AI Agents: Orchestrator and Subagents](demo/context-isolation-demo.gif)
 
-"One agent doing everything ends up with a window full of thirty tool outputs and can't think straight. Isolation fixes it: the orchestrator keeps a clean window with the goal and the plan, and hands each subtask to a subagent that starts fresh — narrow task, only the inputs it needs, only the tools it needs, its own budget. The subagent returns a small structured result with citations; its whole transcript goes to the trace store, not back into the orchestrator. Pass document IDs, not documents. And write the contract for each subagent type first — that's the real design work."
+*([full-resolution MP4 with audio](demo/context-isolation-demo.mp4) — 40s · [watch on YouTube](https://youtu.be/CEMaJVgz3oc))*
 
 ## What it is
 
