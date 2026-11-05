@@ -1,8 +1,8 @@
 # OCR / digitization → Per-page classification and routing
 
-## Video takeaway
+![RAG Per-Page Routing for Document Parsing Explained](demo/per-page-routing-demo.gif)
 
-"A 200-page PDF is rarely one kind of thing: a digital body, a scanned appendix, a few charts. Route per document and you either OCR pages that had perfect text, or skip the scanned pages entirely. Route per page instead: a cheap classifier looks at text density and image area, then sends each page to the fast extractor, the OCR engine, the formula parser, or the vision model. Watch for scanners that embed garbage text layers — validate after parsing and re-route. Put the GPU parsers in their own queue so one huge scan doesn't block everything."
+*([full-resolution MP4 with audio](demo/per-page-routing-demo.mp4) — 37s · [watch on YouTube](https://youtu.be/0dkAhjM94gU))*
 
 ## What it is
 
