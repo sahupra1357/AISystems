@@ -1,8 +1,8 @@
 # Agents → State & durability (checkpointing and idempotency)
 
-## Video takeaway
+![AI Agent Checkpointing and Idempotency Keys Explained](demo/state-durability-demo.gif)
 
-"A forty-step agent run that crashes at step thirty-eight has already spent your money and possibly already sent the email. So checkpoint after every step, and give every side-effecting tool call a stable idempotency key derived from the run, the step, and the canonicalised arguments. Then a resume replays step thirty-eight, the key matches, and the service returns the original result instead of sending again. That crash window between 'action done' and 'checkpoint written' is exactly why the key is mandatory. And if you can, don't hand-roll any of this — use a durable workflow engine that gives you resume and idempotency as primitives."
+*([full-resolution MP4 with audio](demo/state-durability-demo.mp4) — 43s · [watch on YouTube](https://youtu.be/6miqTKpCu8A))*
 
 ## What it is
 
