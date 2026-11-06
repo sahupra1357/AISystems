@@ -1,8 +1,8 @@
 # Context engineering → Per-source truncation budgets
 
-## Video takeaway
+![LLM Context Budgets: Truncate Tool Outputs Without Losing the Answer](demo/per-source-truncation-budgets-demo.gif)
 
-"One tool call returns thirty thousand tokens of log file, and everything else — including the passage with the answer — gets pushed out of the window. Fix it with budgets at three levels: per item, per source, and global, with output tokens reserved. Truncate visibly: show the model how much it's seeing and how to fetch more. Truncate smartly: keep the matched span for chunks, head and tail for logs. And never let the top-ranked chunk be the thing that gets cut — drop the weak ones instead, and alert if that ever fails."
+*([full-resolution MP4 with audio](demo/per-source-truncation-budgets-demo.mp4) — 31s · [watch on YouTube](https://youtu.be/eKngkiQ18OQ))*
 
 ## What it is
 
