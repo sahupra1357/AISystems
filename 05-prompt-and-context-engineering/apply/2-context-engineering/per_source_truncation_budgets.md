@@ -2,7 +2,7 @@
 
 ![LLM Context Budgets: Truncate Tool Outputs Without Losing the Answer](demo/per-source-truncation-budgets-demo.gif)
 
-*([full-resolution MP4 with audio](demo/per-source-truncation-budgets-demo.mp4) — 31s · [watch on YouTube](https://youtu.be/eKngkiQ18OQ))*
+*([full-resolution MP4 with audio](demo/per-source-truncation-budgets-demo.mp4) — 31s · [watch on YouTube](https://youtu.be/Ab40QMpY75k))*
 
 ## What it is
 
