@@ -1,8 +1,8 @@
 # Evaluation → Online eval (production signals)
 
-## Video takeaway
+![Online Evaluation for LLM Apps Explained: Production Signals](demo/online-eval-demo.gif)
 
-"Offline evals tell you about the cases you thought of. Production tells you about the ones you didn't. Two signals do most of the work. Automated checks on every single request — are the cited IDs real, is each claim supported, did it abstain — because those are cheap enough to run on everything and they catch regressions between releases. And implicit behaviour, especially edit distance: in any drafting product, the gap between what you generated and what the user actually sent is the closest thing to ground truth that exists at scale. Thumbs are useful for triage and terrible as a metric — only frustrated people click them. Slice everything by prompt and model version, or you'll see quality drop and have no idea which change did it."
+*([full-resolution MP4 with audio](demo/online-eval-demo.mp4) — 50s · [watch on YouTube](https://youtu.be/mz8o1Me2wsk))*
 
 ## What it is
 
