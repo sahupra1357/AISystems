@@ -1,8 +1,8 @@
 # Context engineering → Prompt caching of static prefixes
 
-## Video takeaway
+![Prompt Caching Explained: Cut LLM Cost With a Static Prefix](demo/prompt-caching-demo.gif)
 
-"Every call re-sends your four-thousand-token system prompt, your tools, your examples. Prompt caching stores that prefix on the provider's side and charges about a tenth to reuse it, with faster time-to-first-token. The rule is that the prefix must be byte-identical: one timestamp, one user name, one reshuffled tool list, and your hit rate is zero — and you find out from the invoice. So put everything stable first, set breakpoints after the global block, the tenant block, and the conversation, log the cache-read tokens on every call, and alert when the hit rate drops."
+*([full-resolution MP4 with audio](demo/prompt-caching-demo.mp4) — 37s · [watch on YouTube](https://youtu.be/MPQoQsr3Ezo))*
 
 ## What it is
 
