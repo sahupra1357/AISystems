@@ -1,8 +1,8 @@
 # Structure extraction → Reading order
 
-## Video takeaway
+![PDF Reading Order in RAG Parsing Explained: Why Text Gets Scrambled](demo/reading-order-demo.gif)
 
-"A PDF doesn't know what order you read it in; it just has letters at coordinates. Get the order wrong on a two-column page and every sentence is chopped in half — the text is all there, but scrambled, and nothing downstream can fix it. Use a layout-aware parser, emit tables and footnotes as separate elements instead of splicing them into paragraphs, and verify every page with a cheap continuity check: a block ending mid-sentence followed by a block starting a new one is a red flag. Send the failures up the retry ladder."
+*([full-resolution MP4 with audio](demo/reading-order-demo.mp4) — 30s · [watch on YouTube](https://youtu.be/cMu62dD5Ok8))*
 
 ## What it is
 
