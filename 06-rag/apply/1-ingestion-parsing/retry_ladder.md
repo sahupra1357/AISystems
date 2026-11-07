@@ -1,8 +1,8 @@
 # Retry ladder → Bounded escalation with visible failure
 
-## Video takeaway
+![RAG Parsing Retry Ladder Explained: Escalate, Never Fail Silently](demo/retry-ladder-demo.gif)
 
-"When the parser fails a page, you have three choices: crash, silently emit nothing, or escalate. Only the third is acceptable. Build a ladder: a second engine, then a vision model, then — for documents that justify it — a human. Every rung costs more, so bound it with budgets per page, per document, per day. Pass the failure reason down so each rung tries something smarter, not just something more expensive. And when the ladder runs out, mark the page degraded and say so all the way to the user — an empty page that looks like success is the worst outcome in the whole pipeline."
+*([full-resolution MP4 with audio](demo/retry-ladder-demo.mp4) — 44s · [watch on YouTube](https://youtu.be/GkrUEjO7tkk))*
 
 ## What it is
 
