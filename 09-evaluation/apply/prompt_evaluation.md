@@ -1,8 +1,8 @@
 # Evaluation → Prompt evaluation
 
-## Video takeaway
+![Prompt Evaluation for LLM Apps Explained: Diff, Don't Average](demo/prompt-evaluation-demo.gif)
 
-"A prompt change without an eval run is a deploy without a test. Pin everything except the prompt — temperature zero, fixed model, cached retrieval — run your golden cases against both versions, and report the *diff*: which cases newly pass, and which ones broke. That second list is the gate. Aggregate improvement with three individual regressions is not a win; it's a change someone needs to look at. Score with free deterministic checks first — schema valid, required phrase present, citations real — and only pay for a judge on the open-ended parts. And always break the results down by question type, because a change that helps factoids and breaks abstention looks flat in the average."
+*([full-resolution MP4 with audio](demo/prompt-evaluation-demo.mp4) — 48s · [watch on YouTube](https://youtu.be/SpjV6_FVRz4))*
 
 ## What it is
 
