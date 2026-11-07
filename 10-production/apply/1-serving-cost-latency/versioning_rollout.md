@@ -1,8 +1,8 @@
 # Production → Versioning & rollout
 
-## Video takeaway
+![LLM Versioning and Rollout Explained: Pin, Canary, Roll Back](demo/versioning-rollout-demo.gif)
 
-"An AI system's behaviour isn't one version — it's a vector: prompts, model, retrieval config, index, parser, chunking, reranker, guardrails. Pin every one of them per environment, because an unpinned model alias means a provider can change your behaviour on a Tuesday without telling you. Ship changes through the same path every time: eval gate, then canary on sticky user buckets starting with internal users, then compare online quality, cost, and latency by version. Roll back automatically on hard metrics like errors and cost. Change one thing at a time, or you'll never know which one did it. And drill the rollback — a rollback you've never run is a hypothesis, not a plan."
+*([full-resolution MP4 with audio](demo/versioning-rollout-demo.mp4) — 46s · [watch on YouTube](https://youtu.be/kxqbrFdibX4))*
 
 ## What it is
 
