@@ -1,8 +1,8 @@
 # OCR / digitization → Scanned page (PaddleOCR)
 
-## Video takeaway
+![Scanned Page OCR for RAG Explained: Validate, Never Trust](demo/scanned-page-ocr-demo.gif)
 
-"A scanned page is a photo. OCR turns it into text, but never perfectly — one to three percent of characters on a clean scan, far worse on a fax. The dangerous errors are in numbers: a 0 read as an O in a contract value. In production, run OCR on GPU workers that pull pages, not documents, so a 500-page scan doesn't block the queue. Keep every confidence score, validate every page, and escalate the bad ones to a second engine or a vision model. And store the page images — you'll need them for citations and for re-OCR when the engine improves."
+*([full-resolution MP4 with audio](demo/scanned-page-ocr-demo.mp4) — 38s · [watch on YouTube](https://youtu.be/ZSl0JgnQO5M))*
 
 ## What it is
 
