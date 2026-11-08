@@ -1,14 +1,8 @@
 # GPU resizing for production AI applications
 
-## Video takeaway
+![GPU Resizing for LLM Inference Explained: Replace the Fleet](demo/GPUResizing-demo.gif)
 
-GPU resize is not an instance-type dropdown. You replace a fleet: new nodes, load weights, shift traffic, drain. First figure out what is binding — KV and VRAM, decode bandwidth, or just not enough replicas — because those three buy three different SKUs. Exhaust packing: quantise, cap context, split embeddings and OCR off the chat GPUs, and cap noisy tenants. Then add identical replicas. Only then buy more VRAM or tensor-parallel. Never autoscale on GPU utilisation; autoscale on queue and TTFT, keep a warm minimum, and treat a SKU change like a model deploy: golden set, canary, overflow, rollback.
-
-A standalone playbook: how to approach GPU capacity changes, what to consider, and the trade-offs. Start here. Finer details live in [`details/`](details/).
-
-This playbook is separate from [`AI_System.md`](../../../AI_System.md) and covers only GPU capacity.
-
----
+*([full-resolution MP4 with audio](demo/GPUResizing-demo.mp4) — 44s · [watch on YouTube](https://youtu.be/kBW2pqBPL7s))*
 
 ## 1. The point
 
