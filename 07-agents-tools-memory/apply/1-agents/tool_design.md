@@ -1,8 +1,8 @@
 # Agents → Tool design
 
-## Video takeaway
+![LLM Agent Tool Design Explained: Write Tools Models Pick Right](demo/tool-design-demo.gif)
 
-"A tool definition is a prompt with a schema attached — the model picks tools almost entirely from their names and descriptions. So write the description like an instruction: what it's for, what it returns, and crucially what *not* to use it for, naming the tool it should use instead. Fewer tools beat more: fourteen overlapping tools is how agents call the wrong one. Type every parameter, use enums so values can't be invented, and separate reading from writing — write tools get an idempotency key, an authorisation check against the caller's permissions, and usually a human approval gate. And measure tool-selection accuracy separately from task success."
+*([full-resolution MP4 with audio](demo/tool-design-demo.mp4) — 43s · [watch on YouTube](https://youtu.be/DsniFWPO0kY))*
 
 ## What it is
 
