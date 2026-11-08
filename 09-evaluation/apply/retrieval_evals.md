@@ -1,8 +1,8 @@
 # Evaluation → Retrieval evals (recall@k, precision@k, MRR, nDCG)
 
-## Video takeaway
+![RAG Retrieval Evaluation Explained: Recall@k and nDCG](demo/retrieval-evals-demo.gif)
 
-"Measure retrieval on its own, because if the answer-bearing passage never made it into the context, every generation metric you compute is noise. Two numbers, not one: recall of the fifty-candidate pool tells you whether retrieval found it at all, and nDCG of the final five tells you whether ranking put it where the model will use it. Low pool recall means fix chunking, embeddings, or hybrid search. High pool recall but low nDCG means fix the reranker. Label the ground truth as document spans rather than chunk IDs, or your labels break the next time you change chunking. And always run it with the real permission filters on."
+*([full-resolution MP4 with audio](demo/retrieval-evals-demo.mp4) — 41s · [watch on YouTube](https://youtu.be/elMSS8GR64A))*
 
 ## What it is
 
