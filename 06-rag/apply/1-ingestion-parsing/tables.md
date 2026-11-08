@@ -1,8 +1,8 @@
 # Structure extraction → Tables (emit as HTML/Markdown, never flattened)
 
-## Video takeaway
+![Table Extraction for RAG: Never Flatten a Table](demo/tables-demo.gif)
 
-"Flatten a table to text and 'EMEA Q3 revenue' becomes a guess among forty numbers. Keep the grid: Markdown or HTML, header row repeated in every chunk, caption and section attached, cell values stored as data. Split big tables into row groups, never mid-row. Merge tables that continue across pages. Validate — if the Total row doesn't add up, the parser got a cell wrong, and that page goes to the retry ladder. And if the question is 'sum across regions', don't ask the LLM to do arithmetic; route it to code."
+*([full-resolution MP4 with audio](demo/tables-demo.mp4) — 38s · [watch on YouTube](https://youtu.be/MNf62VrS--Y))*
 
 ## What it is
 
