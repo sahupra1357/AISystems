@@ -1,8 +1,8 @@
 # Source ingestion → Tenant / ACL capture at ingest
 
-## Video takeaway
+![RAG Access Control Explained: Capture Tenant and ACL at Ingest](demo/tenant-acl-capture-at-ingest-demo.gif)
 
-"If the model can read it, the model can leak it. So the fix isn't a prompt saying 'don't reveal HR documents' — it's never retrieving them for someone who can't see them. That means capturing tenant and permissions at ingest, on every chunk, from the source that knows. At query time the caller's groups become a hard filter inside the vector search. Never default open: an empty ACL must mean nobody. And permissions change without content changing, so you need a separate sync path with an SLA."
+*([full-resolution MP4 with audio](demo/tenant-acl-capture-at-ingest-demo.mp4) — 36s · [watch on YouTube](https://youtu.be/MD31gC6LO_0))*
 
 ## What it is
 
