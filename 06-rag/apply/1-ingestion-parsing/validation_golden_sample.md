@@ -1,8 +1,8 @@
 # Validation → Test-time validation against a golden sample
 
-## Video takeaway
+![RAG Parser Evaluation: Golden Sample Testing in CI](demo/validation-golden-sample-demo.gif)
 
-"You'd never ship a model without an eval. Don't ship a parser without one either. Take a couple of hundred real pages — stratified by source and page type, including the ugly scans — and label the truth: text, key fields, table cells, reading order. Measure character error rate, field F1, cell accuracy, order agreement, per stratum, and gate every parser upgrade on them in CI. Weight what matters: a flipped digit in a total is worse than a typo in a footnote. Grow the set from every production failure."
+*([full-resolution MP4 with audio](demo/validation-golden-sample-demo.mp4) — 35s · [watch on YouTube](https://youtu.be/hO_1bbQDI7E))*
 
 ## What it is
 
