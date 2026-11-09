@@ -1,8 +1,8 @@
 # Deployment → AWS: Fargate, Lambda, Bedrock
 
-## Video takeaway
+![AWS Fargate vs Lambda vs Bedrock: Which Runs What in AI Apps](demo/aws-bedrock-fargate-lambda-demo.gif)
 
-"Three services, three jobs. Fargate hosts your application — the API, the streaming responses, the retrieval service, the agent runtime — anything that needs to stay warm and hold connections. Lambda runs short stateless work: one invocation per document for parsing, connector polls, webhooks, scheduled cleanup jobs. Bedrock runs the model. The traps are predictable: Lambda's fifteen-minute limit kills large OCR jobs, so split per page or escalate to Fargate; cold starts hurt on the request path, so keep streaming on Fargate; and Bedrock quotas are regional, so capacity planning is per region. For durable agent runs with human approval waits, Step Functions gives you checkpointing and the pause for free."
+*([full-resolution MP4 with audio](demo/aws-bedrock-fargate-lambda-demo.mp4) — 48s · [watch on YouTube](https://youtu.be/6piW515uTXc))*
 
 ## What it is
 
