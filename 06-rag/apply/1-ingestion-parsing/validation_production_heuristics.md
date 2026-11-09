@@ -1,8 +1,8 @@
 # Validation → Production per-page heuristics (no ground truth)
 
-## Video takeaway
+![Parse Quality Checks Without Ground Truth: Production Heuristics](demo/validation-production-heuristics-demo.gif)
 
-"In production there's no answer key for a page. But you can still check what always holds for a good parse: enough words, no replacement characters or control garbage, mostly dictionary words, sentences that continue across blocks, boxes inside the page, tables that are rectangular and add up, OCR confidence above the floor. Each check is microseconds. Fail any and the page goes to the retry ladder with a reason. The one rule: a page that comes out empty must fail loudly — an empty page indexed silently becomes a confident wrong answer later."
+*([full-resolution MP4 with audio](demo/validation-production-heuristics-demo.mp4) — 36s · [watch on YouTube](https://youtu.be/sa-gztCCokQ))*
 
 ## What it is
 
