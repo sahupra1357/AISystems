@@ -1,8 +1,8 @@
 # Evaluation → Statistical hygiene
 
-## Video takeaway
+![LLM Evaluation Statistical Significance: Is Your Gain Just Noise?](demo/statistical-hygiene-demo.gif)
 
-"On fifty test cases, a score of eighty percent has a confidence interval of roughly sixty-seven to eighty-nine. So the three-point improvement someone just shipped was almost certainly noise. Three habits fix this. Run both variants on the *same* cases and compare per case — a paired test on the handful of cases that changed is far more sensitive than comparing two averages. Report the sample size and the interval with every number, on every dashboard. And run a power calculation once: if you need to detect three-point gains, you'll learn that fifty cases can never do it, and that tells you exactly how much to invest in your golden set."
+*([full-resolution MP4 with audio](demo/statistical-hygiene-demo.mp4) — 42s · [watch on YouTube](https://youtu.be/TyliUrNqFtE))*
 
 ## What it is
 
