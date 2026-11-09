@@ -1,8 +1,8 @@
 # Memory → Conflict resolution (supersede, don't accumulate)
 
-## Video takeaway
+![Agent Memory Conflict Resolution Explained: Supersede, Don't Append](demo/conflict-resolution-demo.gif)
 
-"In January the user said they work on the German entity. In June they moved to the UK. If your memory store just appends, both facts are now live and the model picks one at random. Supersede instead: insert the new fact, mark the old one superseded with a valid-from date, and make every retrieval filter out superseded records. Keep a precedence order — what the user explicitly told you beats what a nightly sync asserts, or your users will correct the same thing every week. And two active values for one field isn't a case to handle gracefully; it's a bug to alert on."
+*([full-resolution MP4 with audio](demo/conflict-resolution-demo.mp4) — 37s · [watch on YouTube](https://youtu.be/UhVI5llv01s))*
 
 ## What it is
 
