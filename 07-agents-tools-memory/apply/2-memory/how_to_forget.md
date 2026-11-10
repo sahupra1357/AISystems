@@ -1,8 +1,8 @@
 # Memory → How to forget (TTL, decay, deletion, user controls)
 
-## Video takeaway
+![How to Forget in AI Agent Memory: Erase, Then Verify](demo/how-to-forget-demo.gif)
 
-"Every memory system needs a forget path, and it's harder than it sounds, because a memory isn't in one place — it's in your database, your vector index, the rolling conversation summaries, your caches, your traces, and any eval set it got sampled into. So build the erasure function first, make it cover every store, and then *verify*: query each one afterwards and assert it's gone. Add time-to-live for context that ages out, supersession for facts that change, and a user-facing list where people can see and delete what you remember about them. That last one isn't just GDPR — it's your best source of corrections."
+*([full-resolution MP4 with audio](demo/how-to-forget-demo.mp4) — 38s · [watch on YouTube](https://youtu.be/3WevIduzp1E))*
 
 ## What it is
 
