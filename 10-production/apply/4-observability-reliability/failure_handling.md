@@ -1,8 +1,8 @@
 # Testing & reliability → Failure handling
 
-## Video takeaway
+![LLM Failure Handling Explained: Timeouts, Retries, Degradation](demo/failure-handling-demo.gif)
 
-"Your system depends on a model provider, a vector store, a reranker, and every tool an agent calls — all of which will fail. Put a timeout on every one, derived from what's left of the request budget, not a fixed number. Retry only the retriable errors, with full jitter so you don't stampede the provider after an outage. Trip a circuit breaker when a dependency is clearly down. And define what degraded looks like at each stage: reranker down, use fusion order; dense search down, use keywords; model down, return the sources you found with 'I couldn't summarise these'. That last one is the whole idea — partial value beats a five hundred. Just make sure degradation is a metric, or you'll serve worse answers for a week without noticing."
+*([full-resolution MP4 with audio](demo/failure-handling-demo.mp4) — 51s · [watch on YouTube](https://youtu.be/7gbnQG4Xrc8))*
 
 ## What it is
 
