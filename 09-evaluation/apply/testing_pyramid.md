@@ -1,8 +1,8 @@
 # Testing & reliability → The testing pyramid
 
-## Video takeaway
+![AI Testing Pyramid Explained: What to Unit Test, Mock and Eval](demo/testing-pyramid-demo.gif)
 
-"AI systems still have a lot of ordinary deterministic code, and that's where your real guarantees live: the function that builds the permission filter, the one that generates chunk IDs, the idempotency key, the citation validator. Unit-test those hard. Above that, mock the model and test your agent flows — error recovery, approval gates, budget limits — deterministically in seconds. Then run scoped eval suites on whatever artefact changed, blocking the merge on any case that used to pass and now doesn't. And keep one separate gate that's absolute: cross-tenant retrieval, PII leakage, injection following. Those block regardless of how good the quality numbers look."
+*([full-resolution MP4 with audio](demo/testing-pyramid-demo.mp4) — 48s · [watch on YouTube](https://youtu.be/1VYuRmEsN_c))*
 
 ## What it is
 
