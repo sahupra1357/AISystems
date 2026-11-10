@@ -1,8 +1,8 @@
 # Chunking → Contextual retrieval (LLM-generated chunk context)
 
-## Video takeaway
+![Contextual Retrieval in RAG Explained: Fix Chunks That Lose Context](demo/contextual-retrieval-demo.gif)
 
-"A chunk that says 'revenue grew 3%' can't be found by 'Acme Q3 revenue' — the context got cut off. Contextual retrieval asks a cheap LLM to write one sentence situating each chunk in its document, and prepends it before embedding. Retrieval failures drop by a third to two-thirds. At scale the trick is prompt caching: the document is the cached prefix, each chunk is a tiny suffix. Cache the blurbs, version the model, keep the blurb out of what users see."
+*([full-resolution MP4 with audio](demo/contextual-retrieval-demo.mp4) — 31s · [watch on YouTube](https://youtu.be/VDnvPAtHIg0))*
 
 ## What it is
 
