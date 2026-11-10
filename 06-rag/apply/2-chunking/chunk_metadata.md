@@ -1,8 +1,8 @@
 # Chunking → Metadata on every chunk
 
-## Video takeaway
+![Chunk Metadata in RAG Explained: Give Every Chunk a Passport](demo/chunk-metadata-demo.gif)
 
-"A chunk is not just text. It's text plus a passport: which document, which version, which tenant, who may read it, which page, which parser and embedding model made it. Design that schema before you embed anything. Tenant and ACL are required fields with no default — most retrieval leaks are a connector that forgot to set them. Keep filter fields small and indexed in the vector store, put bulky display fields elsewhere, and copy document-level fields down onto every chunk."
+*([full-resolution MP4 with audio](demo/chunk-metadata-demo.mp4) — 32s · [watch on YouTube](https://youtu.be/Ao8NRzSqwjA))*
 
 ## What it is
 
