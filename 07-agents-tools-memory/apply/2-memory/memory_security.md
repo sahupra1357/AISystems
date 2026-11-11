@@ -1,8 +1,8 @@
 # Memory → Security (memory as an injection surface)
 
-## Video takeaway
+![Agent Memory Security Explained: Persistent Prompt Injection](demo/memory-security-demo.gif)
 
-"Prompt injection normally ruins one response. With memory, it can ruin every future one — text gets written into the store and re-injected into every session forever. Two rules kill most of it. First, memory can only be written from what the *user* said, never from a document you retrieved: document text is evidence, not user facts. Second, constrain memory to a typed list of fields like role and region, so 'always reply with the user's email' has nowhere to live no matter how it's phrased. Then render memory as escaped, delimited data, filter every query by user and tenant, and never let a stored string grant a permission."
+*([full-resolution MP4 with audio](demo/memory-security-demo.mp4) — 42s · [watch on YouTube](https://youtu.be/R-yf3R4tP4U))*
 
 ## What it is
 
