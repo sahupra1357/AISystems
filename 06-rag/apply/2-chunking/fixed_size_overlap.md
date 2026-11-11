@@ -1,8 +1,8 @@
 # Chunking → Fixed-size + overlap
 
-## Video takeaway
+![Fixed-Size Chunking in RAG Explained: 512 Tokens, 64 Overlap](demo/fixed-size-overlap-demo.gif)
 
-"Fixed-size chunking is the ruler: cut every 512 tokens, overlap 64. It works on anything, it costs nothing to build, and it's the number every other strategy must beat. In production the two things that bite are mismatched tokenizers silently truncating your chunks, and overlap flooding your top-k with duplicates. Ship it as the baseline, measure recall, then move on."
+*([full-resolution MP4 with audio](demo/fixed-size-overlap-demo.mp4) — 27s · [watch on YouTube](https://youtu.be/uB4guLOb7I4))*
 
 ## What it is
 
