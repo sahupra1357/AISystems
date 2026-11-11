@@ -1,8 +1,8 @@
 # Testing & reliability → Observability & tracing
 
-## Video takeaway
+![LLM Observability & Tracing Explained: Log What the Model Read](demo/observability-tracing-demo.gif)
 
-"When someone says the answer was wrong, you need to know what the model read. So log the retrieved chunk IDs and their scores — the pool and the final set — on every single request. That one field turns an unanswerable complaint into a five-minute diagnosis. Add the version vector: which prompt, which model, which index, which parser, which chunking config, so a quality drop maps to the thing that changed. Track tokens and cost per call, including cached ones. Sample the big payloads, but keep the metadata on everything and all the errors. And govern it — your trace store holds user queries and document contents, which makes it one of the most sensitive things you own."
+*([full-resolution MP4 with audio](demo/observability-tracing-demo.mp4) — 46s · [watch on YouTube](https://youtu.be/2iAkRwLDNCU))*
 
 ## What it is
 
