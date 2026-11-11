@@ -1,8 +1,8 @@
 # Memory → Types (short-term, working, episodic, semantic, procedural)
 
-## Video takeaway
+![Agent Memory Types Explained: Short-Term to Procedural](demo/memory-types-demo.gif)
 
-"Agent memory isn't one thing, it's five. Short-term is just the context window. Working memory is the scratchpad for the current run. Episodic is what happened before — past questions and how they went. Semantic is durable facts about the user: their role, their region, their default entity. Procedural is learned how-tos. The key production split: exact facts go in a relational store where you can read, update, and delete them precisely; fuzzy recall goes in a vector store. Put the user's timezone only in a vector index and you're *hoping* to retrieve it. And build working memory first, episodic last — that's where the privacy and quality problems live."
+*([full-resolution MP4 with audio](demo/memory-types-demo.mp4) — 44s · [watch on YouTube](https://youtu.be/2l33YCc1UV8))*
 
 ## What it is
 
