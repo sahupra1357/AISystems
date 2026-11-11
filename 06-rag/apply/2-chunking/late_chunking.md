@@ -1,8 +1,8 @@
 # Chunking → Late chunking
 
-## Video takeaway
+![Late Chunking in RAG Explained: Embed First, Cut Later](demo/late-chunking-demo.gif)
 
-"Normally you cut the document into chunks, then embed each one blind. Late chunking embeds the whole document first, so every token already knows its neighbours, and only *then* cuts and pools per chunk. 'It must be returned in 14 days' now knows 'it' is the leased equipment. No LLM calls, fully deterministic. The catches: you need a long-context encoder that exposes token embeddings, it eats GPU on long docs, and it does nothing for keyword search. Measure it against naive embedding before you switch."
+*([full-resolution MP4 with audio](demo/late-chunking-demo.mp4) — 34s · [watch on YouTube](https://youtu.be/KGaBcEAutwU))*
 
 ## What it is
 
