@@ -1,8 +1,8 @@
 # Chunking → Layout / structure-aware
 
-## Video takeaway
+![Structure-Aware Chunking for RAG Explained: Split by Layout](demo/layout-structure-aware-demo.gif)
 
-"Structure-aware chunking splits where the author split: headings, sections, tables. Every chunk carries a breadcrumb like 'Contract › Termination › Notice period', so 'the limit is 30 days' is actually findable. It is the fix for table questions. The catch: it's only as good as your parser. In production, define one internal element schema, keep tables atomic with header rows repeated, and treat a parser upgrade like an embedding-model change: it re-chunks the world."
+*([full-resolution MP4 with audio](demo/layout-structure-aware-demo.mp4) — 35s · [watch on YouTube](https://youtu.be/Nuv3wzAf814))*
 
 ## What it is
 
