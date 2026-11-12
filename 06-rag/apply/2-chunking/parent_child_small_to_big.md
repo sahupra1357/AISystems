@@ -1,8 +1,8 @@
 # Chunking → Parent–child (small-to-big)
 
-## Video takeaway
+![Parent-Child Chunking Explained: Search Small, Answer Big](demo/parent-child-small-to-big-demo.gif)
 
-"Small chunks match well but starve the model. Big chunks feed the model but match badly. Parent–child does both: search on small children, then hand the model their big parent section. It's the highest-ROI chunking change most teams can make. In production the hard part isn't retrieval — it's keeping parents and children consistent across versions, and enforcing ACLs on both. Get the write and delete order right, add an orphan checker, and rerank the children before you collapse them."
+*([full-resolution MP4 with audio](demo/parent-child-small-to-big-demo.mp4) — 35s · [watch on YouTube](https://youtu.be/--pAvrGUSzc))*
 
 ## What it is
 
