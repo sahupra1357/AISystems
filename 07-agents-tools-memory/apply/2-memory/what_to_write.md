@@ -1,8 +1,8 @@
 # Memory → What to write (the extraction step)
 
-## Video takeaway
+![What to Store in Agent Memory: The Extraction Gate Explained](demo/what-to-write-demo.gif)
 
-"The fastest way to ruin agent memory is to write everything to it. After two hundred conversations you have three thousand fragments, and 'user works on the German entity' is buried under four hundred instances of 'user said thanks'. So put a gate in front: after each interaction, a cheap async call decides what's worth remembering — durable, reusable, specific — and the expected answer is 'nothing'. Constrain it to a fixed list of typed fields so it can't invent categories. Record whether the user actually said it or you inferred it. And when a user explicitly asks you to remember something, confirm it back to them — that's your cheapest correction mechanism."
+*([full-resolution MP4 with audio](demo/what-to-write-demo.mp4) — 44s · [watch on YouTube](https://youtu.be/XU6_2V1oaOk))*
 
 ## What it is
 
