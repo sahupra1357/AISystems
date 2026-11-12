@@ -1,8 +1,8 @@
 # Testing & reliability → Excessive agency (least privilege)
 
-## Video takeaway
+![Excessive Agency in AI Agents Explained: Least Privilege Wins](demo/excessive-agency-demo.gif)
 
-"The strongest control in an agent system isn't a prompt — it's a credential. A read-only agent with a read-only token cannot be talked into a delete, no matter how clever the injection or how confused the model. So enumerate exactly what the task needs and remove everything else: if deletion isn't part of the product, the delete tool shouldn't exist in the catalogue at all. Make the agent act with the *user's* permissions, not a shared service account that can see every tenant. Put write tools only in the phase that writes. And write the negative tests — assert the agent *cannot* do the dangerous thing even when you explicitly tell it to. That test is your proof the control is real."
+*([full-resolution MP4 with audio](demo/excessive-agency-demo.mp4) — 55s · [watch on YouTube](https://youtu.be/mTAlSnubvfA))*
 
 ## What it is
 
