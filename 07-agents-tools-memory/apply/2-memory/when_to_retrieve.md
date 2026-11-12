@@ -1,8 +1,8 @@
 # Memory → When to retrieve (relevance + recency, with a cap)
 
-## Video takeaway
+![Agent Memory Retrieval Explained: Recency, Budget and a Floor](demo/when-to-retrieve-demo.gif)
 
-"Memory retrieval isn't just similarity search. Two things differ from document retrieval: recency genuinely matters, so decay old episodes exponentially, and the budget is tiny — a few hundred tokens, because memory competes with the passages that actually answer the question. Split it: look up typed semantic facts by key, so the user's region is reliably there rather than hopefully retrieved; search episodic memories by similarity times recency times confidence, with a floor, and inject nothing when nothing clears it. Cap the count, attach provenance, and tell the model plainly that a memory never outranks a retrieved document."
+*([full-resolution MP4 with audio](demo/when-to-retrieve-demo.mp4) — 41s · [watch on YouTube](https://youtu.be/EWVh5nOekw4))*
 
 ## What it is
 
