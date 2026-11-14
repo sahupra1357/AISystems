@@ -1,8 +1,8 @@
 # Chunking → Semantic chunking
 
-## Video takeaway
+![Semantic Chunking Explained: When It Beats Recursive Splitting](demo/semantic-chunking-demo.gif)
 
-"Semantic chunking cuts where the topic changes: embed each sentence, find the dips in similarity, cut there. You get chunks that are about one thing. The cost is a second embedding pass at ingest, and boundaries that move whenever you change the model. It wins on transcripts and narrative text, loses to heading-aware splitting on anything structured. Always guard min and max size, always A/B it against recursive splitting before you pay for it."
+*([full-resolution MP4 with audio](demo/semantic-chunking-demo.mp4) — 33s · [watch on YouTube](https://youtu.be/k4-M9v162hE))*
 
 ## What it is
 
