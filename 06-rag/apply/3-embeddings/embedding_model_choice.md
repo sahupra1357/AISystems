@@ -1,8 +1,8 @@
 # Embeddings → Model choice (domain, language, dimensions, Matryoshka)
 
-## Video takeaway
+![How to Choose an Embedding Model for RAG: Golden Set vs MTEB](demo/embedding-model-choice-demo.gif)
 
-"The leaderboard tells you which embedding models are worth trying. Your golden set tells you which one to use — models that are neighbours on MTEB can differ by fifteen points of recall on your contracts. Check domain, language, max input length, and dimensions: a thousand dimensions costs four times the memory of two-fifty-six, and Matryoshka models let you truncate and rescore. Then pin the version, stamp it on every chunk, and don't swap models for marginal gains — every swap is a full re-index. Fine-tune or fix chunking first."
+*([full-resolution MP4 with audio](demo/embedding-model-choice-demo.mp4) — 35s · [watch on YouTube](https://youtu.be/2-yqu5HsYZ4))*
 
 ## What it is
 
