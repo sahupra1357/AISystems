@@ -1,8 +1,8 @@
 # Testing & reliability → Input guardrails
 
-## Video takeaway
+![Input Guardrails for LLM Apps Explained: Cheapest Place to Stop Problems](demo/input-guardrails-demo.gif)
 
-"Input guardrails are the cheapest place to stop a problem, because they run before you spend anything on retrieval or generation. Free checks first: size, rate limits, and a regex for API keys, because users paste secrets constantly. Then PII, with a per-tenant policy — mask reversibly and restore the real values in the answer, or block outright for regulated tenants. One subtlety worth knowing: masking at the front door can break retrieval, because 'Jane's contract' becomes 'PERSON_1's contract'. Often it's better to mask only at the boundary where data leaves for a third-party model. And review your blocked requests weekly — a guardrail blocking legitimate work never shows up in your quality metrics."
+*([full-resolution MP4 with audio](demo/input-guardrails-demo.mp4) — 46s · [watch on YouTube](https://youtu.be/3oUbNOsnKcY))*
 
 ## What it is
 
