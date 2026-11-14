@@ -1,8 +1,8 @@
 # Security → Auditability
 
-## Video takeaway
+![LLM Audit Logging Explained: Audit Is Not Observability](demo/auditability-demo.gif)
 
-"Audit is not the same as observability. Observability is sampled, short-lived, and for engineers. Audit is complete, long-lived, append-only, and for the moment someone disputes an answer. The record that matters is the evidence chain: not just 'the system said X', but 'it said X based on document D version three, page twelve, retrieved under these permissions, with prompt version seven'. That means keeping old document versions for the audit period, or you can't reproduce what the user actually saw. Log denials too — they're your proof the access controls fired. And test reconstruction once a quarter, because that exercise is where you discover the gaps."
+*([full-resolution MP4 with audio](demo/auditability-demo.mp4) — 46s · [watch on YouTube](https://youtu.be/6KkCEJdCBdo))*
 
 ## What it is
 
