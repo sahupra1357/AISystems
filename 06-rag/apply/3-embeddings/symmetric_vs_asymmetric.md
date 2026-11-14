@@ -1,8 +1,8 @@
 # Embeddings → Symmetric vs asymmetric (query/passage prefixes)
 
-## Video takeaway
+![Embedding Query vs Passage Prefixes Explained: Free RAG Recall](demo/symmetric-vs-asymmetric-demo.gif)
 
-"A question and the passage that answers it look nothing alike, so many embedding models want to be told which one they're looking at: 'query:' on one side, 'passage:' on the other, or an input-type flag in the API. Leave it off and you still get vectors — just worse ones, and nothing errors. Wrap the model in two functions, embed-queries and embed-documents, make them the only way anyone embeds anything, bake the prefix into the version string, and test that the prefixed recall is actually higher. It's several points of recall for free."
+*([full-resolution MP4 with audio](demo/symmetric-vs-asymmetric-demo.mp4) — 36s · [watch on YouTube](https://youtu.be/RZN1QXXzUyM))*
 
 ## What it is
 
