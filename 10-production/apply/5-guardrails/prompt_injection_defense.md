@@ -1,8 +1,8 @@
 # Testing & reliability → Prompt-injection defence
 
-## Video takeaway
+![Prompt Injection Defense Explained: Why Filters Fail, Permissions Work](demo/prompt-injection-defense-demo.gif)
 
-"Prompt injection is SQL injection without a syntax to escape — there's no reliable boundary between instructions and data in natural language. Direct attacks, where the user types it, mostly harm themselves. The dangerous kind is indirect: a poisoned document that gets retrieved while the model is acting with someone else's authority. Delimiters, escaping, and pattern screening all reduce the odds and none of them close it. The layer that actually works is that model output can never authorise an action — permissions are computed in code from the authenticated caller, before execution. Add one deterministic rule on top: if any passage in this turn was flagged, no write tools this turn. And re-run your injection tests on every model upgrade, because susceptibility changes."
+*([full-resolution MP4 with audio](demo/prompt-injection-defense-demo.mp4) — 50s · [watch on YouTube](https://youtu.be/nE4DZii3f7c))*
 
 ## What it is
 
