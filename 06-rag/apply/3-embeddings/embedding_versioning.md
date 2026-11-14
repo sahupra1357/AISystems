@@ -1,8 +1,8 @@
 # Embeddings → Versioning & migration (dual-index cutover)
 
-## Video takeaway
+![Embedding Model Migration for RAG: Dual-Index Cutover Explained](demo/embedding-versioning-demo.gif)
 
-"Change the embedding model and every vector in your index is instantly meaningless to the new query embeddings. So a model change — or a prefix change, a dimension change, a chunking change — is a migration: build the new index alongside the old one from your chunk registry, write new documents to both while it builds, gate the cutover on your golden set, flip a flag, keep the old index for a rollback window, then delete it. Stamp the version on every chunk and make the query service refuse to start if its embedder doesn't match the index."
+*([full-resolution MP4 with audio](demo/embedding-versioning-demo.mp4) — 37s · [watch on YouTube](https://youtu.be/qA7ixGxdDkA))*
 
 ## What it is
 
