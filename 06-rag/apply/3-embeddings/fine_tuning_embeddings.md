@@ -1,8 +1,8 @@
 # Embeddings → Fine-tuning embeddings on your own logs
 
-## Video takeaway
+![Fine-Tuning Embedding Models for RAG: Train on Your Own Logs](demo/fine-tuning-embeddings-demo.gif)
 
-"Your embedding model learned similarity from the web. Your corpus has its own words and its own idea of relevance. Fine-tune it on triplets from your own data: a real query, the passage that answered it, and a hard negative — a passage that looks relevant but isn't, mined from your current retriever. A few hours on one GPU often buys more recall than switching to a bigger LLM. Filter out false negatives, hold out test queries from day one, and remember every new version means re-embedding the whole corpus — so if you're multi-tenant, fine-tune the reranker first."
+*([full-resolution MP4 with audio](demo/fine-tuning-embeddings-demo.mp4) — 36s · [watch on YouTube](https://youtu.be/LqPo1p7WzkI))*
 
 ## What it is
 
