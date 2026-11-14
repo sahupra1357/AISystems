@@ -1,8 +1,8 @@
 # Testing & reliability → Output guardrails
 
-## Video takeaway
+![Output Guardrails for LLM Apps Explained: The Last Gate Before Users](demo/output-guardrails-demo.gif)
 
-"Output guardrails are the last thing between a bad answer and a user. Run the free checks on everything: is the schema valid, do the cited IDs actually exist, is there an API key in the text, and — the one people forget — is this output about to be rendered as HTML or interpolated into SQL, because that's an injection vector no matter how well-behaved the model was. Then tier the expensive checks by risk: faithfulness and toxicity on external-facing answers, deterministic only internally. Define the action per violation — redact, regenerate once, or block with an honest message — and treat rising violation rates as a symptom to fix upstream, not just a block that worked."
+*([full-resolution MP4 with audio](demo/output-guardrails-demo.mp4) — 48s · [watch on YouTube](https://youtu.be/4M9oRv5icn8))*
 
 ## What it is
 
