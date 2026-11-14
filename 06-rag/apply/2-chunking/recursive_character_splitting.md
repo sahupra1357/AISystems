@@ -1,8 +1,8 @@
 # Chunking → Recursive character splitting
 
-## Video takeaway
+![Recursive Character Splitting Explained: Fixed-Size With Manners](demo/recursive-character-splitting-demo.gif)
 
-"Recursive splitting is fixed-size with manners: it tries paragraph breaks first, then sentences, then words. Same cost, far fewer sentences cut in half. It's the default for wikis, tickets, and docs. Two production traps: greedy merging glues headings onto the *previous* chunk, and English punctuation rules break on other languages. Version your separator list — changing it means re-embedding everything."
+*([full-resolution MP4 with audio](demo/recursive-character-splitting-demo.mp4) — 31s · [watch on YouTube](https://youtu.be/szAq4seTCGg))*
 
 ## What it is
 
