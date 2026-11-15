@@ -1,8 +1,8 @@
 # Indexing → Vector store choice
 
-## Video takeaway
+![How to Choose a Vector Database for RAG: pgvector vs Qdrant vs Milvus](demo/vector-store-choice-demo.gif)
 
-"Don't pick a vector database from a benchmark of unfiltered queries — your queries have a tenant filter, a permission filter, and a current-version filter on every one. Pick by what you actually need: already on Postgres with under twenty million vectors and permissions that need joins? pgvector. Tens of millions, rich filters, quantisation, multi-tenant? A dedicated store like Qdrant, Weaviate, or Milvus. Zero ops? Managed. Need BM25 and aggregations in the same box? OpenSearch. Whatever you choose, keep your chunk registry outside it so you can rebuild — and leave."
+*([full-resolution MP4 with audio](demo/vector-store-choice-demo.mp4) — 40s · [watch on YouTube](https://youtu.be/t41J57L60g4))*
 
 ## What it is
 
