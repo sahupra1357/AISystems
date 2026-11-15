@@ -1,8 +1,8 @@
 # Security → Authentication & authorization (permission-filtered retrieval)
 
-## Video takeaway
+![RAG Permission Filtering Explained: Never Send What Users Can't See](demo/authn-authz-permission-filtered-retrieval-demo.gif)
 
-"The security model of a RAG system is one sentence: the model must never receive a chunk the caller can't see. Not 'the model shouldn't reveal it' — never receives it. That means the caller's groups become a mandatory filter inside the vector search, alongside tenant and current-version, built by one function that every read path is forced to use. Post-filtering the top hundred results isn't just insecure, it's broken — for a user who can see one percent of the corpus you'll return nothing. And remember search isn't the only read: fetching a parent chunk, serving a page image for a citation, reading memory — each is a separate authorisation, and one missed path is the leak."
+*([full-resolution MP4 with audio](demo/authn-authz-permission-filtered-retrieval-demo.mp4) — 45s · [watch on YouTube](https://youtu.be/VTkIAsk6riM))*
 
 ## What it is
 
