@@ -1,8 +1,8 @@
 # Indexing → Index types: Flat, HNSW, IVF-PQ (and tuning the recall/latency curve)
 
-## Video takeaway
+![HNSW vs IVF-PQ vs Flat Vector Index Explained: Which to Pick](demo/index-types-flat-hnsw-ivfpq-demo.gif)
 
-"Three index families. Flat compares your query to every vector — exact, fine up to about a million, and the yardstick for everything else. HNSW is a graph you walk greedily — fast, near-exact, and the default, but it lives entirely in RAM. IVF with product quantisation compresses vectors ten to sixty times for hundreds of millions of vectors, at some recall cost you win back by rescoring the top few hundred exactly. Whatever you pick, tune ef-search or nprobe against a flat index with your real tenant filters on — and run that recall check every day, because approximate search fails silently."
+*([full-resolution MP4 with audio](demo/index-types-flat-hnsw-ivfpq-demo.mp4) — 42s · [watch on YouTube](https://youtu.be/l3OJJ751zAg))*
 
 ## What it is
 
