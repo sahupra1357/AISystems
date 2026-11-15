@@ -1,8 +1,8 @@
 # Indexing → Filtered search (pre-filter vs post-filter)
 
-## Video takeaway
+![Filtered Vector Search Explained: Pre-Filter vs Post-Filter](demo/filtered-search-demo.gif)
 
-"Fetch the hundred nearest vectors, then drop the ones that aren't this tenant's — and for a small tenant you're left with nothing. That's post-filtering, and it's the wrong way to do permissions. The filter has to be applied inside the search: filter-aware graph traversal, or exact search over the small matching subset, which good stores switch between automatically. Index every field you filter on, raise the candidate count for selective filters, test with a small tenant and a narrow-permission user, and apply the exact same filters to your keyword index before you fuse results — or you've built a leak."
+*([full-resolution MP4 with audio](demo/filtered-search-demo.mp4) — 38s · [watch on YouTube](https://youtu.be/ynLC4LOBt0o))*
 
 ## What it is
 
