@@ -1,8 +1,8 @@
 # Security → PII (detect, mask, reversible mapping)
 
-## Video takeaway
+![PII Masking for LLM Apps Explained: Mask Only at the Boundary](demo/pii-demo.gif)
 
-"The instinct is to strip personal data at the front door. Don't — retrieval needs real names to work, and 'PERSON_1's contract' finds nothing. Instead, classify sensitivity at ingest, retrieve with real values inside your own boundary, and mask only what crosses to a third-party model. Use consistent placeholders so the same person is PERSON_1 everywhere and the model can still reason about relationships, then restore the real values in the answer for the user who's entitled to them. Keep that mapping in request memory and nowhere else — it's the re-identification key. And check your traces: masking the model call while logging the raw prompt is the classic miss."
+*([full-resolution MP4 with audio](demo/pii-demo.mp4) — 46s · [watch on YouTube](https://youtu.be/34cxx-SJig4))*
 
 ## What it is
 
