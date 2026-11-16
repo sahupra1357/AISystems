@@ -1,8 +1,8 @@
 # Query understanding → Decomposition (multi-hop into sub-questions)
 
-## Video takeaway
+![Query Decomposition Explained: Multi-Hop RAG Questions](demo/decomposition-demo.gif)
 
-"Ask 'how does our parental leave compare to the German minimum, and what changed in 2024' and a single top-k search answers maybe one third of it — the passages for the other parts aren't near that query. Split it into sub-questions, retrieve for each in parallel, label the evidence by part, and require the synthesis step to address every part and say so out loud when a part has no evidence. Gate it, because decomposing 'how many sick days' is pure waste. And if a sub-question needs the previous answer, bound the chain at two or three hops — that's where a query quietly becomes an expensive agent run."
+*([full-resolution MP4 with audio](demo/decomposition-demo.mp4) — 39s · [watch on YouTube](https://youtu.be/5rcBJcnAKuE))*
 
 ## What it is
 
