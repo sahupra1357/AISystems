@@ -1,8 +1,8 @@
 # Query understanding → HyDE (Hypothetical Document Embeddings)
 
-## Video takeaway
+![HyDE Explained: Search With a Fake Answer in RAG](demo/hyde-demo.gif)
 
-"A seven-word question and a two-hundred-word legal clause don't look alike to an embedding model. HyDE fixes that by having the model write a fake answer — confidently, inventing details — and searching with the embedding of *that* instead. The invented specifics don't matter; the style and vocabulary do, and real passages that look like it are the ones you want. Two rules: embed the fake answer with your document prefix, not your query prefix, or the whole thing silently does nothing. And never let that fake answer reach the generation prompt — it's a hallucination you created on purpose."
+*([full-resolution MP4 with audio](demo/hyde-demo.mp4) — 42s · [watch on YouTube](https://youtu.be/7RxowRW4u_Y))*
 
 ## What it is
 
