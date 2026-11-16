@@ -1,8 +1,8 @@
 # Query understanding → Multi-query + Reciprocal Rank Fusion
 
-## Video takeaway
+![Multi-Query Retrieval + Reciprocal Rank Fusion (RRF) Explained](demo/multi-query-rrf-demo.gif)
 
-"Users ask 'can I roll over vacation days'; the policy says 'carry-forward of annual leave entitlement'. One query embedding might miss it. Multi-query asks a cheap model for four rephrasings — plain, keyword-only, formal, and a likely section title — searches for all of them in parallel, and merges the lists with reciprocal rank fusion, which rewards documents that show up near the top of several lists without needing comparable scores. Then rerank with the original question. Gate it to short or ambiguous queries, cap the variants, and apply the same permission filters to every list."
+*([full-resolution MP4 with audio](demo/multi-query-rrf-demo.mp4) — 37s · [watch on YouTube](https://youtu.be/ARKZSXueI44))*
 
 ## What it is
 
