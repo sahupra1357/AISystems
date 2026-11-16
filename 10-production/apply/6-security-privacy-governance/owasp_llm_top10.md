@@ -1,8 +1,8 @@
 # Security → Threat checklist (OWASP LLM Top 10)
 
-## Video takeaway
+![OWASP LLM Top 10 Checklist Explained: Control, Test, Owner](demo/owasp-llm-top10-demo.gif)
 
-"Use the OWASP list for LLM applications as a review checklist, not a reading list: for each of the ten threats, name the control, name the test, name the owner. Most of them you've already handled — permission-filtered retrieval covers sensitive disclosure, least privilege covers excessive agency, budgets cover denial of service. Two get missed. Insecure output handling: your model's text rendered as HTML or dropped into SQL is an injection no matter how well-behaved the model is. And prompt injection, where the honest answer isn't 'we prevent it' but 'we contain it' — a successful injection reaches only what the caller could already see and can't take an irreversible action without a human. Write that down, back it with tests, and re-run the whole thing on every model change."
+*([full-resolution MP4 with audio](demo/owasp-llm-top10-demo.mp4) — 52s · [watch on YouTube](https://youtu.be/2qzvl_8DS5M))*
 
 ## What it is
 
