@@ -1,8 +1,8 @@
 # Query understanding → Query rewriting (coreference over chat history)
 
-## Video takeaway
+![Query Rewriting for RAG Explained: Fix Follow-Up Questions](demo/query-rewriting-demo.gif)
 
-"'What about its termination notice?' — the retriever has no idea what 'its' is. Before you search, rewrite the turn into a standalone query using the conversation: 'termination notice period of the Acme MSA'. One cheap model call, skippable when the query is already self-contained. Guard against the model inventing entities: if the rewrite is way longer than the original or mentions something never discussed, fall back. Keep the user's original words for the answer prompt — the rewrite is for search only. This is the fix for RAG that works on turn one and falls apart on turn three."
+*([full-resolution MP4 with audio](demo/query-rewriting-demo.mp4) — 36s · [watch on YouTube](https://youtu.be/CIKnr0T-Z5Q))*
 
 ## What it is
 
