@@ -1,8 +1,8 @@
 # Query understanding → Self-query (natural language → metadata filters)
 
-## Video takeaway
+![Self-Query Retriever Explained: Natural Language to Metadata Filters](demo/self-query-metadata-filters-demo.gif)
 
-"'Contracts signed after 2023 with EMEA vendors' — an embedding can't tell 2019 from 2024, but your metadata can. Self-query has a cheap model pull the constraints out as real filters and leaves the rest as the semantic query. Two things make or break it: validate every extracted field and value against a closed schema built from what's actually in your index, because a hallucinated filter silently hides the right answer; and show the parsed filters in the UI as chips the user can remove. Security filters get ANDed on top and are never relaxed, no matter how empty the result set is."
+*([full-resolution MP4 with audio](demo/self-query-metadata-filters-demo.mp4) — 38s · [watch on YouTube](https://youtu.be/vGVvz9alySU))*
 
 ## What it is
 
