@@ -1,8 +1,8 @@
 # Query understanding → Routing (vector, SQL, graph, web, or no retrieval)
 
-## Video takeaway
+![Query Routing for RAG Explained: SQL, Graph, API or Vector?](demo/query-routing-demo.gif)
 
-"'How many contracts did we sign last quarter' is not a retrieval question. Send it to your vector index and you get five contracts and a made-up number. Route first: greetings and formatting need no retrieval at all — that's often a quarter of your traffic and it's free to skip. Aggregations go to SQL. Relationship questions go to a graph. Live record lookups go to the API. Rules catch most of it, a cheap classifier handles the rest, and low confidence defaults to hybrid search. Log the route on every request — it's the first thing you check when an answer is wrong."
+*([full-resolution MP4 with audio](demo/query-routing-demo.mp4) — 39s · [watch on YouTube](https://youtu.be/3QUSpvbvWzI))*
 
 ## What it is
 
