@@ -1,8 +1,8 @@
 # Data flywheel → The compounding loop
 
-## Video takeaway
+![Data Flywheel for AI Systems Explained: Turn Failures Into Tests](demo/data-flywheel-demo.gif)
 
-"The flywheel is what separates systems that improve from systems that plateau. Production traffic produces traces and user signals; you triage the failures weekly; each confirmed failure becomes a permanent golden case; you fix it at the right layer, gate it in CI, and canary it. Every turn makes your eval set more representative and the next fix cheaper. Two things people miss. The new test case must *fail* before the fix — assert it, or you've written a test that protects nothing. And the same triage produces three other free assets: hard negatives for your retriever, preference pairs from user edits, and training examples from accepted outputs. Most teams collect the test cases and throw the rest away."
+*([full-resolution MP4 with audio](demo/data-flywheel-demo.mp4) — 53s · [watch on YouTube](https://youtu.be/gDCtlcp8rdk))*
 
 ## What it is
 
