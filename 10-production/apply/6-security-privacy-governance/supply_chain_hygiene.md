@@ -1,8 +1,8 @@
 # Security → Model & supply-chain hygiene
 
-## Video takeaway
+![AI Supply Chain Security Explained: Dependencies Can Ship Prompts](demo/supply-chain-hygiene-demo.gif)
 
-"AI systems have a supply-chain risk with no equivalent in normal software: a dependency can ship text your model obeys. A third-party tool server's description is an instruction the model reads and follows — so review every one before you enable it, hash the descriptions, and diff them on upgrade, because a dependency bump that changes a description is a prompt change. Refuse tool schemas that accept a tenant or user ID as a parameter; identity comes from the session, not from something the model can choose. Pin model IDs exactly, never aliases, verify weight hashes, insist on safetensors rather than pickle. And track deprecation dates as scheduled work, because migrating under a sunset deadline is how regressions ship."
+*([full-resolution MP4 with audio](demo/supply-chain-hygiene-demo.mp4) — 47s · [watch on YouTube](https://youtu.be/fB7dDAqF_JY))*
 
 ## What it is
 
