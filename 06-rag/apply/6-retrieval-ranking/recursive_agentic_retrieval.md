@@ -1,8 +1,8 @@
 # Retrieval & ranking → Recursive / agentic retrieval (bounded follow-up searches)
 
-## Video takeaway
+![Recursive Agentic Retrieval in RAG Explained: Bound the Loop](demo/recursive-agentic-retrieval-demo.gif)
 
-"After reading the first five passages, the model knows things it didn't know when it wrote the query — the real term of art, a cross-reference to Schedule 3, the fact that the answer depends on jurisdiction. Recursive retrieval lets it search again with that knowledge. It's genuinely better on research questions. It's also how a two-second query becomes a twenty-second, two-dollar agent run. So bound it in code, not in the prompt: three hops maximum, a wall-clock deadline, a guard that stops it re-searching the same thing, and a rule that a hop adding nothing relevant ends the loop. And always exit with a real decision — answer, or admit you don't have it."
+*([full-resolution MP4 with audio](demo/recursive-agentic-retrieval-demo.mp4) — 43s · [watch on YouTube](https://youtu.be/eDlqxNdtc-E))*
 
 ## What it is
 
