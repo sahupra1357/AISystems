@@ -1,8 +1,8 @@
 # Retrieval & ranking → MMR / diversity
 
-## Video takeaway
+![Maximal Marginal Relevance (MMR) in RAG Explained: Fix Duplicate Chunks](demo/mmr-diversity-demo.gif)
 
-"You retrieve five passages and they're all the same paragraph — overlapping chunks, a duplicated document, the same clause from three copies of the contract. Now the model sees one fact where the question needed three. Maximal marginal relevance fixes it: at each step pick the chunk that's most relevant *and* least like what you've already picked. Lambda around zero-point-seven is a sane default. But first try the cheaper version — cap it at two chunks per document, one per section — and measure whether you actually have a duplicate problem. And always keep the top result no matter what."
+*([full-resolution MP4 with audio](demo/mmr-diversity-demo.mp4) — 37s · [watch on YouTube](https://youtu.be/K6lja-drmSE))*
 
 ## What it is
 
