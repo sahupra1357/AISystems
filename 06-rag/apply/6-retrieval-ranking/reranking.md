@@ -1,8 +1,8 @@
 # Retrieval & ranking → Reranking (cross-encoder / late interaction)
 
-## Video takeaway
+![Reranking in RAG Explained: Cross-Encoder Rerank, Keep the Best Five](demo/reranking-demo.gif)
 
-"Your embedding model turned each passage into a single vector months ago, without ever seeing this question. A cross-encoder reads the question and the passage together and scores them properly — far more accurate, far too slow for the whole corpus, perfect for fifty candidates. So retrieve wide and cheap, rerank, keep the best five. It's usually the biggest single quality jump in a RAG pipeline, it needs no re-indexing, and its scores are the best abstention signal you'll get. Two rules: rerank small child chunks, not giant parents, and always have a timeout and a fallback — a reranker outage should cost you quality, not uptime."
+*([full-resolution MP4 with audio](demo/reranking-demo.mp4) — 42s · [watch on YouTube](https://youtu.be/saX8iLvnmj0))*
 
 ## What it is
 
