@@ -1,8 +1,8 @@
 # Data flywheel → Feedback capture & triage
 
-## Video takeaway
+![LLM Feedback Triage Explained: Find Which Stage Failed](demo/feedback-capture-triage-demo.gif)
 
-"Thumbs-down is a weak signal — only frustrated people click it. The strong signals are behavioural: did they copy the answer, retry the question, escalate to a human, and above all, how much did they edit the draft before sending it. Then triage weekly, and bucket every failure by stage: was the text even parsed, was it split across chunks, did retrieval find it, did ranking keep it, did the context budget drop it, or did the model just get it wrong. Run that ladder automatically so a human confirms in two minutes instead of investigating for thirty. The histogram of those buckets over time is your roadmap — and it usually shows that the thing you were about to fine-tune is actually a retrieval problem."
+*([full-resolution MP4 with audio](demo/feedback-capture-triage-demo.mp4) — 46s · [watch on YouTube](https://youtu.be/3h0HXrOGiBA))*
 
 ## What it is
 
