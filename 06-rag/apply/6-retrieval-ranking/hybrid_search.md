@@ -1,8 +1,8 @@
 # Retrieval & ranking → Hybrid search (BM25 + dense, fused)
 
-## Video takeaway
+![Hybrid Search Explained: BM25 + Vector Search with RRF](demo/hybrid-search-demo.gif)
 
-"Ask for 'SKU-4471' and a dense embedding shrugs — every alphanumeric code looks alike in vector space. Ask for 'time off' when the policy says 'annual leave entitlement' and keyword search finds nothing. So run both: BM25 for exact terms and identifiers, vectors for meaning, and merge the two ranked lists with reciprocal rank fusion, which needs no score calibration at all. Then rerank. The one thing you must get right: both legs get the exact same tenant and permission filter, from the same function — fusing a filtered list with an unfiltered one is a data leak, not a feature."
+*([full-resolution MP4 with audio](demo/hybrid-search-demo.mp4) — 40s · [watch on YouTube](https://youtu.be/jm8BM0AgSX0))*
 
 ## What it is
 
