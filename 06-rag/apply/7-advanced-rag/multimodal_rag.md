@@ -1,8 +1,8 @@
 # Advanced RAG → Multimodal RAG (page images, ColPali, VLM descriptions)
 
-## Video takeaway
+![Multimodal RAG Explained: ColPali vs Text Parsing Pipelines](demo/multimodal-rag-demo.gif)
 
-"Your slide deck's key fact is a bar chart, and every step of your parsing pipeline is a lossy attempt to turn that picture into words. ColPali-style retrieval skips it: render the page, embed the image as a thousand patch vectors, and match query tokens against patches directly — then hand the actual page image to a vision model to answer. It beats text pipelines on visual documents and the ingest is just 'render and embed'. The price is storage: a thousand vectors per page instead of one. Pool them, quantise them, use two-stage retrieval, and keep a keyword leg alongside — visual embeddings still can't match an exact part number."
+*([full-resolution MP4 with audio](demo/multimodal-rag-demo.mp4) — 42s · [watch on YouTube](https://youtu.be/kQ6Pmtg29ho))*
 
 ## What it is
 
