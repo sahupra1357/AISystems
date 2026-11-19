@@ -1,8 +1,8 @@
 # Advanced RAG → Agentic RAG (retrieval as a tool)
 
-## Video takeaway
+![Agentic RAG Explained: When Retrieval Becomes a Tool the Model Calls](demo/agentic-rag-demo.gif)
 
-"Agentic RAG turns retrieval from a fixed step into a tool the model calls as often as it likes, with queries and filters it chooses. That's genuinely more capable for research questions where you can't know the path in advance. It's also how the same question costs two cents one time and two dollars the next. The rules that make it survivable: budgets enforced in code — tool calls, tokens, seconds, dollars — not asked for in the prompt; security filters applied inside the tool, never passed by the model; and a scripted pipeline still handling the ninety percent of questions that never needed an agent."
+*([full-resolution MP4 with audio](demo/agentic-rag-demo.mp4) — 39s · [watch on YouTube](https://youtu.be/LlaalrjNmGc))*
 
 ## What it is
 
