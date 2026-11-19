@@ -1,8 +1,8 @@
 # Retrieval & ranking → Score thresholding & abstention
 
-## Video takeaway
+![RAG Score Thresholding Explained: When Your Retriever Should Abstain](demo/score-thresholding-abstention-demo.gif)
 
-"Vector search always returns five results, even when your corpus has nothing to say. That's how systems end up confidently answering from the five least-irrelevant passages. So put a floor under it: if the reranker's top score is below a calibrated threshold, don't answer — say what you searched and where to look instead. To calibrate it you need something most teams never build: a set of questions your corpus genuinely *cannot* answer. Then track two numbers forever — how often you correctly decline, and how often you refuse something you actually had. That second one is the most skipped metric in RAG."
+*([full-resolution MP4 with audio](demo/score-thresholding-abstention-demo.mp4) — 40s · [watch on YouTube](https://youtu.be/ByiNccZ-BiY))*
 
 ## What it is
 
