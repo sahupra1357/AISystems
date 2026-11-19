@@ -1,8 +1,8 @@
 # Advanced RAG → GraphRAG / knowledge graph
 
-## Video takeaway
+![GraphRAG Explained: Knowledge Graph RAG for Global Questions](demo/graphrag-demo.gif)
 
-"Ask 'what themes recur across our four thousand incident reports' and top-k retrieval has nothing to give you — no single passage contains the answer. GraphRAG extracts entities and relationships from every chunk, clusters them into communities, summarises each community, and answers global questions by mapping over those summaries. It also follows real relationship chains for multi-hop questions. The catch is cost: an LLM call per chunk at ingest, often ten to a hundred times plain embedding, plus entity resolution, which is genuinely hard. Prototype on one percent of your corpus, measure the gain on global questions specifically, and check whether a summary tree or a SQL query answers the same question for a fraction of the price."
+*([full-resolution MP4 with audio](demo/graphrag-demo.mp4) — 50s · [watch on YouTube](https://youtu.be/J9pkVzNSn5Q))*
 
 ## What it is
 
