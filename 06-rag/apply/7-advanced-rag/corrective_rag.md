@@ -1,8 +1,8 @@
 # Advanced RAG → Corrective RAG (CRAG): grade, then rewrite or fall back
 
-## Video takeaway
+![Corrective RAG (CRAG) Explained: Grade, Rewrite or Fall Back](demo/corrective-rag-demo.gif)
 
-"Corrective RAG puts a grader between retrieval and generation. If the passages are clearly relevant, keep only the sentences that matter and answer. If they're borderline, rewrite the query and search again, maybe adding an outside source. If they're plainly irrelevant, don't generate from them at all — fall back or say you don't know. In production, use your reranker's score as the grader for free and save the LLM grading for the borderline cases. And watch the branch mix week over week: a rising 'irrelevant' rate tells you your corpus is drifting before any user files a ticket."
+*([full-resolution MP4 with audio](demo/corrective-rag-demo.mp4) — 37s · [watch on YouTube](https://youtu.be/ptCzRmTU6zo))*
 
 ## What it is
 
