@@ -1,8 +1,8 @@
 # Generation & grounding → Faithfulness check (is each claim entailed?)
 
-## Video takeaway
+![RAG Faithfulness Check Explained: Block Unsupported Claims](demo/faithfulness-check-demo.gif)
 
-"Validating that a citation ID exists proves nothing about whether the passage says what the answer claims. So run a second pass: split the answer into claims, and for each one ask whether the passage it cites actually entails it. A small NLI model does this in milliseconds. Add a dumb regex check that every number in the claim appears in the evidence — that catches invented amounts and dates better than any entailment model. Then *act* on the result: never deliver a contradicted claim, regenerate once when the score is low, abstain when it's very low. Measuring hallucination is a metric. Blocking it is a control."
+*([full-resolution MP4 with audio](demo/faithfulness-check-demo.mp4) — 44s · [watch on YouTube](https://youtu.be/GPEN26x2JUI))*
 
 ## What it is
 
