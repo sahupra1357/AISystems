@@ -1,8 +1,8 @@
 # Advanced RAG → Structured + unstructured hybrid (SQL for numbers, vectors for narrative)
 
-## Video takeaway
+![Hybrid RAG Explained: Text-to-SQL for Numbers, Vectors for Narrative](demo/structured-unstructured-hybrid-demo.gif)
 
-"'How many contracts did we sign last quarter' is not a retrieval question, and answering it by retrieving five contracts and counting them is how RAG systems produce confident wrong numbers. Route aggregates to SQL over a small, curated set of views — not your raw warehouse — with a library of verified example queries as few-shot prompts. Validate the generated SQL before it runs: read-only role, table allow-list, injected limit, row-level security in the database. Then show the user the query. And for the best questions — 'why did revenue drop and what does the post-mortem say' — run both legs and let the numbers come from the query and the story come from the documents."
+*([full-resolution MP4 with audio](demo/structured-unstructured-hybrid-demo.mp4) — 47s · [watch on YouTube](https://youtu.be/c60jYut7omw))*
 
 ## What it is
 
