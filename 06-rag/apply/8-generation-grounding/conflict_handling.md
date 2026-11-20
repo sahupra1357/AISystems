@@ -1,8 +1,8 @@
 # Generation & grounding → Conflict handling (when sources disagree)
 
-## Video takeaway
+![RAG Conflict Handling Explained: When Sources Disagree](demo/conflict-handling-demo.gif)
 
-"Your index has the 2022 policy and the 2024 policy, and the model answers from whichever one it happened to attend to — so the same question gets different answers on different days. First, fix it upstream: superseded versions shouldn't be retrievable at all. For what's left, put effective dates, authority tiers, and scope on every passage and give the model an ordered rule: different scope isn't a conflict, newer wins, higher authority wins, and if you still can't resolve it, show both with their dates and say they disagree. Never pick silently. And when two *current* documents genuinely contradict, that's not a nuisance — it's a data-quality ticket someone needs to close."
+*([full-resolution MP4 with audio](demo/conflict-handling-demo.mp4) — 42s · [watch on YouTube](https://youtu.be/AetSUftNskQ))*
 
 ## What it is
 
