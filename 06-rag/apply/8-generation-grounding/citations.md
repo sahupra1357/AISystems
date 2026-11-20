@@ -1,8 +1,8 @@
 # Generation & grounding → Citations (span-level, validated)
 
-## Video takeaway
+![RAG Citations Explained: Validate Chunk IDs and Quotes](demo/citations-demo.gif)
 
-"A citation is only useful if it can be checked. So make the model emit chunk IDs — never page numbers, never URLs, never titles — and resolve all of that yourself from metadata. Then validate: does that ID exist in what we actually retrieved for this request, and if there's a quote, does it really appear in that chunk? Invalid IDs and phantom quotes are fabrication, and you can catch them with string comparison, no model needed. Track the invalid-citation rate like an error rate. And remember ID-valid doesn't mean supported — that's a separate check."
+*([full-resolution MP4 with audio](demo/citations-demo.mp4) — 40s · [watch on YouTube](https://youtu.be/1u27DGoiy0g))*
 
 ## What it is
 
