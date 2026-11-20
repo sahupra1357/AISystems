@@ -1,8 +1,8 @@
 # Advanced RAG → Self-RAG (reflection tokens: retrieve? supported? useful?)
 
-## Video takeaway
+![Self-RAG Explained: Reflection Tokens and Why to Validate Self-Grading](demo/self-rag-demo.gif)
 
-"Self-RAG has the model reflect as it writes: do I even need to retrieve for this, is this passage relevant, is the sentence I just wrote actually supported. In production, take the first part seriously — a lot of conversational turns need no retrieval at all, and skipping it saves latency and noise. Take the self-grading with salt: a model that made something up will often also mark it supported. So validate every citation ID in code, verify a sample independently, and publish how often 'fully supported' really means fully supported before you put that word in your UI."
+*([full-resolution MP4 with audio](demo/self-rag-demo.mp4) — 38s · [watch on YouTube](https://youtu.be/BtO5qK_8EMU))*
 
 ## What it is
 
