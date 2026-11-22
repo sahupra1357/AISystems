@@ -1,8 +1,8 @@
 # Generation & grounding → Grounded prompting
 
-## Video takeaway
+![Grounded Prompting for RAG Explained: Why It's Only 60% of the Fix](demo/grounded-prompting-demo.gif)
 
-"Telling the model 'answer only from the context and say so if it's not there' is the foundation of grounded RAG — and it's about sixty percent of a solution, not a hundred. Models still bridge gaps when the passages almost answer the question. So write the rules precisely, say what reasoning *is* allowed so it doesn't refuse to add two numbers, include a worked example where the context is insufficient, and then verify: validate every citation ID in code and check faithfulness separately. Grounding is a stack. The prompt is just the first layer."
+*([full-resolution MP4 with audio](demo/grounded-prompting-demo.mp4) — 35s · [watch on YouTube](https://youtu.be/MuHgoJLTRHA))*
 
 ## What it is
 
