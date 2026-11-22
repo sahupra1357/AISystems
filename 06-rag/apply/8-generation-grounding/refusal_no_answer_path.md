@@ -1,8 +1,8 @@
 # Generation & grounding → Refusal / no-answer path
 
-## Video takeaway
+![RAG Refusal and No-Answer Path Explained: Decline Without Losing Trust](demo/refusal-no-answer-path-demo.gif)
 
-"Most RAG systems are never measured on whether they correctly decline — and that's the metric that decides whether anyone trusts them. Design the no-answer path like a feature: name the reason, say what you searched and what that corpus covers, answer whatever part you can, and give a real next step — the team to ask, the system to try. Make permission refusals reveal nothing about whether the document exists. Give users a 'search anyway' button, because every click on it is free evidence your threshold is too strict. And track two numbers forever: how often you correctly say you don't know, and how often you refuse something you actually had."
+*([full-resolution MP4 with audio](demo/refusal-no-answer-path-demo.mp4) — 41s · [watch on YouTube](https://youtu.be/mybajoZ-FR0))*
 
 ## What it is
 
