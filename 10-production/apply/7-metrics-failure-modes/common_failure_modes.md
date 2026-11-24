@@ -1,8 +1,8 @@
 # Common failure modes (and the fix)
 
-## Video takeaway
+![Common AI Failure Modes and Fixes: Symptom to Cause](demo/common-failure-modes-demo.gif)
 
-"Eight symptoms cover most production AI failures, and each has a known fix. The right document exists but is never retrieved — that's dense-only search; add keyword search and contextual headers. It cites the wrong section — chunks too big, no reranker. Confidently wrong on a question your corpus can't answer — no abstention threshold. Correct on turn one, wrong on turn three — no query rewriting over history. Costs ten times the estimate — check your cache hit rate first. Table questions always wrong — the table got flattened at parse time. And when the agent does something destructive, the fix isn't a better prompt, it's a credential that couldn't do it. Look up the symptom, but confirm with the diagnostic ladder before you fix anything."
+*([full-resolution MP4 with audio](demo/common-failure-modes-demo.mp4) — 52s · [watch on YouTube](https://youtu.be/mHbCPsaTw68))*
 
 ## What it is
 
