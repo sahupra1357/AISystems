@@ -1,8 +1,8 @@
 # Metrics cheat sheet
 
-## Video takeaway
+![AI System Metrics Cheat Sheet: One Metric Per Stage](demo/metrics-cheat-sheet-demo.gif)
 
-"One metric per stage, each answering a specific question. Parsing accuracy caps everything downstream. Retrieval recall tells you whether the answer was even available. Reranking nDCG isolates the ranking gain. Faithfulness and citation validity cover hallucination. Then the one almost nobody has: correct-abstention and false-refusal rates, which need questions your corpus genuinely can't answer. For agents, always report cost and steps next to accuracy. And for leadership, report cost per *successful* task, not per request — a cheap system that fails half the time isn't cheap. Every number needs a sample size, an interval, and the ability to slice by which prompt and model produced it."
+*([full-resolution MP4 with audio](demo/metrics-cheat-sheet-demo.mp4) — 45s · [watch on YouTube](https://youtu.be/6NkDdPNs1lM))*
 
 ## What it is
 
